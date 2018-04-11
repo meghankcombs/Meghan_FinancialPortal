@@ -12,12 +12,12 @@ namespace Meghan_FinancialPortal.Controllers
 {
     public class BudgetItemsController : Controller
     {
-        private FinancialPortal db = new FinancialPortal();
+        private FinancialPortal fdb = new FinancialPortal();
 
         // GET: BudgetItems
         public ActionResult Index()
         {
-            var budgetItems = db.BudgetItems.Include(b => b.Budget).Include(b => b.Category);
+            var budgetItems = fdb.BudgetItems.Include(b => b.Budget).Include(b => b.Category);
             return View(budgetItems.ToList());
         }
 
@@ -28,7 +28,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BudgetItem budgetItem = db.BudgetItems.Find(id);
+            BudgetItem budgetItem = fdb.BudgetItems.Find(id);
             if (budgetItem == null)
             {
                 return HttpNotFound();
@@ -39,8 +39,8 @@ namespace Meghan_FinancialPortal.Controllers
         // GET: BudgetItems/Create
         public ActionResult Create()
         {
-            ViewBag.BudgetId = new SelectList(db.Budgets, "Id", "Name");
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
+            ViewBag.BudgetId = new SelectList(fdb.Budgets, "Id", "Name");
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name");
             return View();
         }
 
@@ -53,13 +53,13 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.BudgetItems.Add(budgetItem);
-                db.SaveChanges();
+                fdb.BudgetItems.Add(budgetItem);
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BudgetId = new SelectList(db.Budgets, "Id", "Name", budgetItem.BudgetId);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", budgetItem.CategoryId);
+            ViewBag.BudgetId = new SelectList(fdb.Budgets, "Id", "Name", budgetItem.BudgetId);
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name", budgetItem.CategoryId);
             return View(budgetItem);
         }
 
@@ -70,13 +70,13 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BudgetItem budgetItem = db.BudgetItems.Find(id);
+            BudgetItem budgetItem = fdb.BudgetItems.Find(id);
             if (budgetItem == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BudgetId = new SelectList(db.Budgets, "Id", "Name", budgetItem.BudgetId);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", budgetItem.CategoryId);
+            ViewBag.BudgetId = new SelectList(fdb.Budgets, "Id", "Name", budgetItem.BudgetId);
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name", budgetItem.CategoryId);
             return View(budgetItem);
         }
 
@@ -89,12 +89,12 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(budgetItem).State = EntityState.Modified;
-                db.SaveChanges();
+                fdb.Entry(budgetItem).State = EntityState.Modified;
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BudgetId = new SelectList(db.Budgets, "Id", "Name", budgetItem.BudgetId);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", budgetItem.CategoryId);
+            ViewBag.BudgetId = new SelectList(fdb.Budgets, "Id", "Name", budgetItem.BudgetId);
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name", budgetItem.CategoryId);
             return View(budgetItem);
         }
 
@@ -105,7 +105,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            BudgetItem budgetItem = db.BudgetItems.Find(id);
+            BudgetItem budgetItem = fdb.BudgetItems.Find(id);
             if (budgetItem == null)
             {
                 return HttpNotFound();
@@ -118,9 +118,9 @@ namespace Meghan_FinancialPortal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            BudgetItem budgetItem = db.BudgetItems.Find(id);
-            db.BudgetItems.Remove(budgetItem);
-            db.SaveChanges();
+            BudgetItem budgetItem = fdb.BudgetItems.Find(id);
+            fdb.BudgetItems.Remove(budgetItem);
+            fdb.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -128,7 +128,7 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                fdb.Dispose();
             }
             base.Dispose(disposing);
         }

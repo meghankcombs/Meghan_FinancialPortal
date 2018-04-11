@@ -29,14 +29,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Load up and set View Model for this details view
-            var household = new HouseholdViewModel();
-            var householdId = fdb.Households.FirstOrDefault(h => h.Id == id).Id;
-            household.Accounts = fdb.PersonalAccounts.Where(a => a.Id == householdId).ToList();
-            household.Invitations = fdb.Invites.Where(i => i.Id == householdId).ToList();
-            household.Transactions = fdb.Transactions.Where(t => t.Id == householdId).ToList();
-            household.Users = adb.Users.Where(u => u.HouseholdId == householdId).ToList();
-
+            Household household = fdb.Households.Find(id);
             if (household == null)
             {
                 return HttpNotFound();

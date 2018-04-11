@@ -12,12 +12,12 @@ namespace Meghan_FinancialPortal.Controllers
 {
     public class CategoriesController : Controller
     {
-        private FinancialPortal db = new FinancialPortal();
+        private FinancialPortal fdb = new FinancialPortal();
 
         // GET: Categories
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(fdb.Categories.ToList());
         }
 
         // GET: Categories/Details/5
@@ -27,7 +27,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+            Category category = fdb.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -50,8 +50,8 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Add(category);
-                db.SaveChanges();
+                fdb.Categories.Add(category);
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +65,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+            Category category = fdb.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -82,8 +82,8 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
+                fdb.Entry(category).State = EntityState.Modified;
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(category);
@@ -96,7 +96,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Category category = db.Categories.Find(id);
+            Category category = fdb.Categories.Find(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -109,9 +109,9 @@ namespace Meghan_FinancialPortal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
-            db.SaveChanges();
+            Category category = fdb.Categories.Find(id);
+            fdb.Categories.Remove(category);
+            fdb.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -119,7 +119,7 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                fdb.Dispose();
             }
             base.Dispose(disposing);
         }

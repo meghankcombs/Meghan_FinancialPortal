@@ -1,6 +1,7 @@
 ﻿using Meghan_FinancialPortal.Models;
 using Meghan_FinancialPortal.Models.Helpers;
 using Meghan_FinancialPortal.Models.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -80,6 +81,7 @@ namespace Meghan_FinancialPortal.Controllers
         [Authorize]
         public ActionResult CreateJoinHousehold(Guid? code)
         {
+            //If the current user accessing this page already has a HouseholdId, send them to their dashboard
             if (User.Identity.IsInHousehold())
             {
                 return RedirectToAction("Index", "Home");
@@ -87,9 +89,54 @@ namespace Meghan_FinancialPortal.Controllers
 
             HouseholdViewModel household = new HouseholdViewModel();
 
-            //need to set the view model here...
+            //Determine whether the user has been sent an invite and set property values 
+            if (code != null)
+            {
+                string msg = "";
+                if (ValidInvite(code, ref msg))
+                {
+                    Invite result = fdb.Invites.FirstOrDefault(i => i.HHToken == code);
 
+                    household.IsJoinHouse = true;
+                    household.HouseholdId = result.HouseholdId;
+                    household.HouseholdName = result.Household.Name;
+
+                    //Set USED flag to true for this invite
+
+                    result.HasBeenUsed = true;
+
+                    ApplicationUser user = adb.Users.Find(User.Identity.GetUserId());
+                    user.InviteEmail = result.Email;
+                    adb.SaveChanges();
+                }
+                else
+                {
+                    return RedirectToAction("InviteError", new { errMsg = msg });
+                }
+            }
             return View(household);
+        }
+        
+        private bool ValidInvite(Guid? code, ref string message)
+        {
+            if ((DateTime.Now - fdb.Invites.FirstOrDefault(i => i.HHToken == code).InviteDate).TotalDays < 6)
+            {
+                bool result = fdb.Invites.FirstOrDefault(i => i.HHToken == code).HasBeenUsed;
+                if (result)
+                {
+                    message = "invalid";
+                }
+                else
+                {
+                    message = "valid";
+                }
+                return !result;
+            }
+            else
+            {
+                message = "expired";
+                return false;
+            }
         }
     }
 }

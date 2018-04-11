@@ -1,57 +1,26 @@
 ﻿@model Meghan_FinancialPortal.Models.Budget
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Edit</title>
-</head>
-<body>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jqueryval")
-    
-    
+<div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Budgets / </span>Edit</h1>
+</div>
+<div class="panel">
+    <div class="panel-heading">
+        <div class="panel-title">Edit Budget</div>
+    </div>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        
-        <div class="form-horizontal">
-            <h4>Budget</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.HiddenFor(model => model.Id)
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                @Html.LabelFor(model => model.HouseholdId, "HouseholdId", htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.DropDownList("HouseholdId", null, htmlAttributes: new { @class = "form-control" })
-                    @Html.ValidationMessageFor(model => model.HouseholdId, "", new { @class = "text-danger" })
-                </div>
-            </div>
-    
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Save" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
+        @Html.HiddenFor(model => model.Id)
+        <fieldset class="form-group">
+            <label for="form-group-input-1">Name</label>
+            <input type="text" class="form-control" name="Name" vale="@Model.Name" placeholder="Name of budget...">
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="form-group-input-2">Household</label>
+            @Html.DropDownList("HouseholdId", null, "--- None selected ---", htmlAttributes: new { @class = "form-control" })
+        </fieldset>
+        <fieldset class="form-group text-right">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </fieldset>
     }
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
-</body>
-</html>
+</div>

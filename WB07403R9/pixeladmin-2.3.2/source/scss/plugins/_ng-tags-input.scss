@@ -1,0 +1,157 @@
+//
+// Plugins / ngTagsInput
+// --------------------------------------------------
+
+tags-input {
+  display: block;
+
+  * { outline: none !important; }
+
+  // Default size
+
+  .host {
+    position: relative;
+    height: 100%;
+  }
+
+  .tags {
+    color: $input-color;
+    border: 1px solid $input-border;
+    background: $input-bg;
+    overflow: hidden;
+    word-wrap: break-word;
+    cursor: text;
+    height: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: $border-radius-base;
+  }
+
+  .tag-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .tag-item {
+    display: block;
+    float: left;
+    font-size: 11px;
+  }
+
+  .tag-item * {
+    display: inline;
+    vertical-align: top;
+  }
+
+  .tag-item.selected { opacity: .8; }
+
+  .tags .remove-button {
+    margin: 0 0 0 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
+  }
+
+  .tags .input {
+    border: 0;
+    outline: none;
+    padding: 0;
+    float: left;
+
+    &:-ms-input-placeholder { color: $input-color-placeholder !important; }
+    &::-webkit-input-placeholder { color: $input-color-placeholder !important; }
+  }
+
+  .tags .input {
+    padding-left: 4px;
+  }
+
+  .input::-ms-clear { display: none; }
+
+  &.ng-invalid .tags { border-color: $brand-danger; }
+  .invalid-tag { color: $brand-danger; }
+}
+
+
+// Autocomplete
+//
+
+tags-input {
+  .autocomplete {
+    margin: 2px 0 0;
+    position: absolute;
+    z-index: $zindex-dropdown;
+    width: 100%;
+    padding: $dropdown-padding-y 0;
+    border: 2px solid $dropdown-border;
+    border-radius: $border-radius-base;
+    color: $text-color;
+    background: $dropdown-bg;
+    box-shadow: none;
+  }
+
+  .suggestion-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    max-height: 280px;
+    overflow-y: auto;
+    position: relative;
+  }
+
+  .suggestion-item {
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    em { font-weight: 700; }
+
+    &:hover,
+    &:focus {
+      color: $dropdown-link-hover-color;
+      background: $dropdown-link-hover-bg;
+    }
+  }
+}
+
+
+// Disabled
+//
+
+tags-input[disabled] {
+  .tags,
+  .input {
+    opacity: 1 !important;
+    border-color: $input-border !important;
+    background: $input-bg-disabled !important;
+  }
+
+  .tags .remove-button { display: none !important; }
+
+  * { cursor: not-allowed !important;}
+}
+
+
+// Sizes
+//
+
+tags-input { @include ng-tags-input-size-base($font-size-base, $bs-tagsinput-tag-height, $bs-tagsinput-padding, $border-radius-base); }
+@include ng-tags-input-size(sm, $font-size-small, $bs-tagsinput-tag-height-sm, $bs-tagsinput-padding-sm, $border-radius-small);
+@include ng-tags-input-size(lg, $font-size-large, $bs-tagsinput-tag-height-lg, $bs-tagsinput-padding-lg, $border-radius-large);
+
+
+// States
+//
+
+@include ng-tags-input-state-variant(error, $brand-danger);
+@include ng-tags-input-state-variant(warning, $brand-warning);
+@include ng-tags-input-state-variant(success, $brand-success);

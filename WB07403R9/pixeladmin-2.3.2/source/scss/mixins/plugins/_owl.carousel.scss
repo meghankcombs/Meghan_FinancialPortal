@@ -1,0 +1,15 @@
+//
+// Mixins / Plugins / Owl Carousel
+// --------------------------------------------------
+
+@mixin owl-carousel-theme($color, $background) {
+  .owl-nav [class*='owl-']:hover {
+    background: $background;
+    color: $color;
+  }
+
+  .owl-dots .owl-dot.active span,
+  .owl-dots .owl-dot:hover span {
+    background: $background;
+  }
+}

@@ -1,0 +1,134 @@
+<div ng-controller="ChartsC3Ctrl as ctrl">
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-stats-bars"></i>Charts / </span>C3.js</h1>
+    <a href="http://c3js.org" target="_blank" class="page-header-text text-muted font-weight-light pull-md-right col-xs-12 width-md-auto width-lg-auto width-xl-auto p-x-0">http://c3js.org</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Line</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-line" chart-data="ctrl.lineData" chart-columns="ctrl.lineColumns" chart-x="ctrl.lineDataX">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.lineColors.join(',') }}" />
+          </c3chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Spline</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-spline" chart-data="ctrl.splineData" chart-columns="ctrl.splineColumns" chart-x="ctrl.splineDataX">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.splineColors.join(',') }}" />
+          </c3chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Step</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-step" chart-data="ctrl.stepData" chart-columns="ctrl.stepColumns" chart-x="ctrl.stepDataX">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.stepColors.join(',') }}" />
+          </c3chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Area</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-area" chart-data="ctrl.areaData" chart-columns="ctrl.areaColumns" chart-x="ctrl.areaDataX">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.areaColors.join(',') }}" />
+          </c3chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Bar</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-bar" chart-data="ctrl.barData" chart-columns="ctrl.barColumns" chart-x="ctrl.barDataX">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.barColors.join(',') }}" />
+            <chart-bar ratio="0.5"/>
+          </c3chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Scatter</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-scatter" chart-data="ctrl.scatterData" chart-columns="ctrl.scatterColumns" chart-x="ctrl.scatterDataX">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.scatterColors.join(',') }}" />
+            <chart-axis>
+              <chart-axis-x axis-label="Sepal.Width">
+                  <chart-axis-x-tick tick-fit="false"/>
+              </chart-axis-x>
+              <chart-axis-y axis-label="Petal.Width"/>
+            </chart-axis>
+          </c3chart>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Pie / Donut</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-pie" chart-data="ctrl.pieData" chart-columns="ctrl.pieColumns">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.pieColors.join(',') }}" />
+            <chart-donut title="Some title" />
+          </c3chart>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Gauge</div>
+        <hr>
+
+        <div class="panel-body">
+          <c3chart bindto-id="c3-gauge" chart-data="ctrl.gaugeData" chart-columns="ctrl.gaugeColumns">
+            <chart-size chart-height="250" />
+            <chart-colors color-pattern="{{ ctrl.gaugeColors.join(',') }}" />
+          </c3chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Wizard - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  #wizardjs-log {
+    border: 1px solid #e4e4e4;
+    padding: 20px 0 0 0;
+    border-radius: 3px;
+    position: relative;
+    margin: 0 0 20px 0;
+    height: 200px;
+    overflow-y: auto;
+  }
+
+  #wizardjs-log:before {
+    content: "EVENT LOG";
+    background: #ebebeb;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    position: absolute;
+    display: block;
+    line-height: 20px;
+    height: 20px;
+    left: 0;
+    right: 0;
+    top: 0;
+    color: #555;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 0 20px;
+  }
+
+  #wizardjs-log li {
+    padding: 5px 20px;
+    margin: 0;
+    list-style: none;
+  }
+
+  #wizardjs-log li:nth-of-type(odd) {
+    background: #f9f9f9;
+  }
+
+  #wizardjs-log li.blink {
+    background: #b5cc18;
+  }
+
+  #wizardjs-log li.animted {
+    transition: background 1s;
+  }
+
+  #wizardjs-log + div .btn {
+    margin-bottom: 6px;
+  }
+
+  .event-label {
+    font-size:10px;
+    display:inline-block;
+    margin-right:20px;
+    font-weight: bold;
+  }
+
+  html[dir="rtl"] .event-label {
+    margin-right:0;
+    margin-left:20px;
+  }
+
+  #wizard-example-code.example.show-code-block > pre {
+    max-height: 8000px;
+  }
+</style>
+
+<h1 class="doc-header">Wizard</h1>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <h4 class="doc-subheader">Basic</h4>
+
+      <div class="example" data-accent="(wizard)''||(wizard-(?:wrapper|steps|content|pane))||(wizard-step-(?:number|complete|caption|description))||(data-target)">
+<div class="wizard" id="wizard-basic">
+  <div class="wizard-wrapper">
+    <ul class="wizard-steps">
+      <li data-target="#wizard-example-step1">
+        <span class="wizard-step-number">1</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">
+          Step 1
+          <span class="wizard-step-description">First step description</span>
+        </span>
+      </li>
+      <li data-target="#wizard-example-step2">
+        <span class="wizard-step-number">2</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">
+          Step 2
+          <span class="wizard-step-description">Second step description</span>
+        </span>
+      </li>
+      <li data-target="#wizard-example-step3">
+        <span class="wizard-step-number">3</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">
+          Step 3
+          <span class="wizard-step-description">Third step description. Lorem ipsum dolor sit amet</span>
+        </span>
+      </li>
+      <li data-target="#wizard-example-step4">
+        <span class="wizard-step-number">4</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">
+          Finish
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="wizard-content">
+    <div class="wizard-pane" id="wizard-example-step1">
+      <h4>Step 1</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+        deserunt mollit anim id est laborum.
+      </p>
+      <div class="pull-right">
+        <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+      </div>
+    </div>
+    <div class="wizard-pane" id="wizard-example-step2">
+      <h4>Step 2</h4>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
+        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius
+        modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
+        veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+        commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam
+        nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+      </p>
+      <div class="pull-right">
+        <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+        <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+      </div>
+    </div>
+    <div class="wizard-pane" id="wizard-example-step3">
+      <h4>Step 3</h4>
+      <p>
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+      </p>
+      <div class="pull-right">
+        <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+        <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+      </div>
+    </div>
+    <div class="wizard-pane" id="wizard-example-step4">
+      <h4>Finish</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <div class="pull-right">
+        <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+        <button type="button" class="btn btn-primary" data-wizard-action="finish">Finish</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#wizard-basic').pxWizard();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Default step</h4>
+      <p>
+        You can change the default active step by adding the <code>.active</code> class
+        to the targeted <code>.wizard-steps > li</code> element.
+      </p>
+
+      <div class="example" data-accent="''(active)''">
+<div class="wizard" id="wizard-active">
+  <div class="wizard-wrapper">
+    <ul class="wizard-steps">
+      <li data-target="#wizard-active-step1">
+        <span class="wizard-step-number">1</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 1</span>
+      </li>
+      <li data-target="#wizard-active-step2" class="active">
+        <span class="wizard-step-number">2</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 2</span>
+      </li>
+      <li data-target="#wizard-active-step3">
+        <span class="wizard-step-number">3</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Finish</span>
+      </li>
+    </ul>
+  </div>
+  <div class="wizard-content">
+    <div class="wizard-pane" id="wizard-active-step1">
+      <h4>Step 1</h4>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-active-step2">
+      <h4>Step 2</h4>
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-active-step3">
+      <h4>Step 3</h4>
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="finish">Finish</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#wizard-active').pxWizard();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Custom icons</h4>
+
+      <div class="example" data-accent="(fa-[-\w]+)||(fa)">
+<div class="wizard" id="wizard-custom-icons">
+  <div class="wizard-wrapper">
+    <ul class="wizard-steps">
+      <li data-target="#wizard-custom-icons-step1">
+        <span class="wizard-step-number"><i class="fa fa-shopping-cart"></i></span>
+        <span class="wizard-step-complete border-success"><i class="fa fa-shopping-cart text-success"></i></span>
+        <span class="wizard-step-caption">Shopping Cart</span>
+      </li>
+      <li data-target="#wizard-custom-icons-step2">
+        <span class="wizard-step-number"><i class="fa fa-truck"></i></span>
+        <span class="wizard-step-complete border-success"><i class="fa fa-truck text-success"></i></span>
+        <span class="wizard-step-caption">Delivery Info</span>
+      </li>
+      <li data-target="#wizard-custom-icons-step3">
+        <span class="wizard-step-number"><i class="fa fa-credit-card"></i></span>
+        <span class="wizard-step-complete border-success"><i class="fa fa-credit-card text-success"></i></span>
+        <span class="wizard-step-caption">Checkout</span>
+      </li>
+      <li data-target="#wizard-custom-icons-step4">
+        <span class="wizard-step-number"><i class="fa fa-check"></i></span>
+        <span class="wizard-step-complete border-success"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Finish</span>
+      </li>
+    </ul>
+  </div>
+  <div class="wizard-content">
+    <div class="wizard-pane" id="wizard-custom-icons-step1">
+      <br>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-custom-icons-step2">
+      <br>
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-custom-icons-step3">
+      <br>
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-custom-icons-step4">
+      <br>
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="finish">Finish</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#wizard-custom-icons').pxWizard();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Bordered</h4>
+      <p>
+        Create a wizard that acts like a panel by adding the <code>.wizard-bordered</code>
+        class to the <code>.wizard</code>.
+      </p>
+
+      <div class="example" data-accent=" (wizard-bordered)''">
+<div class="wizard wizard-bordered" id="wizard-bordered">
+  <div class="wizard-wrapper">
+    <ul class="wizard-steps">
+      <li data-target="#wizard-bordered-step1">
+        <span class="wizard-step-number">1</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 1</span>
+      </li>
+      <li data-target="#wizard-bordered-step2">
+        <span class="wizard-step-number">2</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 2</span>
+      </li>
+      <li data-target="#wizard-bordered-step3">
+        <span class="wizard-step-number">3</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 3</span>
+      </li>
+      <li data-target="#wizard-bordered-step4">
+        <span class="wizard-step-number">4</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Finish</span>
+      </li>
+    </ul>
+  </div>
+  <div class="wizard-content">
+    <div class="wizard-pane" id="wizard-bordered-step1">
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-bordered-step2">
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-bordered-step3">
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizard-bordered-step4">
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="finish">Finish</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#wizard-bordered').pxWizard();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Within modal</h4>
+
+      <div class="example" data-accent="(breadcrumb)">
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#wizard-modal-example">Launch modal with wizard</button>
+
+<div id="wizard-modal-example" class="modal fade" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="wizard" id="wizard-modal">
+        <div class="wizard-wrapper">
+          <ul class="wizard-steps">
+            <li data-target="#wizard-modal-step1">
+              <span class="wizard-step-number">1</span>
+              <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+              <span class="wizard-step-caption">Step 1</span>
+            </li>
+            <li data-target="#wizard-modal-step2">
+              <span class="wizard-step-number">2</span>
+              <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+              <span class="wizard-step-caption">Step 2</span>
+            </li>
+            <li data-target="#wizard-modal-step3">
+              <span class="wizard-step-number">3</span>
+              <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+              <span class="wizard-step-caption">Step 3</span>
+            </li>
+            <li data-target="#wizard-modal-step4">
+              <span class="wizard-step-number">4</span>
+              <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+              <span class="wizard-step-caption">Finish</span>
+            </li>
+          </ul>
+        </div>
+        <div class="wizard-content">
+          <div class="wizard-pane" id="wizard-modal-step1">
+            <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+          </div>
+          <div class="wizard-pane" id="wizard-modal-step2">
+            <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+            <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+          </div>
+          <div class="wizard-pane" id="wizard-modal-step3">
+            <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+            <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+          </div>
+          <div class="wizard-pane" id="wizard-modal-step4">
+            <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+            <button type="button" class="btn btn-primary" data-wizard-action="finish">Finish</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#wizard-modal').pxWizard();
+  });
+</script>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+
+      <h4 class="doc-subheader">Initializing</h4>
+      <p>PxWizard plugin is initialized on pre-existing markup.</p>
+      <div class="alert alert-info">
+        Options can be passed via data attributes or JavaScript. For data attributes,
+        append the option name to <code>data-</code>, for example:
+        <code>&lt;div class="wizard" data-min-step-width="150"&gt;...&lt;/div&gt;</code>.
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$('.wizard').pxWizard(options);
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Option</th>
+            <th>Default</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>minStepWidth</th>
+              <td>200</td>
+              <td>Minimal wizard's step width in pixels.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/plugins/px-wizard'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Methods</h4>
+      <p>
+        You can call a public method of PxWizard instance using the syntax:
+      </p>
+
+      <div class="example nocode" data-accent="(methodName)">
+        <pre><code data-lang="js">
+$('.wizard').pxWizard('methodName', argumentOne, argumentTwo);
+        </code></pre>
+      </div>
+
+      <div class="alert alert-info">
+        <small><strong>NOTE:</strong></small> Steps are indexed from left to right.
+        The index of the first step is <strong>0</strong>, and
+        the index of the last step is <strong>numberOfSteps - 1</strong>.
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Method name</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>resizeStepItems</th>
+              <td>Force step elements resize.</td>
+            </tr>
+            <tr>
+              <th>getActiveStepIndex</th>
+              <td>Get the index of the active step.</td>
+            </tr>
+            <tr>
+              <th>getActivePane</th>
+              <td>Returns the active content element as a jQuery object.</td>
+            </tr>
+            <tr>
+              <th>getStepCount</th>
+              <td>Get the number of steps.</td>
+            </tr>
+            <tr>
+              <th>goTo(stepIndex)</th>
+              <td>Jump to another step by the specified index.</td>
+            </tr>
+            <tr>
+              <th>getPaneByIndex(stepIndex)</th>
+              <td>Returns a content element as a jQuery object by the specified index.</td>
+            </tr>
+            <tr>
+              <th>goNext</th>
+              <td>
+                <p>Jump to the next step.</p>
+                <small><strong>NOTE:</strong></small> The <code>finish()</code> method will be invoked if the active step is the last.
+              </td>
+            </tr>
+            <tr>
+              <th>goPrev</th>
+              <td>Jump to the previous step.</td>
+            </tr>
+            <tr>
+              <th>finish</th>
+              <td>Finish and freeze the wizard.</td>
+            </tr>
+            <tr>
+              <th>isFinished</th>
+              <td>Returns whether the wizard is finished.</td>
+            </tr>
+            <tr>
+              <th>freeze</th>
+              <td>Freeze the wizard. Frozen wizard will not respond to user actions.</td>
+            </tr>
+            <tr>
+              <th>unfreeze</th>
+              <td>Unfreeze the wizard.</td>
+            </tr>
+            <tr>
+              <th>isFrozen</th>
+              <td>Returns whether the wizard is frozen.</td>
+            </tr>
+            <tr>
+              <th>reset</th>
+              <td>Reset the wizard state (finished, frozen) and jump to the first step.</td>
+            </tr>
+            <tr>
+              <th>destroy</th>
+              <td>Destroy the PxWizard instance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader">Data actions</h4>
+      <p>
+        You can bind some actions on buttons inside the <code>.wizard-content</code> container using the <code>data-wizard-action</code> attribute:
+      </p>
+
+      <div class="example nocode" data-accent="(actionName)">
+        <pre><code data-lang="html">
+<div class="wizard">
+  ...
+  <div class="wizard-content">
+    ...
+    <div class="wizard-pane">
+      <button type="button" data-wizard-action="actionName">Action</button>
+    </div>
+    ...
+  </div>
+</div>
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Action name</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>prev</th>
+              <td>Jump to the previous step.</td>
+            </tr>
+            <tr>
+              <th>next</th>
+              <td>Jump to the next step.</td>
+            </tr>
+            <tr>
+              <th>finish</th>
+              <td>Finish the wizard.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader">Events</h4>
+      <p>
+        You can subscribe on wizard events using the syntax:
+      </p>
+
+      <div class="example nocode" data-accent="(event)\.">
+        <pre><code data-lang="js">
+$('.wizard').on('event.px.wizard', function(e) {
+  // ...
+
+  // Preventable events can be prevented:
+  // e.preventDefault();
+});
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="alert alert-info">
+        Events marked with <span style="color: red">*</span> are preventable.
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Event</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>stepchange<span style="color: red">*</span></th>
+              <td>
+                <p>This event is fired when the active step is changing.</p>
+                <p><small><strong>NOTE:</strong></small> The event handler receives a data hash as a second argument. The hash contains active and next step indexes.</p>
+                <div class="example nocode">
+                  <pre><code data-lang="js">
+  $('.wizard').on('stepchange.px.wizard', function(e, data) {
+    // data => { activeStepIndex: ACTIVE_STEP_INDEX, nextStepIndex: NEXT_STEP_INDEX }
+  });
+                  </code></pre>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>stepchanged</th>
+              <td>
+                <p>This event is fired when the active step has changed.</p>
+                <p><small><strong>NOTE:</strong></small> The event handler receives a data hash as a second argument. The hash contains previous and active step indexes.</p>
+                <div class="example nocode">
+                  <pre><code data-lang="js">
+  $('.wizard').on('stepchanged.px.wizard', function(e, data) {
+    // data => { prevStepIndex: PREVIOUS_STEP_INDEX, activeStepIndex: ACTIVE_STEP_INDEX }
+  });
+                  </code></pre>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>finish<span style="color: red">*</span></th>
+              <td>This event is fired immediately when the <code>finish()</code> method is called.</td>
+            </tr>
+            <tr>
+              <th>finished</th>
+              <td>This event is fired when the wizard has finished.</td>
+            </tr>
+            <tr>
+              <th>frozen</th>
+              <td>This event is fired when the wizard has frozen.</td>
+            </tr>
+            <tr>
+              <th>unfrozen</th>
+              <td>This event is fired when the wizard has unfrozen.</td>
+            </tr>
+            <tr>
+              <th>reseted</th>
+              <td>This event is fired when the wizard has reseted.</td>
+            </tr>
+            <tr>
+              <th>destroy<span style="color: red">*</span></th>
+              <td>This event is fired immediately when the <code>destroy()</code> method is called.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <br>
+
+      <h4 class="doc-subheader">Example</h4>
+
+      <div class="example" id="wizard-example-code">
+<div class="wizard wizard-bordered" id="wizardjs">
+  <div class="wizard-wrapper">
+    <ul class="wizard-steps">
+      <li data-target="#wizardjs-step1">
+        <span class="wizard-step-number">1</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 1</span>
+      </li>
+      <li data-target="#wizardjs-step2">
+        <span class="wizard-step-number">2</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 2</span>
+      </li>
+      <li data-target="#wizardjs-step3">
+        <span class="wizard-step-number">3</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Step 3</span>
+      </li>
+      <li data-target="#wizardjs-step4">
+        <span class="wizard-step-number">4</span>
+        <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+        <span class="wizard-step-caption">Finish</span>
+      </li>
+    </ul>
+  </div>
+  <div class="wizard-content">
+    <div class="wizard-pane" id="wizardjs-step1">
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizardjs-step2">
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizardjs-step3">
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="next">Next</button>
+    </div>
+    <div class="wizard-pane" id="wizardjs-step4">
+      <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+      <button type="button" class="btn btn-primary" data-wizard-action="finish">Finish</button>
+    </div>
+  </div>
+</div>
+
+<ul id="wizardjs-log"></ul>
+
+<div>
+  <button type="button" class="btn btn-sm" id="wizardjs-getActiveStepIndex">getActiveStepIndex()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-getActivePane">getActivePane()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-getStepCount">getStepCount()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-goTo">goTo(2)</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-getPaneByIndex">getPaneByIndex(2)</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-goNext">goNext()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-goPrev">goPrev()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-finish">finish()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-isFinished">isFinished()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-freeze">freeze()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-unfreeze">unfreeze()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-isFrozen">isFrozen()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-reset">reset()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-destroy">destroy()</button>
+  <button type="button" class="btn btn-sm" id="wizardjs-initialize" disabled>Initialize</button>
+</div>
+
+<script>
+  function addLogEvent(text, isEvent) {
+    var $logEvent = $('<li class="blink animted">' + (isEvent ? '<span class="event-label text-muted">EVENT</span>' : '') + text + '</li>');
+
+    $('#wizardjs-log').prepend($logEvent);
+
+    setTimeout(function() {
+      $logEvent.removeClass('blink');
+      setTimeout(function() { $logEvent.removeClass('animted'); }, 1000);
+    }, 100);
+  }
+
+  $(function() {
+    function initializeWizard() {
+      $('#wizardjs').pxWizard();
+
+      $('#wizardjs').on('stepchange.px.wizard', function(_e, data) {
+        // You can prevent step changing by calling:
+        // _e.preventDefault();
+
+        addLogEvent('The active step index is changing from ' + data.activeStepIndex + ' to ' + data.nextStepIndex + '.', true);
+      });
+
+      $('#wizardjs').on('stepchanged.px.wizard', function(_e, data) {
+        addLogEvent('The active step index has changed from ' + data.prevStepIndex + ' to ' + data.activeStepIndex + '.', true);
+      });
+
+      $('#wizardjs').on('finish.px.wizard', function(_e) {
+        // You can prevent finishing by calling:
+        // _e.preventDefault();
+
+        addLogEvent('The wizard is finishing.', true);
+      });
+
+      $('#wizardjs').on('finished.px.wizard', function() {
+        addLogEvent('The wizard has been finished.', true);
+      });
+
+      $('#wizardjs').on('frozen.px.wizard', function() {
+        addLogEvent('The wizard has been frozen.', true);
+      });
+
+      $('#wizardjs').on('unfrozen.px.wizard', function() {
+        addLogEvent('The wizard has been unfrozen.', true);
+      });
+
+      $('#wizardjs').on('reseted.px.wizard', function() {
+        addLogEvent('The wizard has been reseted.', true);
+      });
+
+      $('#wizardjs').on('destroy.px.wizard', function(_e) {
+        // You can prevent destroying by calling:
+        // _e.preventDefault();
+
+        addLogEvent('The wizard instance is destroying.', true);
+
+        // Deactivate buttons
+        $('#wizardjs-log + div .btn, #wizardjs .btn').attr('disabled', 'disabled');
+        $('#wizardjs-initialize').removeAttr('disabled');
+      });
+
+      // Activate buttons
+      $('#wizardjs-log + div .btn, #wizardjs .btn').removeAttr('disabled');
+      $('#wizardjs-initialize').attr('disabled', 'disabled');
+    }
+
+    initializeWizard();
+
+
+    // Button hanblers
+    //
+
+    // getActiveStepIndex()
+    $('#wizardjs-getActiveStepIndex').on('click', function() {
+      var activeStepIndex = $('#wizardjs').pxWizard('getActiveStepIndex');
+
+      addLogEvent('The active step index is ' + activeStepIndex);
+    });
+
+    // getActivePane()
+    $('#wizardjs-getActivePane').on('click', function() {
+      var $activePane = $('#wizardjs').pxWizard('getActivePane');
+
+      addLogEvent('The active pane id is #' + $activePane.attr('id'));
+    });
+
+    // getStepCount()
+    $('#wizardjs-getStepCount').on('click', function() {
+      var stepsCount = $('#wizardjs').pxWizard('getStepCount');
+
+      addLogEvent('Total steps count: ' + stepsCount);
+    });
+
+    // goTo(stepIndex)
+    $('#wizardjs-goTo').on('click', function() {
+      $('#wizardjs').pxWizard('goTo', 2);
+    });
+
+    // getPaneByIndex(stepIndex)
+    $('#wizardjs-getPaneByIndex').on('click', function() {
+      var $pane = $('#wizardjs').pxWizard('getPaneByIndex', 2);
+
+      addLogEvent('The pane[index=2] id is #' + $pane.attr('id'));
+    });
+
+    // goNext()
+    $('#wizardjs-goNext').on('click', function() {
+      $('#wizardjs').pxWizard('goNext');
+    });
+
+    // goPrev()
+    $('#wizardjs-goPrev').on('click', function() {
+      $('#wizardjs').pxWizard('goPrev');
+    });
+
+    // finish()
+    $('#wizardjs-finish').on('click', function() {
+      $('#wizardjs').pxWizard('finish');
+    });
+
+    // isFinished()
+    $('#wizardjs-isFinished').on('click', function() {
+      var isFinished = $('#wizardjs').pxWizard('isFinished');
+
+      addLogEvent('The wizard is ' + (isFinished ? '' : '<strong>not</strong> ') + 'finished');
+    });
+
+    // freeze()
+    $('#wizardjs-freeze').on('click', function() {
+      $('#wizardjs').pxWizard('freeze');
+    });
+
+    // unfreeze()
+    $('#wizardjs-unfreeze').on('click', function() {
+      $('#wizardjs').pxWizard('unfreeze');
+    });
+
+    // isFrozen()
+    $('#wizardjs-isFrozen').on('click', function() {
+      var isFrozen = $('#wizardjs').pxWizard('isFrozen');
+
+      addLogEvent('The wizard is ' + (isFrozen ? '' : '<strong>not</strong> ') + 'frozen');
+    });
+
+    // reset()
+    $('#wizardjs-reset').on('click', function() {
+      $('#wizardjs').pxWizard('reset');
+    });
+
+    // destroy()
+    $('#wizardjs-destroy').on('click', function() {
+      $('#wizardjs').pxWizard('destroy');
+    });
+
+    $('#wizardjs-initialize').on('click', function() {
+      initializeWizard();
+    });
+  });
+</script>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>px-wizard</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/pixeladmin/plugins/px-wizard.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-px-wizard.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['px-wizard']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>px-wizard</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'px-wizard',
+    files: [
+      'path/to/js/pixeladmin/plugins/px-wizard.js',
+      'path/to/js/pixeladmin/directives/angular-px-wizard.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>px-wizard</code> directive</h4>
+
+      <p>
+        You can use <code>px-wizard</code> directive where you want.
+        And when the scope is destroyed the directive will be destroyed.
+      </p>
+
+      <div class="example" data-accent=" (px-wizard)">
+<div ng-app="ngWizardApp">
+  <px-wizard class="wizard-bordered">
+    <div class="wizard-wrapper">
+      <ul class="wizard-steps">
+        <li data-target="#wizard-example-step1">
+          <span class="wizard-step-number">1</span>
+          <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+          <span class="wizard-step-caption">
+            Step 1
+            <span class="wizard-step-description">First step description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-example-step2">
+          <span class="wizard-step-number">2</span>
+          <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+          <span class="wizard-step-caption">
+            Step 2
+            <span class="wizard-step-description">Second step description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-example-finish">
+          <span class="wizard-step-number">3</span>
+          <span class="wizard-step-complete"><i class="fa fa-check text-success"></i></span>
+          <span class="wizard-step-caption">
+            Finish
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="wizard-content">
+      <div class="wizard-pane" id="wizard-example-step1">
+        <h4 class="m-t-0">Step 1</h4>
+        <button type="button" class="btn" data-wizard-action="next">Next</button>
+      </div>
+      <div class="wizard-pane" id="wizard-example-step2">
+        <h4 class="m-t-0">Step 2</h4>
+        <button type="button" class="btn" data-wizard-action="prev">Prev</button>
+        <button type="button" class="btn" data-wizard-action="next">Next</button>
+      </div>
+      <div class="wizard-pane" id="wizard-example-finish">
+        <h4 class="m-t-0">Finish</h4>
+        <button type="button" class="btn" data-wizard-action="finish">Finish</button>
+      </div>
+    </div>
+  </px-wizard>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/pixeladmin/plugins/px-wizard.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-px-wizard.js"></script>
+
+<script>
+  angular.module('ngWizardApp', [ 'px-wizard' ]);
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Instance</h4>
+
+      <p>
+        You can define <code>instance</code> attribute to get a pointer to px-wizard element:
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-wizard instance="ctrl.$wizard"&gt;&lt;/px-wizard&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  // Pointer
+  this.$wizard = null;
+
+  // ...
+
+  // Then, after the initialization, you can call plugin methods:
+  this.$wizard('getActivePane');
+  this.$wizard('goTo', 2);
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Options</h4>
+
+      <p>
+        <strong>px-wizard</strong>'s options can be specified as attributes.
+        All options expect an angular expression instead of a literal string.
+      </p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>min-step-width</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-wizard min-step-width="400"&gt;&lt;/px-wizard&gt;
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Events</h4>
+
+      <p>
+        Event handlers can be bound using attributes:
+      </p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>on-destroy</li>
+            <li>on-finish</li>
+            <li>on-finished</li>
+            <li>on-frozen</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>on-reseted</li>
+            <li>on-stepchange</li>
+            <li>on-stepchanged</li>
+            <li>on-unfrozen</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-wizard on-finished="ctrl.finished"
+           on-stepchange="ctrl.stepChange"
+           on-stepchanged="ctrl.stepChanged"&gt;&lt;/px-wizard&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  this.finished = function(e) { ... }
+  this.stepChange = function(e, data) { ... }
+  this.stepChanged = function(e, data) { ... }
+});
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_wizard.html');
+  </script>
+</body>
+</html>

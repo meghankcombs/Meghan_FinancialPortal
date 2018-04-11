@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Box - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <h1 class="doc-header">Box</h1>
+  <h4 class="doc-description">
+    PixelAdmin's boxes are flexible tool to build content blocks.
+  </h4>
+
+  <p>
+    The main advantages of the boxes over regular divs:
+  </p>
+  <ul>
+    <li>box rows/cells stretches vertically automatically;</li>
+    <li>content of a box cell can be aligned vertically.</li>
+  </ul>
+  <p>
+    Boxes can be represented by several core classes:
+  </p>
+  <ul>
+    <li><code>.box</code> - basic container, which is an element with <code>display: table</code>.</li>
+    <li><code>.box-constainer</code> - sub-container, which is an element with <code>display: table</code>. Use it when you want add extra structure in a cell.</li>
+    <li><code>.box-row</code> - box row, which is an element with <code>display: table-row</code>.</li>
+    <li><code>.box-cell</code> - box cell, which is an element with <code>display: table-cell</code>.</li>
+  </ul>
+  <p>To see how it works, look at the examples below.</p>
+
+
+  <h4 class="doc-subheader">Simple cells</h4>
+
+  <div class="example" data-accent="''(box)''||(box-row)||(box-cell)">
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell">Cell #1</div>
+    <div class="box-cell">Cell #2</div>
+    <div class="box-cell">Cell #3</div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Several rows</h4>
+  <p>Box rows must contain equal number of cells.</p>
+
+  <div class="example" data-accent="''(box)''||(box-row)||(box-cell)">
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell">Cell #1</div>
+    <div class="box-cell">Cell #2</div>
+    <div class="box-cell">Cell #3</div>
+  </div>
+  <div class="box-row">
+    <div class="box-cell">Cell #4</div>
+    <div class="box-cell">Cell #5</div>
+    <div class="box-cell">Cell #6</div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Structure variations</h4>
+  <p>If you want add extra structure to a box, you need to use a <code>.box-container</code> element.</p>
+
+  <div class="example" data-accent="(box-container)">
+<p>The first row contains 1 cell, the second row contains 3 cells:</p>
+
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell">
+      Cell #1
+    </div>
+  </div>
+  <div class="box-row">
+    <div class="box-cell">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell">Cell #2</div>
+          <div class="box-cell">Cell #3</div>
+          <div class="box-cell">Cell #4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(box-container)">
+<p>The first row contains 2 cells, the second row contains 4 cells:</p>
+
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell">Cell #1</div>
+          <div class="box-cell">Cell #2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="box-row">
+    <div class="box-cell">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell">Cell #3</div>
+          <div class="box-cell">Cell #4</div>
+          <div class="box-cell">Cell #5</div>
+          <div class="box-cell">Cell #6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(box-container)">
+<p>The first cell contains 1 row, the second cell contains 3 rows:</p>
+
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell">
+      Cell #1
+    </div>
+    <div class="box-cell">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell">Cell #2</div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">Cell #3</div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">Cell #4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(box-container)">
+<p>The first cell contains 2 rows, the second cell contains 4 rows:</p>
+
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell">Cell #1</div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">Cell #2</div>
+        </div>
+      </div>
+    </div>
+    <div class="box-cell">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell">Cell #3</div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">Cell #4</div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">Cell #5</div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell">Cell #6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Content alignment</h4>
+  <p>Use utility classes to align content inside a box cell.</p>
+
+  <div class="example" data-accent="(text-xs-\w+)||(valign-\w+)">
+<div class="box" style="height: 200px">
+  <div class="box-row">
+    <div class="box-cell text-xs-right">Cell #1</div>
+    <div class="box-cell valign-middle text-xs-center">Cell #2</div>
+    <div class="box-cell valign-bottom">Cell #3</div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With utility classes</h4>
+
+  <div class="example">
+<div class="box">
+  <a href="#" class="box-cell col-xs-5 b-r-1 valign-middle text-xs-center bg-success font-size-24">
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;<strong>11</strong>
+  </a>
+
+  <div class="box-cell">
+    <div class="box-container">
+      <div class="box-row">
+        <a href="#" class="box-cell p-a-1 valign-middle bg-success">
+          32 messages
+          <i class="pull-xs-right fa fa-envelope-o"></i>
+        </a>
+      </div>
+      <div class="box-row">
+        <a href="#" class="box-cell p-a-1 valign-middle bg-success darken">
+          9 issues
+          <i class="pull-xs-right fa fa-bug"></i>
+        </a>
+      </div>
+      <div class="box-row">
+        <a href="#" class="box-cell p-a-1 valign-middle bg-success darker">
+          47 new users
+          <i class="pull-xs-right fa fa-users"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example">
+<div class="panel box">
+  <div class="box-row">
+    <div class="box-cell p-a-3 valign-middle bg-primary">
+      <div class="font-size-17">Overview</div>
+      <div class="text-muted font-size-12">Your account statistics</div>
+    </div>
+  </div>
+  <div class="box-row">
+    <div class="box-cell">
+      <div class="box-container text-xs-center">
+        <div class="box-row valign-middle">
+          <div class="box-cell p-y-1 b-r-1">
+            <div class="font-size-17"><strong>12</strong></div>
+            <div class="font-size-11">PURCHASES</div>
+          </div>
+          <div class="box-cell p-y-1 b-r-1">
+            <div class="font-size-17"><strong>17</strong></div>
+            <div class="font-size-11">REVIEWS</div>
+          </div>
+          <div class="box-cell p-y-1">
+            <div class="font-size-17"><strong>49</strong></div>
+            <div class="font-size-11">LIKES</div>
+          </div>
+        </div>
+        <div class="box-row valign-middle">
+          <div class="box-cell p-y-1 b-t-1 b-r-1">
+            <div class="font-size-17"><strong>203</strong></div>
+            <div class="font-size-11">FRIENDS</div>
+          </div>
+          <div class="box-cell p-y-1 b-t-1 b-r-1">
+            <div class="font-size-17"><strong>1056</strong></div>
+            <div class="font-size-11">POINTS</div>
+          </div>
+          <a href="#" class="box-cell p-y-1 b-t-1 bg-white text-default font-size-12">
+            MORE&nbsp;&nbsp;&gt;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example">
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell p-x-3 p-y-1 bg-info darken">
+      <div class="pull-xs-left font-weight-semibold font-size-12">VISITORS</div>
+      <div class="pull-xs-right font-size-12"><i class="fa fa-caret-down"></i> 6%</div>
+    </div>
+  </div>
+  <div class="box-row">
+    <div class="box-cell p-x-3 p-y-2 bg-info">
+      <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">987</div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Icons</h4>
+  <p>
+    When you're using icons in box cells, add the <code>.box-icon</code>
+    class to an icon element.
+  </p>
+
+  <div class="example" data-accent="''(box-icon)">
+<div class="box bg-white darken" style="height: 60px;">
+  <div class="box-row font-size-15">
+    <div class="box-cell p-a-1 valign-middle">
+      <i class="fa fa-check pull-xs-right"></i>
+      Without <code>.box-icon</code> class
+    </div>
+    <div class="box-cell p-a-1 valign-middle">
+      <i class="box-icon fa fa-check pull-xs-right"></i>
+      With <code>.box-icon</code> class
+    </div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Background icon</h4>
+  <p>
+    You can add background icon to a box cell. Change the icon position by adding
+    the <code>.left</code>, <code>.right</code>, <code>.top</code>, <code>.middle</code>
+    and <code>.bottom</code> classes.
+  </p>
+
+  <div class="example" data-accent="(box-bg-icon)|| (left)|| (right)|| (top)|| (middle)|| (bottom)">
+<div class="box bg-danger" style="height: 200px;">
+  <div class="box-row">
+    <div class="box-cell b-r-1 b-b-1">
+      <i class="box-bg-icon left top font-size-52 fa fa-check"></i>
+      .left.top
+    </div>
+    <div class="box-cell b-r-1 b-b-1">
+      <i class="box-bg-icon left middle font-size-52 fa fa-check"></i>
+      .left.middle
+    </div>
+    <div class="box-cell b-b-1">
+      <i class="box-bg-icon left bottom font-size-52 fa fa-check"></i>
+      .left.bottom
+    </div>
+  </div>
+  <div class="box-row">
+    <div class="box-cell b-r-1">
+      <i class="box-bg-icon right top font-size-52 fa fa-check"></i>
+      .right.top
+    </div>
+    <div class="box-cell b-r-1">
+      <i class="box-bg-icon right middle font-size-52 fa fa-check"></i>
+      .right.middle
+    </div>
+    <div class="box-cell">
+      <i class="box-bg-icon right bottom font-size-52 fa fa-check"></i>
+      .right.bottom
+    </div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Responsivity</h4>
+  <p>
+    Use the regular Bootstrap's responsive classes with box cells.
+  </p>
+
+  <div class="example" data-accent="(col-\w+-\d+)">
+<p>First-level cells will be stacked on screen sizes up to large, second-level cells will be stacked on screen sizes up to small:</p>
+
+<div class="box">
+  <div class="box-row">
+    <div class="box-cell col-lg-5">
+      Cell #1
+    </div>
+    <div class="box-cell col-lg-7">
+      <div class="box-container">
+        <div class="box-row">
+          <div class="box-cell col-sm-4">Cell #2</div>
+          <div class="box-cell col-sm-4">Cell #3</div>
+          <div class="box-cell col-sm-4">Cell #4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_box.html');
+  </script>
+</body>
+</html>

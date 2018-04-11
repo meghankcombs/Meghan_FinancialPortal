@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Panel - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <h1 class="doc-header">
+    Panel
+    <div class="pull-right" style="font-size:16px;margin-top:6px;white-space:nowrap;font-weight:normal;">
+      Style&nbsp;&nbsp;
+      <select id="panel-style" class="form-control custom-select" style="display:inline-block;vertical-align:middle;width:150px;">
+        <option value="panel" selected>Default</option>
+        <option value="panel panel-warning">Light</option>
+        <option value="panel panel-warning panel-body-colorful">Light colorful</option>
+        <option value="panel panel-warning panel-dark">Dark</option>
+        <option value="panel panel-warning panel-dark panel-body-colorful">Dark colorful</option>
+      </select>
+    </div>
+  </h1>
+
+  <h4 class="doc-subheader">Basic</h4>
+
+  <div class="example panels-example" data-accent="(panel-body)||(panel)">
+<div class="panel">
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With title</h4>
+
+  <div class="example panels-example" data-accent="(panel-title)||(panel-subtitle)">
+<div class="panel">
+  <div class="panel-title">Title</div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-title">Title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With image</h4>
+
+  <div class="example panels-example" data-accent="(panel-img(:?-\w+)?)">
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel">
+      <img class="panel-img-top" data-src="holder.js/100px180" alt="Panel image cap">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Title</div>
+      <img class="panel-img" data-src="holder.js/100px180" alt="Panel image cap">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Title</div>
+      <div class="panel-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+      <img class="panel-img-bottom" data-src="holder.js/100px180" alt="Panel image cap">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel">
+      <img class="panel-img-top" data-src="holder.js/100px180" alt="Panel image cap">
+      <div class="panel-title">Title</div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Title</div>
+      <small class="panel-subtitle text-muted">Support panel subtitle</small>
+      <img class="panel-img" data-src="holder.js/100px180" alt="Panel image cap">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Title</div>
+      <small class="panel-subtitle text-muted">Support panel subtitle</small>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+      <img class="panel-img-bottom" data-src="holder.js/100px180" alt="Panel image cap">
+    </div>
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With header and footer</h4>
+
+  <div class="example panels-example" data-accent="(panel-heading)||(panel-footer)||(panel-title)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Panel header</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Title with Icon</h4>
+
+  <div class="example panels-example" data-accent="(panel-title-icon)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Title icon</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With list group</h4>
+  <p>Easily include full-width list groups within any panel.</p>
+
+  <div class="example panels-example" data-accent="(list-group-item)||(list-group)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">List group</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+  </ul>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With table</h4>
+  <p>Add any non-bordered <code>.table</code> within a panel for a seamless design.</p>
+
+  <div class="example panels-example" data-accent="''(table)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Table</span>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With tabs</h4>
+  <p>
+    Create a panel with tabs by appending a <code>.nav-tabs</code> element to the <code>.panel-heading</code>.
+  </p>
+
+  <div class="example panels-example" data-accent="(nav-tabs)||(nav-xs)||(nav)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Tabs</span>
+    <ul class="nav nav-tabs nav-xs">
+      <li class="active"><a href="#" data-toggle="tab">Home</a></li>
+      <li><a href="#" data-toggle="tab">Profile</a></li>
+      <li><a href="#" data-toggle="tab">More</a></li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With buttons</h4>
+  <p>
+    Create a panel with buttons by wrapping <code>.btn</code>s or <code>.btn-group</code>s within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(btn) ||(btn-group-xs)||(btn-group)||(btn-xs)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Buttons</span>
+    <div class="panel-heading-controls">
+      <button class="btn btn-xs btn-success btn-outline btn-outline-colorless"><i class="fa fa-check"></i> Apply</button>
+      <button class="btn btn-xs btn-danger btn-outline"><i class="fa fa-close"></i></button>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-cog"></i></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With labels</h4>
+  <p>
+    Create a panel with labels by wrapping <code>.label</code> within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(label-tag)||(label) ||(badge) ">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Labels</span>
+    <div class="panel-heading-controls">
+      <span class="label label-tag label-success">Tag</span>
+      <span class="label label-danger">Label</span>
+      <span class="label label-pill label-info">Badge</span>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With alerts</h4>
+  <p>
+    Create a panel with alerts by adding the <code>.panel-alert</code> class to an <code>.alert</code> element and appending it to the <code>.panel</code>.
+  </p>
+
+  <div class="example panels-example" data-accent="(px-block-alerts)||''(alert) ">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Alerts</span>
+  </div>
+  <div class="px-block-alerts">
+    <div class="alert alert-success alert-dark">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </div>
+    <div class="alert alert-info">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With pagination</h4>
+  <p>
+    Create a panel with pagination by wrapping a <code>.pagination</code> element within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(pagination-xs)||(pagination)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Pagination</span>
+    <div class="panel-heading-controls">
+      <ul class="pagination pagination-xs">
+        <li><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With pager</h4>
+  <p>
+    Create a panel with pager by wrapping a <code>.pager</code> element within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(pager-xs)||(pager)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Pager</span>
+    <div class="panel-heading-controls">
+      <ul class="pager pager-xs">
+        <li class="disabled"><a href="#">← Older</a></li>
+        <li><a href="#">Newer →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With progress</h4>
+  <p>
+    Create a panel with progress by wrapping a <code>.progress</code> element within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(progress) ||(progress-bar) ">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Progress</span>
+    <div class="panel-heading-controls" style="width: 30%; max-width: 140px;">
+      <div class="progress progress-striped active" style="width: 100%">
+        <div class="progress-bar progress-bar-danger" style="width: 60%;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With text</h4>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(panel-heading-text)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">With text</span>
+    <div class="panel-heading-controls">
+      <span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <button class="btn btn-xs">Button</button>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With icon</h4>
+  <p>
+    Create a panel with an icon by appending a <code>.panel-heading-icon</code> element to the <code>.panel-heading</code>.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(panel-heading-icon)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Icon</span>
+    <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With input group</h4>
+  <p>
+    Create a panel with an input group by wrapping an <code>.input-group</code> element within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(input-group-sm)||(input-group) ">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Input group</span>
+    <div class="panel-heading-controls col-sm-4">
+      <form action="">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" placeholder="Search..." name="s">
+          <span class="input-group-btn">
+            <button class="btn" type="submit">
+              <span class="fa fa-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With input</h4>
+  <p>
+    Create a panel with an input by wrapping a <code>.form-control</code> element within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(form-control)||(input-sm)||<(/?select)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Input</span>
+    <div class="panel-heading-controls">
+      <select class="form-control input-sm custom-select">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With switcher</h4>
+  <p>
+    Create panel with a switcher by wrapping a <code>.switcher</code> element within the <code>.panel-heading-controls</code> element.
+  </p>
+
+  <div class="example panels-example" data-accent="(panel-heading-controls)||(switcher) ||(switcher-sm)">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Switcher</span>
+    <div class="panel-heading-controls">
+      <label for="panel-with-switcher" class="switcher switcher-rounded switcher-sm switcher-primary switcher-blank">
+        <input type="checkbox" id="panel-with-switcher" checked>
+        <div class="switcher-indicator">
+          <div class="switcher-yes">ON</div>
+          <div class="switcher-no">OFF</div>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">With wizard</h4>
+  <p>
+    Create a panel with a wizard by adding the <code>.panel-wizard</code> class to a <code>.wizard</code> element and appending it to the <code>.panel</code>.
+  </p>
+
+  <div class="example panels-example" data-accent=" (panel-wizard)''">
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Wizard</span>
+  </div>
+  <div class="wizard panel-wizard" id="wizard-panel">
+    <div class="wizard-wrapper">
+      <ul class="wizard-steps">
+        <li data-target="#wizard-panel-step1" class="completed">
+          <span class="wizard-step-number">1</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 1
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel-step2" class="active">
+          <span class="wizard-step-number">2</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 2
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel-step3">
+          <span class="wizard-step-number">3</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 3
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel-step4">
+          <span class="wizard-step-number">4</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Finish
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="wizard-content">
+      <div class="wizard-pane" id="wizard-panel-step1"></div>
+      <div class="wizard-pane active" id="wizard-panel-step2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="wizard-pane" id="wizard-panel-step3"></div>
+      <div class="wizard-pane" id="wizard-panel-step4"></div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example panels-example" data-accent=" (panel-wizard)''">
+<div class="panel">
+  <div class="panel-title">Wizard title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <div class="wizard panel-wizard" id="wizard-panel2">
+    <div class="wizard-wrapper">
+      <ul class="wizard-steps">
+        <li data-target="#wizard-panel2-step1" class="completed">
+          <span class="wizard-step-number">1</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">Step 1</span>
+        </li>
+        <li data-target="#wizard-panel2-step2" class="active">
+          <span class="wizard-step-number">2</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">Step 2</span>
+        </li>
+        <li data-target="#wizard-panel2-step3">
+          <span class="wizard-step-number">3</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">Step 3</span>
+        </li>
+        <li data-target="#wizard-panel2-step4">
+          <span class="wizard-step-number">4</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">Finish</span>
+        </li>
+      </ul>
+    </div>
+    <div class="wizard-content">
+      <div class="wizard-pane" id="wizard-panel2-step1"></div>
+      <div class="wizard-pane active" id="wizard-panel2-step2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="wizard-pane" id="wizard-panel2-step3"></div>
+      <div class="wizard-pane" id="wizard-panel2-step4"></div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Some body content.
+  </div>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Colors</h4>
+
+  <div class="example" data-accent="(panel-danger)||(panel-dark)||(panel-body-colorful)">
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <span class="panel-title">Danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-danger panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-danger panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-danger panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(panel-success)||(panel-dark)||(panel-body-colorful)">
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <span class="panel-title">Success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-success panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-success panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-success panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(panel-warning)||(panel-dark)||(panel-body-colorful)">
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <span class="panel-title">Warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-warning panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-warning panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-warning panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(panel-info)||(panel-dark)||(panel-body-colorful)">
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <span class="panel-title">Info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-info panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-info panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-info panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <div class="example" data-accent="(panel-transparent)">
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-transparent">
+      <div class="panel-heading">
+        <span class="panel-title">Panel - Transparent</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+<script>
+  $(function() {
+    $('#panel-style').on('change', function() {
+      var cl = this.value;
+
+      $('.panels-example .panel').each(function() {
+        this.className = cl;
+      });
+
+      if (cl.indexOf('dark') !== -1) {
+        $('.panels-example .btn-outline-colorless')
+          .removeClass('btn-outline-colorless')
+          .addClass('btn-outline-colorless-inverted');
+      } else {
+        $('.panels-example .btn-outline-colorless-inverted')
+          .removeClass('btn-outline-colorless-inverted')
+          .addClass('btn-outline-colorless');
+      }
+    });
+
+    $('.wizard').pxWizard();
+  });
+</script>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_panel.html');
+  </script>
+</body>
+</html>

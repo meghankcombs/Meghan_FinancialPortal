@@ -1,0 +1,207 @@
+<!-- Custom styling -->
+<style>
+.demo-item {
+  padding: 30px;
+}
+
+.demo-item h4 {
+  margin: 0;
+}
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Carousel</h1>
+</div>
+
+<div ng-controller="UiCarouselCtrl as ctrl">
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Basic</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel loop="true" margin="10" nav="true" responsive="{ 0: { items: 1 }, 600: { items: 4 }, 1000: { items: 6 } }" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary"><h4>1</h4></div>
+        <div class="demo-item bg-primary"><h4>2</h4></div>
+        <div class="demo-item bg-primary"><h4>3</h4></div>
+        <div class="demo-item bg-primary"><h4>4</h4></div>
+        <div class="demo-item bg-primary"><h4>5</h4></div>
+        <div class="demo-item bg-primary"><h4>6</h4></div>
+        <div class="demo-item bg-primary"><h4>7</h4></div>
+        <div class="demo-item bg-primary"><h4>8</h4></div>
+        <div class="demo-item bg-primary"><h4>9</h4></div>
+        <div class="demo-item bg-primary"><h4>10</h4></div>
+        <div class="demo-item bg-primary"><h4>11</h4></div>
+        <div class="demo-item bg-primary"><h4>12</h4></div>
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel bg-black">
+    <div class="panel-heading bg-black">
+      <div class="panel-title">Inverted</div>
+    </div>
+    <div class="panel-body bg-black">
+      <owl-carousel class="owl-carousel-inverted" loop="true" margin="10" nav="true" responsive="{ 0: { items: 1 }, 600: { items: 4 }, 1000: { items: 6 } }" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary"><h4>1</h4></div>
+        <div class="demo-item bg-primary"><h4>2</h4></div>
+        <div class="demo-item bg-primary"><h4>3</h4></div>
+        <div class="demo-item bg-primary"><h4>4</h4></div>
+        <div class="demo-item bg-primary"><h4>5</h4></div>
+        <div class="demo-item bg-primary"><h4>6</h4></div>
+        <div class="demo-item bg-primary"><h4>7</h4></div>
+        <div class="demo-item bg-primary"><h4>8</h4></div>
+        <div class="demo-item bg-primary"><h4>9</h4></div>
+        <div class="demo-item bg-primary"><h4>10</h4></div>
+        <div class="demo-item bg-primary"><h4>11</h4></div>
+        <div class="demo-item bg-primary"><h4>12</h4></div>
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Center</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel center="true" items="2" loop="true" margin="10" responsive="{ 600: { items: 4 } }" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary"><h4>1</h4></div>
+        <div class="demo-item bg-primary"><h4>2</h4></div>
+        <div class="demo-item bg-primary"><h4>3</h4></div>
+        <div class="demo-item bg-primary"><h4>4</h4></div>
+        <div class="demo-item bg-primary"><h4>5</h4></div>
+        <div class="demo-item bg-primary"><h4>6</h4></div>
+        <div class="demo-item bg-primary"><h4>7</h4></div>
+        <div class="demo-item bg-primary"><h4>8</h4></div>
+        <div class="demo-item bg-primary"><h4>9</h4></div>
+        <div class="demo-item bg-primary"><h4>10</h4></div>
+        <div class="demo-item bg-primary"><h4>11</h4></div>
+        <div class="demo-item bg-primary"><h4>12</h4></div>
+      </owl-carousel>
+
+      <br>
+
+      <owl-carousel center="true" items="2" loop="false" margin="10" responsive="{ 600: { items: 4 } }" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary"><h4>1</h4></div>
+        <div class="demo-item bg-primary"><h4>2</h4></div>
+        <div class="demo-item bg-primary"><h4>3</h4></div>
+        <div class="demo-item bg-primary"><h4>4</h4></div>
+        <div class="demo-item bg-primary"><h4>5</h4></div>
+        <div class="demo-item bg-primary"><h4>6</h4></div>
+        <div class="demo-item bg-primary"><h4>7</h4></div>
+        <div class="demo-item bg-primary"><h4>8</h4></div>
+        <div class="demo-item bg-primary"><h4>9</h4></div>
+        <div class="demo-item bg-primary"><h4>10</h4></div>
+        <div class="demo-item bg-primary"><h4>11</h4></div>
+        <div class="demo-item bg-primary"><h4>12</h4></div>
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Auto Width</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel margin="10" loop="true" auto-width="true" items="4" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary" style="width:250px"><h4>1</h4></div>
+        <div class="demo-item bg-primary" style="width:100px"><h4>2</h4></div>
+        <div class="demo-item bg-primary" style="width:500px"><h4>3</h4></div>
+        <div class="demo-item bg-primary" style="width:100px"><h4>4</h4></div>
+        <div class="demo-item bg-primary" style="width:50px"><h4>6</h4></div>
+        <div class="demo-item bg-primary" style="width:250px"><h4>7</h4></div>
+        <div class="demo-item bg-primary" style="width:120px"><h4>8</h4></div>
+        <div class="demo-item bg-primary" style="width:420px"><h4>9</h4></div>
+        <div class="demo-item bg-primary" style="width:120px"><h4>10</h4></div>
+        <div class="demo-item bg-primary" style="width:300px"><h4>11</h4></div>
+        <div class="demo-item bg-primary" style="width:450px"><h4>12</h4></div>
+        <div class="demo-item bg-primary" style="width:220px"><h4>13</h4></div>
+        <div class="demo-item bg-primary" style="width:150px"><h4>14</h4></div>
+        <div class="demo-item bg-primary" style="width:600px"><h4>15</h4></div>
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Lazy Load</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel items="4" lazy-load="true" loop="true" margin="10" rtl="ctrl.isRtl">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=1" data-src-retina="http://placehold.it/350x250&text=1-retina" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=2" data-src-retina="http://placehold.it/350x250&text=2-retina" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=3" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=4" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=5" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=6" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=7" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=8" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=9" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=10" alt="">
+        <img class="owl-lazy" data-src="http://placehold.it/350x250&text=11" alt="">
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Video</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel items="1" loop="true" margin="10" video="true" lazy-load="true" center="true" responsive="{ 480: { items: 2 }, 600: { items: 3 } }" rtl="ctrl.isRtl">
+        <div style="height: 300px;"><a class="owl-video" href="https://vimeo.com/56624256"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=voBNpdXkLnU"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=VlClCPTbkBo"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=-59jGD4WrmE"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=wQRV5omnBBU"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=3FPwcaflCS8"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=DnGdoEa1tPg"></a></div>
+        <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=HyHNuVaZJ-k"></a></div>
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Autoplay</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel items="4" loop="true" margin="10" autoplay="true" autoplay-timeout="1000" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary"><h4>1</h4></div>
+        <div class="demo-item bg-primary"><h4>2</h4></div>
+        <div class="demo-item bg-primary"><h4>3</h4></div>
+        <div class="demo-item bg-primary"><h4>4</h4></div>
+        <div class="demo-item bg-primary"><h4>5</h4></div>
+        <div class="demo-item bg-primary"><h4>6</h4></div>
+        <div class="demo-item bg-primary"><h4>7</h4></div>
+        <div class="demo-item bg-primary"><h4>8</h4></div>
+        <div class="demo-item bg-primary"><h4>9</h4></div>
+        <div class="demo-item bg-primary"><h4>10</h4></div>
+        <div class="demo-item bg-primary"><h4>11</h4></div>
+        <div class="demo-item bg-primary"><h4>12</h4></div>
+      </owl-carousel>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <div class="panel-title">Auto Height</div>
+    </div>
+    <div class="panel-body">
+      <owl-carousel items="1" margin="10" auto-height="true" rtl="ctrl.isRtl">
+        <div class="demo-item bg-primary" style="height: 300px;"><h4>1</h4></div>
+        <div class="demo-item bg-primary" style="height: 100px;"><h4>2</h4></div>
+        <div class="demo-item bg-primary" style="height: 500px;"><h4>3</h4></div>
+        <div class="demo-item bg-primary" style="height: 250px;"><h4>4</h4></div>
+        <div class="demo-item bg-primary" style="height: 400px;"><h4>5</h4></div>
+        <div class="demo-item bg-primary" style="height: 500px;"><h4>6</h4></div>
+        <div class="demo-item bg-primary" style="height: 600px;"><h4>7</h4></div>
+        <div class="demo-item bg-primary" style="height: 400px;"><h4>8</h4></div>
+        <div class="demo-item bg-primary" style="height: 300px;"><h4>9</h4></div>
+        <div class="demo-item bg-primary" style="height: 350px;"><h4>10</h4></div>
+        <div class="demo-item bg-primary" style="height: 200px;"><h4>11</h4></div>
+        <div class="demo-item bg-primary" style="height: 150px;"><h4>12</h4></div>
+      </owl-carousel>
+    </div>
+  </div>
+</div>

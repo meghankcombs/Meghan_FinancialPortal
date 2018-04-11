@@ -23,7 +23,7 @@ namespace Meghan_FinancialPortal.Models
 
         public bool HasBeenUsed { get; set; }
 
-        public virtual AspNetUser AspNetUser { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public virtual Household Household { get; set; }
     }

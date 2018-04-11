@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Meghan_FinancialPortal.Models;
+using System.Net.Mail;
 
 namespace Meghan_FinancialPortal.Controllers
 {
@@ -151,7 +152,8 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,
+                    FirstName = model.FirstName, LastName = model.LastName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -203,18 +205,28 @@ namespace Meghan_FinancialPortal.Controllers
             if (ModelState.IsValid)
             {
                 var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                if (user == null)
                 {
                     // Don't reveal that the user does not exist or is not confirmed
                     return View("ForgotPasswordConfirmation");
                 }
 
-                // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+
+                var from = "Financial Portal <meghankcombs@gmail.com>";
+                var email = new MailMessage(from, model.Email)
+                {
+                    Subject = "Reset Password",
+                    Body = "Please reset your password by clicking <a href =\"" + callbackUrl + "\">here</a>",
+                    IsBodyHtml = true
+                };
+
+                var svc = new PersonalEmail();
+                await svc.SendAsync(email);
+
+                TempData["MessageForgot"] = "Please check your email to reset your password.";
+                return RedirectToAction("Index", "Home");
             }
 
             // If we got this far, something failed, redisplay form

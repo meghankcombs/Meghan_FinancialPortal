@@ -1,0 +1,207 @@
+<!-- Custom template -->
+<script id="px/pages/account.html" type="text/ng-template">
+  <div class="page-header p-b-0 b-b-0">
+    <h1>Account <span class="text-muted font-weight-light">Settings</span></h1>
+
+    <ul class="nav nav-tabs page-block m-t-4" ng-transclude></ul>
+    <div class="tab-content p-y-4">
+      <div class="tab-pane" ng-repeat="tab in tabset.tabs" ng-class="{active: tabset.active === tab.index}" uib-tab-content-transclude="tab"></div>
+    </div>
+  </div>
+</script>
+<!-- / Custom template -->
+
+<uib-tabset template-url="px/pages/account.html" px-tab-resize class="page-block">
+  <uib-tab heading="Profile">
+
+    <!-- Profile tab -->
+
+    <div class="row">
+      <form class="col-md-8 col-lg-9">
+        <div class="p-x-1">
+          <fieldset class="form-group form-group-lg">
+            <label for="account-name">Name</label>
+            <input type="text" class="form-control" id="account-name" value="John Doe">
+          </fieldset>
+          <fieldset class="form-group form-group-lg">
+            <label for="account-username">Username</label>
+            <input type="text" class="form-control" id="account-username" value="jdoe">
+            <small class="text-muted">Your PixelAdmin URL: https://pixeladmin.com/<strong>username</strong>.</small>
+          </fieldset>
+          <fieldset class="form-group form-group-lg">
+            <label for="account-email">E-mail</label>
+            <input type="email" class="form-control" id="account-email" value="john-doe@email.com">
+          </fieldset>
+          <fieldset class="form-group form-group-lg">
+            <label for="account-location">Location</label>
+            <input type="text" class="form-control" id="account-location" value="Glendale, CA">
+          </fieldset>
+          <fieldset class="form-group form-group-lg">
+            <label for="account-url">Website</label>
+            <input type="url" class="form-control" id="account-url" value="">
+            <small class="text-muted">Your home page, blog or company site, e.g. <strong>http://website.com</strong></small>
+          </fieldset>
+          <fieldset class="form-group form-group-lg">
+            <label for="account-bio">Bio</label>
+            <textarea px-char-limit class="form-control" rows="3" id="account-bio" maxlength="200" data-counter="#account-bio + small > strong">About John Doe...</textarea>
+            <small class="text-muted">Characters left: <strong>0</strong></small>
+          </fieldset>
+          <button type="submit" class="btn btn-lg btn-primary m-t-3">Update profile</button>
+          <a href="#" class="pull-xs-right text-muted p-t-4">Deactivate account</a>
+        </div>
+      </form>
+
+      <!-- Spacer -->
+      <div class="m-t-4 visible-xs visible-sm"></div>
+
+      <!-- Avatar -->
+      <div class="col-md-4 col-lg-3">
+        <div class="panel bg-transparent">
+          <div class="panel-body text-xs-center">
+            <img src="assets/demo/avatars/1.jpg" alt="" class="" style="max-width: 100%;">
+          </div>
+          <hr class="m-y-0">
+          <div class="panel-body text-xs-center">
+            <button type="button" class="btn btn-primary">Change</button>&nbsp;
+            <button type="button" class="btn"><i class="fa fa-trash"></i></button>
+            <div class="m-t-2 text-muted font-size-12">JPG, GIF or PNG. Max size of 1MB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- / Profile tab -->
+
+  </uib-tab>
+  <uib-tab heading="Social profiles">
+
+    <!-- Social tab -->
+
+    <form class="p-x-1">
+      <fieldset class="form-group form-group-lg">
+        <label for="account-social-facebook">Facebook</label>
+        <div class="form-group form-group-lg">
+          <button type="button" class="btn btn-success"><span class="btn-label-icon left fa fa-facebook"></span>Connect to Facebook</button>
+        </div>
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-social-twitter">Twitter&nbsp;&nbsp;&nbsp;&nbsp;<small class="text-success font-weight-normal"><i class="fa fa-check"></i>&nbsp;Connected</small></label>
+        <div class="input-group input-group-lg">
+          <input type="text" class="form-control" id="account-social-twitter" value="@jdoe" disabled>
+          <a href="#" class="input-group-addon text-muted"><i class="fa fa-times"></i></a>
+        </div>
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-social-instagram">Instagram</label>
+        <input type="text" class="form-control" id="account-social-instagram">
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-social-pinterest">Pinterest</label>
+        <input type="text" class="form-control" id="account-social-pinterest" value="@jdoe">
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-social-github">Github</label>
+        <input type="text" class="form-control" id="account-social-github">
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-social-linkedin">LinkedIn</label>
+        <input type="text" class="form-control" id="account-social-linkedin">
+      </fieldset>
+      <button type="submit" class="btn btn-lg btn-primary m-t-3">Save changes</button>
+    </form>
+
+    <!-- / Social tab -->
+
+  </uib-tab>
+  <uib-tab heading="Password">
+
+    <!-- Password tab -->
+
+    <form class="p-x-1">
+      <fieldset class="form-group form-group-lg">
+        <label for="account-password">Old password</label>
+        <input type="password" class="form-control" id="account-password">
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-new-password">New password</label>
+        <input type="password" class="form-control" id="account-new-password">
+        <small class="text-muted">Minimum 6 characters</small>
+      </fieldset>
+      <fieldset class="form-group form-group-lg">
+        <label for="account-new-password-repeat">Verify password</label>
+        <input type="password" class="form-control" id="account-new-password-repeat">
+      </fieldset>
+      <button type="submit" class="btn btn-lg btn-primary m-t-3">Change password</button>
+    </form>
+
+    <!-- / Password tab -->
+
+  </uib-tab>
+  <uib-tab heading="Notifications">
+
+    <!-- Notifications tab -->
+
+    <form class="row">
+      <div class="col-md-6">
+        <div class="panel bg-transparent">
+          <div class="panel-title"><strong>Activity Notifications</strong></div>
+          <hr class="m-y-0">
+          <div class="panel-body">
+            <p>Email me when:</p>
+
+            <label class="custom-control custom-checkbox m-t-2">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Someone comments on my article
+            </label>
+
+            <label class="custom-control custom-checkbox m-t-2">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Someone answers on my forum thread
+            </label>
+
+            <label class="custom-control custom-checkbox m-t-2">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Someone follows me
+            </label>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel bg-transparent">
+          <div class="panel-title"><strong>PixelAdmin Emails</strong></div>
+          <hr class="m-y-0">
+          <div class="panel-body">
+            <label class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              News
+            </label>
+            <small class="text-muted">Periodic news and announcements</small>
+
+            <label class="custom-control custom-checkbox m-t-2">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Weekly product updates
+            </label>
+
+            <label class="custom-control custom-checkbox m-t-2">
+              <input type="checkbox" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Blog digest
+            </label>
+            <small class="text-muted">Get weekly blog digest emails</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12"><button type="submit" class="btn btn-lg btn-primary m-t-3">Update notifications</button></div>
+    </form>
+
+    <!-- / Notifications tab -->
+
+  </uib-tab>
+</uib-tabset>

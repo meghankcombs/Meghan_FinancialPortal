@@ -11,7 +11,7 @@ namespace Meghan_FinancialPortal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Household()
         {
-            AspNetUsers = new HashSet<AspNetUser>();
+            Users = new HashSet<ApplicationUser>();
             Budgets = new HashSet<Budget>();
             Invites = new HashSet<Invite>();
             PersonalAccounts = new HashSet<PersonalAccount>();
@@ -23,7 +23,7 @@ namespace Meghan_FinancialPortal.Models
         public string Name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetUser> AspNetUsers { get; set; }
+        public virtual ICollection<ApplicationUser> Users { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Budget> Budgets { get; set; }

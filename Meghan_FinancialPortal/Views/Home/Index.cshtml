@@ -1,31 +1,347 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model Meghan_FinancialPortal.Models.ViewModels.HomeViewModel
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="page-header m-b-0">
+        <div class="row">
+            <div class="col-md-4">
+                <h1><i class="page-header-icon ion-arrow-graph-up-right"></i>Financial <span class="text-muted font-weight-light">Dashboard</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Users -->
+        <div class="col-md-12">
+            <div class="panel panel-warning panel-dark">
+                <div class="panel-heading">
+                    <span class="panel-title"><i class="panel-title-icon fa fa-smile-o"></i>Users</span>
+                </div>
+                <div class="panel-body">
+                    <div class="panel-default">
+                        <table class="table" id="userTable">
+                            <thead>
+                                <tr>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody class="valign-middle">
+                                @foreach (var user in Model.AllUsers)
+                                {
+                                    <tr>
+                                        <td>@user.FirstName</td>
+                                        <td>@user.LastName</td>
+                                        <td>@user.Email</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Users -->
+    </div>
+
+    <div class="row">
+        <!-- Accounts -->
+        <div class="col-md-6">
+            <div class="panel clearfix text-default">
+                <div class="panel-title">
+                    <i class="panel-title-icon ion-card font-size-16 text-primary"></i> Accounts
+                </div>
+                @foreach (var acct in Model.Accounts)
+                {
+                    <div class="col-xs-12 p-x-3 p-y-2 b-t-1 bg-white">
+                        <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>@acct.Balance</strong></div>
+                        <div class="font-size-15">@acct.Name</div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- / Accounts -->
+        <!-- Budgets -->
+        <div class="col-md-6">
+            <div class="panel clearfix text-default">
+                <div class="panel-title">
+                    <i class="panel-title-icon ion-social-usd font-size-16 text-primary"></i> Budgets
+                </div>
+                @foreach (var budget in Model.Budgets)
+                {
+                    <div class="box m-a-0 p-x-3 p-y-2 b-t-1 bg-white">
+                        <div class="box-cell valign-middle" style="width: 54px;">
+                            <i class="fa fa-area-chart text-muted font-size-28"></i>
+                        </div>
+                        <div class="box-cell">
+                            <div class="pull-xs-right font-size-18"><small class="font-size-13"></small><strong>(Amount)</strong></div>
+                            <div class="font-size-15">@budget.Name</div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- / Budgets -->
+    </div>
+
+    <div class="row">
+        <!-- Latest Transactions -->
+        <div class="col-md-12">
+            <div class="panel panel-primary panel-dark">
+                <div class="panel-heading">
+                    <span class="panel-title"><i class="panel-title-icon fa fa-balance-scale"></i>Latest Transactions</span>
+                </div>
+                <div class="panel-body">
+                    <div class="panel-default">
+                        <table class="table" id="transactionTable">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="valign-middle">
+                                @foreach (var trans in Model.Transactions)
+                                {
+                                    <tr>
+                                        <td>@trans.Date.ToString("MM/dd/yyy")</td>
+                                        <td>@trans.Category.Name</td>
+                                        <td>@trans.Description</td>
+                                        <td>$@trans.Amount</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- / Users -->
+    </div>
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="page-header m-b-0">
+        <div class="row">
+            <div class="col-md-4">
+                <h1><i class="page-header-icon ion-arrow-graph-up-right"></i>Example <span class="text-muted font-weight-light">Dashboard</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- Balance -->
+    <div class="row">
+        <div class="box-cell col-md-7 p-a-4">
+            <div>
+                <span class="font-size-18 font-weight-light">Balance</span>&nbsp;&nbsp;
+                <span class="text-success">12% <i class="ion-arrow-up-c"></i></span>
+            </div>
+            <div class="font-size-34"><small class="font-weight-light text-muted">$</small><strong>31,600</strong></div>
+        </div>
+    </div>
+    <!-- / Balance -->
+    <!-- Money flow charts -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel">
+                <div class="panel-title">Graph</div>
+                <hr>
+                <div class="panel-body">
+                    <div id="flot-graph" style="height: 250px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel">
+                <div class="panel-title">Pie / Doughnut</div>
+                <hr>
+                <div class="panel-body">
+                    <div id="flot-pie" style="height: 250px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- / Money flow charts -->
+    <!-- Accounts -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel clearfix text-default">
+                <div class="panel-title">
+                    <i class="panel-title-icon ion-social-usd font-size-16 text-primary"></i> Accounts
+                </div>
+                <a href="#" class="col-xs-12 p-x-3 p-y-2 b-t-1 bg-white">
+                    <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>10,501</strong></div>
+                    <div class="font-size-15">Bank of America</div>
+                    <div class="text-muted font-size-14">**********1312</div>
+                </a>
+                <a href="#" class="col-xs-12 p-x-3 p-y-2 b-t-1 bg-white">
+                    <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>5,241</strong></div>
+                    <div class="font-size-15">Citigroup</div>
+                    <div class="text-muted font-size-14">**********3265</div>
+                </a>
+                <a href="#" class="col-xs-12 p-x-3 p-y-2 b-t-1 bg-white">
+                    <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>2,042</strong></div>
+                    <div class="font-size-15">J.P.Morgan Chase & Co</div>
+                    <div class="text-muted font-size-14">**********6294</div>
+                </a>
+            </div>
+        </div>
+        <!-- / Accounts -->
+        <!-- Cards -->
+        <div class="col-md-6">
+            <div class="panel clearfix text-default">
+                <div class="panel-title">
+                    <i class="panel-title-icon ion-card font-size-16 text-primary"></i> Cards
+                </div>
+                <a href="#" class="box m-a-0 p-x-3 p-y-2 b-t-1 bg-white">
+                    <div class="box-cell valign-middle" style="width: 54px;">
+                        <i class="fa fa-cc-visa text-muted font-size-28"></i>
+                    </div>
+                    <div class="box-cell">
+                        <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>5,312</strong></div>
+                        <div class="font-size-15">Salary card <span class="text-muted font-size-12">- Bank of America</span></div>
+                        <div class="text-muted font-size-14">**** **** **** 1313</div>
+                    </div>
+                </a>
+                <a href="#" class="box m-a-0 p-x-3 p-y-2 b-t-1 bg-white">
+                    <div class="box-cell valign-middle" style="width: 54px;">
+                        <i class="fa fa-cc-amex text-muted font-size-28"></i>
+                    </div>
+                    <div class="box-cell">
+                        <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>2,150</strong></div>
+                        <div class="font-size-15">Shopping card <span class="text-muted font-size-12">- Citigroup</span></div>
+                        <div class="text-muted font-size-14">**** **** **** 3266</div>
+                    </div>
+                </a>
+                <a href="#" class="box m-a-0 p-x-3 p-y-2 b-t-1 bg-white">
+                    <div class="box-cell valign-middle" style="width: 54px;">
+                        <i class="fa fa-cc-mastercard text-muted font-size-28"></i>
+                    </div>
+                    <div class="box-cell">
+                        <div class="pull-xs-right font-size-18"><small class="font-size-13">$</small><strong>6,454</strong></div>
+                        <div class="font-size-15">Funded card <span class="text-muted font-size-12">- J.P.Morgan Chase & Co</span></div>
+                        <div class="text-muted font-size-14">**** **** **** 6295</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- / Cards -->
+    </div>
+    <!-- Latest transactions -->
+    <div class="panel">
+        <div class="panel-title">
+            Latest transactions
+            <div class="panel-heading-controls">
+                <a href="#" class="btn btn-xs btn-primary btn-outline btn-outline-colorless">Show all transactions</a>
+            </div>
+        </div>
+        <hr class="m-a-0">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th class="text-xs-right">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="label label-danger">OUTCOME</span></td>
+                        <td>07/12/2016</td>
+                        <td>Monthly service subscription payment</td>
+                        <td class="text-xs-right"><strong>$102.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-danger">OUTCOME</span></td>
+                        <td>07/05/2016</td>
+                        <td>Shopping</td>
+                        <td class="text-xs-right"><strong>$82.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-success">INCOME</span></td>
+                        <td>07/02/2016</td>
+                        <td>Monthly salary</td>
+                        <td class="text-xs-right"><strong>$3000.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-success">INCOME</span></td>
+                        <td>06/29/2016</td>
+                        <td>Freelance salary</td>
+                        <td class="text-xs-right"><strong>$1230.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-danger">OUTCOME</span></td>
+                        <td>06/23/2016</td>
+                        <td>Monthly bills</td>
+                        <td class="text-xs-right"><strong>$862.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-danger">OUTCOME</span></td>
+                        <td>06/12/2016</td>
+                        <td>Monthly service subscription payment</td>
+                        <td class="text-xs-right"><strong>$102.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-danger">OUTCOME</span></td>
+                        <td>06/05/2016</td>
+                        <td>Shopping</td>
+                        <td class="text-xs-right"><strong>$82.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-success">INCOME</span></td>
+                        <td>06/02/2016</td>
+                        <td>Monthly salary</td>
+                        <td class="text-xs-right"><strong>$3000.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-success">INCOME</span></td>
+                        <td>05/29/2016</td>
+                        <td>Freelance salary</td>
+                        <td class="text-xs-right"><strong>$1230.00</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="label label-danger">OUTCOME</span></td>
+                        <td>05/23/2016</td>
+                        <td>Monthly bills</td>
+                        <td class="text-xs-right"><strong>$862.00</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- / Latest transactions -->
+}
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+
+@section scripts {
+    @if (TempData.ContainsKey("Message"))
+    {
+        <script>
+            $(function () {
+                swal('Thank you!', '@TempData["Message"]', 'success');
+            });
+        </script>
+    }
+
+    @if (TempData.ContainsKey("MessageForgot"))
+    {
+        <script>
+                $(function () {
+                    swal('Password Reset Confirmed!', '@TempData["MessageForgot"]', 'success');
+                });
+        </script>
+    }
+
+    <script>
+        $('#userTable').DataTable();
+    </script>
+
+    <script>
+        $('#transactionTable').DataTable();
+    </script>
+}

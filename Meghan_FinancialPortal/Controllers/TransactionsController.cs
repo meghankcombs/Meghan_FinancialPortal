@@ -12,12 +12,13 @@ namespace Meghan_FinancialPortal.Controllers
 {
     public class TransactionsController : Controller
     {
-        private FinancialPortal db = new FinancialPortal();
+        private FinancialPortal fdb = new FinancialPortal();
+        private ApplicationDbContext adb = new ApplicationDbContext();
 
         // GET: Transactions
         public ActionResult Index()
         {
-            var transactions = db.Transactions.Include(t => t.AspNetUser).Include(t => t.Category).Include(t => t.PersonalAccount);
+            var transactions = fdb.Transactions.Include(t => t.User).Include(t => t.Category).Include(t => t.PersonalAccount);
             return View(transactions.ToList());
         }
 
@@ -28,7 +29,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Transaction transaction = db.Transactions.Find(id);
+            Transaction transaction = fdb.Transactions.Find(id);
             if (transaction == null)
             {
                 return HttpNotFound();
@@ -39,9 +40,9 @@ namespace Meghan_FinancialPortal.Controllers
         // GET: Transactions/Create
         public ActionResult Create()
         {
-            ViewBag.EnteredById = new SelectList(db.AspNetUsers, "Id", "FirstName");
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name");
+            ViewBag.EnteredById = new SelectList(adb.Users, "Id", "FirstName");
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name");
+            ViewBag.AccountId = new SelectList(fdb.PersonalAccounts, "Id", "Name");
             return View();
         }
 
@@ -54,14 +55,14 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Transactions.Add(transaction);
-                db.SaveChanges();
+                fdb.Transactions.Add(transaction);
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.EnteredById = new SelectList(db.AspNetUsers, "Id", "FirstName", transaction.EnteredById);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.AccountId);
+            ViewBag.EnteredById = new SelectList(adb.Users, "Id", "FirstName", transaction.EnteredById);
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name", transaction.CategoryId);
+            ViewBag.AccountId = new SelectList(fdb.PersonalAccounts, "Id", "Name", transaction.AccountId);
             return View(transaction);
         }
 
@@ -72,14 +73,14 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Transaction transaction = db.Transactions.Find(id);
+            Transaction transaction = fdb.Transactions.Find(id);
             if (transaction == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.EnteredById = new SelectList(db.AspNetUsers, "Id", "FirstName", transaction.EnteredById);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.AccountId);
+            ViewBag.EnteredById = new SelectList(adb.Users, "Id", "FirstName", transaction.EnteredById);
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name", transaction.CategoryId);
+            ViewBag.AccountId = new SelectList(fdb.PersonalAccounts, "Id", "Name", transaction.AccountId);
             return View(transaction);
         }
 
@@ -92,13 +93,13 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(transaction).State = EntityState.Modified;
-                db.SaveChanges();
+                fdb.Entry(transaction).State = EntityState.Modified;
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.EnteredById = new SelectList(db.AspNetUsers, "Id", "FirstName", transaction.EnteredById);
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", transaction.CategoryId);
-            ViewBag.AccountId = new SelectList(db.PersonalAccounts, "Id", "Name", transaction.AccountId);
+            ViewBag.EnteredById = new SelectList(adb.Users, "Id", "FirstName", transaction.EnteredById);
+            ViewBag.CategoryId = new SelectList(fdb.Categories, "Id", "Name", transaction.CategoryId);
+            ViewBag.AccountId = new SelectList(fdb.PersonalAccounts, "Id", "Name", transaction.AccountId);
             return View(transaction);
         }
 
@@ -109,7 +110,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Transaction transaction = db.Transactions.Find(id);
+            Transaction transaction = fdb.Transactions.Find(id);
             if (transaction == null)
             {
                 return HttpNotFound();
@@ -122,9 +123,9 @@ namespace Meghan_FinancialPortal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Transaction transaction = db.Transactions.Find(id);
-            db.Transactions.Remove(transaction);
-            db.SaveChanges();
+            Transaction transaction = fdb.Transactions.Find(id);
+            fdb.Transactions.Remove(transaction);
+            fdb.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -132,7 +133,7 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                fdb.Dispose();
             }
             base.Dispose(disposing);
         }

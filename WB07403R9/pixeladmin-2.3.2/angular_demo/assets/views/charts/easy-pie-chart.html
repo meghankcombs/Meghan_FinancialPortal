@@ -1,0 +1,28 @@
+<div ng-controller="ChartsEasyPieChartCtrl as ctrl">
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-stats-bars"></i>Charts / </span>Easy Pie Chart</h1>
+    <a href="https://github.com/rendro/easy-pie-chart" target="_blank" class="page-header-text text-muted font-weight-light pull-md-right col-xs-12 width-md-auto width-lg-auto width-xl-auto p-x-0">https://github.com/rendro/easy-pie-chart</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-body text-xs-center">
+          <div easypiechart options="ctrl.easyPieChart1Options" percent="ctrl.easyPieChart1Data" class="easy-pie-chart"><span class="font-size-14 font-weight-light"></span></div>
+          <br>
+          <div class="label">New visitors</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-body text-xs-center">
+          <div easypiechart options="ctrl.easyPieChart2Options" percent="ctrl.easyPieChart2Data" class="easy-pie-chart"><span class="font-size-14 font-weight-light"></span></div>
+          <br>
+          <div class="label">Bounce rate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

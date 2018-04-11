@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Custom controls - Form - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  .disabled-example > .form-control + .custom-file,
+  .disabled-example > .custom-file + .custom-file,
+  .sizes-example > .form-control + .custom-file,
+  .sizes-example > .custom-file + .custom-file {
+    margin-top: 10px;
+  }
+</style>
+
+  <h1 class="doc-header"><span class="text-muted">Form /</span> Custom controls</h1>
+
+  <h4 class="doc-description">
+    For more customization and cross browser consistency, use the custom form
+    elements to replace the browser defaults. They’re built on top of semantic
+    and accessible markup, so they’re solid replacements for any default form
+    control.
+  </h4>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <h4 class="doc-subheader">Select</h4>
+      <p>
+        Use the <code>.custom-select</code> class to create a custom <code>&lt;select&gt;</code>.
+      </p>
+
+      <div class="example" data-accent="(custom-select)">
+<select class="custom-select form-control">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+      </div>
+
+
+      <h4 class="doc-subheader">Checkboxes and radios</h4>
+      <p>
+        Each checkbox and radio is wrapped in a <code>&lt;label&gt;</code>
+        for three reasons:
+      </p>
+      <ul>
+        <li>
+          It provides a larger hit areas for checking the control.
+        </li>
+        <li>
+          It provides a helpful and semantic wrapper to help us replace
+          the default <code>&lt;input&gt;</code>s.
+        </li>
+        <li>
+          It triggers the state of the <code>&lt;input&gt;</code> automatically,
+          meaning no JavaScript is required.
+        </li>
+      </ul>
+      <p>
+        We hide the default <code>&lt;input&gt;</code> with opacity and use
+        the <code>.custom-control-indicator</code> to build a new custom form
+        control. We can’t build a custom one from just the <code>&lt;input&gt;</code>
+        because CSS’s content doesn’t work on that element.
+      </p>
+      <p>
+        With the sibling selector (<code>~</code>), we use the <code>:checked</code>
+        state to trigger a makeshift checked state on the custom control.
+      </p>
+      <p>
+        In the checked states, we use <strong>base64 embedded SVG icons</strong>
+        from <a href="https://useiconic.com/open" target="_blank">Open Iconic</a>.
+        This provides us the best control for styling and positioning across
+        browsers and devices.
+      </p>
+
+      <h4 class="doc-subheader">Checkbox</h4>
+
+      <div class="example" data-accent="(custom-control) || (custom-checkbox)||(custom-control-input)||(custom-control-indicator)">
+<label class="custom-control custom-checkbox" for="custom-checkbox-3">
+  <input type="checkbox" id="custom-checkbox-3" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  1
+</label>
+<label class="custom-control custom-checkbox" for="custom-checkbox-4">
+  <input type="checkbox" id="custom-checkbox-4" class="custom-control-input" checked>
+  <span class="custom-control-indicator"></span>
+  2
+</label>
+      </div>
+
+      <p>
+        To make checkboxes without label text, add the <code>.custom-control-blank</code> class.
+      </p>
+
+      <div class="example" data-accent="(custom-control-blank)">
+<label class="custom-control custom-checkbox custom-control-blank" for="custom-checkbox-1">
+  <input type="checkbox" id="custom-checkbox-1" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+</label>
+<label class="custom-control custom-checkbox custom-control-blank" for="custom-checkbox-2">
+  <input type="checkbox" id="custom-checkbox-2" class="custom-control-input" checked>
+  <span class="custom-control-indicator"></span>
+</label>
+      </div>
+
+      <p>
+        To make checkboxes inline, add the <code>.checkbox-inline</code> class.
+      </p>
+
+      <div class="example" data-accent="(checkbox-inline)">
+<label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-5">
+  <input type="checkbox" id="custom-checkbox-5" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  1
+</label>
+<label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-6">
+  <input type="checkbox" id="custom-checkbox-6" class="custom-control-input" checked>
+  <span class="custom-control-indicator"></span>
+  2
+</label>
+<label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-7">
+  <input type="checkbox" id="custom-checkbox-7" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  3
+</label>
+    </div>
+
+
+      <h4 class="doc-subheader">Radio</h4>
+
+      <div class="example" data-accent="(custom-control) || (custom-radio)||(custom-control-input)||(custom-control-indicator)">
+<label class="custom-control custom-radio" for="custom-radio-3">
+  <input type="radio" id="custom-radio-3" name="custom-radios-2" class="custom-control-input" checked>
+  <span class="custom-control-indicator"></span>
+  1
+</label>
+<label class="custom-control custom-radio" for="custom-radio-4">
+  <input type="radio" id="custom-radio-4" name="custom-radios-2" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  2
+</label>
+      </div>
+
+      <p>
+        To make radios without label text, add the <code>.custom-control-blank</code> class.
+      </p>
+
+      <div class="example" data-accent="(custom-control-blank)">
+<label class="custom-control custom-radio custom-control-blank" for="custom-radio-1">
+  <input type="radio" id="custom-radio-1" name="custom-radios-1" class="custom-control-input" checked>
+  <span class="custom-control-indicator"></span>
+</label>
+<label class="custom-control custom-radio custom-control-blank" for="custom-radio-2">
+  <input type="radio" id="custom-radio-2" name="custom-radios-1" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+</label>
+      </div>
+
+      <p>
+        To make radios inline, add the <code>.radio-inline</code> class.
+      </p>
+
+      <div class="example" data-accent="(radio-inline)">
+<label class="custom-control custom-radio radio-inline" for="custom-radio-5">
+  <input type="radio" id="custom-radio-5" name="custom-radios-3" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  1
+</label>
+<label class="custom-control custom-radio radio-inline" for="custom-radio-6">
+  <input type="radio" id="custom-radio-6" name="custom-radios-3" class="custom-control-input" checked>
+  <span class="custom-control-indicator"></span>
+  2
+</label>
+<label class="custom-control custom-radio radio-inline" for="custom-radio-7">
+  <input type="radio" id="custom-radio-7" name="custom-radios-3" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  3
+</label>
+      </div>
+
+      <h4 class="doc-subheader">File</h4>
+
+      <div class="alert alert-info">
+        Custom file input requires "px-file.js" plugin.
+      </div>
+
+      <p>
+        To create a custom file input:
+      </p>
+
+      <ul>
+        <li>Add the <code>.custom-file-input</code> class to the <code>&lt;input&gt;</code>.</li>
+        <li>Wrap the <code>&lt;input&gt;</code> in a <code>&lt;label class="custom-file"&gt;</code>.</li>
+        <li>Append a <code>&lt;span class="custom-file-control"&gt;</code> to the <code>.custom-file</code>.</li>
+      </ul>
+
+      <div class="example" data-accent="''(custom-file)''||''(custom-file-input)''||(custom-file-control) ">
+<label id="file-custom-1" class="custom-file" for="file-custom-input-1">
+  <input type="file" id="file-custom-input-1" class="custom-file-input">
+  <span class="custom-file-control form-control">Choose file...</span>
+</label>
+
+<script>
+  $(function() {
+    $('#file-custom-1').pxFile();
+  });
+</script>
+      </div>
+
+      <p>
+        To create an alternative custom file input, add the <code>.px-file</code>
+        class and append control buttons to the <code>.custom-file</code>.
+      </p>
+
+      <div class="example" data-accent="(px-file-clear)||(px-file-browse)|| (px-file)||(px-file-buttons)">
+<label id="px-file-custom-1" class="custom-file px-file" for="px-file-custom-input-1">
+  <input type="file" id="px-file-custom-input-1" class="custom-file-input">
+  <span class="custom-file-control form-control">Choose file...</span>
+  <div class="px-file-buttons">
+    <button type="button" class="btn px-file-clear">Clear</button>
+    <button type="button" class="btn btn-primary px-file-browse">Browse</button>
+  </div>
+</label>
+
+<script>
+  $(function() {
+    $('#px-file-custom-1').pxFile();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Sizes</h4>
+
+      <div class="example sizes-example" data-accent="(input-sm)">
+<select class="custom-select form-control input-sm">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+
+<label id="file-custom-2" class="custom-file" for="file-custom-input-2">
+  <input type="file" id="file-custom-input-2" class="custom-file-input">
+  <span class="custom-file-control form-control input-sm">Choose file...</span>
+</label>
+
+<label id="px-file-custom-2" class="custom-file px-file " for="px-file-custom-input-2">
+  <input type="file" id="px-file-custom-input-2" class="custom-file-input">
+  <span class="custom-file-control form-control input-sm">Choose file...</span>
+  <div class="px-file-buttons">
+    <button type="button" class="btn px-file-clear">Clear</button>
+    <button type="button" class="btn btn-primary px-file-browse">Browse</button>
+  </div>
+</label>
+      </div>
+
+      <div class="example sizes-example" data-accent="(input-lg)">
+<select class="custom-select form-control input-lg">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+
+<label id="file-custom-3" class="custom-file" for="file-custom-input-3">
+  <input type="file" id="file-custom-input-3" class="custom-file-input">
+  <span class="custom-file-control form-control input-lg">Choose file...</span>
+</label>
+
+<label id="px-file-custom-4" class="custom-file px-file " for="px-file-custom-input-4">
+  <input type="file" id="px-file-custom-input-4" class="custom-file-input">
+  <span class="custom-file-control form-control input-lg">Choose file...</span>
+  <div class="px-file-buttons">
+    <button type="button" class="btn px-file-clear">Clear</button>
+    <button type="button" class="btn btn-primary px-file-browse">Browse</button>
+  </div>
+</label>
+      </div>
+
+      <h4 class="doc-subheader">Disabled</h4>
+
+      <div class="example disabled-example" data-accent="(disabled)">
+<select class="custom-select form-control" disabled>
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+      </div>
+
+      <div class="example disabled-example" data-accent="(disabled)">
+<label id="file-custom-5" class="custom-file" for="file-custom-input-5">
+  <input type="file" id="file-custom-input-5" class="custom-file-input" disabled>
+  <span class="custom-file-control form-control">Choose file...</span>
+</label>
+
+<label id="px-file-custom-6" class="custom-file px-file " for="px-file-custom-input-6">
+  <input type="file" id="px-file-custom-input-6" class="custom-file-input" disabled>
+  <span class="custom-file-control form-control">Choose file...</span>
+  <div class="px-file-buttons">
+    <button type="button" class="btn px-file-clear disabled">Clear</button>
+    <button type="button" class="btn btn-primary px-file-browse disabled">Browse</button>
+  </div>
+</label>
+      </div>
+
+      <div class="example" data-accent="(disabled)">
+<label class="custom-control custom-checkbox custom-control-blank disabled" for="custom-checkbox-8">
+  <input type="checkbox" id="custom-checkbox-8" class="custom-control-input" disabled>
+  <span class="custom-control-indicator"></span>
+</label>
+<label class="custom-control custom-checkbox custom-control-blank disabled" for="custom-checkbox-9">
+  <input type="checkbox" id="custom-checkbox-9" class="custom-control-input" checked disabled>
+  <span class="custom-control-indicator"></span>
+</label>
+
+<hr>
+
+<label class="custom-control custom-checkbox disabled" for="custom-checkbox-10">
+  <input type="checkbox" id="custom-checkbox-10" class="custom-control-input" disabled>
+  <span class="custom-control-indicator"></span>
+  1
+</label>
+<label class="custom-control custom-checkbox disabled" for="custom-checkbox-11">
+  <input type="checkbox" id="custom-checkbox-11" class="custom-control-input" checked disabled>
+  <span class="custom-control-indicator"></span>
+  2
+</label>
+
+<hr>
+
+<label class="custom-control custom-checkbox checkbox-inline disabled" for="custom-checkbox-12">
+  <input type="checkbox" id="custom-checkbox-12" class="custom-control-input" disabled>
+  <span class="custom-control-indicator"></span>
+  1
+</label>
+<label class="custom-control custom-checkbox checkbox-inline disabled" for="custom-checkbox-13">
+  <input type="checkbox" id="custom-checkbox-13" class="custom-control-input" checked disabled>
+  <span class="custom-control-indicator"></span>
+  2
+</label>
+<label class="custom-control custom-checkbox checkbox-inline disabled" for="custom-checkbox-14">
+  <input type="checkbox" id="custom-checkbox-14" class="custom-control-input" disabled>
+  <span class="custom-control-indicator"></span>
+  3
+</label>
+      </div>
+
+      <div class="example" data-accent="(disabled)">
+<fieldset disabled>
+  <label class="custom-control custom-radio custom-control-blank" for="custom-radio-8">
+    <input type="radio" id="custom-radio-8" name="custom-radios-4" class="custom-control-input" checked>
+    <span class="custom-control-indicator"></span>
+  </label>
+  <label class="custom-control custom-radio custom-control-blank" for="custom-radio-9">
+    <input type="radio" id="custom-radio-9" name="custom-radios-4" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+  </label>
+
+  <hr>
+
+  <label class="custom-control custom-radio" for="custom-radio-10">
+    <input type="radio" id="custom-radio-10" name="custom-radios-5" class="custom-control-input" checked>
+    <span class="custom-control-indicator"></span>
+    1
+  </label>
+  <label class="custom-control custom-radio" for="custom-radio-11">
+    <input type="radio" id="custom-radio-11" name="custom-radios-5" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    2
+  </label>
+
+  <hr>
+
+  <label class="custom-control custom-radio radio-inline" for="custom-radio-12">
+    <input type="radio" id="custom-radio-12" name="custom-radios-6" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    1
+  </label>
+  <label class="custom-control custom-radio radio-inline" for="custom-radio-13">
+    <input type="radio" id="custom-radio-13" name="custom-radios-6" class="custom-control-input" checked>
+    <span class="custom-control-indicator"></span>
+    2
+  </label>
+  <label class="custom-control custom-radio radio-inline" for="custom-radio-14">
+    <input type="radio" id="custom-radio-14" name="custom-radios-6" class="custom-control-input">
+    <span class="custom-control-indicator"></span>
+    3
+  </label>
+</fieldset>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+
+      <h4 class="doc-subheader">Initializing a custom file input</h4>
+      <div class="alert alert-info">PxFile plugin has no custom options.</div>
+      <p>PxFile plugin is initialized on pre-existing markup.</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$('.custom-file').pxFile();
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Custom file input usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/plugins/px-file'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Methods</h4>
+      <p>
+        You can call a public method of PxFile instance using the syntax:
+      </p>
+
+      <div class="example nocode" data-accent="(methodName)">
+        <pre><code data-lang="js">
+$('.custom-file').pxFile('methodName');
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Method name</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>browse</th>
+              <td>Open a file browser window.</td>
+            </tr>
+            <tr>
+              <th>clear</th>
+              <td>Reset an <code>input[type="file"]</code>'s value and a <code>.custom-file-control</code>'s value to default.</td>
+            </tr>
+            <tr>
+              <th>update</th>
+              <td>Update a <code>.custom-file-control</code>'s value.</td>
+            </tr>
+            <tr>
+              <th>destroy</th>
+              <td>Destroy the PxFile instance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader text-danger"><i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Form reset</h4>
+      <p>
+        By default, browser doesn't fire a <code>change</code> event on form reset, so you
+        need to handle the <code>reset</code> event and invoke the <code>PxFile.clear()</code> method manually.
+      </p>
+
+      <div class="example">
+<form id="form-reset-example">
+  <label id="file-custom-reset" class="custom-file" for="file-custom-input-reset">
+    <input id="file-custom-input-reset" class="custom-file-input" type="file">
+    <span class="custom-file-control form-control">Choose file...</span>
+  </label>
+  <br>
+  <input type="reset" class="btn">
+</form>
+
+<script>
+  $(function() {
+    // Initialize custom file input
+    $('#file-custom-reset').pxFile();
+
+    // Handle reset event
+    $('#form-reset-example').on('reset', function() {
+      $('#file-custom-reset').pxFile('clear');
+    });
+  });
+</script>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>px-file</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/pixeladmin/plugins/px-file.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-px-file.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['px-file']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>px-file</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'px-file',
+    files: [
+      'path/to/js/pixeladmin/plugins/px-file.js',
+      'path/to/js/pixeladmin/directives/angular-px-file.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>px-file</code> and <code>px-custom-file</code> directives</h4>
+
+      <div class="alert alert-warning">
+        <code>px-file</code> and <code>px-custom-file</code> directives require <strong>ngModel</strong> to be on the element.
+      </div>
+
+      <div class="alert alert-info">
+        <p><strong>ngModel</strong> property will contain <code>FileList</code> instance.</p>
+        <pre>document.querySelector('input[type="file"]').files;</pre>
+      </div>
+
+      <p>
+        You can use <code>px-file</code> and <code>px-custom-file</code> directives where you want.
+        And when the scope is destroyed the directives will be destroyed.
+      </p>
+
+      <div class="example" data-accent="<(px-file)||<(px-custom-file)">
+<div ng-app="ngPxFileApp">
+  <px-file ng-model="fileModel1"></px-file>
+
+  <br>
+
+  <px-custom-file ng-model="fileModel2"></px-custom-file>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/pixeladmin/plugins/px-file.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-px-file.js"></script>
+
+<script>
+  angular.module('ngPxFileApp', [ 'px-file' ]);
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Instance</h4>
+
+      <p>
+        You can define <code>instance</code> attribute to get a pointer to px-file element:
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-file instance="ctrl.$pxFile" ng-model="someModel1"&gt;&lt;/px-file&gt;
+&lt;px-custom-file instance="ctrl.$pxCustomFile" ng-model="someModel2"&gt;&lt;/px-custom-file&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  // Pointers
+  this.$pxFile = null;
+  this.$pxCustomFile = null;
+
+  // ...
+
+  // Then, after the initialization, you can call plugin methods:
+  this.$pxFile('browse');
+  this.$pxCustomFile('clear');
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Options</h4>
+
+      <p>
+        Options can be specified as attributes.
+      </p>
+
+      <div class="alert alert-info">
+        Options marked with <span style="color: red">*</span> are available only for <code>px-custom-file</code> directive.
+      </div>
+
+      <div class="alert alert-info">
+        Options marked with <i class="fa fa-eye"></i> have an angular $watch listener applied to it.
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Option</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>browse-text<span style="color: red">*</span></th>
+              <td>
+                <p>"Browse" button text.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>clear-text<span style="color: red">*</span></th>
+              <td>
+                <p>"Clear" button text.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>disable <i class="fa fa-eye text-muted"></i></th>
+              <td>
+                <p>Disable input.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>input-id<span style="color: red">*</span></th>
+              <td>
+                <p>Input id.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>placeholder</th>
+              <td>
+                <p>Input placeholder.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>size</th>
+              <td>
+                <p>Input size. Available values:</p>
+                <ul>
+                  <li><strong>sm</strong> - small input.</li>
+                  <li><strong>lg</strong> - large input</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-file ng-model="fileModel1"
+         placeholder="Select file"
+         size="lg"&gt;&lt;/px-file&gt;
+
+&lt;px-custom-file ng-model="fileModel2"
+                browse-text="Select"
+                input-id="custom-id"
+                disable="true"&gt;&lt;/px-file&gt;
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_form_custom-controls.html');
+  </script>
+</body>
+</html>

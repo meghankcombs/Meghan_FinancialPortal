@@ -1,63 +1,45 @@
 ﻿@using Meghan_FinancialPortal.Models
 @model LoginViewModel
-@{
-    ViewBag.Title = "Log in";
-}
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+<div class="page-header m-b-0 p-b-0 b-b-0">
+    <h1>Login</h1>
+    <ul class="nav nav-tabs page-block m-t-4" id="account-tabs">
+        <li class="active">
+            <a href="#account-profile" data-toggle="tab">
+                Login
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="tab-content p-y-4">
+    <!-- Login tab -->
+    <div class="tab-pane fade in active" id="account-profile">
+        <div class="row">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "col-md-8 col-lg-9", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
+                <div class="p-x-1">
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-email">Email</label>
+                        <input type="email" class="form-control" name="Email" id="account-email">
+                    </fieldset>
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-location">Password</label>
+                        <input type="password" class="form-control" name="Password" id="account-location">
+                    </fieldset>
+                    <button type="submit" class="btn btn-lg btn-primary m-t-3">Login</button>
+                    <a href="@Url.Action("ForgotPassword", "Account")" class="btn btn-lg btn-info m-t-3" id="forgotPassBtn">Forgot Password?</a>
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
             }
-        </section>
+            <div class="p-x-1">
+                <fieldset class="form-group form-group-lg">
+                    <label for="account-social-facebook">Third party logins</label>
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </fieldset>
+            </div>
+            <!-- Spacer -->
+            <div class="m-t-4 visible-xs visible-sm"></div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
+    <!-- / Login tab -->
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

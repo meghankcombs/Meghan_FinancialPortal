@@ -1,0 +1,527 @@
+<!-- Custom styling -->
+<style>
+  .spacing-example > div,
+  .borders-example > div,
+  .blocks-example {
+    margin-top: 20px;
+  }
+
+  .floating-example {
+    margin: 10px;
+  }
+
+  .floating-example > span {
+    border: 1px solid #ddd;
+  }
+
+  .spacing-example > div > div,
+  .blocks-example {
+    background: #ddd;
+    background: repeating-linear-gradient(
+      45deg,
+      #e0e0e0,
+      #e0e0e0 10px,
+      #ddd 10px,
+      #ddd 20px
+    );
+  }
+
+  .spacing-example > div > div > div {
+    background: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .spacing-example .m-x-auto {
+    width: 150px;
+  }
+
+  .borders-example > div > div {
+    background: #f1f1f1;
+    border-color: #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .blocks-example {
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .blocks-example > div {
+    background: #fff;
+  }
+
+  .text-examples .panel-body > p:last-child {
+    margin-bottom: 0;
+  }
+
+  .colors-example > a {
+    display: block;
+    padding: 5px;
+  }
+
+  .colors-example > a + a {
+    margin-top: 10px;
+  }
+
+  .bg-example > div a {
+    padding: 12px;
+    display: block;
+  }
+
+  .bg-example > div + div {
+    margin-top: 10px;
+  }
+
+  .border-colors-example > div {
+    padding: 12px;
+  }
+
+  .border-colors-example > div + div {
+    margin-top: 10px;
+  }
+
+  .valign-example > div {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 0 10px;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .valign-example > div > span,
+  .valign-example > div > code {
+    line-height: 1 !important;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <h1><i class="page-header-icon ion-cube"></i>Utility classes&nbsp;&nbsp;<span class="text-muted">[ <a href="../../docs/elements_utilities.html">Go to docs</a> ]</span></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <div class="panel">
+      <div class="panel-title">Spacing</div>
+      <hr>
+      <div class="panel-body">
+        Assign <code>margin</code> or <code>padding</code> to an element or a subset of its sides with
+        shorthand classes. Includes support for individual properties, all
+        properties, and vertical and horizontal properties.
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p>
+          The <code>.m-{side}-{size}</code> class set on the inner element:
+        </p>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-t-1"><code>.m-t-1</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-b-2"><code>.m-b-2</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-l-3"><code>.m-l-3</code></div></div>
+          </div>
+        </div>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-r-4"><code>.m-r-4</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-x-1"><code>.m-x-1</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-y-2"><code>.m-y-2</code></div></div>
+          </div>
+        </div>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-sm-4">
+            <div class="clearfix"><div class="m-a-3"><code>.m-a-3</code></div></div>
+          </div>
+          <div class="col-sm-8">
+            <div class="clearfix"><div class="m-x-auto"><code>.m-x-auto</code></div></div>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p>
+          The <code>.p-{side}-{size}</code> class set on the outer element:
+        </p>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-sm-4">
+            <div class="clearfix p-t-1"><div><code>.p-t-1</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix p-b-2"><div><code>.p-b-2</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix p-l-3"><div><code>.p-l-3</code></div></div>
+          </div>
+        </div>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-sm-4">
+            <div class="clearfix p-r-4"><div><code>.p-r-4</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix p-x-1"><div><code>.p-x-1</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix p-y-2"><div><code>.p-y-2</code></div></div>
+          </div>
+        </div>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-sm-4">
+            <div class="clearfix p-a-3"><div><code>.p-a-3</code></div></div>
+          </div>
+        </div>
+
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p>
+          Use the <code>.m-x-auto</code> class for horizontally centering fixed-width block level content:
+        </p>
+
+        <div class="row clearfix spacing-example">
+          <div class="col-xs-12">
+            <div><div class="m-x-auto" style="width: 200px;"><code>.m-x-auto</code></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Borders</div>
+      <hr>
+      <div class="panel-body">
+        Set borders to an element or a subset of its sides with shorthand classes.
+      </div>
+      <hr>
+      <div class="panel-body p-t-0">
+
+        <div class="row clearfix borders-example">
+          <div class="col-sm-4">
+            <div class="clearfix b-t-1"><div><code>.b-t-1</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix b-b-2"><div><code>.b-b-2</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix b-l-3"><div><code>.b-l-3</code></div></div>
+          </div>
+        </div>
+
+        <div class="row clearfix borders-example">
+          <div class="col-sm-4">
+            <div class="clearfix b-r-1"><div><code>.b-r-1</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix b-x-2"><div><code>.b-x-2</code></div></div>
+          </div>
+          <div class="col-sm-4">
+            <div class="clearfix b-y-3"><div><code>.b-y-3</code></div></div>
+          </div>
+        </div>
+
+        <div class="row clearfix borders-example">
+          <div class="col-sm-4">
+            <div class="clearfix b-a-1"><div><code>.b-a-1</code></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel p-b-3">
+      <div class="panel-title">Blocks</div>
+      <hr>
+
+      <div class="blocks-example">
+        <div class="page-block"><code>.page-block</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="page-wide-block"><code>.page-wide-block</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="panel-block"><code>.panel-block</code></div>
+      </div>
+
+      <div class="blocks-example panel-body">
+        <div class="panel-block"><code>.panel-block</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="panel-wide-block"><code>.panel-wide-block</code></div>
+      </div>
+
+      <hr class="m-t-3">
+
+      <div class="blocks-example">
+        <div class="width-xs-auto" style="width: 150px;"><code>.width-xs-auto</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="width-sm-auto" style="width: 150px;"><code>.width-sm-auto</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="width-md-auto" style="width: 150px;"><code>.width-md-auto</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="width-lg-auto" style="width: 150px;"><code>.width-lg-auto</code></div>
+      </div>
+
+      <div class="blocks-example">
+        <div class="width-xl-auto" style="width: 150px;"><code>.width-xl-auto</code></div>
+      </div>
+
+      <hr class="m-t-3">
+
+      <div class="panel-body p-b-0">
+        <span class="display-block p-a-1 m-b-1 bg-white darker"><code>.display-block</code></span>
+        <div class="display-inline-block p-a-1 bg-white darker"><code>.display-inline-block</code></div>
+      </div>
+
+      <hr class="m-t-3">
+
+      <div class="panel-body p-b-0">
+        <p>Quickly change the element position.</p>
+        <div class="position-static p-a-1 m-b-1 bg-white darker"><code>.position-static</code></div>
+        <div class="position-relative p-a-1 m-b-1 bg-white darker"><code>.position-relative</code></div>
+        <div class="position-absolute p-a-1 bg-white darker"><code>.position-absolute</code></div>
+      </div>
+
+      <hr class="m-t-3">
+
+      <div class="panel-body p-b-0">
+        <p><img src="assets/demo/avatars/2.jpg" class="image-inline"> Text with an inline image.</p>
+        <h3><img src="assets/demo/avatars/3.jpg" class="image-inline"> Header with an inline image.</h3>
+      </div>
+
+    </div>
+
+    <div class="panel p-b-3">
+      <div class="panel-title">Floating</div>
+      <hr>
+
+      <div class="panel-body">
+        These utility classes float an element to the left or right, or disable
+        floating, based on the current viewport size using the CSS <code>float</code>
+        property. These use the same viewport width breakpoints as the grid system.
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <div class="pull-xs-left floating-example"><span><code>.pull-xs-left</code> - Float left on all viewport sizes</span></div>
+        <div class="pull-xs-right floating-example"><span><code>.pull-xs-right</code> - Float right on all viewport sizes</span></div>
+        <div class="pull-xs-none floating-example"><span><code>.pull-xs-none</code> - Don't float on all viewport sizes</span></div>
+
+        <div class="pull-sm-left floating-example"><span><code>.pull-sm-left</code> - Float left on viewports sized SM (small) or wider</span></div>
+        <div class="pull-md-left floating-example"><span><code>.pull-md-left</code> - Float left on viewports sized MD (medium) or wider</span></div>
+        <div class="pull-lg-left floating-example"><span><code>.pull-lg-left</code> - Float left on viewports sized LG (large) or wider</span></div>
+        <div class="pull-xl-left floating-example"><span><code>.pull-xl-left</code> - Float left on viewports sized XL (extra-large) or wider</span></div>
+      </div>
+    </div>
+
+    <div class="panel p-b-3">
+      <div class="panel-title">Vertical alignment</div>
+      <hr>
+
+      <div class="panel-body">
+        Easily set vertical alignment of the element.
+      </div>
+      <hr>
+
+      <div class="panel-body valign-example">
+        <div><span class="valign-top"><code class="valign-top">.valign-top</code> - Top-aligned</span></div>
+        <div><span class="valign-middle"><code class="valign-middle">.valign-middle</code> - Middle-aligned</span></div>
+        <div><span class="valign-bottom"><code class="valign-bottom">.valign-bottom</code> - Bottom-aligned</span></div>
+      </div>
+    </div>
+
+    <div class="panel text-examples">
+      <div class="panel-title">Text</div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="text-justify"><code>.text-justify</code> - Justified text.</p>
+        <p class="text-nowrap"><code>.text-nowrap</code> - No wrap text.</p>
+        <p class="text-truncate">
+          <code>.text-truncate</code> - Truncated text. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+          consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+          dolore magna aliqua.
+        </p>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="text-xs-left"><code>.text-xs-left</code> - Left aligned text on all viewport sizes.</p>
+        <p class="text-xs-center"><code>.text-xs-center</code> - Center aligned text on all viewport sizes.</p>
+        <p class="text-xs-right"><code>.text-xs-right</code> - Right aligned text on all viewport sizes.</p>
+
+        <p class="text-sm-right"><code>.text-sm-right</code> - Right aligned text on viewports sized SM (small) or wider.</p>
+        <p class="text-md-right"><code>.text-md-right</code> - Right aligned text on viewports sized MD (medium) or wider.</p>
+        <p class="text-lg-right"><code>.text-lg-right</code> - Right aligned text on viewports sized LG (large) or wider.</p>
+        <p class="text-xl-right"><code>.text-xl-right</code> - Right aligned text on viewports sized XL (extra-large) or wider.</p>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="text-lowercase"><code>.text-lowercase</code> - Lowercased text.</p>
+        <p class="text-uppercase"><code>.text-uppercase</code> - Uppercased text.</p>
+        <p class="text-capitalize"><code>.text-capitalize</code> - CapiTaliZed text.</p>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="font-weight-normal"><code>.font-weight-normal</code> - Normal weight text.</p>
+        <p class="font-weight-light"><code>.font-weight-light</code> - Light text.</p>
+        <p class="font-weight-semibold"><code>.font-weight-semibold</code> - Semibold text.</p>
+        <p class="font-weight-bold"><code>.font-weight-bold</code> - Bold text.</p>
+        <p class="font-italic"><code>.font-italic</code> - Italicized text.</p>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="line-height-1"><code>.line-height-1</code> - Reset line height to 1.</p>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="text-underlined"><code>.text-underlined</code> - Underlined text.</p>
+      </div>
+      <hr>
+
+      <div class="panel-body">
+        <p class="font-size-11"><code>.font-size-11</code> - Font size is 11px</p>
+        <p class="font-size-12"><code>.font-size-12</code> - Font size is 12px</p>
+        <p class="font-size-13"><code>.font-size-13</code> - Font size is 13px</p>
+        <p class="font-size-14"><code>.font-size-14</code> - Font size is 14px</p>
+        <p class="font-size-15"><code>.font-size-15</code> - Font size is 15px</p>
+        <p class="font-size-16"><code>.font-size-16</code> - Font size is 16px</p>
+        <p class="font-size-17"><code>.font-size-17</code> - Font size is 17px</p>
+        <p class="font-size-18"><code>.font-size-18</code> - Font size is 18px</p>
+        <p class="font-size-20"><code>.font-size-20</code> - Font size is 20px</p>
+        <p class="font-size-24"><code>.font-size-24</code> - Font size is 24px</p>
+        <p class="font-size-28"><code>.font-size-28</code> - Font size is 28px</p>
+        <p class="font-size-34"><code>.font-size-34</code> - Font size is 34px</p>
+        <p class="font-size-40"><code>.font-size-40</code> - Font size is 40px</p>
+        <p class="font-size-46"><code>.font-size-46</code> - Font size is 46px</p>
+        <p class="font-size-52"><code>.font-size-52</code> - Font size is 52px</p>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Border radius</div>
+      <hr>
+
+      <div class="panel-body">
+        Quickly change the <code>border-radius</code> of the element.
+      </div>
+      <hr>
+
+      <div class="panel-body border-radius-example">
+        <div class="border-rounded bg-default pull-xs-left p-a-3"><code>.border-rounded</code></div>
+        <div class="border-round bg-default pull-xs-left p-a-3 m-l-3"><code>.border-round</code></div>
+        <div class="border-radius-0 bg-default pull-xs-left p-a-3 m-l-3"><code>.border-radius-0</code></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Colors</div>
+      <hr>
+
+      <div class="panel-body colors-example">
+        <a href="#" class="text-white" style="background: #666;"><code>.text-white</code> - White text</a>
+        <a href="#" class="text-default"><code>.text-default</code> - Default text</a>
+        <a href="#" class="text-muted"><code>.text-muted</code> - Muted text</a>
+        <a href="#" class="text-light"><code>.text-light</code> - Light text</a>
+        <a href="#" class="text-primary"><code>.text-primary</code> - Primary text</a>
+        <a href="#" class="text-success"><code>.text-success</code> - Success text</a>
+        <a href="#" class="text-danger"><code>.text-danger</code> - Danger text</a>
+        <a href="#" class="text-warning"><code>.text-warning</code> - Warning text</a>
+        <a href="#" class="text-info"><code>.text-info</code> - Info text</a>
+      </div>
+      <hr>
+
+      <div class="panel-body bg-example">
+        <div>
+          <a href="#" class="bg-transparent"><code>.bg-transparent</code> - Transparent background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-white"><code>.bg-white</code> - White background</a>
+          <a href="#" class="bg-white darken"><code>.bg-white.darken</code> - White darken background</a>
+          <a href="#" class="bg-white darker"><code>.bg-white.darker</code> - White darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-black"><code>.bg-black</code> - Black background</a>
+          <a href="#" class="bg-black darken"><code>.bg-black.darken</code> - Black darken background</a>
+          <a href="#" class="bg-black darker"><code>.bg-black.darker</code> - Black darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-default"><code>.bg-default</code> - Default background</a>
+          <a href="#" class="bg-default darken"><code>.bg-default.darken</code> - Default darken background</a>
+          <a href="#" class="bg-default darker"><code>.bg-default.darker</code> - Default darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-primary"><code>.bg-primary</code> - Primary background</a>
+          <a href="#" class="bg-primary darken"><code>.bg-primary.darken</code> - Primary darken background</a>
+          <a href="#" class="bg-primary darker"><code>.bg-primary.darker</code> - Primary darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-success"><code>.bg-success</code> - Success background</a>
+          <a href="#" class="bg-success darken"><code>.bg-success.darken</code> - Success darken background</a>
+          <a href="#" class="bg-success darker"><code>.bg-success.darker</code> - Success darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-danger"><code>.bg-danger</code> - Danger background</a>
+          <a href="#" class="bg-danger darken"><code>.bg-danger.darken</code> - Danger darken background</a>
+          <a href="#" class="bg-danger darker"><code>.bg-danger.darker</code> - Danger darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-warning"><code>.bg-warning</code> - Warning background</a>
+          <a href="#" class="bg-warning darken"><code>.bg-warning.darken</code> - Warning darken background</a>
+          <a href="#" class="bg-warning darker"><code>.bg-warning.darker</code> - Warning darker background</a>
+        </div>
+        <div>
+          <a href="#" class="bg-info"><code>.bg-info</code> - Info background</a>
+          <a href="#" class="bg-info darken"><code>.bg-info.darken</code> - Info darken background</a>
+          <a href="#" class="bg-info darker"><code>.bg-info.darker</code> - Info darker background</a>
+        </div>
+      </div>
+      <hr>
+
+      <div class="panel-body border-colors-example">
+        <div class="b-a-2 border-default"><code>.border-default</code> - Default border color</div>
+        <div class="b-a-2 border-panel"><code>.border-panel</code> - Panel border color</div>
+        <div class="b-a-2 border-primary"><code>.border-primary</code> - Primary border color</div>
+        <div class="b-a-2 border-success"><code>.border-success</code> - Success border color</div>
+        <div class="b-a-2 border-danger"><code>.border-danger</code> - Danger border color</div>
+        <div class="b-a-2 border-warning"><code>.border-warning</code> - Warning border color</div>
+        <div class="b-a-2 border-info"><code>.border-info</code> - Info border color</div>
+      </div>
+    </div>
+
+  </div>
+</div>

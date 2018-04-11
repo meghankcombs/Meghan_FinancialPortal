@@ -1,0 +1,78 @@
+<div ng-controller="ChartsChartjsCtrl as ctrl">
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-stats-bars"></i>Charts / </span>Chart.js</h1>
+    <a href="http://www.chartjs.org" target="_blank" class="page-header-text text-muted font-weight-light pull-md-right col-xs-12 width-md-auto width-lg-auto width-xl-auto p-x-0">http://www.chartjs.org</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Graph</div>
+        <hr>
+
+        <div class="panel-body">
+          <canvas chart-line chart-data="ctrl.graphData" chart-series="ctrl.graphSeries" chart-labels="ctrl.graphLabels" chart-options="ctrl.graphOptions" chart-dataset-override="ctrl.graphDatasetOverride" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Bars</div>
+        <hr>
+
+        <div class="panel-body">
+          <canvas chart-bar chart-data="ctrl.barsData" chart-series="ctrl.barsSeries" chart-labels="ctrl.barsLabels" chart-options="ctrl.barsOptions" chart-dataset-override="ctrl.barsDatasetOverride" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Radar</div>
+        <hr>
+
+        <div class="panel-body">
+          <canvas chart-radar chart-data="ctrl.radarData" chart-series="ctrl.radarSeries" chart-labels="ctrl.radarLabels" chart-options="ctrl.radarOptions" chart-dataset-override="ctrl.radarDatasetOverride" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Polar Area</div>
+        <hr>
+
+        <div class="panel-body">
+          <canvas chart-polar-area chart-data="ctrl.areaData" chart-series="ctrl.areaSeries" chart-labels="ctrl.areaLabels" chart-options="ctrl.areaOptions" chart-dataset-override="ctrl.areaDatasetOverride" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Pie</div>
+        <hr>
+
+        <div class="panel-body">
+          <canvas chart-pie chart-data="ctrl.pieData" chart-series="ctrl.pieSeries" chart-labels="ctrl.pieLabels" chart-options="ctrl.pieOptions" chart-dataset-override="ctrl.pieDatasetOverride" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Doughnut</div>
+        <hr>
+
+        <div class="panel-body">
+          <canvas chart-doughnut chart-data="ctrl.doughnutData" chart-series="ctrl.doughnutSeries" chart-labels="ctrl.doughnutLabels" chart-options="ctrl.doughnutOptions" chart-dataset-override="ctrl.doughnutDatasetOverride" width="400" height="250"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

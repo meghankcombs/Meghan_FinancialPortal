@@ -1,0 +1,614 @@
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Components</h1>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Input groups</span>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" placeholder="Username">
+        </div>
+        <br>
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Recipient's username">
+          <span class="input-group-addon">@example.com</span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="basic-url">Your vanity URL</label>
+        <div class="input-group">
+          <span class="input-group-addon">https://example.com/users/</span>
+          <input type="text" class="form-control" id="basic-url">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+          <input type="text" class="form-control" placeholder="Amount">
+          <span class="input-group-addon">.00</span>
+        </div>
+      </div>
+    </div>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">CHECKBOX & RADIO</h6>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="checkbox">
+          </span>
+          <input type="text" class="form-control">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <label class="custom-control custom-checkbox custom-control-blank" for="group-checkbox-1">
+              <input type="checkbox" id="group-checkbox-1" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+            </label>
+          </span>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <input type="radio">
+          </span>
+          <input type="text" class="form-control">
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-addon">
+            <label class="custom-control custom-radio custom-control-blank" for="group-radio-1">
+              <input type="radio" id="group-radio-1" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+            </label>
+          </span>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">BUTTONS</h6>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <span class="input-group-btn">
+            <button type="button" class="btn">Go!</button>
+          </span>
+          <input type="text" class="form-control" placeholder="Search for...">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <input type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button type="button" class="btn">Go!</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <div uib-dropdown class="input-group-btn">
+            <button uib-dropdown-toggle type="button" class="btn">
+              Action
+            </button>
+            <ul uib-dropdown-menu>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <input type="text" class="form-control">
+          <div uib-dropdown class="input-group-btn">
+            <button uib-dropdown-toggle type="button" class="btn">
+              Action
+            </button>
+            <ul uib-dropdown-menu class="dropdown-menu-right">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <div class="input-group-btn" uib-dropdown>
+            <button type="button" class="btn">Action</button>
+            <button uib-dropdown-toggle type="button" class="btn"></button>
+            <ul uib-dropdown-menu>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <input type="text" class="form-control">
+          <div class="input-group-btn" uib-dropdown>
+            <button type="button" class="btn">Action</button>
+            <button uib-dropdown-toggle type="button" class="btn"></button>
+            <ul uib-dropdown-menu class="dropdown-menu-right">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <div class="input-group-btn">
+            <button type="button" class="btn"><i class="fa fa-bold"></i></button>
+            <button type="button" class="btn"><i class="fa fa-italic"></i></button>
+          </div>
+          <input type="text" class="form-control">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="input-group m-b-2">
+          <input type="text" class="form-control">
+          <div class="input-group-btn">
+            <button type="button" class="btn"><i class="fa fa-question"></i></button>
+            <button type="button" class="btn">Action</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZES</h6>
+
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Username">
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Username">
+    </div>
+    <br>
+    <div class="input-group input-group-sm">
+      <span class="input-group-addon">@</span>
+      <input type="text" class="form-control" placeholder="Username">
+    </div>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">STATES</h6>
+
+    <div class="form-group has-success">
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control" placeholder="Amount">
+        <span class="input-group-addon">.00</span>
+      </div>
+    </div>
+    <div class="form-group has-error">
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control" placeholder="Amount">
+        <span class="input-group-addon">.00</span>
+      </div>
+    </div>
+    <div class="form-group has-warning">
+      <div class="input-group">
+        <span class="input-group-addon">$</span>
+        <input type="text" class="form-control" placeholder="Amount">
+        <span class="input-group-addon">.00</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Required field</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group">
+          <label class="control-label required" for="required-input">Required field</label>
+          <input type="text" class="form-control" id="required-input">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Help text</div>
+      </div>
+      <div class="panel-body">
+        <p class="text-muted">
+          A block of help text that breaks onto a new line and may extend beyond one line.
+        </p>
+        <small class="text-muted">
+          Some inline text with a small tag looks like this.
+        </small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Loading</div>
+      </div>
+      <form class="panel-body form-horizontal form-loading">
+        <div class="form-group">
+          <label for="loading-input-8" class="col-md-3 control-label">Username</label>
+          <div class="col-md-9">
+            <input class="form-control" id="loading-input-8" placeholder="Username" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loading-input-9" class="col-md-3 control-label">Password</label>
+          <div class="col-md-9">
+            <input class="form-control" id="loading-input-9" placeholder="Password" type="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-3 col-md-9">
+            <button type="submit" class="btn">Sign In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Inverted loading</div>
+      </div>
+      <form class="panel-body form-horizontal form-loading form-loading-inverted">
+        <div class="form-group">
+          <label for="loading-input-8" class="col-md-3 control-label">Username</label>
+          <div class="col-md-9">
+            <input class="form-control" id="loading-input-8" placeholder="Username" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="loading-input-9" class="col-md-3 control-label">Password</label>
+          <div class="col-md-9">
+            <input class="form-control" id="loading-input-9" placeholder="Password" type="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-offset-3 col-md-9">
+            <button type="submit" class="btn">Sign In</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Feedback icon</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-feedback">
+          <label class="control-label" for="feedback-input">Input with feedback</label>
+          <input class="form-control" type="text" id="feedback-input">
+          <i class="fa fa-comments form-control-feedback"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">State icons</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-success">
+          <input type="text" class="form-control form-control-success" placeholder="Text input with success icon">
+        </div>
+        <div class="form-group has-warning">
+          <input type="text" class="form-control form-control-warning" placeholder="Text input with warning icon">
+        </div>
+        <div class="form-group has-error">
+          <input type="text" class="form-control form-control-error" placeholder="Text input with error icon">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-wide-block">
+
+<h4 class="m-y-4">States</h4>
+
+<div class="row">
+  <div class="col-xl-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Success</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-success">
+          <label class="control-label" for="success-input-1">Input with success</label>
+          <input type="text" class="form-control" id="success-input-1">
+        </div>
+        <div class="form-group has-success">
+          <label class="control-label" for="success-input-2">Select with success</label>
+          <select class="form-control" id="success-input-2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group has-success">
+          <label class="control-label" for="success-input-3">Custom select with success</label>
+          <select class="custom-select form-control" id="success-input-3">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group has-success">
+          <label class="control-label">Custom file input with success</label>
+          <px-custom-file ng-model="pxFile1" />
+        </div>
+        <div class="checkbox has-success">
+          <label>
+            <input type="checkbox">
+            Checkbox with success
+          </label>
+        </div>
+        <div class="radio has-success">
+          <label>
+            <input type="radio">
+            Radio with success
+          </label>
+        </div>
+        <label class="custom-control custom-checkbox has-success" for="success-input-5">
+          <input type="checkbox" id="success-input-5" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Custom checkbox with success
+        </label>
+        <label class="custom-control custom-radio has-success" for="success-input-6">
+          <input type="radio" id="success-input-6" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Custom radio with success
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Warning</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-warning">
+          <label class="control-label" for="warning-input-1">Input with warning</label>
+          <input type="text" class="form-control" id="warning-input-1">
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="warning-input-2">Select with warning</label>
+          <select class="form-control" id="warning-input-2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="warning-input-3">Custom select with warning</label>
+          <select class="custom-select form-control" id="warning-input-3">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label">Custom file input with warning</label>
+          <px-custom-file ng-model="pxFile2" />
+        </div>
+        <div class="checkbox has-warning">
+          <label>
+            <input type="checkbox">
+            Checkbox with warning
+          </label>
+        </div>
+        <div class="radio has-warning">
+          <label>
+            <input type="radio">
+            Radio with warning
+          </label>
+        </div>
+        <label class="custom-control custom-checkbox has-warning" for="warning-input-5">
+          <input type="checkbox" id="warning-input-5" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Custom checkbox with warning
+        </label>
+        <label class="custom-control custom-radio has-warning" for="warning-input-6">
+          <input type="radio" id="warning-input-6" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Custom radio with warning
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Error</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-error">
+          <label class="control-label" for="error-input-1">Input with error</label>
+          <input type="text" class="form-control" id="error-input-1">
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label" for="error-input-2">Select with error</label>
+          <select class="form-control" id="error-input-2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label" for="error-input-3">Custom select with error</label>
+          <select class="custom-select form-control" id="error-input-3">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label">Custom file input with error</label>
+          <px-custom-file ng-model="pxFile3" />
+        </div>
+        <div class="checkbox has-error">
+          <label>
+            <input type="checkbox">
+            Checkbox with error
+          </label>
+        </div>
+        <div class="radio has-error">
+          <label>
+            <input type="radio">
+            Radio with error
+          </label>
+        </div>
+        <label class="custom-control custom-checkbox has-error" for="error-input-5">
+          <input type="checkbox" id="error-input-5" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Custom checkbox with error
+        </label>
+        <label class="custom-control custom-radio has-error" for="error-input-6">
+          <input type="radio" id="error-input-6" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Custom radio with error
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-wide-block">
+
+<h4 class="m-y-4">Messages</h4>
+
+<div class="row">
+  <div class="col-xl-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Default</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-success">
+          <label class="control-label" for="message-input-1">Input with success</label>
+          <input type="text" class="form-control" id="message-input-1">
+          <small class="form-message">Some success message.</small>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="message-input-2">Input with warning</label>
+          <input type="text" class="form-control" id="message-input-2">
+          <small class="form-message">Some warning message.</small>
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label" for="message-input-3">Input with error</label>
+          <input type="text" class="form-control" id="message-input-3">
+          <small class="form-message">Some error message.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Light</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-success">
+          <label class="control-label" for="message-light-input-1">Input with success</label>
+          <input type="text" class="form-control" id="message-light-input-1">
+          <small class="form-message light">Some success message.</small>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="message-light-input-2">Input with warning</label>
+          <input type="text" class="form-control" id="message-light-input-2">
+          <small class="form-message light">Some warning message.</small>
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label" for="message-light-input-3">Input with error</label>
+          <input type="text" class="form-control" id="message-light-input-3">
+          <small class="form-message light">Some error message.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Dark</div>
+      </div>
+      <div class="panel-body">
+        <div class="form-group has-success">
+          <label class="control-label" for="message-dark-input-1">Input with success</label>
+          <input type="text" class="form-control" id="message-dark-input-1">
+          <small class="form-message dark">Some success message.</small>
+        </div>
+        <div class="form-group has-warning">
+          <label class="control-label" for="message-dark-input-2">Input with warning</label>
+          <input type="text" class="form-control" id="message-dark-input-2">
+          <small class="form-message dark">Some warning message.</small>
+        </div>
+        <div class="form-group has-error">
+          <label class="control-label" for="message-dark-input-3">Input with error</label>
+          <input type="text" class="form-control" id="message-dark-input-3">
+          <small class="form-message dark">Some error message.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

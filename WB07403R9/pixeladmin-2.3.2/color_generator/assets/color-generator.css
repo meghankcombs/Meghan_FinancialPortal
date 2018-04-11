@@ -1,0 +1,180 @@
+.px-content { padding-left: 255px !important; padding-right: 20px !important; margin: 0 !important; }
+#px-color_generator-footer.px-footer { left: 235px !important; }
+#px-demo-togglers, .px-nav-toggle { display: none !important; }
+*[data-toggle="px-nav"] {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+}
+
+#cg-color,
+#cg-text-color {
+  text-align: center;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#cg-cur-color {
+  position: absolute;
+  height: 23px;
+  width: 23px;
+  top: 4px;
+  left: 4px;
+}
+
+.colors-list {
+  margin-left: -6px;
+  margin-bottom: -6px;
+}
+
+.colors-list > div,
+#colors-list-add {
+  height: 22px;
+  float: left;
+  display: block;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-radius: 0;
+  font-size: 11px;
+  margin-left: 6px;
+}
+
+.colors-list > div {
+  width: 22px;
+  line-height: 22px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  position: relative;
+}
+
+#colors-list-add {
+  line-height: 20px;
+  margin-top: 8px;
+  margin-left: 0;
+}
+
+#cg-selected-colors-edit {
+  font-size: 10px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-weight: 600;
+  padding: 1px 5px !important;
+}
+
+.colors-list.edit-mode > div:after {
+  display: block;
+  content: "×";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.modal-backdrop.in {
+  opacity: .8 !important;
+}
+
+.cg-example-modal pre {
+  background: #fff;
+  overflow: hidden;
+  font-size: 13px !important;
+  padding: 0;
+  direction: ltr !important;
+}
+
+.cg-example-modal:after {
+  display: block;
+  content: "×";
+  position: absolute;
+  top: -10px;
+  right: 1%;
+  text-align: center;
+  color: #fff;
+  font-size: 54px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cg-example-modal pre code {
+  white-space: pre;
+  padding: 20px;
+}
+
+.cg-example-modal .modal-content,
+.cg-example-modal .modal-body,
+.cg-example-modal pre,
+.cg-example-modal pre code {
+  border-radius: 0;
+  box-shadow: none;
+  position: absolute;
+  margin: 0;
+  border: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.cg-example-modal .modal-dialog {
+  width: auto;
+  margin: 0;
+  position: fixed;
+  left: 10%;
+  right: 10%;
+  top: 40px;
+  bottom: 40px;
+}
+
+.doc-accent {
+  padding: 1px 4px !important;
+
+  color: #9E6C00 !important;
+  border-radius: 3px !important;
+  background: rgba(218, 189, 40, 0.15) !important;
+}
+
+/* Examples */
+
+.bg-cg-generated,
+.border-cg-generated {
+  padding: 10px;
+  text-align: center;
+}
+
+.border-cg-generated {
+  border-style: solid;
+  border-width: 4px;
+}
+
+.label-cg-generated {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 7px;
+}
+
+.btn-cg-generated,
+.cg-example-tooltips .btn {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 7px;
+}
+
+.dropdown-menu-cg-generated {
+  display: block;
+  position: relative;
+}
+
+.nav-cg-generated {
+  margin-bottom: 20px;
+}
+
+.px-style-dark .btn:not(.btn-outline) {
+  border-color: transparent;
+}

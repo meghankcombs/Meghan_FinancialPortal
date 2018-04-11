@@ -1,0 +1,2257 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>Advanced - Forms - PixelAdmin: Responsive Bootstrap Template</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+    _pxDemo_loadStylesheet('assets/css/widgets.min.css', 'px-demo-stylesheet-widgets');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <!-- Pace.js -->
+  <script src="assets/pace/pace.min.js"></script>
+
+  <script src="assets/demo/demo.js"></script>
+</head>
+<body>
+  <nav class="px-nav px-nav-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <img src="assets/demo/avatars/1.jpg" alt="" class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
+        <div class="font-size-16"><span class="font-weight-light">Welcome, </span><strong>John</strong></div>
+        <div class="btn-group" style="margin-top: 4px;">
+          <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-envelope"></i></a>
+          <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-user"></i></a>
+          <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-cog"></i></a>
+          <a href="#" class="btn btn-xs btn-danger btn-outline"><i class="fa fa-power-off"></i></a>
+        </div>
+      </li>
+
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-ios-pulse-strong"></i><span class="px-nav-label">Dashboards<span class="label label-danger">5</span></span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="index.html"><span class="px-nav-label">Default</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-analytics.html"><span class="px-nav-label">Analytics</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-videos.html"><span class="px-nav-label">Videos</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-financial.html"><span class="px-nav-label">Financial</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-blog.html"><span class="px-nav-label">Blog</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item">
+        <a href="boxes.html"><i class="px-nav-icon ion-ios-analytics"></i><span class="px-nav-label">Boxes</span></a>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-erlenmeyer-flask"></i><span class="px-nav-label">Widgets</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="widgets-lists.html"><span class="px-nav-label">Lists</span></a></li>
+          <li class="px-nav-item"><a href="widgets-pricing.html"><span class="px-nav-label">Pricing</span></a></li>
+          <li class="px-nav-item"><a href="widgets-timeline.html"><span class="px-nav-label">Timeline</span></a></li>
+          <li class="px-nav-item"><a href="widgets-misc.html"><span class="px-nav-label">Misc</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item">
+        <a href="utilities.html"><i class="px-nav-icon ion-cube"></i><span class="px-nav-label">Utilities</span></a>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-monitor"></i><span class="px-nav-label">UI elements</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="ui-buttons.html"><span class="px-nav-label">Buttons</span></a></li>
+          <li class="px-nav-item"><a href="ui-tabs.html"><span class="px-nav-label">Tabs & Accordions</span></a></li>
+          <li class="px-nav-item"><a href="ui-modals.html"><span class="px-nav-label">Modals</span></a></li>
+          <li class="px-nav-item"><a href="ui-alerts.html"><span class="px-nav-label">Alerts & Tooltips</span></a></li>
+          <li class="px-nav-item"><a href="ui-panels.html"><span class="px-nav-label">Panels</span></a></li>
+          <li class="px-nav-item"><a href="ui-sortable.html"><span class="px-nav-label">Sortable</span></a></li>
+          <li class="px-nav-item"><a href="ui-carousel.html"><span class="px-nav-label">Carousel</span></a></li>
+          <li class="px-nav-item"><a href="ui-misc.html"><span class="px-nav-label">Misc</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-android-checkbox-outline"></i><span class="px-nav-label">Forms</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="forms-layout.html"><span class="px-nav-label">Layout</span></a></li>
+          <li class="px-nav-item"><a href="forms-controls.html"><span class="px-nav-label">Controls</span></a></li>
+          <li class="px-nav-item"><a href="forms-components.html"><span class="px-nav-label">Components</span></a></li>
+          <li class="px-nav-item"><a href="forms-advanced.html"><span class="px-nav-label">Advanced</span></a></li>
+          <li class="px-nav-item"><a href="forms-sliders.html"><span class="px-nav-label">Sliders</span></a></li>
+          <li class="px-nav-item"><a href="forms-pickers.html"><span class="px-nav-label">Pickers</span></a></li>
+          <li class="px-nav-item"><a href="forms-editors.html"><span class="px-nav-label">Editors</span></a></li>
+          <li class="px-nav-item"><a href="forms-validation.html"><span class="px-nav-label">Validation</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-ios-keypad"></i><span class="px-nav-label">Tables</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="tables-bootstrap.html"><span class="px-nav-label">Bootstrap</span></a></li>
+          <li class="px-nav-item"><a href="tables-datatables.html"><span class="px-nav-label">DataTables</span></a></li>
+          <li class="px-nav-item"><a href="tables-editable-table.html"><span class="px-nav-label">editableTableWidget</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-stats-bars"></i><span class="px-nav-label">Charts</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="charts-flot.html"><span class="px-nav-label">Flot.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-morris.html"><span class="px-nav-label">Morris.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-chart.html"><span class="px-nav-label">Chart.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-chartist.html"><span class="px-nav-label">Chartist</span></a></li>
+          <li class="px-nav-item"><a href="charts-c3.html"><span class="px-nav-label">C3.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-sparkline.html"><span class="px-nav-label">Sparkline</span></a></li>
+          <li class="px-nav-item"><a href="charts-easy-pie-chart.html"><span class="px-nav-label">Easy Pie Chart</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-ios-paper"></i><span class="px-nav-label">Pages<span class="label label-info">22</span></span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Authentication</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-signin-v1.html"><span class="px-nav-label">Sign In v1</span></a></li>
+              <li class="px-nav-item"><a href="pages-signin-v2.html"><span class="px-nav-label">Sign In v2</span></a></li>
+              <li class="px-nav-item"><a href="pages-signup-v1.html"><span class="px-nav-label">Sign Up v1</span></a></li>
+              <li class="px-nav-item"><a href="pages-signup-v2.html"><span class="px-nav-label">Sign Up v2</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Blog</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-blog-posts.html"><span class="px-nav-label">Posts</span></a></li>
+              <li class="px-nav-item"><a href="pages-blog-post.html"><span class="px-nav-label">Post</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Error pages</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-404.html"><span class="px-nav-label">404</span></a></li>
+              <li class="px-nav-item"><a href="pages-500.html"><span class="px-nav-label">500</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Forum</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-forum-forums-list.html"><span class="px-nav-label">Forums list</span></a></li>
+              <li class="px-nav-item"><a href="pages-forum-topics.html"><span class="px-nav-label">Topics</span></a></li>
+              <li class="px-nav-item"><a href="pages-forum-thread.html"><span class="px-nav-label">Thread</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Messages</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-messages-list.html"><span class="px-nav-label">List</span></a></li>
+              <li class="px-nav-item"><a href="pages-messages-item.html"><span class="px-nav-label">Item</span></a></li>
+              <li class="px-nav-item"><a href="pages-messages-new.html"><span class="px-nav-label">New message</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="pages-about-us.html"><span class="px-nav-label">About Us</span></a></li>
+          <li class="px-nav-item"><a href="pages-account.html"><span class="px-nav-label">Account</span></a></li>
+          <li class="px-nav-item"><a href="pages-invoice.html"><span class="px-nav-label">Invoice</span></a></li>
+          <li class="px-nav-item"><a href="pages-pricing.html"><span class="px-nav-label">Pricing</span></a></li>
+          <li class="px-nav-item"><a href="pages-profile-v1.html"><span class="px-nav-label">Profile v1</span></a></li>
+          <li class="px-nav-item"><a href="pages-profile-v2.html"><span class="px-nav-label">Profile v2</span></a></li>
+          <li class="px-nav-item"><a href="pages-search-results.html"><span class="px-nav-label">Search results</span></a></li>
+          <li class="px-nav-item"><a href="pages-support-center.html"><span class="px-nav-label">Support center</span></a></li>
+          <li class="px-nav-item"><a href="pages-blank.html"><span class="px-nav-label">Blank</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item">
+        <a href="../color_generator/index.html"><i class="px-nav-icon ion-aperture"></i><span class="px-nav-label">Color Generator</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="../docs/index.html" target="_blank" class="bg-success text-white b-a-0"><i class="px-nav-icon ion-social-buffer"></i><span class="px-nav-label">Docs</span></a>
+      </li>
+      <li class="px-nav-box b-t-1 p-a-2">
+        <a href="pages-invoice.html" class="btn btn-primary btn-block btn-outline">Create Invoice</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand px-demo-brand" href="index.html"><span class="px-demo-logo bg-primary"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>PixelAdmin</a>
+    </div>
+
+    <!-- Navbar togglers -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-demo-navbar-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="px-demo-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="dropdown-multi-column">
+            <ul class="dropdown-menu dropdown-column col-md-4">
+              <li class="dropdown-header">Business</li>
+              <li><a href="#">Design &amp; Urban Ecologies</a></li>
+              <li><a href="#">Fine Art</a></li>
+              <li><a href="#">Fashion Design</a></li>
+              <li><a href="#">Strategic Design</a></li>
+            </ul>
+            <ul class="dropdown-menu dropdown-column col-md-4">
+              <li class="dropdown-header">Liberal Arts</li>
+              <li><a href="#">Anthropology</a></li>
+              <li><a href="#">Media Studies</a></li>
+              <li><a href="#">Philosophy</a></li>
+            </ul>
+            <ul class="dropdown-menu dropdown-column col-md-4">
+              <li class="dropdown-header">Social Sciences</li>
+              <li><a href="#">Food Studies</a></li>
+              <li><a href="#">Journalism</a></li>
+              <li><a href="#">Non Profit Management</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bookmark m-r-1"></i>Links</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-toggle">
+              <a href>Products</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Recent</a></li>
+                <li><a href="#">Featured</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-plus m-r-1"></i>Add product</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-toggle">
+              <a href>Users</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Recent</a></li>
+                <li><a href="#">Banned</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-user-plus m-r-1"></i>Create user</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-toggle">
+              <a href>Blog</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Popular</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-edit m-r-1"></i>New blog post</a></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">Overview</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="https://stackoverflow.com" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="px-navbar-icon fa fa-bullhorn font-size-14"></i>
+            <span class="px-navbar-icon-label">Notifications</span>
+            <span class="px-navbar-label label label-success">5</span>
+          </a>
+          <div class="dropdown-menu p-a-0" style="width: 300px">
+            <div id="navbar-notifications" style="height: 280px; position: relative;">
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-danger">SYSTEM</div>
+                <div class="widget-notifications-description"><strong>Error 500</strong>: Syntax error in index.php at line <strong>461</strong>.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-hdd-o bg-danger"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-info">STORE</div>
+                <div class="widget-notifications-description">You have <strong>9</strong> new orders.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-truck bg-info"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-default">CRON DAEMON</div>
+                <div class="widget-notifications-description">Job <strong>"Clean DB"</strong> has been completed.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-clock-o bg-default"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-success">SYSTEM</div>
+                <div class="widget-notifications-description">Server <strong>up</strong>.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-hdd-o bg-success"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-warning">SYSTEM</div>
+                <div class="widget-notifications-description"><strong>Warning</strong>: Processor load <strong>92%</strong>.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-hdd-o bg-warning"></div>
+              </div>
+            </div>
+
+            <a href="#" class="widget-more-link">MORE NOTIFICATIONS</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="https://google.com" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="px-navbar-icon fa fa-envelope font-size-14"></i>
+            <span class="px-navbar-icon-label">Income messages</span>
+            <span class="px-navbar-label label label-danger">8</span>
+          </a>
+          <div class="dropdown-menu p-a-0" style="width: 300px;">
+            <div id="navbar-messages" style="height: 280px; position: relative;">
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/2.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Robert Jang</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/3.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Michelle Bortz</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/4.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Timothy Owens</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/5.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Denise Steiner</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/2.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Robert Jang</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/3.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Michelle Bortz</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/4.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Timothy Owens</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/5.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Denise Steiner</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+            </div>
+
+            <a href="#" class="widget-more-link">MORE MESSAGES</a>
+          </div> <!-- / .dropdown-menu -->
+        </li>
+
+        <li>
+          <form class="navbar-form" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" style="width: 140px;">
+            </div>
+          </form>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/demo/avatars/1.jpg" alt="" class="px-navbar-image">
+            <span class="hidden-md">John Doe</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="pages-profile-v2.html"><span class="label label-warning pull-xs-right"><i class="fa fa-asterisk"></i></span>Profile</a></li>
+            <li><a href="pages-account.html">Account</a></li>
+            <li><a href="pages-messages-list.html"><i class="dropdown-icon fa fa-envelope"></i>&nbsp;&nbsp;Messages</a></li>
+            <li class="divider"></li>
+            <li><a href="pages-signin-v1.html"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <div class="px-content">
+    <div class="page-header">
+      <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Advanced</h1>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Select2</div>
+          </div>
+          <div class="panel-body">
+            <div class="m-b-2">
+              <select class="form-control select2-example" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DISABLED</h6>
+
+            <div class="m-b-2">
+              <select class="form-control select2-example" style="width: 100%" data-allow-clear="true" disabled>
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-example" multiple style="width: 100%" disabled>
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZES</h6>
+
+            <div class="m-b-2">
+              <select class="form-control select2-sm select2-example" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+
+              <br>
+              <br>
+
+              <select class="form-control select2-sm select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-lg select2-example" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+
+              <br>
+              <br>
+
+              <select class="form-control select2-lg select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+            <div class="m-b-2">
+              <select class="form-control select2-primary select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-success select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-info select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-warning select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="m-b-2">
+              <select class="form-control select2-danger select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">STATES</h6>
+
+            <div class="form-group has-success">
+              <select class="form-control select2-example" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+            </div>
+
+            <div class="form-group has-success">
+              <select class="form-control select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group has-warning">
+              <select class="form-control select2-example" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+            </div>
+
+            <div class="form-group has-warning">
+              <select class="form-control select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+            <div class="form-group has-error">
+              <select class="form-control select2-example" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AK">Alaska</option>
+                <option value="HI">Hawaii</option>
+                <option value="CA">California</option>
+                <option value="NV">Nevada</option>
+                <option value="OR">Oregon</option>
+                <option value="WA">Washington</option>
+                <option value="AZ">Arizona</option>
+                <option value="CO">Colorado</option>
+                <option value="ID">Idaho</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NM">New Mexico</option>
+                <option value="ND">North Dakota</option>
+                <option value="UT">Utah</option>
+                <option value="WY">Wyoming</option>
+                <option value="AL">Alabama</option>
+                <option value="AR">Arkansas</option>
+                <option value="IL">Illinois</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="OK">Oklahoma</option>
+                <option value="SD">South Dakota</option>
+                <option value="TX">Texas</option>
+                <option value="TN">Tennessee</option>
+                <option value="WI">Wisconsin</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="IN">Indiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="OH">Ohio</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WV">West Virginia</option>
+              </select>
+            </div>
+
+            <div class="form-group has-error">
+              <select class="form-control select2-example" multiple style="width: 100%">
+                <optgroup label="Alaskan/Hawaiian Time Zone">
+                  <option value="AK">Alaska</option>
+                  <option value="HI">Hawaii</option>
+                </optgroup>
+                <optgroup label="Pacific Time Zone">
+                  <option value="CA">California</option>
+                  <option value="NV">Nevada</option>
+                  <option value="OR">Oregon</option>
+                  <option value="WA" selected>Washington</option>
+                </optgroup>
+                <optgroup label="Mountain Time Zone">
+                  <option value="AZ">Arizona</option>
+                  <option value="CO">Colorado</option>
+                  <option value="ID">Idaho</option>
+                  <option value="MT">Montana</option>
+                  <option value="NE">Nebraska</option>
+                  <option value="NM">New Mexico</option>
+                  <option value="ND">North Dakota</option>
+                  <option value="UT">Utah</option>
+                  <option value="WY">Wyoming</option>
+                </optgroup>
+                <optgroup label="Central Time Zone">
+                  <option value="AL">Alabama</option>
+                  <option value="AR">Arkansas</option>
+                  <option value="IL">Illinois</option>
+                  <option value="IA">Iowa</option>
+                  <option value="KS">Kansas</option>
+                  <option value="KY">Kentucky</option>
+                  <option value="LA">Louisiana</option>
+                  <option value="MN">Minnesota</option>
+                  <option value="MS">Mississippi</option>
+                  <option value="MO">Missouri</option>
+                  <option value="OK">Oklahoma</option>
+                  <option value="SD">South Dakota</option>
+                  <option value="TX">Texas</option>
+                  <option value="TN">Tennessee</option>
+                  <option value="WI">Wisconsin</option>
+                </optgroup>
+                <optgroup label="Eastern Time Zone">
+                  <option value="CT">Connecticut</option>
+                  <option value="DE">Delaware</option>
+                  <option value="FL">Florida</option>
+                  <option value="GA">Georgia</option>
+                  <option value="IN">Indiana</option>
+                  <option value="ME">Maine</option>
+                  <option value="MD">Maryland</option>
+                  <option value="MA">Massachusetts</option>
+                  <option value="MI">Michigan</option>
+                  <option value="NH" selected>New Hampshire</option>
+                  <option value="NJ">New Jersey</option>
+                  <option value="NY">New York</option>
+                  <option value="NC">North Carolina</option>
+                  <option value="OH">Ohio</option>
+                  <option value="PA">Pennsylvania</option>
+                  <option value="RI">Rhode Island</option>
+                  <option value="SC">South Carolina</option>
+                  <option value="VT">Vermont</option>
+                  <option value="VA">Virginia</option>
+                  <option value="WV">West Virginia</option>
+                </optgroup>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Bootstrap TouchSpin</div>
+          </div>
+          <div class="panel-body">
+            <input type="text" value="23" name="touchspin-1" class="form-control">
+            <br>
+            <input type="text" value="50" name="touchspin-2" class="form-control">
+            <br>
+            <input type="text" value="16" name="touchspin-3" class="form-control">
+            <br>
+            <input type="text" value="71" name="touchspin-4" class="form-control">
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZING</h6>
+
+            <input type="text" value="55" name="touchspin-5" class="form-control input-sm">
+            <br>
+            <input type="text" value="23" name="touchspin-6" class="form-control input-sm">
+            <br>
+            <input type="text" value="55" name="touchspin-7" class="form-control input-lg">
+            <br>
+            <input type="text" value="23" name="touchspin-8" class="form-control input-lg">
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Expanding input</div>
+          </div>
+          <div class="panel-body">
+            <div class="expanding-input m-b-2">
+              <input type="text" class="form-control expanding-input-control" placeholder="Write a comment...">
+              <div class="expanding-input-content">
+                <label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-1">
+                  <input type="checkbox" id="custom-checkbox-1" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  Publish now
+                </label>
+                <div class="pull-right">
+                  <button type="button" class="btn" data-collapse="true">Cancel</button>&nbsp;
+                  <button type="button" class="btn btn-primary">Post</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="expanding-input m-b-2">
+              <textarea class="form-control expanding-input-control" rows="4" placeholder="Write a comment..."></textarea>
+              <div class="expanding-input-content">
+                <label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-2">
+                  <input type="checkbox" id="custom-checkbox-2" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  Publish now
+                </label>
+                <div class="pull-right">
+                  <button type="button" class="btn" data-collapse="true">Cancel</button>&nbsp;
+                  <button type="button" class="btn btn-primary">Post</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="expanding-input m-b-2">
+              <input type="text" class="form-control input-sm expanding-input-control" placeholder="Write a comment...">
+              <div class="expanding-input-content" style="text-align: right">
+                <button type="button" class="btn btn-sm" data-collapse="true">Cancel</button>&nbsp;
+                <button type="button" class="btn btn-sm btn-primary">Post</button>
+              </div>
+            </div>
+
+            <div class="expanding-input" id="expanding-input-lg">
+              <input type="text" class="form-control input-lg expanding-input-control" placeholder="Write a comment...">
+              <div class="expanding-input-content" style="text-align: right">
+                <button type="button" class="btn btn-lg" data-collapse="true">Cancel</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-lg btn-primary">Post</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Knob</div>
+          </div>
+          <div class="panel-body">
+            <div style="display: inline-block">
+              <input type="text" value="75" class="knob-input-example" data-width="80" data-height="80" data-fgColor="#6597ea" data-thickness=".2" data-angleOffset="180">
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div style="display: inline-block">
+              <input type="text" value="75" class="knob-input-example" data-width="80" data-height="80" data-displayPrevious="true" data-thickness=".2" data-min="-100" data-angleOffset="-125" data-angleArc="250" data-linecap="round" data-fgColor="#5ebd5e">
+            </div>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <div style="display: inline-block">
+              <input type="text" value="75" class="knob-input-example" data-width="100" data-height="100" data-thickness=".25" data-cursor="true" data-fgColor="#e5635f">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Bootstrap Tags Input</div>
+          </div>
+          <div class="panel-body">
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" class="form-control">
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">CATEGORIZING TAGS</h6>
+
+            <input type="text" class="form-control" id="bs-tagsinput-1">
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" class="form-control" id="bs-tagsinput-2">
+            <br>
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" class="form-control" id="bs-tagsinput-3">
+            <br>
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" class="form-control" id="bs-tagsinput-4">
+            <br>
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" class="form-control" id="bs-tagsinput-5">
+            <br>
+            <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" class="form-control" id="bs-tagsinput-6">
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">STATES</h6>
+
+            <div class="form-group has-error">
+              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" class="form-control">
+            </div>
+            <div class="form-group has-warning">
+              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" class="form-control">
+            </div>
+            <div class="form-group has-success">
+              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" class="form-control">
+            </div>
+
+            <hr class="panel-wide-block">
+
+            <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZING</h6>
+
+            <div class="bootstrap-tagsinput-sm">
+              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" class="form-control">
+            </div>
+            <br>
+            <div class="bootstrap-tagsinput-lg">
+              <input type="text" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" class="form-control">
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Bootstrap 3 Typeahead</div>
+          </div>
+          <div class="panel-body">
+            <p>Enter a country name:</p>
+            <input id="typeahead-input" class="form-control" type="text" data-provide="typeahead" autocomplete="off">
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Autosize</div>
+          </div>
+          <div class="panel-body">
+            <textarea id="autosize" rows="3" class="form-control"></textarea>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Masked input</div>
+          </div>
+          <div class="panel-body">
+            <input type="text" id="masked-input-date" class="form-control" placeholder="Date: 99/99/9999">
+            <br>
+            <input type="text" id="masked-input-ssn" class="form-control" placeholder="SSN: 999-99-9999">
+            <br>
+            <input type="text" id="masked-input-phone" class="form-control" placeholder="Phone: (999) 999-9999">
+            <br>
+            <input type="text" id="masked-input-product-key" class="form-control" placeholder="Product Key: a*-999-a999">
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Char limit</div>
+          </div>
+          <div class="panel-body">
+            <input type="text" class="form-control char-limit-example m-b-2" data-maxlength="20">
+            <textarea class="form-control char-limit-example m-b-2" rows="3" maxlength="100"></textarea>
+            <div class="m-b-2">
+              <input type="text" class="form-control" id="char-limit-with-counter-1" maxlength="20" data-counter="#char-limit-with-counter-1 + small > strong">
+              <small class="text-muted">Characters left: <strong>0</strong></small>
+            </div>
+            <textarea class="form-control" rows="3" id="char-limit-with-counter-2" maxlength="100" data-counter="#char-limit-with-counter-2 + small > strong"></textarea>
+            <small class="text-muted">Characters left: <strong>0</strong></small>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-heading">
+            <div class="panel-title">Quick[select]</div>
+          </div>
+          <div class="panel-body">
+            <p>What's your favourite meal?</p>
+            <select id="quick-select-1">
+              <option value="">Select one...</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Brunch">Brunch</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Afternoon Tea">Afternoon Tea</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Midnight Snack">Midnight Snack</option>
+              <option value="I do not know">I do not know</option>
+            </select>
+            <div class="m-t-3"></div>
+            <select id="quick-select-2">
+              <option value="">Select one...</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Brunch">Brunch</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Afternoon Tea">Afternoon Tea</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Midnight Snack">Midnight Snack</option>
+              <option value="I do not know">I do not know</option>
+            </select>
+            <div class="m-t-3"></div>
+            <select id="quick-select-3" disabled>
+              <option value="">Select one...</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Brunch">Brunch</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Afternoon Tea">Afternoon Tea</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Midnight Snack">Midnight Snack</option>
+              <option value="I do not know">I do not know</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Dropzone</div>
+      </div>
+      <div class="panel-body">
+        <form action="/upload" id="dropzonejs" class="dropzone-box">
+          <div class="dz-default dz-message">
+            <div class="dz-upload-icon"></div>
+            Drop files in here<br>
+            <span class="dz-text-small">or click to pick manually</span>
+          </div>
+          <div class="fallback">
+            <input name="file" type="file" multiple>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer class="px-footer px-footer-bottom p-t-0">
+    <div class="box m-a-0 bg-transparent">
+      <div class="box-cell col-md-3 p-t-3">
+        <h5 class="m-t-0 m-b-1 font-size-13">About Us</h5>
+        <a href="#">Who we are</a><br>
+        <a href="#">Jobs</a><br>
+        <a href="#">Newsletters</a><br>
+      </div>
+      <div class="box-cell col-md-3 p-t-3">
+        <h5 class="m-t-0 m-b-1 font-size-13">Help</h5>
+        <a href="#">Support Center</a><br>
+        <a href="#">Terms of Use</a><br>
+        <a href="#">Privacy Policy</a><br>
+      </div>
+      <div class="box-cell col-md-3 p-t-3">
+        <h5 class="m-t-0 m-b-1 font-size-13">Products</h5>
+        <a href="#">Popular</a><br>
+        <a href="#">Most rated</a><br>
+        <a href="#">Recent</a><br>
+      </div>
+      <div class="box-cell col-md-3 p-t-3 valign-middle">
+        <a href="#" class="display-block m-b-1 text-nowrap"><i class="fa fa-twitter"></i>&nbsp;&nbsp;@pixeladmin</a>
+        <a href="#" class="display-block m-b-1 text-nowrap"><i class="fa fa-facebook"></i>&nbsp;&nbsp;PixelAdmin</a>
+        <a href="#" class="display-block text-nowrap"><i class="fa fa-envelope"></i>&nbsp;&nbsp;support@pixeladmin.com</a>
+      </div>
+    </div>
+
+    <hr class="page-wide-block">
+
+    <span class="text-muted">Copyright © 2017 PixelAdmin LLC. All rights reserved.</span>
+  </footer>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+  <script type="text/javascript">
+    // -------------------------------------------------------------------------
+    // Initialize DEMO
+
+    $(function() {
+      var file = String(document.location).split('/').pop();
+
+      // Remove unnecessary file parts
+      file = file.replace(/(\.html).*/i, '$1');
+
+      if (!/.html$/i.test(file)) {
+        file = 'index.html';
+      }
+
+      // Activate current nav item
+      $('body > .px-nav')
+        .find('.px-nav-item > a[href="' + file + '"]')
+        .parent()
+        .addClass('active');
+
+      $('body > .px-nav').pxNav();
+      $('body > .px-footer').pxFooter();
+
+      $('#navbar-notifications').perfectScrollbar();
+      $('#navbar-messages').perfectScrollbar();
+    });
+  </script>
+
+  <!--[if lte IE 9]><script>window.skipQuickSelect = true;</script><![endif]-->
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize Select2
+
+    $(function() {
+      $('.select2-example').select2({
+        placeholder: 'Select value',
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Bootstrap TouchSpin
+
+    $(function() {
+      $('input[name="touchspin-1"]').TouchSpin();
+      $('input[name="touchspin-2"]').TouchSpin({
+        min:            0,
+        max:            100,
+        step:           0.1,
+        decimals:       2,
+        boostat:        5,
+        maxboostedstep: 10,
+        postfix:        '%'
+      });
+      $('input[name="touchspin-3"]').TouchSpin({
+        verticalbuttons: true
+      });
+      $('input[name="touchspin-4"]').TouchSpin({
+        verticalbuttons: true,
+        prefix: '$'
+      });
+      $('input[name="touchspin-5"], input[name="touchspin-7"]').TouchSpin();
+      $('input[name="touchspin-6"], input[name="touchspin-8"]').TouchSpin({
+        verticalbuttons: true
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Expanding input
+
+    $(function() {
+      $('.expanding-input').pxExpandingInput();
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Knob
+
+    $(function() {
+      $(".knob-input-example").knob();
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Bootstrap Tags Input
+
+    $(function() {
+      (function() {
+        var $el = $('#bs-tagsinput-1');
+
+        $el.tagsinput({
+          tagClass: function(item) {
+            switch (item.continent) {
+              case 'Europe'   : return 'label label-primary';
+              case 'America'  : return 'label label-danger label-important';
+              case 'Australia': return 'label label-success';
+              case 'Africa'   : return 'label label-default';
+              case 'Asia'     : return 'label label-warning';
+            }
+          },
+
+          itemValue: 'value',
+          itemText:  'text',
+        });
+
+        $el.tagsinput('add', { value: 1,  text: 'Amsterdam',  continent: 'Europe' });
+        $el.tagsinput('add', { value: 4,  text: 'Washington', continent: 'America' });
+        $el.tagsinput('add', { value: 7,  text: 'Sydney',     continent: 'Australia' });
+        $el.tagsinput('add', { value: 10, text: 'Beijing',    continent: 'Asia' });
+        $el.tagsinput('add', { value: 13, text: 'Cairo',      continent: 'Africa' });
+      })();
+
+      $('#bs-tagsinput-2').tagsinput({ tagClass: 'label label-primary' });
+      $('#bs-tagsinput-3').tagsinput({ tagClass: 'label label-success' });
+      $('#bs-tagsinput-4').tagsinput({ tagClass: 'label label-warning' });
+      $('#bs-tagsinput-5').tagsinput({ tagClass: 'label label-danger' });
+      $('#bs-tagsinput-6').tagsinput({ tagClass: 'label label-default' });
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Bootstrap 3 Typeahead
+
+    $(function() {
+      $('#typeahead-input').typeahead({source: [
+        'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Antigua and Barbuda',
+        'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
+        'Bahamas, The', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium',
+        'Belize', 'Benin', 'Bhutan', 'Bolivia', 'Bosnia and Herzegovina', 'Botswana',
+        'Brazil', 'Brunei ', 'Bulgaria', 'Burkina Faso', 'Burma', 'Burundi', 'Cambodia',
+        'Cameroon', 'Canada', 'Cabo Verde', 'Central African Republic', 'Chad', 'Chile',
+        'China', 'Colombia', 'Comoros', 'Congo, Democratic Republic of the',
+        'Congo, Republic of the', 'Costa Rica', 'Cote d\'Ivoire', 'Croatia', 'Cuba',
+        'Curacao', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica',
+        'Dominican Republic', 'Timor-Leste', 'Ecuador', 'Egypt', 'El Salvador',
+        'Equatorial Guinea', 'Eritrea', 'Estonia', 'Ethiopia', 'Fiji', 'Finland',
+        'France', 'Gabon', 'Gambia, The', 'Georgia', 'Germany', 'Ghana', 'Greece',
+        'Grenada', 'Guatemala', 'Guinea', 'Guinea-Bissau', 'Guyana', 'Haiti', 'Holy See',
+        'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran',
+        'Iraq', 'Ireland', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jordan', 'Kazakhstan',
+        'Kenya', 'Kiribati', 'Korea, North', 'Korea, South', 'Kosovo', 'Kuwait',
+        'Kyrgyzstan', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya',
+        'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar',
+        'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Marshall Islands',
+        'Mauritania', 'Mauritius', 'Mexico', 'Micronesia', 'Moldova', 'Monaco',
+        'Mongolia', 'Montenegro', 'Morocco', 'Mozambique', 'Namibia', 'Nauru', 'Nepal',
+        'Netherlands', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'North Korea',
+        'Norway', 'Oman', 'Pakistan', 'Palau', 'Palestinian Territories', 'Panama',
+        'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal',
+        'Qatar', 'Romania', 'Russia', 'Rwanda', 'Saint Kitts and Nevis', 'Saint Lucia',
+        'Saint Vincent and the Grenadines', 'Samoa ', 'San Marino', 'Sao Tome and Principe',
+        'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore',
+        'Sint Maarten', 'Slovakia', 'Slovenia', 'Solomon Islands', 'Somalia', 'South Africa',
+        'South Korea', 'South Sudan', 'Spain ', 'Sri Lanka', 'Sudan', 'Suriname',
+        'Swaziland ', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania',
+        'Thailand ', 'Timor-Leste', 'Togo', 'Tonga', 'Trinidad and Tobago', 'Tunisia',
+        'Turkey', 'Turkmenistan', 'Tuvalu', 'Uganda', 'Ukraine', 'United Arab Emirates',
+        'United Kingdom', 'United States of America', 'Uruguay', 'Uzbekistan',
+        'Vanuatu', 'Venezuela', 'Vietnam', 'Yemen', 'Zambia', 'Zimbabwe '
+      ]});
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Autosize
+
+    $(function() {
+      $('#autosize').autosize();
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Masked input
+
+    $(function() {
+      $('#masked-input-date').mask('99/99/9999');
+      $('#masked-input-phone').mask('(999) 999-9999');
+      $('#masked-input-ssn').mask('999-99-9999');
+      $('#masked-input-product-key').mask('a*-999-a999', {
+        completed: function(){
+          alert('You typed the following: ' + this.val());
+        }
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Char limit
+
+    $(function() {
+      $('.char-limit-example').pxCharLimit();
+      $('#char-limit-with-counter-1').pxCharLimit();
+      $('#char-limit-with-counter-2').pxCharLimit();
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Quick[select]
+
+    $(function() {
+      if (window.skipQuickSelect) {
+        $('<div class="alert alert-warning">Quick[select] doesn\'t support Internet Explorer 9</div>').insertBefore('#quick-select-1');
+        return;
+      }
+
+      $('#quick-select-1').quickselect({
+        activeButtonClass: 'btn-primary active',
+        breakOutValues: ['Breakfast', 'Lunch', 'Dinner'],
+        buttonClass: 'btn btn-default',
+        selectDefaultText: 'Other',
+        wrapperClass: 'btn-group'
+      });
+
+      $('#quick-select-2').quickselect({
+        activeButtonClass: 'btn-primary active',
+        breakOutAll: true,
+        buttonClass: 'btn btn-default',
+        selectDefaultText: 'Other',
+        wrapperClass: 'btn-group'
+      });
+
+      $('#quick-select-3').quickselect({
+        activeButtonClass: 'btn-primary active',
+        breakOutValues: ['Breakfast', 'Lunch', 'Dinner'],
+        buttonClass: 'btn btn-default',
+        selectDefaultText: 'Other',
+        wrapperClass: 'btn-group'
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize Dropzone
+
+    $(function() {
+      $('#dropzonejs').dropzone({
+        parallelUploads: 2,
+        maxFilesize:     50,
+        filesizeBase:    1000,
+
+        resize: function(file) {
+          return {
+            srcX:      0,
+            srcY:      0,
+            srcWidth:  file.width,
+            srcHeight: file.height,
+            trgWidth:  file.width,
+            trgHeight: file.height,
+          };
+        },
+      });
+
+      // Mock the file upload progress (only for the demo)
+      //
+      Dropzone.prototype.uploadFiles = function(files) {
+        var minSteps         = 6;
+        var maxSteps         = 60;
+        var timeBetweenSteps = 100;
+        var bytesPerStep     = 100000;
+        var isUploadSuccess  = Math.round(Math.random());
+
+        var self = this;
+
+        for (var i = 0; i < files.length; i++) {
+
+          var file = files[i];
+          var totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+          for (var step = 0; step < totalSteps; step++) {
+            var duration = timeBetweenSteps * (step + 1);
+
+            setTimeout(function(file, totalSteps, step) {
+              return function() {
+                file.upload = {
+                  progress: 100 * (step + 1) / totalSteps,
+                  total: file.size,
+                  bytesSent: (step + 1) * file.size / totalSteps
+                };
+
+                self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+                if (file.upload.progress == 100) {
+
+                  if (isUploadSuccess) {
+                    file.status =  Dropzone.SUCCESS;
+                    self.emit('success', file, 'success', null);
+                  } else {
+                    file.status =  Dropzone.ERROR;
+                    self.emit('error', file, 'Some upload error', null);
+                  }
+
+                  self.emit('complete', file);
+                  self.processQueue();
+                }
+              };
+            }(file, totalSteps, step), duration);
+          }
+        }
+      };
+    });
+  </script>
+</body>
+</html>

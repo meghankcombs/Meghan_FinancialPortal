@@ -1,0 +1,126 @@
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Pickers</h1>
+</div>
+
+<div class="panel" ng-controller="FormsPickersDaterangePickerCtrl as ctrl">
+  <div class="panel-heading">
+    <div class="panel-title">Date Range Picker</div>
+  </div>
+  <div class="panel-body">
+    <input daterangepicker locale="sl" start-date="ctrl.default.startDate" end-date="ctrl.default.endDate" type="text" class="form-control">
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DATE &amp; TIME</h6>
+
+    <input daterangepicker start-date="ctrl.dateTime.startDate" end-date="ctrl.dateTime.endDate" time-picker="true" time-picker-increment="30" locale="{ format: 'MM/DD/YYYY h:mm A' }" type="text" class="form-control">
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SINGLE DATE PICKER</h6>
+
+    <input daterangepicker start-date="ctrl.single" single-date-picker="true" show-dropdowns="true" callback="ctrl.singleCallback" type="text" class="form-control">
+
+    <hr class="panel-wide-block">
+
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">PREDEFINED RANGES</h6>
+
+    <button daterangepicker start-date="ctrl.range.startDate" end-date="ctrl.range.endDate" ranges="ctrl.ranges" callback="ctrl.rangeCallback" id="daterangepicker-btn" class="btn dropdown-toggle"></button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="panel" ng-controller="FormsPickersBootstrapDatepickerCtrl as ctrl">
+      <div class="panel-heading">
+        <div class="panel-title">Datepicker</div>
+      </div>
+      <div class="panel-body">
+
+        <input bootstrap-datepicker date="ctrl.featuresModel" multidate="true" calendar-weeks="true" today-btn="'linked'" days-of-week-disabled="'1'" clear-btn="true" today-highlight="true" days-of-week-highlighted="'1,2'" orientation="'auto right'" before-show-month="ctrl.beforeShowMonth" before-show-year="ctrl.beforeShowYear" type="text" class="form-control">
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COMPONENT</h6>
+
+        <div bootstrap-datepicker date="ctrl.model" class="date input-group">
+          <input type="text" class="form-control"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">RANGE</h6>
+
+        <div bootstrap-datepicker date="ctrl.rangeModel" class="input-daterange input-group">
+          <bootstrap-datepicker-start />
+          <span class="input-group-addon">to</span>
+          <bootstrap-datepicker-end />
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">INLINE</h6>
+
+        <div bootstrap-datepicker date="ctrl.model"></div>
+      </div>
+    </div>
+
+    <div class="panel" ng-controller="FormsPickersBootstrapDatepickerCtrl as ctrl">
+      <div class="panel-heading">
+        <div class="panel-title">Timepicker</div>
+      </div>
+      <div class="panel-body">
+        <input bootstrap-timepicker ng-model="timepickerModel" type="text" class="form-control m-b-2">
+        <input bootstrap-timepicker show-inputs="false" show-seconds="true" type="text" class="form-control m-b-2">
+        <div class="input-group m-b-2">
+          <input bootstrap-timepicker ng-model="timepickerModel" type="text" class="form-control input-small">
+          <span class="input-group-addon">ST</span>
+        </div>
+        <input bootstrap-timepicker ng-model="timepickerModel" template="'modal'" type="text" class="form-control">
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel" ng-controller="FormsPickersMinicolorsCtrl as ctrl">
+      <div class="panel-heading">
+        <div class="panel-title">Minicolors</div>
+      </div>
+      <div class="panel-body">
+        <input minicolors color="ctrl.color" control="'hue'" position="'bottom left'" type="text" class="form-control">
+        <br>
+        <input minicolors color="ctrl.color" control="'saturation'" position="'bottom right'" type="text" class="form-control">
+        <br>
+        <input minicolors color="ctrl.color" control="'wheel'" position="'top right'" type="text" class="form-control">
+        <br>
+        <input minicolors color="ctrl.rgbColor" format="'rgb'" opacity="true" control="'wheel'" type="text" class="form-control">
+        <br>
+        <input minicolors color="ctrl.color" control="'brightness'" position="'top left'" type="text" class="form-control">
+        <br>
+        <input minicolors color="ctrl.color" type="hidden" class="form-control">
+        <br>
+        <div minicolors color="ctrl.color" inline="true"></div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZES</h6>
+
+        <input minicolors color="ctrl.colorWithOpacity" opacity="true" type="text" class="form-control input-sm">
+        <br>
+        <input minicolors color="ctrl.colorWithOpacity" opacity="true" position="'top right'" type="text" class="form-control input-sm">
+        <br>
+        <input minicolors color="ctrl.color" type="hidden" class="form-control input-sm">
+        <br>
+        <input minicolors color="ctrl.colorWithOpacity" opacity="true" type="text" class="form-control input-lg">
+        <br>
+        <input minicolors color="ctrl.colorWithOpacity" opacity="true" position="'top right'" type="text" class="form-control input-lg">
+        <br>
+        <input minicolors color="ctrl.color" type="hidden" class="form-control input-lg">
+      </div>
+    </div>
+
+  </div>
+</div>

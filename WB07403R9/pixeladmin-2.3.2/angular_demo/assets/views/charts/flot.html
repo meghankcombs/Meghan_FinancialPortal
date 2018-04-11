@@ -1,0 +1,54 @@
+<div ng-controller="ChartsFlotCtrl as ctrl">
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-stats-bars"></i>Charts / </span>Flot.js</h1>
+    <a href="http://www.flotcharts.org" target="_blank" class="page-header-text text-muted font-weight-light pull-md-right col-xs-12 width-md-auto width-lg-auto width-xl-auto p-x-0">http://www.flotcharts.org</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Graph</div>
+        <hr>
+
+        <div class="panel-body">
+          <flot dataset="ctrl.graphData" options="ctrl.graphOptions" height="250px" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Bars</div>
+        <hr>
+
+        <div class="panel-body">
+          <flot dataset="ctrl.barsData" options="ctrl.barsOptions" height="250px" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Categories</div>
+        <hr>
+
+        <div class="panel-body">
+          <flot dataset="ctrl.categoriesData" options="ctrl.categoriesOptions" height="250px" />
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Pie / Doughnut</div>
+        <hr>
+
+        <div class="panel-body">
+          <flot dataset="ctrl.pieData" options="ctrl.pieOptions" height="250px" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Components - Form - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <h1 class="doc-header"><span class="text-muted">Form /</span> Components</h1>
+
+  <h4 class="doc-subheader">Required</h4>
+
+  <p>
+    Add the <code>.required</code> class to an input's <code>&lt;label&gt;</code>
+    to show that the input is mandatory.
+  </p>
+
+  <div class="example" data-accent="(required)''">
+<div class="form-group">
+  <label class="control-label required" for="required-input">Required field</label>
+  <input type="text" class="form-control" id="required-input">
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Help text</h4>
+  <p>
+    Bootstrap 4 will have no official help text classes, so I recommend do not use
+    the <code>.help-block</code> class. Instead, use Bootstrap utility classes
+    like <code>.text-muted</code>.
+  </p>
+  <p>
+    Inline text can use any typical inline HTML element (be it a <code>&lt;small&gt;</code>,
+    <code>&lt;span&gt;</code>, or something else).
+  </p>
+
+  <div class="example" data-accent="(text-muted)">
+<small class="text-muted">
+  Some inline text with a small tag looks like this.
+</small>
+  </div>
+
+  <p>
+    Block help text—for below inputs or for longer lines of help text—can be
+    easily achieved with a <code>&lt;p&gt;</code>.
+    </p>
+
+  <div class="example" data-accent="(text-muted)">
+<p class="text-muted">
+  A block of help text that breaks onto a new line and may extend beyond one line.
+</p>
+  </div>
+
+  <h4 class="doc-subheader">Loading</h4>
+  <p>
+    To show a loading indicator, add the <code>.form-loading</code> class to a
+    <code>&lt;form&gt;</code> element.
+  </p>
+
+  <div class="alert alert-info">
+    The <code>.form-loading</code> class sets <code>position: relative</code> on the form.
+  </div>
+
+  <div class="example" data-accent="(form-loading)">
+<form class="form-horizontal form-loading">
+  <div class="form-group">
+    <label class="col-md-3 control-label">Email</label>
+    <div class="col-md-9">
+      <p class="form-control-static">example@mail.com</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="loading-input-1" class="col-md-3 control-label">Password</label>
+    <div class="col-md-9">
+      <input class="form-control" id="loading-input-1" placeholder="Password" type="password">
+      <small class="text-muted">Please do not use too weak password.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="loading-input-2" class="col-md-3 control-label">Gender</label>
+    <div class="col-md-9">
+      <select class="custom-select form-control" id="loading-input-2">
+        <option>Not selected</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="loading-input-3" class="col-md-3 control-label">Photo</label>
+    <div class="col-md-9">
+      <label class="custom-file px-file" for="loading-input-3">
+        <input id="loading-input-3" class="custom-file-input" type="file">
+        <span class="custom-file-control form-control">Choose file...</span>
+        <div class="px-file-buttons">
+          <button type="button" class="btn btn-xs px-file-clear">Clear</button>
+          <button type="button" class="btn btn-primary btn-xs px-file-browse">Browse</button>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Radios</label>
+    <div class="col-md-9">
+      <label class="custom-control custom-radio" for="loading-input-4">
+        <input id="loading-input-4" name="loading-radios-1" class="custom-control-input" checked type="radio">
+        <span class="custom-control-indicator"></span>
+        Option one is this and that—be sure to include why it's great
+      </label>
+      <label class="custom-control custom-radio" for="loading-input-5">
+        <input id="loading-input-5" name="loading-radios-1" class="custom-control-input" type="radio">
+        <span class="custom-control-indicator"></span>
+        Option two can be something else and selecting it will deselect option one
+      </label>
+      <label class="custom-control custom-radio" for="loading-input-6">
+        <input id="loading-input-6" name="loading-radios-1" class="custom-control-input" disabled type="radio">
+        <span class="custom-control-indicator"></span>
+        Option three is disabled
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Checkbox</label>
+    <div class="col-md-9">
+      <label class="custom-control custom-checkbox" for="loading-input-7">
+        <input id="loading-input-7" class="custom-control-input" type="checkbox">
+        <span class="custom-control-indicator"></span>
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </div>
+</form>
+  </div>
+
+  <p>
+    Show an inverted loading indicator, by adding the <code>.form-loading-inverted</code>
+    class to the <code>.form-loading</code>.
+  </p>
+
+  <div class="example" data-accent="(form-loading-inverted)">
+<form class="form-horizontal form-loading form-loading-inverted">
+  <div class="form-group">
+    <label for="loading-input-8" class="col-md-3 control-label">Username</label>
+    <div class="col-md-9">
+      <input class="form-control" id="loading-input-8" placeholder="Username" type="text">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="loading-input-9" class="col-md-3 control-label">Password</label>
+    <div class="col-md-9">
+      <input class="form-control" id="loading-input-9" placeholder="Password" type="password">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-3 col-md-9">
+      <button type="submit" class="btn">Sign In</button>
+    </div>
+  </div>
+</form>
+  </div>
+
+  <h4 class="doc-subheader">Success</h4>
+
+  <div class="example" data-accent="(has-success)">
+<div class="form-group has-success">
+  <label class="control-label" for="success-input-1">Input with success</label>
+  <input type="text" class="form-control" id="success-input-1">
+</div>
+<div class="form-group has-success">
+  <label class="control-label" for="success-input-2">Select with success</label>
+  <select class="form-control" id="success-input-2">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+</div>
+<div class="form-group has-success">
+  <label class="control-label" for="success-input-3">Custom select with success</label>
+  <select class="custom-select form-control" id="success-input-3">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+</div>
+<div class="form-group has-success">
+  <label class="control-label" for="success-input-4">Custom file input with success</label>
+  <label class="custom-file px-file" for="success-input-4">
+    <input type="file" id="success-input-4" class="custom-file-input">
+    <span class="custom-file-control form-control">Choose file...</span>
+    <div class="px-file-buttons">
+      <button type="button" class="btn btn-xs px-file-clear">Clear</button>
+      <button type="button" class="btn btn-primary btn-xs px-file-browse">Browse</button>
+    </div>
+  </label>
+</div>
+<div class="checkbox has-success">
+  <label>
+    <input type="checkbox">
+    Checkbox with success
+  </label>
+</div>
+<div class="radio has-success">
+  <label>
+    <input type="radio">
+    Radio with success
+  </label>
+</div>
+<label class="custom-control custom-checkbox has-success" for="success-input-5">
+  <input type="checkbox" id="success-input-5" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  Custom checkbox with success
+</label>
+<label class="custom-control custom-radio has-success" for="success-input-6">
+  <input type="radio" id="success-input-6" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  Custom radio with success
+</label>
+  </div>
+
+  <h4 class="doc-subheader">Warning</h4>
+
+  <div class="example" data-accent="(has-warning)">
+<div class="form-group has-warning">
+  <label class="control-label" for="warning-input-1">Input with warning</label>
+  <input type="text" class="form-control" id="warning-input-1">
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="warning-input-2">Select with warning</label>
+  <select class="form-control" id="warning-input-2">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="warning-input-3">Custom select with warning</label>
+  <select class="custom-select form-control" id="warning-input-3">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="warning-input-4">Custom file input with warning</label>
+  <label class="custom-file px-file" for="warning-input-4">
+    <input type="file" id="warning-input-4" class="custom-file-input">
+    <span class="custom-file-control form-control">Choose file...</span>
+    <div class="px-file-buttons">
+      <button type="button" class="btn btn-xs px-file-clear">Clear</button>
+      <button type="button" class="btn btn-primary btn-xs px-file-browse">Browse</button>
+    </div>
+  </label>
+</div>
+<div class="checkbox has-warning">
+  <label>
+    <input type="checkbox">
+    Checkbox with warning
+  </label>
+</div>
+<div class="radio has-warning">
+  <label>
+    <input type="radio">
+    Radio with warning
+  </label>
+</div>
+<label class="custom-control custom-checkbox has-warning" for="warning-input-5">
+  <input type="checkbox" id="warning-input-5" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  Custom checkbox with warning
+</label>
+<label class="custom-control custom-radio has-warning" for="warning-input-6">
+  <input type="radio" id="warning-input-6" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  Custom radio with warning
+</label>
+  </div>
+
+  <h4 class="doc-subheader">Error</h4>
+
+  <div class="example" data-accent="(has-error)">
+<div class="form-group has-error">
+  <label class="control-label" for="error-input-1">Input with error</label>
+  <input type="text" class="form-control" id="error-input-1">
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="error-input-2">Select with error</label>
+  <select class="form-control" id="error-input-2">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="error-input-3">Custom select with error</label>
+  <select class="custom-select form-control" id="error-input-3">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+  </select>
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="error-input-4">Custom file input with error</label>
+  <label class="custom-file px-file" for="error-input-4">
+    <input type="file" id="error-input-4" class="custom-file-input">
+    <span class="custom-file-control form-control">Choose file...</span>
+    <div class="px-file-buttons">
+      <button type="button" class="btn btn-xs px-file-clear">Clear</button>
+      <button type="button" class="btn btn-primary btn-xs px-file-browse">Browse</button>
+    </div>
+  </label>
+</div>
+<div class="checkbox has-error">
+  <label>
+    <input type="checkbox">
+    Checkbox with error
+  </label>
+</div>
+<div class="radio has-error">
+  <label>
+    <input type="radio">
+    Radio with error
+  </label>
+</div>
+<label class="custom-control custom-checkbox has-error" for="error-input-5">
+  <input type="checkbox" id="error-input-5" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  Custom checkbox with error
+</label>
+<label class="custom-control custom-radio has-error" for="error-input-6">
+  <input type="radio" id="error-input-6" class="custom-control-input">
+  <span class="custom-control-indicator"></span>
+  Custom radio with error
+</label>
+  </div>
+
+  <h4 class="doc-subheader">State icon</h4>
+
+  <div class="example" data-accent="(has-\w+)||(form-control-\w+)">
+<div class="form-group has-success">
+  <input type="text" class="form-control form-control-success" placeholder="Text input with success icon">
+</div>
+<div class="form-group has-warning">
+  <input type="text" class="form-control form-control-warning" placeholder="Text input with warning icon">
+</div>
+<div class="form-group has-error">
+  <input type="text" class="form-control form-control-error" placeholder="Text input with error icon">
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Feedback icon</h4>
+
+  <div class="example" data-accent="(has-\w+)||(form-control-\w+)">
+<div class="form-group has-feedback">
+  <label class="control-label" for="feedback-input">Input with feedback</label>
+  <input class="form-control" type="text" id="feedback-input">
+  <i class="fa fa-comments form-control-feedback"></i>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Message</h4>
+
+  <div class="example" data-accent="(has-\w+)||(form-message)">
+<div class="form-group has-success">
+  <label class="control-label" for="message-input-1">Input with success</label>
+  <input type="text" class="form-control" id="message-input-1">
+  <small class="form-message">Some success message.</small>
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="message-input-2">Input with warning</label>
+  <input type="text" class="form-control" id="message-input-2">
+  <small class="form-message">Some warning message.</small>
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="message-input-3">Input with error</label>
+  <input type="text" class="form-control" id="message-input-3">
+  <small class="form-message">Some error message.</small>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Message - light</h4>
+
+  <div class="example" data-accent=" (light)">
+<div class="form-group has-success">
+  <label class="control-label" for="message-light-input-1">Input with success</label>
+  <input type="text" class="form-control" id="message-light-input-1">
+  <small class="form-message light">Some success message.</small>
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="message-light-input-2">Input with warning</label>
+  <input type="text" class="form-control" id="message-light-input-2">
+  <small class="form-message light">Some warning message.</small>
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="message-light-input-3">Input with error</label>
+  <input type="text" class="form-control" id="message-light-input-3">
+  <small class="form-message light">Some error message.</small>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Message - dark</h4>
+
+  <div class="example" data-accent=" (dark)">
+<div class="form-group has-success">
+  <label class="control-label" for="message-dark-input-1">Input with success</label>
+  <input type="text" class="form-control" id="message-dark-input-1">
+  <small class="form-message dark">Some success message.</small>
+</div>
+<div class="form-group has-warning">
+  <label class="control-label" for="message-dark-input-2">Input with warning</label>
+  <input type="text" class="form-control" id="message-dark-input-2">
+  <small class="form-message dark">Some warning message.</small>
+</div>
+<div class="form-group has-error">
+  <label class="control-label" for="message-dark-input-3">Input with error</label>
+  <input type="text" class="form-control" id="message-dark-input-3">
+  <small class="form-message dark">Some error message.</small>
+</div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_form_components.html');
+  </script>
+</body>
+</html>

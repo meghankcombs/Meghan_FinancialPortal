@@ -1,0 +1,751 @@
+<!-- Custom styling -->
+<style>
+  .page-header-form .input-group-addon,
+  .page-header-form .form-control {
+    background: rgba(0,0,0,.05);
+  }
+</style>
+<!-- / Custom styling -->
+
+<ol class="breadcrumb page-breadcrumb">
+  <li><a href="index.html">Home</a></li>
+  <li class="active">Dashboard</li>
+</ol>
+
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-4 text-xs-center text-md-left text-nowrap">
+      <h1><i class="page-header-icon ion-ios-pulse-strong"></i>Dashboard</h1>
+    </div>
+
+    <hr class="page-wide-block visible-xs visible-sm">
+
+    <div class="col-xs-12 width-md-auto width-lg-auto width-xl-auto pull-md-right">
+      <a href="#" class="btn btn-primary btn-block"><span class="btn-label-icon left ion-plus-round"></span>Create project</a>
+    </div>
+
+    <!-- Spacer -->
+    <div class="m-b-2 visible-xs visible-sm clearfix"></div>
+
+    <form action="" class="page-header-form col-xs-12 col-md-4 pull-md-right">
+      <div class="input-group">
+        <span class="input-group-addon b-a-0 font-size-16"><i class="ion-search"></i></span>
+        <input type="text" placeholder="Search..." class="form-control p-l-0 b-a-0">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row" ng-controller="DefaultDashboardChartsCtrl as charts">
+  <div class="col-md-8">
+
+    <!-- Uploads -->
+
+    <div class="panel box">
+      <div class="box-row">
+        <div class="box-cell col-md-4 p-a-3 valign-top">
+          <h4 class="m-y-1 font-weight-normal"><i class="fa fa-cloud-upload text-primary"></i>&nbsp;&nbsp;Uploads</h4>
+          <ul class="list-group m-x-0 m-t-3 m-b-0">
+            <li class="list-group-item p-x-1 b-x-0 b-t-0">
+              <span class="label label-primary pull-right">34</span>
+              Documents
+            </li>
+            <li class="list-group-item p-x-1 b-x-0">
+              <span class="label label-danger pull-right">128</span>
+              Audio
+            </li>
+            <li class="list-group-item p-x-1 b-x-0 b-b-0">
+              <span class="label label-info pull-right">12</span>
+              Videos
+            </li>
+          </ul>
+        </div>
+        <div class="box-cell col-md-8 p-a-1 bg-primary">
+          <div morris-line data="charts.morrisData" options="charts.morrisOptions" style="height: 220px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- / Uploads -->
+
+    <!-- Pie charts -->
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="panel box">
+          <div class="box-row">
+            <div class="box-cell p-x-2 p-y-1 bg-black text-xs-center font-size-11 font-weight-semibold">
+              <i class="fa fa-globe"></i>&nbsp;&nbsp;BANDWIDTH
+            </div>
+          </div>
+          <div class="box-row">
+            <div class="box-cell p-y-2">
+              <div easypiechart options="charts.easyPieChartData[0].options" percent="charts.easyPieChartData[0].percent" class="easy-pie-chart"><span class="font-size-14 font-weight-light"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="panel box">
+          <div class="box-row">
+            <div class="box-cell p-x-2 p-y-1 bg-black text-xs-center font-size-11 font-weight-semibold">
+              <i class="fa fa-flash"></i>&nbsp;&nbsp;PICK LOAD
+            </div>
+          </div>
+          <div class="box-row">
+            <div class="box-cell p-y-2">
+              <div easypiechart options="charts.easyPieChartData[1].options" percent="charts.easyPieChartData[1].percent" class="easy-pie-chart"><span class="font-size-14 font-weight-light"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-4">
+        <div class="panel box">
+          <div class="box-row">
+            <div class="box-cell p-x-2 p-y-1 bg-black text-xs-center font-size-11 font-weight-semibold">
+              <i class="fa fa-cloud"></i>&nbsp;&nbsp;USED RAM
+            </div>
+          </div>
+          <div class="box-row">
+            <div class="box-cell p-y-2">
+              <div easypiechart options="charts.easyPieChartData[2].options" percent="charts.easyPieChartData[2].percent" class="easy-pie-chart"><span class="font-size-14 font-weight-light"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- / Pie charts -->
+
+  </div>
+  <div class="col-md-4">
+
+    <!-- Stats -->
+
+    <a href="#" class="box bg-danger">
+      <div class="box-cell p-a-3 valign-middle">
+        <i class="box-bg-icon middle right ion-arrow-graph-up-right"></i>
+
+        <span class="font-size-24">$<strong>145</strong></span><br>
+        <span class="font-size-15">Earned today</span>
+      </div>
+    </a>
+
+    <div class="panel box">
+      <div class="box-row">
+        <div class="box-container">
+          <div class="box-cell p-a-1 bg-info">
+            <div class="m-b-1 font-size-11">RETWEETS GRAPH</div>
+            <div px-sparkline ng-model="charts.sparklineData[0].data" options="charts.sparklineData[0].options"></div>
+          </div>
+        </div> <!-- / .box-container -->
+      </div>
+      <div class="box-row">
+        <div class="box-container valign-middle text-xs-center">
+          <div class="box-cell p-y-1 b-r-1">
+            <div class="font-size-17"><strong>312</strong></div>
+            <div class="font-size-11">TWEETS</div>
+          </div>
+          <div class="box-cell p-y-1 b-r-1">
+            <div class="font-size-17"><strong>1000</strong></div>
+            <div class="font-size-11">FOLLOWERS</div>
+          </div>
+          <div class="box-cell p-y-1">
+            <div class="font-size-17"><strong>523</strong></div>
+            <div class="font-size-11">FOLLOWING</div>
+          </div>
+        </div> <!-- / .box-container -->
+      </div>
+    </div>
+
+    <div class="box bg-warning">
+      <div class="box-row">
+        <div class="box-cell p-a-2">
+          <div class="font-weight-semibold font-size-17">15% more</div>
+          <div class="font-size-12">Monthly visitor statistics</div>
+        </div>
+      </div>
+      <div class="box-row">
+        <div class="box-cell p-x-2 p-b-1 valign-bottom text-xs-center">
+          <div px-sparkline ng-model="charts.sparklineData[1].data" options="charts.sparklineData[1].options"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- / Stats -->
+
+  </div>
+</div>
+
+<hr class="page-block m-t-0">
+
+<div class="row">
+  <div class="col-md-6">
+
+    <!-- Support tickets -->
+
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <span class="panel-title"><i class="panel-title-icon fa fa-bullhorn"></i>Support tickets</span>
+        <div class="panel-heading-controls">
+          <div class="panel-heading-text">
+            <a  href="#">15 new tickets</a>
+          </div>
+        </div>
+      </div>
+
+      <perfect-scrollbar class="ps-block" style="height: 300px">
+        <div class="widget-support-tickets-item">
+          <span class="label label-success pull-right">Completed</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            Server unavaible
+            <span class="widget-support-tickets-id">[#201798]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#" title="">Timothy Owens</a> today</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-warning pull-right">Pending</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            Mobile App Problem
+            <span class="widget-support-tickets-id">[#201797]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Denise Steiner</a> 2 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-info pull-right">In progress</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            <i class="fa fa-warning text-danger"></i> PayPal issue
+            <span class="widget-support-tickets-id">[#201796]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Robert Jang</a> 3 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-danger pull-right">Rejected</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            IE8 problem
+            <span class="widget-support-tickets-id">[#201795]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Robert Jang</a> 4 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-success pull-right">Completed</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            Server unavaible
+            <span class="widget-support-tickets-id">[#201794]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Timothy Owens</a> 5 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-success pull-right">Completed</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            Server unavaible
+            <span class="widget-support-tickets-id">[#201798]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#" title="">Timothy Owens</a> today</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-warning pull-right">Pending</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            Mobile App Problem
+            <span class="widget-support-tickets-id">[#201797]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Denise Steiner</a> 2 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-info pull-right">In progress</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            <i class="fa fa-warning text-danger"></i> PayPal issue
+            <span class="widget-support-tickets-id">[#201796]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Robert Jang</a> 3 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-danger pull-right">Rejected</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            IE8 problem
+            <span class="widget-support-tickets-id">[#201795]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Robert Jang</a> 4 days ago</span>
+        </div>
+
+        <div class="widget-support-tickets-item">
+          <span class="label label-success pull-right">Completed</span>
+          <a href="#" title="" class="widget-support-tickets-title">
+            Server unavaible
+            <span class="widget-support-tickets-id">[#201794]</span>
+          </a>
+          <span class="widget-support-tickets-info">Opened by <a href="#">Timothy Owens</a> 5 days ago</span>
+        </div>
+      </div>
+
+    </perfect-scrollbar>
+
+    <!-- / Support tickets -->
+
+  </div>
+  <div class="col-md-6">
+
+    <!-- Recent comments / threads -->
+
+    <div class="panel panel-warning" ng-init="activeTab = 1">
+      <div class="panel-heading">
+        <span class="panel-title"><i class="panel-title-icon fa fa-fire text-danger"></i>Recent</span>
+        <ul class="nav nav-tabs nav-xs">
+          <li ng-class="{active: activeTab == 1}"><a href ng-click="activeTab = 1">Comments</a></li>
+          <li ng-class="{active: activeTab == 2}"><a href ng-click="activeTab = 2">Forum threads</a></li>
+        </ul>
+      </div>
+
+      <div class="tab-content p-a-0">
+        <perfect-scrollbar id="threads" class="ps-block tab-pane fade" style="height: 300px" ng-class="{'active in': activeTab == 1}">
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/5.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Michelle Bortz</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Robert Jang</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Timothy Owens</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/5.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Michelle Bortz</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Robert Jang</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-comments-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-comments-avatar">
+            <div class="widget-comments-header">
+              <a href="#" title="">Timothy Owens</a> commented on <a href="#" title="">Article Name</a>
+            </div>
+            <div class="widget-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-comments-footer">
+              2 hours ago
+              <div class="pull-right">
+                <a href="#"><i class="fa fa-pencil"></i>&nbsp;Edit</a>
+                <a href="#"><i class="fa fa-times"></i>&nbsp;Remove</a>
+              </div>
+            </div>
+          </div>
+        </perfect-scrollbar>
+
+        <perfect-scrollbar id="comments" class="ps-block tab-pane fade" style="height: 300px" ng-class="{'active in': activeTab == 2}">
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Robert Jang</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Michelle Bortz</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Timothy Owens</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/5.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Denise Steiner</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Robert Jang</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Michelle Bortz</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Timothy Owens</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Robert Jang</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Michelle Bortz</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Timothy Owens</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/5.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Denise Steiner</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Robert Jang</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Michelle Bortz</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+          <div class="widget-threads-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-threads-avatar">
+            <span class="widget-threads-date">14h</span>
+            <a href="#" class="widget-threads-title">Lorem ipsum dolor sit amet</a>
+            <div class="widget-threads-info">started by <a href="#" title="">Timothy Owens</a> in <a href="#" title="">Forum name</a></div>
+          </div>
+
+        </perfect-scrollbar>
+      </div>
+    </div>
+
+    <!-- / Recent comments / threads -->
+
+  </div>
+</div>
+
+<hr class="page-block m-t-0">
+
+<div class="row">
+  <div class="col-md-7">
+
+    <!-- New users -->
+
+    <div class="panel panel-danger panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title"><i class="panel-title-icon fa fa-smile-o"></i>New users</span>
+        <div class="panel-heading-controls">
+          <ul class="pagination pagination-xs">
+            <li><a href="#">«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Username</th>
+              <th>Full Name</th>
+              <th>E-mail</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody class="valign-middle">
+            <tr>
+              <td>1</td>
+              <td>
+                <img src="assets/demo/avatars/2.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@rjang</a>
+              </td>
+              <td>Robert Jang</td>
+              <td>rjang@example.com</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>
+                <img src="assets/demo/avatars/3.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@mbortz</a>
+              </td>
+              <td>Michelle Bortz</td>
+              <td>mbortz@example.com</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>
+                <img src="assets/demo/avatars/4.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@towens</a>
+              </td>
+              <td>Timothy Owens</td>
+              <td>towens@example.com</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>
+                <img src="assets/demo/avatars/5.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@dsteiner</a>
+              </td>
+              <td>Denise Steiner</td>
+              <td>dsteiner@example.com</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>
+                <img src="assets/demo/avatars/2.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@rjang</a>
+              </td>
+              <td>Robert Jang</td>
+              <td>rjang@example.com</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>
+                <img src="assets/demo/avatars/3.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@mbortz</a>
+              </td>
+              <td>Michelle Bortz</td>
+              <td>mbortz@example.com</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>
+                <img src="assets/demo/avatars/4.jpg" alt="" style="width:26px;height:26px;" class="border-round">&nbsp;&nbsp;<a href="#" title="">@towens</a>
+              </td>
+              <td>Timothy Owens</td>
+              <td>towens@example.com</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- / New users -->
+
+  </div>
+  <div class="col-md-5">
+
+    <!-- Recent tasks -->
+
+    <div class="panel panel-primary panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title"><i class="panel-title-icon fa fa-tasks"></i>Recent tasks</span>
+      </div>
+
+      <div class="widget-tasks-item">
+        <span class="label label-warning pull-right">High</span>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">A very important task</span>&nbsp;&nbsp;
+          <span class="widget-tasks-timer">1 hour left</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <span class="label label-warning pull-right">High</span>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" checked="">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">A very important task</span>&nbsp;&nbsp;
+          <span class="widget-tasks-timer">58 minutes left</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" checked="">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">A regular task</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">A regular task</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">A regular task</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <span class="label pull-right">Low</span>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">A regular task</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <span class="label pull-right">Low</span>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">An unimportant task</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <span class="label pull-right">Low</span>
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">An unimportant task</span>
+        </label>
+      </div>
+
+      <div class="widget-tasks-item">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          <span class="widget-tasks-title">An unimportant task</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- /Recent tasks -->
+
+  </div>
+</div>

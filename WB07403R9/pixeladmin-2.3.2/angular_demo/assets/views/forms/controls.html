@@ -1,0 +1,585 @@
+<!-- Custom styling -->
+<style>
+  #inputs-table {
+    table-layout: fixed;
+  }
+
+  #inputs-table td {
+    padding-top: 15px;
+    padding-bottom: 20px;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Controls</h1>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <span class="panel-title">Controls</span>
+  </div>
+  <table class="table table-striped" id="inputs-table">
+    <thead>
+      <tr><th>Control</th>
+      <th>Default</th>
+      <th>Disabled</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td>
+          Inputs
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="Text input">
+        </td>
+        <td>
+          <input type="text" class="form-control" placeholder="Text input" disabled="">
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Textarea
+        </td>
+        <td>
+          <textarea class="form-control" rows="3"></textarea>
+        </td>
+        <td>
+          <textarea class="form-control" rows="3" disabled=""></textarea>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Checkboxes
+        </td>
+        <td>
+          <div class="checkbox m-t-0">
+            <label>
+              <input type="checkbox" value="option1"> 1
+            </label>
+          </div>
+          <div class="checkbox m-b-0">
+            <label>
+              <input type="checkbox" value="option2" checked> 2
+            </label>
+          </div>
+        </td>
+        <td>
+          <div class="checkbox m-t-0">
+            <label>
+              <input type="checkbox" value="option1" disabled> 1
+            </label>
+          </div>
+          <div class="checkbox m-b-0">
+            <label>
+              <input type="checkbox" value="option2" checked disabled> 2
+            </label>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Inline checkboxes
+        </td>
+        <td>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="option1"> 1
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="option2" checked> 2
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="option3"> 3
+          </label>
+        </td>
+        <td>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="option1" disabled> 1
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="option2" checked disabled> 2
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" value="option3" disabled> 3
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Radios
+        </td>
+        <td>
+          <div class="radio m-t-0">
+            <label>
+              <input type="radio" name="radios-2" value="option1" checked> 1
+            </label>
+          </div>
+          <div class="radio m-b-0">
+            <label>
+              <input type="radio" name="radios-2" value="option2"> 2
+            </label>
+          </div>
+        </td>
+        <td>
+          <div class="radio m-t-0">
+            <label>
+              <input type="radio" name="radios-2-disabled" value="option1" checked disabled> 1
+            </label>
+          </div>
+          <div class="radio m-b-0">
+            <label>
+              <input type="radio" name="radios-2-disabled" value="option2" disabled> 2
+            </label>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Inline radios
+        </td>
+        <td>
+          <label class="radio-inline">
+            <input type="radio" name="radios-3" value="option1"> 1
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="radios-3" value="option2" checked> 2
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="radios-3" value="option3"> 3
+          </label>
+        </td>
+        <td>
+          <label class="radio-inline">
+            <input type="radio" name="radios-3-disabled" value="option1" disabled> 1
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="radios-3-disabled" value="option2" checked disabled> 2
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="radios-3-disabled" value="option3" disabled> 3
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          File
+        </td>
+        <td>
+          <input type="file">
+        </td>
+        <td>
+          <input type="file" disabled>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Selects
+        </td>
+        <td>
+          <select class="form-control m-b-2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <select multiple="" class="form-control">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </td>
+        <td>
+          <select class="form-control m-b-2" disabled="">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+
+          <select multiple="" class="form-control" disabled="">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Switcher
+        </td>
+        <td>
+          <label class="switcher switcher-blank">
+            <input type="checkbox" checked>
+            <div class="switcher-indicator">
+              <div class="switcher-yes">YES</div>
+              <div class="switcher-no">NO</div>
+            </div>
+          </label>
+        </td>
+        <td>
+          <label class="switcher switcher-blank">
+            <input type="checkbox" checked disabled>
+            <div class="switcher-indicator">
+              <div class="switcher-yes">YES</div>
+              <div class="switcher-no">NO</div>
+            </div>
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Custom checkboxes
+        </td>
+        <td>
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" checked>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+        </td>
+        <td>
+          <label class="custom-control custom-checkbox disabled">
+            <input type="checkbox" class="custom-control-input" disabled>
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-checkbox disabled">
+            <input type="checkbox" class="custom-control-input" checked disabled>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Custom inline checkboxes
+        </td>
+        <td>
+          <label class="custom-control custom-checkbox checkbox-inline">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-checkbox checkbox-inline">
+            <input type="checkbox" class="custom-control-input" checked>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+          <label class="custom-control custom-checkbox checkbox-inline">
+            <input type="checkbox" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            3
+          </label>
+        </td>
+        <td>
+          <label class="custom-control custom-checkbox checkbox-inline disabled">
+            <input type="checkbox" class="custom-control-input" disabled>
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-checkbox checkbox-inline disabled">
+            <input type="checkbox" class="custom-control-input" checked disabled>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+          <label class="custom-control custom-checkbox checkbox-inline disabled">
+            <input type="checkbox" class="custom-control-input" disabled>
+            <span class="custom-control-indicator"></span>
+            3
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Custom radios
+        </td>
+        <td>
+          <label class="custom-control custom-radio">
+            <input type="radio" name="custom-radios-2" class="custom-control-input" checked>
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-radio">
+            <input type="radio" name="custom-radios-2" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+        </td>
+        <td>
+          <label class="custom-control custom-radio disabled">
+            <input type="radio" name="custom-radios-2-disabled" class="custom-control-input" checked disabled>
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-radio disabled">
+            <input type="radio" name="custom-radios-2-disabled" class="custom-control-input" disabled>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Custom inline radios
+        </td>
+        <td>
+          <label class="custom-control custom-radio radio-inline">
+            <input type="radio" name="custom-radios-3" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-radio radio-inline">
+            <input type="radio" name="custom-radios-3" class="custom-control-input" checked>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+          <label class="custom-control custom-radio radio-inline">
+            <input type="radio" name="custom-radios-3" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            3
+          </label>
+        </td>
+        <td>
+          <label class="custom-control custom-radio radio-inline disabled">
+            <input type="radio" name="custom-radios-3-disabled" class="custom-control-input" disabled>
+            <span class="custom-control-indicator"></span>
+            1
+          </label>
+          <label class="custom-control custom-radio radio-inline disabled">
+            <input type="radio" name="custom-radios-3-disabled" class="custom-control-input" checked disabled>
+            <span class="custom-control-indicator"></span>
+            2
+          </label>
+          <label class="custom-control custom-radio radio-inline disabled">
+            <input type="radio" name="custom-radios-3-disabled" class="custom-control-input" disabled>
+            <span class="custom-control-indicator"></span>
+            3
+          </label>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Custom select
+        </td>
+        <td>
+          <select class="custom-select form-control">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </td>
+        <td>
+          <select class="custom-select form-control" disabled>
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          Custom file
+        </td>
+        <td>
+          <px-file ng-model="pxFile1" class="m-b-2" />
+          <px-custom-file ng-model="pxFile2" />
+        </td>
+        <td>
+          <px-file ng-model="pxFile3" disable="true" class="m-b-2" />
+          <px-custom-file ng-model="pxFile4" disable="true" />
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Switchers</div>
+  </div>
+  <div class="panel-body">
+    <label for="switcher-rounded" class="switcher switcher-rounded">
+      <input type="checkbox" id="switcher-rounded" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Rounded switcher
+    </label>
+
+    <label for="switcher-icon" class="switcher">
+      <input type="checkbox" id="switcher-icon" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes"><i class="fa fa-check"></i></div>
+        <div class="switcher-no"><i class="fa fa-close"></i></div>
+      </div>
+      Switcher with icon
+    </label>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">RADIOS</h6>
+
+    <label for="switcher-option-1" class="switcher">
+      <input type="radio" name="switcher-radios" id="switcher-option-1" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      First option
+    </label>
+    <label for="switcher-option-2" class="switcher">
+      <input type="radio" name="switcher-radios" id="switcher-option-2">
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Second option
+    </label>
+    <label for="switcher-option-3" class="switcher">
+      <input type="radio" name="switcher-radios" id="switcher-option-3">
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Third option
+    </label>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+    <label for="switcher-primary" class="switcher switcher-primary">
+      <input type="checkbox" id="switcher-primary" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Primary
+    </label>
+    <label for="switcher-success" class="switcher switcher-success">
+      <input type="checkbox" id="switcher-success" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Success
+    </label>
+    <label for="switcher-danger" class="switcher switcher-danger">
+      <input type="checkbox" id="switcher-danger" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Danger
+    </label>
+    <label for="switcher-warning" class="switcher switcher-warning">
+      <input type="checkbox" id="switcher-warning" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Warning
+    </label>
+    <label for="switcher-info" class="switcher switcher-info">
+      <input type="checkbox" id="switcher-info" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Info
+    </label>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Sizes</div>
+  </div>
+  <div class="panel-body">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SMALL</h6>
+
+    <input type="text" class="form-control input-sm m-b-2" placeholder="Text input">
+    <input type="color" class="form-control input-sm m-b-2" placeholder="Color input">
+    <textarea class="form-control input-sm m-b-2" placeholder="Text area" rows="5"></textarea>
+    <select class="form-control input-sm m-b-2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <select class="custom-select form-control input-sm m-b-2">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <px-file ng-model="pxFile5" size="sm" class="m-b-2" />
+    <px-custom-file ng-model="pxFile6" size="sm" class="m-b-2" />
+    <label class="switcher switcher-sm">
+      <input type="checkbox" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Small switcher
+    </label>
+
+    <hr class="panel-wide-block">
+
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">LARGE</h6>
+
+    <input type="text" class="form-control input-lg m-b-2" placeholder="Text input">
+    <input type="color" class="form-control input-lg m-b-2" placeholder="Color input">
+    <textarea class="form-control input-lg m-b-2" placeholder="Text area" rows="5"></textarea>
+    <select class="form-control input-lg m-b-2">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+    <select class="custom-select form-control input-lg m-b-2">
+      <option selected>Open this select menu</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <px-file ng-model="pxFile7" size="lg" class="m-b-2" />
+    <px-custom-file ng-model="pxFile8" size="lg" class="m-b-2" />
+    <label class="switcher switcher-lg">
+      <input type="checkbox" checked>
+      <div class="switcher-indicator">
+        <div class="switcher-yes">YES</div>
+        <div class="switcher-no">NO</div>
+      </div>
+      Large switcher
+    </label>
+  </div>
+</div>

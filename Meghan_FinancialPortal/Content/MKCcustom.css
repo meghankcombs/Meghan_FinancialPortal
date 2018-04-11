@@ -1,0 +1,34 @@
+﻿/* TEMPLATE CSS */
+.page-header-form .input-group-addon,
+.page-header-form .form-control {
+    background: rgba(0,0,0,.05);
+}
+
+.page-about-us-header.page-header {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.page-about-us-text {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.page-about-us-team-avatar {
+    width: 80px;
+}
+
+    .page-about-us-team-avatar img {
+        width: 100%;
+    }
+
+.page-profile-v1-avatar {
+    max-width: 160px;
+    border: 4px solid #fff;
+}
+
+/* MY CSS */
+.myIndexBtns {
+    margin-right: 5px;
+}

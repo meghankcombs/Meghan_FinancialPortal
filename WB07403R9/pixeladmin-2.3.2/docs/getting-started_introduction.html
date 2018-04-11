@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Introduction - Getting started - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  .px-stucture {
+    padding: 20px;
+    border-radius: 3px;
+    border: 3px solid #f7f7f9;
+  }
+
+  .px-stucture li {
+    list-style: none;
+    padding: 2px 0;
+  }
+
+  .px-stucture ul {
+    padding-left: 20px;
+  }
+
+  html[dir="rtl"] .px-stucture ul {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+
+  .px-stucture .fa {
+    display: inline-block;
+    margin-right: 7px;
+  }
+
+  html[dir="rtl"] .px-stucture .fa {
+    margin-right: 0;
+    margin-left: 7px;
+  }
+
+  #px-licensing {
+    font-size: 15px;
+    padding: 0 20px;
+  }
+
+  #px-licensing li {
+    list-style-type: circle;
+    padding: 3px 0;
+  }
+
+  #px-licensing a {
+    text-decoration: underline;
+  }
+</style>
+
+<h1 class="doc-header">Introduction</h1>
+
+<h4 class="doc-subheader">Package structure</h4>
+
+<p>PixelAdmin package has the next structure:</p>
+
+<ul class="px-stucture">
+  <li><i class="fa fa-folder-o"></i>angular_demo</li>
+  <li><i class="fa fa-folder-o"></i>angular_starter</li>
+  <li><i class="fa fa-folder-o"></i>builderapp</li>
+  <li><i class="fa fa-folder-o"></i>color_generator</li>
+  <li><i class="fa fa-folder-o"></i>docs</li>
+  <li><i class="fa fa-folder-o"></i>html_demo</li>
+  <li><i class="fa fa-folder-o"></i>html_starter</li>
+  <li><i class="fa fa-folder-o"></i>requirejs_demo</li>
+  <li><i class="fa fa-folder-o"></i>requirejs_starter</li>
+  <li><i class="fa fa-folder-o"></i>landing_page</li>
+  <li>
+    <i class="fa fa-folder-o"></i>source <span class="text-muted">- Source directory</span>
+    <ul>
+      <li>
+        <i class="fa fa-folder-o"></i>custom <span class="text-muted">- Custom files</span>
+        <ul>
+          <li><i class="fa fa-folder-o"></i>build <span class="text-muted">- Babel working dir</span></li>
+          <li><i class="fa fa-folder-o"></i>js <span class="text-muted">- Custom JS sources, which can be written using ES6</span></li>
+          <li>
+            <i class="fa fa-folder-o"></i>scss <span class="text-muted">- Custom SCSS sources</span>
+            <ul>
+              <li><i class="fa fa-folder-o"></i>themes <span class="text-muted">- Custom SCSS themes</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <i class="fa fa-folder-o"></i>dist <span class="text-muted">- Distribution / Compiled sources</span>
+        <ul>
+          <li>
+            <i class="fa fa-folder-o"></i>css
+            <ul>
+              <li><i class="fa fa-folder-o"></i>themes</li>
+            </ul>
+          </li>
+          <li>
+            <i class="fa fa-folder-o"></i>js
+            <ul>
+              <li><i class="fa fa-folder-o"></i>amd <span class="text-muted">- RequireJS modules</span></li>
+              <li><i class="fa fa-folder-o"></i>angular <span class="text-muted">- Angular dist</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <i class="fa fa-folder-o"></i>js
+        <ul>
+          <li><i class="fa fa-folder-o"></i>angular</li>
+          <li><i class="fa fa-folder-o"></i>build</li>
+          <li>
+            <i class="fa fa-folder-o"></i>src
+            <ul>
+              <li><i class="fa fa-folder-o"></i>directives</li>
+              <li><i class="fa fa-folder-o"></i>extensions</li>
+              <li><i class="fa fa-folder-o"></i>plugins</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <i class="fa fa-folder-o"></i>scss <span class="text-muted">- SCSS sources</span>
+        <ul>
+          <li><i class="fa fa-folder-o"></i>mixins</li>
+          <li><i class="fa fa-folder-o"></i>plugins</li>
+          <li><i class="fa fa-folder-o"></i>themes</li>
+          <li><i class="fa fa-folder-o"></i>utitlilies</li>
+          <li><i class="fa fa-folder-o"></i>widgets</li>
+        </ul>
+      </li>
+      <li><i class="fa fa-folder-o"></i>tasks <span class="text-muted">- Gulp tasks</span></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 class="doc-subheader">Installing required software</h4>
+
+<p>
+  Before using console commands / Builder app, you need to install Node.js and Git.
+  If Node.js and Git are already installed on your system, you can skip this section.
+</p>
+
+<h5 class="doc-subheader m-t-4">On Windows</h5>
+
+<ul>
+  <li>
+    <h5 class="m-y-1">Node.js</h5>
+    Go to <a href="https://nodejs.org" target="blank">https://nodejs.org</a>, and
+    download installer v6.10.x LTS. Launch the downloaded installer and follow instructions.
+  </li>
+  <li>
+    <h5 class="m-y-1">Git</h5>
+    Go to <a href="https://git-scm.com" target="blank">https://git-scm.com</a>, and
+    click the "Downloads for Windows" button. Launch the downloaded installer and follow instructions.
+  </li>
+</ul>
+
+<h5 class="doc-subheader m-t-4">On Linux(Ubuntu)</h5>
+
+<ol>
+  <li>
+    First of all, you need to update your system to make sure that system repository contains latest package versions: <br>
+    <code>sudo apt-get update</code>
+  </li>
+  <li class="m-t-1">
+    Install latest Node.js (see <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions</a>)<br>
+  </li>
+  <li>
+    Install git<br><code>sudo apt-get install git</code>
+  </li>
+</ol>
+
+<h5 class="doc-subheader m-t-4">On Mac OS X</h5>
+
+<ul>
+  <li>
+    <h5 class="m-y-1">Node.js</h5>
+    Go to <a href="https://nodejs.org" target="blank">https://nodejs.org</a>, and
+    download installer v6.10.x LTS. Launch the downloaded installer and follow instructions.
+  </li>
+  <li>
+    <h5 class="m-y-1">Xcode</h5>
+    <ol>
+      <li>Launch "App Store" app.</li>
+      <li>Search and install "Xcode".</li>
+      <li>Launch "Xcode" app.</li>
+      <li>Accept license agreement.</li>
+      <li>
+        Install additional components if required:
+        <div><img src="assets/images/installation/required-components.png" alt=""></div>
+      </li>
+      <li>Quit Xcode</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 class="doc-subheader">Installing PixelAdmin dependencies</h4>
+
+<p>
+  Before you compile PixelAdmin sources, you need to install dependencies:
+</p>
+
+<ol>
+  <li>
+    Go to the PixelAdmin <strong>source</strong> directory (if you want to recompile package sources)
+    or PixelAdmin bundle directory.
+  </li>
+  <li>
+    Run the next commands in terminal: <br>
+    <code>npm install</code><br>
+    <code>npm run bower:install</code>
+  </li>
+</ol>
+
+<p>
+  See the <a href="getting-started_commands.html" class="alert-link">Console commands</a>
+  page to read more about console commands.
+</p>
+
+<h4 class="doc-subheader">Compiling sources</h4>
+
+<ol>
+  <li>
+    Go to the PixelAdmin <strong>source</strong> directory (if you want to recompile package sources)
+    or PixelAdmin bundle directory.
+  </li>
+  <li>
+    Run the next command in terminal: <br>
+    <code>npm run compile</code><br>
+  </li>
+</ol>
+
+<p>
+  Also, you can compile SCSS / Javascript / AMD / Angular sources separately (read more at the <a href="getting-started_commands.html" class="alert-link">Console commands</a> page).
+</p>
+
+<h4 class="doc-subheader">Licensing Information</h4>
+
+<ul id="px-licensing">
+  <li>jquery<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>requirejs<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> / <a href="https://opensource.org/licenses/BSD-3-Clause"><strong>NEW BSD</strong></a> LICENSE</span></li>
+  <li>bootstrap-sass<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>animate-sass<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>select2<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>bootstrap-datepicker<span class="text-muted"> - <a href="https://www.apache.org/licenses/LICENSE-2.0"><strong>APACHE v2.0</strong></a> LICENSE</span></li>
+  <li>bootstrap-timepicker<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery-minicolors<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery.maskedinput<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery-autosize<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery-validation<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>bootbox<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>datatables<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>datatables-plugins<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>growl<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>dropzone<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery-knob<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>summernote<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>markdown<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>bootstrap-markdown<span class="text-muted"> - <a href="https://www.apache.org/licenses/LICENSE-2.0"><strong>APACHE v2.0</strong></a> LICENSE</span></li>
+  <li>perfect-scrollbar<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>ionrangeslider<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery-sortable<span class="text-muted"> - <a href="https://opensource.org/licenses/BSD-3-Clause"><strong>BSD-3</strong></a> LICENSE</span></li>
+  <li>bootstrap-touchspin<span class="text-muted"> - <a href="https://www.apache.org/licenses/LICENSE-2.0"><strong>APACHE v2.0</strong></a> LICENSE</span></li>
+  <li>quick-select<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>editable-table<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>toastr<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>bootstrap-daterangepicker<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>moment<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>bootstrap-3-typeahead<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>bootstrap-tagsinput<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>sortablejs<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>seiyria-bootstrap-slider<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>nouislider<span class="text-muted"> - <a href="http://www.wtfpl.net/about/"><strong>WTFPL</strong></a> LICENSE</span></li>
+  <li>rahael<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>morris.js<span class="text-muted"> - <a href="https://opensource.org/licenses/BSD-2-Clause"><strong>BSD-2-Clause</strong></a> LICENSE</span></li>
+  <li>flot<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>flot.tooltip<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>Chart.js<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>chartist<span class="text-muted"> - <a href="http://www.wtfpl.net/about/"><strong>WTFPL</strong></a> / <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>d3<span class="text-muted"> - <a href="https://opensource.org/licenses/BSD-3-Clause"><strong>BSD-3</strong></a> LICENSE</span></li>
+  <li>c3<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery.sparkline.dist<span class="text-muted"> - <a href="https://opensource.org/licenses/BSD-3-Clause"><strong>NEW BSD</strong></a> LICENSE</span></li>
+  <li>easy-pie-chart<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>owl.carousel<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-ui-router<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>ui-bootstrap<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>oclazyload<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-perfect-scrollbar<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>c3-angular<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-chart.js<span class="text-muted"> - <a href="https://opensource.org/licenses/BSD-2-Clause"><strong>BSD-2-Clause</strong></a> LICENSE</span></li>
+  <li>angular-flot<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-chartist.js<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>ngBootbox<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-legacy-sortablejs<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-ui-select<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>ng-tags-input<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-summernote<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>angular-datatables<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>pace<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>jquery.scrollto<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>waypoints<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+  <li>lazysizes<span class="text-muted"> - <a href="https://opensource.org/licenses/MIT"><strong>MIT</strong></a> LICENSE</span></li>
+</ul>
+
+<p class="font-size-15">
+  All images are licensed under <a href="https://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero</a><strong></strong>.
+</p>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('getting-started_introduction.html');
+  </script>
+</body>
+</html>

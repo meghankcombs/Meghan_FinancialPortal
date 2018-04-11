@@ -1,0 +1,165 @@
+<button type="button" class="px-nav-toggle" data-toggle="px-nav">
+  <span class="px-nav-toggle-arrow"></span>
+  <span class="navbar-toggle-icon"></span>
+  <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+</button>
+
+<ul class="px-nav-content">
+  <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
+    <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <img src="assets/demo/avatars/1.jpg" alt="" class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
+    <div class="font-size-16"><span class="font-weight-light">Welcome, </span><strong>John</strong></div>
+    <div class="btn-group" style="margin-top: 4px;">
+      <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-envelope"></i></a>
+      <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-user"></i></a>
+      <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-cog"></i></a>
+      <a href="#" class="btn btn-xs btn-danger btn-outline"><i class="fa fa-power-off"></i></a>
+    </div>
+  </li>
+
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('dashboards')}">
+    <a href="#"><i class="px-nav-icon ion-ios-pulse-strong"></i><span class="px-nav-label">Dashboards<span class="label label-danger">5</span></span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="dashboards.default"><span class="px-nav-label">Default</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="dashboards.analytics"><span class="px-nav-label">Analytics</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="dashboards.videos"><span class="px-nav-label">Videos</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="dashboards.financial"><span class="px-nav-label">Financial</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="dashboards.blog"><span class="px-nav-label">Blog</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item" ui-sref-active="active">
+    <a href ui-sref="boxes.page"><i class="px-nav-icon ion-ios-analytics"></i><span class="px-nav-label">Boxes</span></a>
+  </li>
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('widgets')}">
+    <a href="#"><i class="px-nav-icon ion-erlenmeyer-flask"></i><span class="px-nav-label">Widgets</span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="widgets.lists"><span class="px-nav-label">Lists</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="widgets.pricing"><span class="px-nav-label">Pricing</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="widgets.timeline"><span class="px-nav-label">Timeline</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="widgets.misc"><span class="px-nav-label">Misc</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item" ui-sref-active="active">
+    <a href ui-sref="utilities.page"><i class="px-nav-icon ion-cube"></i><span class="px-nav-label">Utilities</span></a>
+  </li>
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('ui')}">
+    <a href="#"><i class="px-nav-icon ion-monitor"></i><span class="px-nav-label">UI elements</span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.buttons"><span class="px-nav-label">Buttons</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.tabs"><span class="px-nav-label">Tabs & Accordions</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.modals"><span class="px-nav-label">Modals</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.alerts"><span class="px-nav-label">Alerts & Tooltips</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.panels"><span class="px-nav-label">Panels</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.sortable"><span class="px-nav-label">Sortable</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.carousel"><span class="px-nav-label">Carousel</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="ui.misc"><span class="px-nav-label">Misc</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('forms')}">
+    <a href="#"><i class="px-nav-icon ion-android-checkbox-outline"></i><span class="px-nav-label">Forms</span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.layout"><span class="px-nav-label">Layout</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.controls"><span class="px-nav-label">Controls</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.components"><span class="px-nav-label">Components</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.advanced"><span class="px-nav-label">Advanced</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.sliders"><span class="px-nav-label">Sliders</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.pickers"><span class="px-nav-label">Pickers</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.editors"><span class="px-nav-label">Editors</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="forms.validation"><span class="px-nav-label">Validation</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('tables')}">
+    <a href="#"><i class="px-nav-icon ion-ios-keypad"></i><span class="px-nav-label">Tables</span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="tables.bootstrap"><span class="px-nav-label">Bootstrap</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="tables.datatables"><span class="px-nav-label">DataTables</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="tables.editable-table"><span class="px-nav-label">editableTableWidget</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('charts')}">
+    <a href="#"><i class="px-nav-icon ion-stats-bars"></i><span class="px-nav-label">Charts</span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.flot"><span class="px-nav-label">Flot.js</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.morris"><span class="px-nav-label">Morris.js</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.chartjs"><span class="px-nav-label">Chart.js</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.chartist">Chartist</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.c3"><span class="px-nav-label">C3.js</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.sparkline"><span class="px-nav-label">Sparkline</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="charts.easy-pie-chart"><span class="px-nav-label">Easy Pie Chart</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('pages')}">
+    <a href="#"><i class="px-nav-icon ion-ios-paper"></i><span class="px-nav-label">Pages<span class="label label-info">22</span></span></a>
+
+    <ul class="px-nav-dropdown-menu">
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><span class="px-nav-label">Authentication</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href ui-sref="authentication.signin1"><span class="px-nav-label">Sign In v1</span></a></li>
+          <li class="px-nav-item"><a href ui-sref="authentication.signin2"><span class="px-nav-label">Sign In v2</span></a></li>
+          <li class="px-nav-item"><a href ui-sref="authentication.signup1"><span class="px-nav-label">Sign Up v1</span></a></li>
+          <li class="px-nav-item"><a href ui-sref="authentication.signup2"><span class="px-nav-label">Sign Up v2</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('pages.blog')}">
+        <a href="#"><span class="px-nav-label">Blog</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.blog.posts"><span class="px-nav-label">Posts</span></a></li>
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.blog.post"><span class="px-nav-label">Post</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><span class="px-nav-label">Error pages</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href ui-sref="errors.404"><span class="px-nav-label">404</span></a></li>
+          <li class="px-nav-item"><a href ui-sref="errors.500"><span class="px-nav-label">500</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('pages.forum')}">
+        <a href="#"><span class="px-nav-label">Forum</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.forum.forums-list"><span class="px-nav-label">Forums list</span></a></li>
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.forum.topics"><span class="px-nav-label">Topics</span></a></li>
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.forum.thread"><span class="px-nav-label">Thread</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown" ng-class="{'active px-open': $root.$state.includes('pages.messages')}">
+        <a href="#"><span class="px-nav-label">Messages</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.messages.list"><span class="px-nav-label">List</span></a></li>
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.messages.item"><span class="px-nav-label">Item</span></a></li>
+          <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.messages.new"><span class="px-nav-label">New message</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.about-us">About Us</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.account"><span class="px-nav-label">Account</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.invoice"><span class="px-nav-label">Invoice</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.pricing"><span class="px-nav-label">Pricing</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.profile-v1">Profile v1</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.profile-v2">Profile v2</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.search-results"><span class="px-nav-label">Search results</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.support-center"><span class="px-nav-label">Support center</span></a></li>
+      <li class="px-nav-item" ui-sref-active="active"><a href ui-sref="pages.blank"><span class="px-nav-label">Blank</span></a></li>
+    </ul>
+  </li>
+  <li class="px-nav-item">
+    <a href="../color_generator/index.html"><i class="px-nav-icon ion-aperture"></i><span class="px-nav-label">Color Generator</span></a>
+  </li>
+  <li class="px-nav-item">
+    <a href="../docs/index.html" target="_blank" class="bg-success text-white b-a-0"><i class="px-nav-icon ion-social-buffer"></i><span class="px-nav-label">Docs</span></a>
+  </li>
+  <li class="px-nav-box b-t-1 p-a-2">
+    <a ui-sref="pages.invoice" class="btn btn-primary btn-block btn-outline">Create Invoice</a>
+  </li>
+</ul>

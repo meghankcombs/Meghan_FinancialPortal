@@ -1,0 +1,598 @@
+<div class="page-header">
+  <h1 class="pull-xs-left"><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Panels</h1>
+  <div class="m-b-3 visible-xs visible-sm clearfix"></div>
+  <div class="pull-md-right text-nowrap" ng-controller="UIPanelsStyleCtrl">
+    Style&nbsp;&nbsp;
+    <select ng-model="panelStyle" class="form-control custom-select" style="display:inline-block;vertical-align:middle;width:150px;">
+      <option value="panel">Default</option>
+      <option value="panel panel-success">Light</option>
+      <option value="panel panel-success panel-body-colorful">Light colorful</option>
+      <option value="panel panel-success panel-dark">Dark</option>
+      <option value="panel panel-success panel-dark panel-body-colorful">Dark colorful</option>
+    </select>
+  </div>
+</div>
+
+<div class="row panels-example">
+  <div class="col-md-6">
+
+    <div class="panel">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">Title</div>
+      <small class="panel-subtitle text-muted">Support panel subtitle</small>
+      <img class="panel-img" holder="holder.js/100px180?theme=social" alt="Panel image cap">
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">List group</span>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+      <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Tabs</span>
+        <ul class="nav nav-tabs nav-xs">
+          <li class="active"><a data-toggle="tab">Home</a></li>
+          <li><a data-toggle="tab">Profile</a></li>
+          <li><a data-toggle="tab">More</a></li>
+        </ul>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Labels</span>
+        <div class="panel-heading-controls">
+          <span class="label label-tag label-success">Tag</span>
+          <span class="label label-danger">Label</span>
+          <span class="label label-pill label-info">Badge</span>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Pagination</span>
+        <div class="panel-heading-controls">
+          <ul class="pagination pagination-xs">
+            <li><a href="#">«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">With text</span>
+        <div class="panel-heading-controls">
+          <span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+          <button class="btn btn-xs">Button</button>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Icon</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Input group</span>
+        <div class="panel-heading-controls col-sm-4">
+          <form action="">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" placeholder="Search..." name="s">
+              <span class="input-group-btn">
+                <button class="btn" type="submit">
+                  <span class="fa fa-search"></span>
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel">
+      <div class="panel-title">Title</div>
+      <small class="panel-subtitle text-muted">Support panel subtitle</small>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Panel header</span>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+      <div class="panel-footer">Panel footer</div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Title icon</span>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Table</span>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Buttons</span>
+        <div class="panel-heading-controls">
+          <button class="btn btn-xs btn-success btn-outline btn-outline-colorless"><i class="fa fa-check"></i> Apply</button>
+          <button class="btn btn-xs btn-danger btn-outline"><i class="fa fa-close"></i></button>
+          <div uib-dropdown class="btn-group btn-group-xs">
+            <button uib-dropdown-toggle class="btn btn-info"><i class="fa fa-cog"></i></button>
+            <ul uib-dropdown-menu class="dropdown-menu-right">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Alerts</span>
+      </div>
+      <div class="px-block-alerts">
+        <div class="alert alert-success alert-dark">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Well done!</strong> You successfully read this important alert message.
+        </div>
+        <div class="alert alert-info">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Pager</span>
+        <div class="panel-heading-controls">
+          <ul class="pager pager-xs">
+            <li class="disabled"><a href="#">← Older</a></li>
+            <li><a href="#">Newer →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Progress</span>
+        <div class="panel-heading-controls" style="width: 30%; max-width: 140px;">
+          <div class="progress progress-striped active" style="width: 100%">
+            <div class="progress-bar progress-bar-danger" style="width: 60%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Input</span>
+        <div class="panel-heading-controls">
+          <select class="form-control input-sm custom-select">
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Switcher</span>
+        <div class="panel-heading-controls">
+          <label for="panel-with-switcher" class="switcher switcher-rounded switcher-sm switcher-primary switcher-blank">
+            <input type="checkbox" id="panel-with-switcher" checked>
+            <div class="switcher-indicator">
+              <div class="switcher-yes">ON</div>
+              <div class="switcher-no">OFF</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panels-example">
+  <div class="panel">
+    <div class="panel-heading">
+      <span class="panel-title">Wizard</span>
+    </div>
+    <px-wizard class="panel-wizard">
+      <div class="wizard-wrapper">
+        <ul class="wizard-steps">
+          <li data-target="#wizard-panel-step1" class="completed">
+            <span class="wizard-step-number">1</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Step 1
+              <span class="wizard-step-description">Description</span>
+            </span>
+          </li>
+          <li data-target="#wizard-panel-step2" class="active">
+            <span class="wizard-step-number">2</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Step 2
+              <span class="wizard-step-description">Description</span>
+            </span>
+          </li>
+          <li data-target="#wizard-panel-step3">
+            <span class="wizard-step-number">3</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Step 3
+              <span class="wizard-step-description">Description</span>
+            </span>
+          </li>
+          <li data-target="#wizard-panel-step4">
+            <span class="wizard-step-number">4</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Finish
+              <span class="wizard-step-description">Description</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="wizard-content">
+        <div class="wizard-pane" id="wizard-panel-step1"></div>
+        <div class="wizard-pane active" id="wizard-panel-step2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div class="wizard-pane" id="wizard-panel-step3"></div>
+        <div class="wizard-pane" id="wizard-panel-step4"></div>
+      </div>
+    </px-wizard>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Wizard title</div>
+    <small class="panel-subtitle text-muted">Support panel subtitle</small>
+    <px-wizard class="panel-wizard">
+      <div class="wizard-wrapper">
+        <ul class="wizard-steps">
+          <li data-target="#wizard-panel2-step1" class="completed">
+            <span class="wizard-step-number">1</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">Step 1</span>
+          </li>
+          <li data-target="#wizard-panel2-step2" class="active">
+            <span class="wizard-step-number">2</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">Step 2</span>
+          </li>
+          <li data-target="#wizard-panel2-step3">
+            <span class="wizard-step-number">3</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">Step 3</span>
+          </li>
+          <li data-target="#wizard-panel2-step4">
+            <span class="wizard-step-number">4</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">Finish</span>
+          </li>
+        </ul>
+      </div>
+      <div class="wizard-content">
+        <div class="wizard-pane" id="wizard-panel2-step1"></div>
+        <div class="wizard-pane active" id="wizard-panel2-step2">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div class="wizard-pane" id="wizard-panel2-step3"></div>
+        <div class="wizard-pane" id="wizard-panel2-step4"></div>
+      </div>
+    </div>
+    <div class="panel-body">
+      Some body content.
+    </div>
+  </px-wizard>
+</div>
+
+<hr class="page-wide-block">
+
+<h4 class="m-y-4">Colors</h4>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <span class="panel-title">Danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-danger panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-danger panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-danger panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful danger</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <span class="panel-title">Success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-success panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-success panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-success panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful success</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <span class="panel-title">Warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-warning panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-warning panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-warning panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful warning</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <span class="panel-title">Info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-info panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Colorful info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-info panel-dark">
+      <div class="panel-heading">
+        <span class="panel-title">Dark info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+    <div class="panel panel-info panel-dark panel-body-colorful">
+      <div class="panel-heading">
+        <span class="panel-title">Dark colorful info</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-transparent">
+      <div class="panel-heading">
+        <span class="panel-title">Panel - Transparent</span>
+        <div class="panel-heading-icon"><i class="fa fa-inbox"></i></div>
+      </div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+      </div>
+    </div>
+  </div>
+</div>

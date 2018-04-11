@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Dropzone - Plugins - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <h1 class="doc-header">
+    Dropzone
+    <a href="http://www.dropzonejs.com" target="_blank" class="doc-header-url">http://www.dropzonejs.com</a>
+  </h1>
+
+  <h4 class="doc-description">
+    DropzoneJS is an open source library that provides drag’n’drop file uploads with image previews.
+  </h4>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <div class="example">
+<form action="/upload" id="dropzonejs" class="dropzone-box">
+  <div class="dz-default dz-message">
+    <div class="dz-upload-icon"></div>
+    Drop files in here<br>
+    <span class="dz-text-small">or click to pick manually</span>
+  </div>
+  <div class="fallback">
+    <input name="file" type="file" multiple="">
+  </div>
+</form>
+
+<script>
+  $(function() {
+    $('#dropzonejs').dropzone({
+      parallelUploads: 2,
+      maxFilesize:     50000,
+      filesizeBase:    1000,
+
+      resize: function(file) {
+        return {
+          srcX:      0,
+          srcY:      0,
+          srcWidth:  file.width,
+          srcHeight: file.height,
+          trgWidth:  file.width,
+          trgHeight: file.height,
+        };
+      },
+    });
+
+
+    // Mock the file upload progress (only for the demo)
+    //
+    Dropzone.prototype.uploadFiles = function(files) {
+      var minSteps         = 6;
+      var maxSteps         = 60;
+      var timeBetweenSteps = 100;
+      var bytesPerStep     = 100000;
+      var isUploadSuccess  = Math.round(Math.random());
+
+      var self = this;
+
+      for (var i = 0; i < files.length; i++) {
+
+        var file = files[i];
+        var totalSteps = Math.round(Math.min(maxSteps, Math.max(minSteps, file.size / bytesPerStep)));
+
+        for (var step = 0; step < totalSteps; step++) {
+          var duration = timeBetweenSteps * (step + 1);
+
+          setTimeout(function(file, totalSteps, step) {
+            return function() {
+              file.upload = {
+                progress: 100 * (step + 1) / totalSteps,
+                total: file.size,
+                bytesSent: (step + 1) * file.size / totalSteps
+              };
+
+              self.emit('uploadprogress', file, file.upload.progress, file.upload.bytesSent);
+              if (file.upload.progress == 100) {
+
+                if (isUploadSuccess) {
+                  file.status =  Dropzone.SUCCESS;
+                  self.emit('success', file, 'success', null);
+                } else {
+                  file.status =  Dropzone.ERROR;
+                  self.emit('error', file, 'Some upload error', null);
+                }
+
+                self.emit('complete', file);
+                self.processQueue();
+              }
+            };
+          }(file, totalSteps, step), duration);
+        }
+      }
+    };
+  });
+</script>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+      <div class="doc-external-link alert">
+        See the usage documentation at <a href="http://www.dropzonejs.com" target="_blank">http://www.dropzonejs.com</a>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/extensions/dropzone'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>DropzoneJS</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/libs/dropzone.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/extensions/dropzone.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-dropzone.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['angular-dropzone']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>DropzoneJS</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    serie: true,
+    name: 'angular-dropzone',
+    files: [
+      'path/to/js/libs/dropzone.js',
+      'path/to/js/pixeladmin/extensions/dropzone.js',
+      'path/to/js/pixeladmin/directives/angular-dropzone.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>dropzone</code> directive</h4>
+
+      <p>
+        You can use <code>dropzone</code> directive where you want.
+        And when the scope is destroyed the directive will be destroyed.
+      </p>
+
+      <div class="example" data-accent=" (dropzone)||<(dropzone-message)||<(dropzone-fallback)">
+<div ng-app="ngDropzoneApp">
+  <form dropzone action="/upload">
+    <dropzone-message>
+      <div class="dz-upload-icon"></div>
+      Drop files in here<br>
+      <span class="dz-text-small">or click to pick manually</span>
+    </dropzone-message>
+    <dropzone-fallback class="font-weight-bold">Your browser isn't support Dropzone</dropzone-fallback>
+  </form>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/libs/dropzone.js"></script> -->
+<!-- <script src="assets/js/angular/pixeladmin/extensions/dropzone.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-dropzone.js"></script>
+
+<script>
+  angular.module('ngDropzoneApp', [ 'angular-dropzone' ]);
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Instance</h4>
+
+      <p>
+        You can define <code>instance</code> attribute to get a pointer to DropzoneJS element:
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;form dropzone instance="ctrl.$dropzone" action="/upload"&gt;&lt;/form&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  // Pointer
+  this.$dropzone = null;
+
+  // ...
+
+  // Then, after the initialization, you can call plugin methods:
+  this.$dropzone('getAcceptedFiles');
+  this.$dropzone('disable');
+  this.$dropzone('removeFile', file);
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Options</h4>
+
+      <p>
+        <strong>DropzoneJS</strong>' options can be specified using <code>options</code> attribute
+        (<a href="http://www.dropzonejs.com/#configuration" target="_blank">see the
+        plugin's documentation</a>).
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;form dropzone options="ctrl.options" action="/upload"&gt;&lt;/form&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  this.options = {
+    parallelUploads: 2,
+    maxFilesize:     50,
+    filesizeBase:    1000,
+
+    resize: function(file) {
+      return {
+        srcX:      0,
+        srcY:      0,
+        srcWidth:  file.width,
+        srcHeight: file.height,
+        trgWidth:  file.width,
+        trgHeight: file.height
+      };
+    }
+  };
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Events</h4>
+
+      <p>
+        Event handlers can be bound using <code>callbacks</code> attribute (<a href="http://www.dropzonejs.com/#events" target="_blank">see the plugin's documentation</a>):
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;form dropzone callbacks="ctrl.callbacks" action="/upload"&gt;&lt;/form&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  this.callbacks = {
+    queuecomplete: function() {
+      console.log('Upload queue is complete.');
+    },
+  };
+});
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('plugins_dropzone.html');
+  </script>
+</body>
+</html>

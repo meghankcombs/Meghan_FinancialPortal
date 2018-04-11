@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Bootstrap TouchSpin - Plugins - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <h1 class="doc-header">
+    Bootstrap TouchSpin
+    <a href="http://www.virtuosoft.eu/code/bootstrap-touchspin" target="_blank" class="doc-header-url">http://www.virtuosoft.eu/code/bootstrap-touchspin</a>
+  </h1>
+
+  <h4 class="doc-description">
+    A mobile and touch friendly input spinner component for Bootstrap 3. It supports the mousewheel and the up/down keys.
+  </h4>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <h4 class="doc-subheader">Base</h4>
+
+      <div class="example">
+<input type="text" value="23" name="touchspin-1" class="form-control">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-1"]').TouchSpin();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">With postfix</h4>
+
+      <div class="example">
+<input type="text" value="55" name="touchspin-2" class="form-control">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-2"]').TouchSpin({
+      min:            0,
+      max:            100,
+      step:           0.1,
+      decimals:       2,
+      boostat:        5,
+      maxboostedstep: 10,
+      postfix:        '%'
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">With prefix</h4>
+
+      <div class="example">
+<input type="text" value="0" name="touchspin-3" class="form-control">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-3"]').TouchSpin({
+      min:            -1000000000,
+      max:            1000000000,
+      stepinterval:   50,
+      maxboostedstep: 10000000,
+      prefix:         '$'
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Vertical button alignment</h4>
+
+      <div class="example">
+<input type="text" value="" name="touchspin-4" class="form-control">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-4"]').TouchSpin({
+      verticalbuttons: true
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Vertical buttons with custom icons</h4>
+
+      <div class="example">
+<input type="text" value="" name="touchspin-5" class="form-control">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-5"]').TouchSpin({
+      verticalbuttons:   true,
+      verticalupclass:   'fa fa-plus',
+      verticaldownclass: 'fa fa-minus'
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Sizes</h4>
+
+      <div class="example" data-accent="(input-\w+)">
+<input type="text" value="55" name="touchspin-6" class="form-control input-sm">
+<br>
+<input type="text" value="23" name="touchspin-7" class="form-control input-sm">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-6"]').TouchSpin({
+      min:            0,
+      max:            100,
+      step:           0.1,
+      decimals:       2,
+      boostat:        5,
+      maxboostedstep: 10,
+      postfix:        '%'
+    });
+
+    $('input[name="touchspin-7"]').TouchSpin({
+      verticalbuttons: true
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="(input-\w+)">
+<input type="text" value="55" name="touchspin-6" class="form-control input-lg">
+<br>
+<input type="text" value="23" name="touchspin-7" class="form-control input-lg">
+
+<script>
+  $(function() {
+    $('input[name="touchspin-6"]').TouchSpin({
+      min:            0,
+      max:            100,
+      step:           0.1,
+      decimals:       2,
+      boostat:        5,
+      maxboostedstep: 10,
+      postfix:        '%'
+    });
+
+    $('input[name="touchspin-7"]').TouchSpin({
+      verticalbuttons: true
+    });
+  });
+</script>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+      <div class="doc-external-link alert">
+        See the usage documentation at <a href="http://www.virtuosoft.eu/code/bootstrap-touchspin" target="_blank">http://www.virtuosoft.eu/code/bootstrap-touchspin</a>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px-libs/jquery.bootstrap-touchspin'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>bootstrap-touchspin</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/libs/jquery.bootstrap-touchspin.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-touchspin.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['angular-touchspin']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>bootstrap-touchspin</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'angular-touchspin',
+    files: [
+      'path/to/js/libs/jquery.bootstrap-touchspin.js',
+      'path/to/js/pixeladmin/directives/angular-touchspin.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>touch-spin</code> directive</h4>
+
+      <p>
+        You can use <code>touch-spin</code> directive on input elements.
+        And when the scope is destroyed the directive will be destroyed.
+      </p>
+
+      <div class="example" data-accent=" (touch-spin)">
+<div ng-app="ngTouchSpinApp">
+  <input touch-spin type="text" value="10">
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/libs/jquery.bootstrap-touchspin.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-touchspin.js"></script>
+
+<script>
+  angular.module('ngTouchSpinApp', [ 'angular-touchspin' ]);
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Options</h4>
+
+      <p>
+        <strong>bootstrap-touchspin</strong>'s options can be specified as attributes
+        (<a href="http://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank">see the
+        plugin's documentation</a>). All options expect an angular expression
+        instead of a literal string.
+      </p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>boostat</li>
+            <li>booster</li>
+            <li>buttondown_class</li>
+            <li>buttonup_class</li>
+            <li>decimals</li>
+            <li>forcestepdivisibility</li>
+            <li>initval</li>
+            <li>max</li>
+            <li>maxboostedstep</li>
+            <li>min</li>
+            <li>mousewheel</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>postfix</li>
+            <li>postfix_extraclass</li>
+            <li>prefix</li>
+            <li>prefix_extraclass</li>
+            <li>step</li>
+            <li>stepinterval</li>
+            <li>stepintervaldelay</li>
+            <li>verticalbuttons</li>
+            <li>verticaldownclass</li>
+            <li>verticalupclass</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;input touch-spin type="text" class="form-control"
+       forcestepdivisibility="'floor'"
+       step="5"
+       verticalbuttons="true"
+       buttonup_class="'btn btn-primary'"&gt;
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Events</h4>
+
+      <p>
+        Event handlers can be bound using attributes (<a href="http://www.virtuosoft.eu/code/bootstrap-touchspin/" target="_blank">see the plugin's documentation</a>):
+      </p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>on-max</li>
+            <li>on-min</li>
+            <li>on-startdownspin</li>
+            <li>on-startspin</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>on-startupspin</li>
+            <li>on-stopdownspin</li>
+            <li>on-stopspin</li>
+            <li>on-stopupspin</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;input touch-spin type="text" class="form-control"
+       on-startspin="ctrl.startspin"
+       on-min="ctrl.min"
+       on-stopdownspin="ctrl.stopdownspin"&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  this.startspin = function() { ... }
+  this.min = function() { ... }
+  this.stopdownspin = function() { ... }
+});
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('plugins_bootstrap-touchspin.html');
+  </script>
+</body>
+</html>

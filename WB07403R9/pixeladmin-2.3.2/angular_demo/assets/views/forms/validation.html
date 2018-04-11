@@ -1,0 +1,494 @@
+<div>
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Validation</h1>
+  </div>
+
+  <div class="panel">
+    <div class="panel-heading">
+      <span class="panel-title">Example</span>
+    </div>
+    <div class="panel-body">
+      <form class="form-horizontal" name="validationForm" novalidate ng-controller="FormValidationCtrl as ctrl">
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('email') }">
+            <input ng-model="ctrl.data.email" required type="email" name="email" class="form-control">
+
+            <div ng-show="ctrl.hasErr('email', 'required')" class="form-message">This field is required.</div>
+            <div ng-show="ctrl.hasErr('email', 'email')" class="form-message">Please enter a valid email address.</div>
+
+            <small ng-show="!ctrl.hasErr('email')" class="text-muted form-help-text">Example block-level help text here.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('password') }">
+            <input ng-model="ctrl.data.password" required minlength="6" maxlength="20" type="password" name="password" class="form-control">
+
+            <div ng-show="ctrl.hasErr('password', 'required')" class="form-message">This field is required.</div>
+            <div ng-show="ctrl.hasErr('password', 'minlength')" class="form-message">Please enter at least 6 characters.</div>
+            <div ng-show="ctrl.hasErr('password', 'maxlength')" class="form-message">Please enter no more than 20 characters.</div>
+
+            <small ng-show="!ctrl.hasErr('password')" class="text-muted form-help-text">Example block-level help text here.</small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Confirm password</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('passwordConfirmation') }">
+            <input ng-model="ctrl.data.passwordConfirmation" compare-to="input[name=password]"
+                   type="password" name="passwordConfirmation" class="form-control">
+            <div ng-show="ctrl.hasErr('passwordConfirmation', 'compareTo')" class="form-message">Please enter the same value again.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Required</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('requiredField') }">
+            <input ng-model="ctrl.data.requiredField" required type="text" name="requiredField" class="form-control">
+            <div ng-show="ctrl.hasErr('requiredField', 'required')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">URL</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('url') }">
+            <input ng-model="ctrl.data.url" required type="url" name="url" class="form-control">
+            <div ng-show="ctrl.hasErr('url')" class="form-message">Please enter a valid URL.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Phone</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('phone') }">
+            <input ng-model="ctrl.data.phone" required phone type="text" name="phone" class="form-control" placeholder="(999) 999-9999">
+            <div ng-show="ctrl.hasErr('phone')" class="form-message">Invalid phone number.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Select</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('select') }">
+            <select ng-model="ctrl.data.select" required name="select" class="form-control">
+              <option value="">Select gear...</option>
+              <optgroup label="Climbing">
+                <option value="pitons">Pitons</option>
+                <option value="cams">Cams</option>
+                <option value="nuts">Nuts</option>
+                <option value="bolts">Bolts</option>
+                <option value="stoppers">Stoppers</option>
+                <option value="sling">Sling</option>
+              </optgroup>
+              <optgroup label="Skiing">
+                <option value="skis">Skis</option>
+                <option value="skins">Skins</option>
+                <option value="poles">Poles</option>
+              </optgroup>
+            </select>
+
+            <div ng-show="ctrl.hasErr('select')" class="form-message">Please select a gear.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Multiselect</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('multiselect') }">
+            <select ng-model="ctrl.data.multiselect" required name="multiselect" class="form-control" multiple>
+              <optgroup label="Climbing">
+                <option value="pitons">Pitons</option>
+                <option value="cams">Cams</option>
+                <option value="nuts">Nuts</option>
+                <option value="bolts">Bolts</option>
+                <option value="stoppers">Stoppers</option>
+                <option value="sling">Sling</option>
+              </optgroup>
+              <optgroup label="Skiing">
+                <option value="skis">Skis</option>
+                <option value="skins">Skins</option>
+                <option value="poles">Poles</option>
+              </optgroup>
+            </select>
+
+            <div ng-show="ctrl.hasErr('multiselect')" class="form-message">Please select at least one value.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">UI Select</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('uiSelect') }">
+            <ui-select ng-model="ctrl.data.uiSelect" required name="uiSelect">
+              <ui-select-match placeholder="Select value">
+                <span ng-bind="$select.selected.name"></span>
+              </ui-select-match>
+              <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                  <span ng-bind="state.name"></span>
+              </ui-select-choices>
+              <ui-select-no-choice>
+                No results found.
+              </ui-select-no-choice>
+            </ui-select>
+
+            <div ng-show="ctrl.hasErr('uiSelect')" class="form-message">Please select a state.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">UI Select Multiple</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('uiSelectMultiple') }">
+            <ui-select multiple ng-model="ctrl.data.uiSelectMultiple" required name="uiSelectMultiple">
+              <ui-select-match placeholder="Select value">
+                <span>{{$item.name}}</span>
+              </ui-select-match>
+              <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                  <span ng-bind="state.name"></span>
+              </ui-select-choices>
+              <ui-select-no-choice>
+                No results found.
+              </ui-select-no-choice>
+            </ui-select>
+
+            <div ng-show="ctrl.hasErr('uiSelectMultiple')" class="form-message">Please select at least one state.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Text</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('text') }">
+            <textarea ng-model="ctrl.data.text" required name="text" class="form-control"></textarea>
+            <div ng-show="ctrl.hasErr('text')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Light error</label>
+          <div class="col-sm-9 form-message-light" ng-class="{ 'has-error': ctrl.hasErr('messageLight') }">
+            <input ng-model="ctrl.data.messageLight" required type="text" name="messageLight" class="form-control">
+            <div ng-show="ctrl.hasErr('messageLight')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Dark error</label>
+          <div class="col-sm-9 form-message-dark" ng-class="{ 'has-error': ctrl.hasErr('messageDark') }">
+            <input ng-model="ctrl.data.messageDark" required type="text" name="messageDark" class="form-control">
+            <div ng-show="ctrl.hasErr('messageDark')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">File</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('file') }">
+            <input ng-model="ctrl.data.file" file-required type="file" name="file">
+            <div ng-show="ctrl.hasErr('file')" class="form-message">Please choose a file.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Custom file</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('pxFile') }">
+            <px-custom-file ng-model="ctrl.data.pxFile" px-file-required name="pxFile" />
+            <div ng-show="ctrl.hasErr('pxFile')" class="form-message">Please choose a file.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Switcher</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('switcher') }">
+            <label for="validation-switcher" class="switcher switcher-success">
+              <input ng-model="ctrl.data.switcher" required name="switcher" type="checkbox" id="validation-switcher">
+              <div class="switcher-indicator">
+                <div class="switcher-yes">YES</div>
+                <div class="switcher-no">NO</div>
+              </div>
+              Check me
+            </label>
+
+            <div ng-show="ctrl.hasErr('switcher')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Radios</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('radios') }">
+            <div class="radio">
+              <label>
+                <input ng-model="ctrl.data.radios" required type="radio" name="radios" value="radio1">
+                Option one is this and that—be sure to include why it's great
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input ng-model="ctrl.data.radios" required type="radio" name="radios" value="radio2">
+                Option two can be something else and selecting it will deselect option one
+              </label>
+            </div>
+            <div class="radio disabled">
+              <label>
+                <input ng-model="ctrl.data.radios" required type="radio" name="radios" value="radio3" disabled>
+                Option three is disabled
+              </label>
+            </div>
+            <div ng-show="ctrl.hasErr('radios')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Custom radios</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('customRadios') }">
+            <label class="custom-control custom-radio" for="validation-radios-custom-1">
+              <input ng-model="ctrl.data.customRadios" required type="radio" id="validation-radios-custom-1" name="customRadios" class="custom-control-input" value="customRadio1">
+              <span class="custom-control-indicator"></span>
+              Option one is this and that—be sure to include why it's great
+            </label>
+            <label class="custom-control custom-radio" for="validation-radios-custom-2">
+              <input ng-model="ctrl.data.customRadios" required type="radio" id="validation-radios-custom-2" name="customRadios" class="custom-control-input" value="customRadio2">
+              <span class="custom-control-indicator"></span>
+              Option two can be something else and selecting it will deselect option one
+            </label>
+            <label class="custom-control custom-radio" for="validation-radios-custom-3">
+              <input ng-model="ctrl.data.customRadios" required type="radio" id="validation-radios-custom-3" name="customRadios" class="custom-control-input" value="customRadio3" disabled>
+              <span class="custom-control-indicator"></span>
+              Option three is disabled
+            </label>
+
+            <div ng-show="ctrl.hasErr('customRadios')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Checkbox</label>
+          <div class="col-sm-9" ng-class="{ 'has-error': ctrl.hasErr('checkbox') }">
+            <div class="checkbox">
+              <label>
+                <input ng-model="ctrl.data.checkbox" required type="checkbox" name="checkbox"> Check me out
+              </label>
+            </div>
+
+            <div ng-show="ctrl.hasErr('checkbox')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-3 control-label">Custom checkbox</label>
+          <div class="col-md-9" ng-class="{ 'has-error': ctrl.hasErr('customCheckbox') }">
+            <label class="custom-control custom-checkbox" for="validation-checkbox-custom">
+              <input ng-model="ctrl.data.customCheckbox" required type="checkbox" name="customCheckbox" id="validation-checkbox-custom" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Check me out
+            </label>
+
+            <div ng-show="ctrl.hasErr('customCheckbox')" class="form-message">This field is required.</div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+
+        <div class="p-t-3" ng-show="validationForm.$valid"><pre>{{ctrl.printData()}}</pre></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="panel" ng-controller="WizardValidationCtrl as ctrl">
+    <div class="panel-heading">
+      <span class="panel-title">Within wizard</span>
+    </div>
+    <px-wizard class="panel-wizard" instance="ctrl.$wizard" on-finished="ctrl.finish">
+      <div class="wizard-wrapper">
+        <ul class="wizard-steps">
+          <li data-target="#wizard-account" class="active">
+            <span class="wizard-step-number">1</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Account
+              <span class="wizard-step-description">Setup your account</span>
+            </span>
+          </li>
+          <li data-target="#wizard-profile">
+            <span class="wizard-step-number">2</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Profile
+              <span class="wizard-step-description">Configure profile</span>
+            </span>
+          </li>
+          <li data-target="#wizard-credit-card">
+            <span class="wizard-step-number">3</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Credit card
+              <span class="wizard-step-description">Credit card info</span>
+            </span>
+          </li>
+          <li data-target="#wizard-finish">
+            <span class="wizard-step-number">4</span>
+            <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+            <span class="wizard-step-caption">
+              Finish
+            </span>
+          </li>
+        </ul>
+      </div> <!-- / .wizard-wrapper -->
+
+      <div class="wizard-content">
+        <form name="wizardAccount" ng-submit="ctrl.next(wizardAccount)" novalidate id="wizard-account" class="wizard-pane active">
+
+          <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardAccount, 'username') }">
+            <label>Username</label>
+            <input ng-model="ctrl.data.username" required type="text" name="username" class="form-control">
+            <div ng-show="ctrl.hasErr(wizardAccount, 'username')" class="form-message">This field is required.</div>
+          </fieldset>
+
+          <div class="row">
+            <div class="col-md-6">
+              <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardAccount, 'password') }">
+                <label>Password</label>
+                <input ng-model="ctrl.data.password" required minlength="6" maxlength="20" type="password" name="password" class="form-control">
+                <div ng-show="ctrl.hasErr(wizardAccount, 'password', 'required')" class="form-message">This field is required.</div>
+                <div ng-show="ctrl.hasErr(wizardAccount, 'password', 'minlength')" class="form-message">Please enter at least 6 characters.</div>
+                <div ng-show="ctrl.hasErr(wizardAccount, 'password', 'maxlength')" class="form-message">Please enter no more than 20 characters.</div>
+              </fieldset>
+            </div>
+
+            <div class="col-md-6">
+              <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardAccount, 'passwordConfirmation') }">
+                <label>Repeat password</label>
+                <input ng-model="pwdcnfrm" required minlength="6" maxlength="20" compare-to="form[name=wizardAccount] input[name=password]" type="password" name="passwordConfirmation" class="form-control">
+                <div ng-show="ctrl.hasErr(wizardAccount, 'passwordConfirmation')" class="form-message">Please enter the same value again.</div>
+              </fieldset>
+            </div>
+          </div>
+
+          <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardAccount, 'email') }">
+            <label for="wizard-email">E-mail</label>
+            <input ng-model="ctrl.data.email" required type="email" name="email" class="form-control">
+            <div ng-show="ctrl.hasErr(wizardAccount, 'email', 'required')" class="form-message">This field is required.</div>
+            <div ng-show="ctrl.hasErr(wizardAccount, 'email', 'email')" class="form-message">Please enter a valid email address.</div>
+          </fieldset>
+
+          <div class="panel-wide-block p-x-3 p-t-3 b-t-1 bg-white text-xs-right">
+            <button type="submit" class="btn btn-primary">Next step</button>
+          </div>
+
+        </form> <!-- / wizardAccount -->
+        <form name="wizardProfile" ng-submit="ctrl.next(wizardProfile)" novalidate id="wizard-profile" class="wizard-pane">
+
+          <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardProfile, 'fullName') }">
+            <label>Full Name</label>
+            <input ng-model="ctrl.data.fullName" required type="text" name="fullName" class="form-control">
+            <div ng-show="ctrl.hasErr(wizardProfile, 'fullName')" class="form-message">This field is required.</div>
+          </fieldset>
+
+          <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardProfile, 'gender') }">
+            <label>Gender</label>
+            <div>
+              <label class="custom-control custom-radio radio-inline">
+                <input ng-model="ctrl.data.gender" required value="male" name="gender" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Male
+              </label>
+              <label class="custom-control custom-radio radio-inline">
+                <input ng-model="ctrl.data.gender" required value="female" name="gender" type="radio" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Female
+              </label>
+            </div>
+            <div ng-show="ctrl.hasErr(wizardProfile, 'gender')" class="form-message">This field is required.</div>
+          </fieldset>
+
+          <fieldset class="form-group" ng-class="{ 'has-error': ctrl.hasErr(wizardProfile, 'state') }">
+            <label>State</label>
+            <ui-select ng-model="ctrl.data.state" required name="state">
+              <ui-select-match placeholder="Select a state">
+                <span ng-bind="$select.selected.name"></span>
+              </ui-select-match>
+              <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                  <span ng-bind="state.name"></span>
+              </ui-select-choices>
+              <ui-select-no-choice>
+                No results found.
+              </ui-select-no-choice>
+            </ui-select>
+            <div ng-show="ctrl.hasErr(wizardProfile, 'state')" class="form-message">Please select a state.</div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Subscribe to</label>
+            <div>
+              <label class="custom-control custom-checkbox checkbox-inline">
+                <input ng-model="ctrl.data.subscribeToNews" type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Latest news and announcements
+              </label>
+
+              <label class="custom-control custom-checkbox checkbox-inline">
+                <input ng-model="ctrl.data.subscribeToOffers" type="checkbox" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Product offers and discounts
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="panel-wide-block p-x-3 p-t-3 b-t-1 bg-white text-xs-right">
+            <button type="button" class="btn" ng-click="ctrl.back()">Back</button>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">Next step</button>
+          </div>
+
+        </form> <!-- / wizardProfile -->
+        <form name="wizardCreditCard" ng-submit="ctrl.next(wizardCreditCard)" novalidate id="wizard-credit-card" class="wizard-pane">
+
+          <div class="row">
+            <fieldset class="form-group col-md-3" ng-class="{ 'has-error': ctrl.hasErr(wizardCreditCard, 'postalCode') }">
+              <label>Postal code</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                <input ng-model="ctrl.data.postalCode" required maskedinput mask="'999999'" type="text" name="postalCode" class="form-control">
+              </div>
+              <div ng-show="ctrl.hasErr(wizardCreditCard, 'postalCode')" class="form-message">This field is required.</div>
+            </fieldset>
+
+            <fieldset class="form-group col-md-6" ng-class="{ 'has-error': ctrl.hasErr(wizardCreditCard, 'creditCard') }">
+              <label>Credit card number</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                <input ng-model="ctrl.data.creditCard" required maskedinput mask="'9999 9999 9999 9999'" type="text" name="creditCard" class="form-control">
+              </div>
+              <div ng-show="ctrl.hasErr(wizardCreditCard, 'creditCard', 'required')" class="form-message">This field is required.</div>
+            </fieldset>
+
+            <fieldset class="form-group col-md-3" ng-class="{ 'has-error': ctrl.hasErr(wizardCreditCard, 'csv') }">
+              <label>CSV</label>
+              <div class="has-feedback">
+                <input ng-model="ctrl.data.csv" required maskedinput mask="'999'" type="text" name="csv" class="form-control">
+                <a href="javascript:void(0)" class="fa fa-question-circle form-control-feedback" uib-tooltip="The credit code security code is a three-digit number printed on the back of your card, at the top of the signature field." tooltip-placement="left"></a>
+              </div>
+              <div ng-show="ctrl.hasErr(wizardCreditCard, 'csv')" class="form-message">This field is required.</div>
+            </fieldset>
+          </div>
+
+          <div class="panel-wide-block p-x-3 p-t-3 b-t-1 bg-white text-xs-right">
+            <button type="button" class="btn" ng-click="ctrl.back()">Back</button>&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">Next step</button>
+          </div>
+
+        </form> <!-- / wizardCreditCard -->
+        <div class="wizard-pane" id="wizard-finish">
+
+          <div class="text-xs-center m-y-4">
+            <i class="ion-checkmark-round text-success font-size-52 line-height-1"></i>
+            <h4 class="font-weight-semibold font-size-20 m-x-0 m-t-1 m-b-0">We're almost done</h4>
+            <button type="button" class="btn btn-primary m-t-4" data-wizard-action="finish">Finish</button>
+          </div>
+
+        </div> <!-- / #wizard-finish -->
+      </div>
+    </px-wizard>
+  </div>
+</div>

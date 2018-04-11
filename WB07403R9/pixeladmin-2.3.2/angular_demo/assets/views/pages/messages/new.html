@@ -1,0 +1,149 @@
+<!-- Custom styling -->
+<style>
+
+  /* Common styles */
+
+  .box, .box-row, .box-cell { overflow: visible !important; -webkit-mask-image: none !important; }
+  .page-messages-container > .box-row > .box-cell { display: block !important; }
+
+  .page-messages-label {
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 999px;
+    float: left;
+    margin-top: 6px;
+    margin-right: 12px;
+  }
+
+  html[dir="rtl"] .page-messages-label {
+    float: right;
+    margin-left: 12px;
+    margin-right: 0;
+  }
+
+  #page-messages-aside-nav {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .3s;
+    transition: max-height .3s;
+  }
+
+  #page-messages-aside-nav.show { max-height: 2000px; }
+
+  @media (min-width: 768px) {
+    .page-messages-container > .box-row > .box-cell {
+      display: table-cell !important;
+      padding-top: 15px;
+    }
+    .page-messages-aside { width: 200px; }
+    .page-messages-content { padding-left: 20px; }
+
+    html[dir="rtl"] .page-messages-content {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+
+    #page-messages-aside-nav { max-height: none !important; }
+
+    .page-messages-wide-buttons .btn { width: 60px; }
+  }
+
+  /* Special styles */
+
+  .note-editor { margin: 0 !important; }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-messages-container box m-a-0 bg-transparent position-static">
+  <div class="box-row">
+
+    <!-- Aside -->
+
+    <div class="page-messages-aside box-cell valign-top">
+      <div class="clearfix">
+
+        <!-- Controls -->
+
+        <div class="box-container">
+          <div class="box-row">
+            <div class="box-cell"><a ui-sref="pages.messages.new" class="btn btn-block btn-primary"><span class="btn-label-icon left fa fa-pencil-square-o"></span>New message</a></div>
+            <div class="box-cell p-l-3 hidden-md hidden-lg hidden-xl" style="width: 60px;"><button type="button" class="btn btn-block btn-outline btn-outline-colorless p-x-0" id="page-messages-aside-nav-toggle" ng-click="asideNavExpanded = !asideNavExpanded" ng-class="{ active: asideNavExpanded }"><i class="fa fa-bars"></i></button></div>
+          </div>
+        </div>
+
+        <!-- / Controls -->
+
+        <div class="m-t-3" id="page-messages-aside-nav" ng-class="{ show: asideNavExpanded }">
+          <div class="list-group m-b-1">
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-inbox"></i>Inbox<span class="label">20</span></a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-star"></i>Starred<span class="label">43</span></a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-envelope"></i>Sent</a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-exclamation"></i>Important</a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-file-text-o"></i>Drafts<span class="label">11</span></a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-trash-o"></i>Trash</a>
+          </div>
+          <a href="#" class="text-muted">+ Add More</a>
+
+          <h6 class="m-t-4 m-b-1 text-muted">LABELS</h6>
+          <div class="list-group m-b-1">
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-success"></i>Client</a>
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-danger"></i>Social</a>
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-info"></i>Family</a>
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-warning"></i>Friends</a>
+          </div>
+          <a href="#" class="text-muted">+ Add More</a>
+
+          <!-- Spacer -->
+          <div class="m-t-3 visible-xs visible-sm"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- / Aside -->
+
+    <hr class="page-wide-block m-t-0 visible-xs visible-sm">
+
+    <!-- Content -->
+
+    <div class="page-messages-content box-cell valign-top">
+      <h3 class="p-x-3" style="margin-top: 5px;">New message</h3>
+
+      <div class="panel" ng-controller="PagesMessagesNewCtrl as ctrl">
+        <form class="panel-body">
+          <div class="form-group">
+            <label>From</label>
+            <input type="text" class="form-control" value="johh.doe@example.com" readonly>
+          </div>
+
+          <div class="form-group">
+            <label>To</label>
+            <tags-input ng-model="selectedTags" tag-class="{'label': true}" placeholder="Add recipients" />
+          </div>
+
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" class="form-control">
+          </div>
+
+          <hr class="panel-wide-block">
+
+          <div class="form-group">
+            <div summernote height="200" config="ctrl.options"></div>
+          </div>
+
+          <hr class="panel-wide-block">
+
+          <div class="text-md-right">
+            <button type="submit" class="btn">Save</button>&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="btn btn-primary">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- / Content -->
+
+  </div>
+</div>

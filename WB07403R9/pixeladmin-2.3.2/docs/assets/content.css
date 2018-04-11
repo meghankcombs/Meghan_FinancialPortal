@@ -1,0 +1,342 @@
+body > .nav-tabs {
+  margin-top: 50px;
+}
+
+body > .tab-content > .tab-pane > .doc-subheader:first-child {
+  margin-top: 50px;
+}
+
+.doc-external-link {
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.doc-base-alert {
+  margin-top: 30px;
+}
+
+.doc-accent {
+  padding: 1px 4px !important;
+
+  color: #9E6C00 !important;
+  border-radius: 3px !important;
+  background: rgba(218, 189, 40, 0.15) !important;
+}
+
+.doc-header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.doc-subheader {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.doc-subheader + .alert {
+  margin-top: 20px;
+}
+
+.requirejs-mark {
+  font-weight: 600;
+  color: #aaa;
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.requirejs-mark:after {
+  content: "→ RequireJS";
+}
+
+html[dir="rtl"] .requirejs-mark {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+html[dir="rtl"] .requirejs-mark:after {
+  content: "← RequireJS";
+}
+
+.doc-description {
+  line-height: 1.6;
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.doc-description + .nav-tabs {
+  margin-top: 35px;
+}
+
+.doc-image {
+  display: block;
+  text-align: center;
+}
+
+.doc-image > img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.example + .alert {
+  margin-top: 36px;
+}
+
+.example + p {
+  margin-top: 25px;
+}
+
+.doc-header-url {
+  display: inline-block;
+
+  margin-left: 8px;
+
+  color: #aaa;
+
+  font-size: .6em;
+  font-weight: 400;
+}
+
+html[dir="rtl"] .doc-header-url {
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+.doc-header-url:after {
+  content: " →";
+}
+
+html[dir="rtl"] .doc-header-url:after {
+  content: " ←";
+}
+
+.example {
+  position: relative;
+
+  margin-top: 20px;
+  padding: 20px;
+
+  border: 3px solid #f7f7f9;
+  border-radius: 3px;
+}
+
+.example.inverted {
+  border-color: #333;
+  background: #333;
+}
+
+.example + .example {
+  margin-top: 36px;
+}
+
+.example pre:before,
+.example > .code-block-toggle,
+.example > .code-block-copy {
+  position: absolute;
+  right: 0;
+
+  display: block;
+
+  padding: 0 10px;
+
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 18px;
+}
+
+.example pre:before {
+  content: "CODE";
+
+  color: #aaa;
+  border-bottom: 2px solid #f7f7f9;
+  border-left: 2px solid #f7f7f9;
+  border-bottom-left-radius: 3px;
+  background: #f7f7f9;
+}
+
+.example > pre {
+  position: relative;
+
+  overflow: hidden;
+
+  max-height: 0;
+  margin: 17px -20px -20px -20px;
+  padding: 0;
+
+  transition: .3s ease;
+  word-wrap: normal;
+  word-break: normal;
+
+  direction: ltr !important;
+
+  opacity: 0;
+  border: none;
+  border-top: 3px solid #f7f7f9;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.example > pre code {
+  white-space: pre;
+}
+
+.example.nocode > pre {
+  margin: -20px !important;
+
+  border: none;
+}
+
+.example > pre > code {
+  padding: 20px;
+}
+
+.example.show-code-block > pre,
+.example.nocode > pre {
+  max-height: 2000px;
+  margin-top: 20px;
+
+  transition: .3s ease;
+
+  opacity: 1;
+}
+
+
+.example > .code-block-toggle,
+.example > .code-block-copy {
+  top: 100%;
+
+  margin-top: 5px;
+
+  transition: all .3s;
+  text-decoration: none;
+
+  color: #bbb;
+  border-radius: 3px;
+}
+
+.example > .code-block-toggle .fa,
+.example > .code-block-copy .fa {
+  font-size: 11px;
+}
+
+.example > .code-block-toggle:hover,
+.example.show-code-block > .code-block-toggle,
+.example > .code-block-copy:hover {
+  color: #555;
+}
+
+.example > .code-block-toggle:after {
+  content: "CODE";
+}
+
+.example.show-code-block > .code-block-toggle:after {
+  content: "HIDE";
+}
+
+.example > .code-block-copy {
+  z-index: -1;
+  right: 55px;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+}
+
+.example.show-code-block > .code-block-copy {
+  z-index: auto;
+
+  opacity: 1;
+}
+
+.example.show-code-block > .code-block-copy.copied {
+  color: #fff;
+  background: #333;
+}
+
+@media (max-width: 750px) {
+  .example {
+    margin-left: -22px;
+    margin-right: -22px;
+  }
+
+  .table .example,
+  .alert .example {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Color reset */
+
+.doc-header,
+.doc-subheader,
+.doc-description,
+body > h4,
+body > .tab-content > .tab-pane > h4,
+body > p,
+body > .tab-content > .tab-pane > p,
+body > ul li,
+body > .tab-content > .tab-pane > ul li,
+body > ol li,
+body > .row,
+body > .tab-content > .tab-pane > .row,
+body > .tab-content > .tab-pane > ol li,
+body > .tab-content .doc-external-link,
+body > .table,
+body > .table-responsive .table,
+body > .table th,
+body > .table-responsive .table th,
+body > .tab-content > .tab-pane > .table,
+body > .tab-content > .tab-pane > .table-responsive .table,
+body > .tab-content > .tab-pane > .table th,
+body > .tab-content > .tab-pane > .table-responsive .table th,
+body > .nav.nav-tabs.nav-tabs-simple > li > a,
+body > .nav.nav-tabs.nav-tabs-simple > li > a:hover,
+body > .nav.nav-tabs.nav-tabs-simple > li > a:focus,
+body > .nav.nav-tabs.nav-tabs-simple > li.active > a,
+body > .nav.nav-tabs.nav-tabs-simple > li.active > a:hover,
+body > .nav.nav-tabs.nav-tabs-simple > li.active > a:focus,
+.license-info,
+#pxnavjs-log,
+#wizardjs-log {
+  color: #444;
+}
+
+body > .nav.nav-tabs.nav-tabs-simple {
+  border-color: rgba(0, 0, 0, .07);
+}
+
+body > .tab-content .doc-external-link {
+  background: rgba(0, 0, 0, .03);
+  border-color: rgba(0, 0, 0, .07);
+}
+
+body > .table,
+body > .table-responsive .table,
+body > .table td,
+body > .table-responsive .table td,
+body > .table th,
+body > .table-responsive .table th,
+body > .tab-content > .tab-pane > .table,
+body > .tab-content > .tab-pane > .table-responsive .table,
+body > .tab-content > .tab-pane > .table td,
+body > .tab-content > .tab-pane > .table-responsive .table td,
+body > .tab-content > .tab-pane > .table th,
+body > .tab-content > .tab-pane > .table-responsive .table th {
+  border-color: #ddd !important;
+}
+
+body > .tab-content > .tab-pane > .table thead th,
+body > .tab-content > .tab-pane > .table-responsive .table thead th {
+  background: #eee;
+}
+
+/* Dark assets */
+
+.docs-dark .example:not(.nocode) {
+  border-color: #2d353d;
+  background: #2d353d;
+}

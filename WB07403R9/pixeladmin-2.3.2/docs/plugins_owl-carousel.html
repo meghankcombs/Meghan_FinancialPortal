@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Owl Carousel - Plugins - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  .demo-item {
+    padding: 30px;
+  }
+
+  .demo-item h4 {
+    margin: 0;
+  }
+</style>
+
+<h1 class="doc-header">
+  Owl Carousel
+  <a href="http://owlcarousel2.github.io/OwlCarousel2" target="_blank" class="doc-header-url">http://owlcarousel2.github.io/OwlCarousel2</a>
+</h1>
+
+<h4 class="doc-description">
+  Touch enabled jQuery plugin that lets you create beautiful responsive carousel slider.
+</h4>
+
+<ul class="nav nav-tabs nav-tabs-simple nav-lg">
+  <li class="active">
+    <a href="#definition" data-toggle="tab">Definition</a>
+  </li>
+  <li>
+    <a href="#usage" data-toggle="tab">Usage</a>
+  </li>
+  <li>
+    <a href="#angular" data-toggle="tab">Angular 1.x</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="definition">
+
+    <h4 class="doc-subheader">Basic</h4>
+
+    <div class="example">
+<div id="owl-carousel-basic" class="owl-carousel">
+  <div class="demo-item bg-primary"><h4>1</h4></div>
+  <div class="demo-item bg-primary"><h4>2</h4></div>
+  <div class="demo-item bg-primary"><h4>3</h4></div>
+  <div class="demo-item bg-primary"><h4>4</h4></div>
+  <div class="demo-item bg-primary"><h4>5</h4></div>
+  <div class="demo-item bg-primary"><h4>6</h4></div>
+  <div class="demo-item bg-primary"><h4>7</h4></div>
+  <div class="demo-item bg-primary"><h4>8</h4></div>
+  <div class="demo-item bg-primary"><h4>9</h4></div>
+  <div class="demo-item bg-primary"><h4>10</h4></div>
+  <div class="demo-item bg-primary"><h4>11</h4></div>
+  <div class="demo-item bg-primary"><h4>12</h4></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-basic').owlCarousel({
+      loop:   true,
+      margin: 10,
+      nav:    true,
+
+      responsive:{
+        0:    { items: 1 },
+        600:  { items: 4 },
+        1000: { items: 6 },
+      },
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Inverted</h4>
+    <p>Add the <code>.owl-carousel-inverted</code> class to an <code>.owl-carousel</code> element to invert nav colors.</p>
+
+    <div class="example inverted" data-accent=" (owl-carousel-inverted)">
+<div id="owl-carousel-inverted" class="owl-carousel owl-carousel-inverted">
+  <div class="demo-item bg-primary"><h4>1</h4></div>
+  <div class="demo-item bg-primary"><h4>2</h4></div>
+  <div class="demo-item bg-primary"><h4>3</h4></div>
+  <div class="demo-item bg-primary"><h4>4</h4></div>
+  <div class="demo-item bg-primary"><h4>5</h4></div>
+  <div class="demo-item bg-primary"><h4>6</h4></div>
+  <div class="demo-item bg-primary"><h4>7</h4></div>
+  <div class="demo-item bg-primary"><h4>8</h4></div>
+  <div class="demo-item bg-primary"><h4>9</h4></div>
+  <div class="demo-item bg-primary"><h4>10</h4></div>
+  <div class="demo-item bg-primary"><h4>11</h4></div>
+  <div class="demo-item bg-primary"><h4>12</h4></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-inverted').owlCarousel({
+      loop:   true,
+      margin: 10,
+      nav:    true,
+
+      responsive:{
+        0:    { items: 1 },
+        600:  { items: 4 },
+        1000: { items: 6 },
+      },
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Center</h4>
+
+    <div class="example">
+<div id="owl-carousel-with-loop" class="owl-carousel">
+  <div class="demo-item bg-primary"><h4>1</h4></div>
+  <div class="demo-item bg-primary"><h4>2</h4></div>
+  <div class="demo-item bg-primary"><h4>3</h4></div>
+  <div class="demo-item bg-primary"><h4>4</h4></div>
+  <div class="demo-item bg-primary"><h4>5</h4></div>
+  <div class="demo-item bg-primary"><h4>6</h4></div>
+  <div class="demo-item bg-primary"><h4>7</h4></div>
+  <div class="demo-item bg-primary"><h4>8</h4></div>
+  <div class="demo-item bg-primary"><h4>9</h4></div>
+  <div class="demo-item bg-primary"><h4>10</h4></div>
+  <div class="demo-item bg-primary"><h4>11</h4></div>
+  <div class="demo-item bg-primary"><h4>12</h4></div>
+</div>
+
+<br>
+
+<div id="owl-carousel-without-loop" class="owl-carousel">
+  <div class="demo-item bg-primary"><h4>1</h4></div>
+  <div class="demo-item bg-primary"><h4>2</h4></div>
+  <div class="demo-item bg-primary"><h4>3</h4></div>
+  <div class="demo-item bg-primary"><h4>4</h4></div>
+  <div class="demo-item bg-primary"><h4>5</h4></div>
+  <div class="demo-item bg-primary"><h4>6</h4></div>
+  <div class="demo-item bg-primary"><h4>7</h4></div>
+  <div class="demo-item bg-primary"><h4>8</h4></div>
+  <div class="demo-item bg-primary"><h4>9</h4></div>
+  <div class="demo-item bg-primary"><h4>10</h4></div>
+  <div class="demo-item bg-primary"><h4>11</h4></div>
+  <div class="demo-item bg-primary"><h4>12</h4></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-with-loop').owlCarousel({
+      center: true,
+      items:  2,
+      loop:   true,
+      margin: 10,
+
+      responsive: {
+        600: { items: 4 },
+      },
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+
+    $('#owl-carousel-without-loop').owlCarousel({
+      center: true,
+      items:  2,
+      loop:   false,
+      margin: 10,
+
+      responsive: {
+        600: { items: 4 },
+      },
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Auto Width</h4>
+
+    <div class="example">
+<div id="owl-carousel-auto-width" class="owl-carousel">
+  <div class="demo-item bg-primary" style="width:250px"><h4>1</h4></div>
+  <div class="demo-item bg-primary" style="width:100px"><h4>2</h4></div>
+  <div class="demo-item bg-primary" style="width:500px"><h4>3</h4></div>
+  <div class="demo-item bg-primary" style="width:100px"><h4>4</h4></div>
+  <div class="demo-item bg-primary" style="width:50px"><h4>6</h4></div>
+  <div class="demo-item bg-primary" style="width:250px"><h4>7</h4></div>
+  <div class="demo-item bg-primary" style="width:120px"><h4>8</h4></div>
+  <div class="demo-item bg-primary" style="width:420px"><h4>9</h4></div>
+  <div class="demo-item bg-primary" style="width:120px"><h4>10</h4></div>
+  <div class="demo-item bg-primary" style="width:300px"><h4>11</h4></div>
+  <div class="demo-item bg-primary" style="width:450px"><h4>12</h4></div>
+  <div class="demo-item bg-primary" style="width:220px"><h4>13</h4></div>
+  <div class="demo-item bg-primary" style="width:150px"><h4>14</h4></div>
+  <div class="demo-item bg-primary" style="width:600px"><h4>15</h4></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-auto-width').owlCarousel({
+      margin:    10,
+      loop:      true,
+      autoWidth: true,
+      items:     4,
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+
+    <h4 class="doc-subheader">Lazy Load</h4>
+
+    <div class="example">
+<div id="owl-carousel-lazy-load" class="owl-carousel">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=1" data-src-retina="http://placehold.it/350x250&text=1-retina" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=2" data-src-retina="http://placehold.it/350x250&text=2-retina" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=3" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=4" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=5" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=6" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=7" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=8" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=9" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=10" alt="">
+  <img class="owl-lazy" data-src="http://placehold.it/350x250&text=11" alt="">
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-lazy-load').owlCarousel({
+      items:    4,
+      lazyLoad: true,
+      loop:     true,
+      margin:   10,
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Video</h4>
+
+    <div class="example">
+<div id="owl-carousel-video" class="owl-carousel">
+  <div style="height: 300px;"><a class="owl-video" href="https://vimeo.com/56624256"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=voBNpdXkLnU"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=VlClCPTbkBo"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=-59jGD4WrmE"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=wQRV5omnBBU"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=3FPwcaflCS8"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=DnGdoEa1tPg"></a></div>
+  <div style="height: 300px;"><a class="owl-video" href="https://www.youtube.com/watch?v=HyHNuVaZJ-k"></a></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-video').owlCarousel({
+      items:    1,
+      loop:     true,
+      margin:   10,
+      video:    true,
+      lazyLoad: true,
+      center:   true,
+
+      responsive: {
+        480: { items: 2 },
+        600: { items: 3 },
+      },
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Autoplay</h4>
+
+    <div class="example">
+<div id="owl-carousel-autoplay" class="owl-carousel">
+  <div class="demo-item bg-primary"><h4>1</h4></div>
+  <div class="demo-item bg-primary"><h4>2</h4></div>
+  <div class="demo-item bg-primary"><h4>3</h4></div>
+  <div class="demo-item bg-primary"><h4>4</h4></div>
+  <div class="demo-item bg-primary"><h4>5</h4></div>
+  <div class="demo-item bg-primary"><h4>6</h4></div>
+  <div class="demo-item bg-primary"><h4>7</h4></div>
+  <div class="demo-item bg-primary"><h4>8</h4></div>
+  <div class="demo-item bg-primary"><h4>9</h4></div>
+  <div class="demo-item bg-primary"><h4>10</h4></div>
+  <div class="demo-item bg-primary"><h4>11</h4></div>
+  <div class="demo-item bg-primary"><h4>12</h4></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-autoplay').owlCarousel({
+      items:           4,
+      loop:            true,
+      margin:          10,
+      autoplay:        true,
+      autoplayTimeout: 1000,
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Auto Height</h4>
+
+    <div class="example">
+<div id="owl-carousel-autoheight" class="owl-carousel">
+  <div class="demo-item bg-primary" style="height: 300px;"><h4>1</h4></div>
+  <div class="demo-item bg-primary" style="height: 100px;"><h4>2</h4></div>
+  <div class="demo-item bg-primary" style="height: 500px;"><h4>3</h4></div>
+  <div class="demo-item bg-primary" style="height: 250px;"><h4>4</h4></div>
+  <div class="demo-item bg-primary" style="height: 400px;"><h4>5</h4></div>
+  <div class="demo-item bg-primary" style="height: 500px;"><h4>6</h4></div>
+  <div class="demo-item bg-primary" style="height: 600px;"><h4>7</h4></div>
+  <div class="demo-item bg-primary" style="height: 400px;"><h4>8</h4></div>
+  <div class="demo-item bg-primary" style="height: 300px;"><h4>9</h4></div>
+  <div class="demo-item bg-primary" style="height: 350px;"><h4>10</h4></div>
+  <div class="demo-item bg-primary" style="height: 200px;"><h4>11</h4></div>
+  <div class="demo-item bg-primary" style="height: 150px;"><h4>12</h4></div>
+</div>
+
+<script>
+  $(function() {
+    $('#owl-carousel-autoheight').owlCarousel({
+      items:      1,
+      margin:     10,
+      autoHeight: true,
+
+      rtl: $('html').attr('dir') === 'rtl',
+    });
+  });
+</script>
+    </div>
+
+  </div>
+  <div class="tab-pane" id="usage">
+    <div class="doc-external-link alert">
+      See the usage documentation at <a href="http://owlcarousel2.github.io/OwlCarousel2" target="_blank">http://owlcarousel2.github.io/OwlCarousel2</a>
+    </div>
+
+    <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+    <div class="example nocode">
+      <pre><code data-lang="js">
+require(['jquery', 'px-libs/owl.carousel'], function($) {
+  ...
+});
+      </code></pre>
+    </div>
+  </div>
+
+  <div class="tab-pane" id="angular">
+    <h4 class="doc-subheader">Usage</h4>
+
+    <p>To use <strong>owl.carousel</strong> plugin, you need to include the next scripts:</p>
+
+    <div class="example nocode">
+      <pre><code>
+&lt;script src="path/to/js/libs/owl.carousel.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-owl.carousel.js"&gt;&lt;/script&gt;
+      </code></pre>
+    </div>
+
+    <p>Then inject the plugin into your angular application:</p>
+
+    <div class="example nocode">
+      <pre><code data-lang="js">angular.module('yourApp', ['owl.carousel']);</code></pre>
+    </div>
+
+    <p>Alternatively, you can include <strong>owl.carousel</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+    <div class="example nocode">
+      <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'owl.carousel',
+    files: [
+      'path/to/js/libs/owl.carousel.js',
+      'path/to/js/pixeladmin/directives/angular-owl.carousel.js',
+    ],
+  },
+]);
+      </code></pre>
+    </div>
+
+    <h4 class="doc-subheader"><code>owl-carousel</code> directive</h4>
+
+    <p>
+      You can use <code>owl-carousel</code> directive where you want.
+      And when the scope is destroyed the directive will be destroyed.
+    </p>
+
+    <div class="example" data-accent="<(owl-carousel)">
+<div ng-app="ngOwlCarouselApp" ng-controller="ngOwlCarouselAppCtrl as ctrl">
+  <owl-carousel items="4" lazy-load="true" loop="true" margin="10" rtl="ctrl.isRtl">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=1">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=2">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=3">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=4">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=5">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=6">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=7">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=8">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=9">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=10">
+    <img class="owl-lazy" data-src="http://placehold.it/350x250&text=11">
+  </owl-carousel>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/libs/owl.carousel.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-owl.carousel.js"></script>
+
+<script>
+  angular.module('ngOwlCarouselApp', [ 'owl.carousel' ])
+    .controller('ngOwlCarouselAppCtrl', function() {
+      this.isRtl = $('html').attr('dir') === 'rtl';
+    });
+</script>
+    </div>
+
+    <h4 class="doc-subheader">Methods</h4>
+
+    <p>
+      You can define <code>methods</code> attribute to get a pointer to owl.carousel instance methods
+      (<a href="http://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html" target="_blank">see the
+      plugin's documentation</a>):
+    </p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="options-list">
+          <li>add</li>
+          <li>next</li>
+          <li>play</li>
+          <li>prev</li>
+          <li>refresh</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="options-list">
+          <li>remove</li>
+          <li>replace</li>
+          <li>stop</li>
+          <li>to</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example nocode">
+      <pre><code>
+&lt;owl-carousel methods="ctrl.$carousel"&gt;...&lt;/owl-carousel&gt;
+      </code></pre>
+    </div>
+
+    <div class="example nocode">
+      <pre><code data-lang="js">
+function SomeController() {
+  // Pointer
+  this.$carousel = null;
+
+  // ...
+
+  // Then, after the initialization, you can call plugin methods:
+  this.$carousel.prev([300]));
+  this.$carousel.next([500]));
+  this.$carousel.to([5, 300]));
+});
+      </code></pre>
+    </div>
+
+    <h4 class="doc-subheader">Options</h4>
+
+    <p>
+      <strong>owl.carousel</strong>'s options can be specified as attributes
+      (<a href="http://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html" target="_blank">see the
+      plugin's documentation</a>). All options expect an angular expression
+      instead of a literal string.
+    </p>
+
+    <div class="alert alert-info">
+      Options marked with <i class="fa fa-eye"></i> have an angular $watch listener applied to it.
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="options-list">
+          <li>animate-in</li>
+          <li>animate-out</li>
+          <li class="watcher">auto-height</li>
+          <li class="watcher">auto-height-class</li>
+          <li class="watcher">auto-width</li>
+          <li class="watcher">autoplay</li>
+          <li class="watcher">autoplay-hover-pause</li>
+          <li class="watcher">autoplay-speed</li>
+          <li class="watcher">autoplay-timeout</li>
+          <li class="watcher">center</li>
+          <li class="watcher">dot-data</li>
+          <li class="watcher">dots</li>
+          <li>dots-container</li>
+          <li class="watcher">dots-each</li>
+          <li class="watcher">dots-speed</li>
+          <li class="watcher">drag-end-speed</li>
+          <li>fallback-easing</li>
+          <li class="watcher">fluid-speed</li>
+          <li class="watcher">free-drag</li>
+          <li>info</li>
+          <li>item-element</li>
+          <li class="watcher">items</li>
+          <li class="watcher">lazy-content</li>
+          <li class="watcher">lazy-load</li>
+          <li class="watcher">loop</li>
+          <li>margin</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="options-list">
+          <li class="watcher">merge</li>
+          <li class="watcher">merge-fit</li>
+          <li class="watcher">mouse-drag</li>
+          <li class="watcher">nav</li>
+          <li>nav-container</li>
+          <li>nav-element</li>
+          <li class="watcher">nav-speed</li>
+          <li class="watcher">nav-text</li>
+          <li>nested-item-selector</li>
+          <li class="watcher">pull-drag</li>
+          <li class="watcher">responsive</li>
+          <li>responsive-base-element</li>
+          <li class="watcher">responsive-refresh-rate</li>
+          <li class="watcher">rewind</li>
+          <li>rtl</li>
+          <li class="watcher">slide-by</li>
+          <li class="watcher">smart-speed</li>
+          <li>stage-element</li>
+          <li>stage-padding</li>
+          <li class="watcher">start-position</li>
+          <li class="watcher">touch-drag</li>
+          <li class="watcher">url-hash-listener</li>
+          <li class="watcher">video</li>
+          <li class="watcher">video-height</li>
+          <li class="watcher">video-width</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example nocode">
+      <pre><code>
+&lt;owl-carousel items="4"
+              loop="true"
+              responsive="{ 480: { items: 2 }, 600: { items: 4 } }"
+              nav-element="'nav'"&gt;...&lt;/owl-carousel&gt;
+      </code></pre>
+    </div>
+
+    <h4 class="doc-subheader">Events</h4>
+
+    <p>
+      Event handlers can be bound using attributes (<a href="http://owlcarousel2.github.io/OwlCarousel2/docs/api-events.html" target="_blank">see the plugin's documentation</a>):
+    </p>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="options-list">
+          <li>on-change</li>
+          <li>on-changed</li>
+          <li>on-drag</li>
+          <li>on-dragged</li>
+          <li>on-initialize</li>
+          <li>on-initialized</li>
+          <li>on-load-lazy</li>
+          <li>on-loaded-lazy</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="options-list">
+          <li>on-play-video</li>
+          <li>on-refresh</li>
+          <li>on-refreshed</li>
+          <li>on-resize</li>
+          <li>on-resized</li>
+          <li>on-stop-video</li>
+          <li>on-translate</li>
+          <li>on-translated</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example nocode">
+      <pre><code>
+&lt;owl-carousel on-changed="ctrl.changed"
+              on-loaded-lazy="ctrl.loadedLazy"
+              on-play-video="ctrl.playVideo"&gt;...&lt;/owl-carousel&gt;
+      </code></pre>
+    </div>
+
+    <div class="example nocode">
+      <pre><code data-lang="js">
+function SomeController() {
+  this.changed = function(e) { ... }
+  this.loadedLazy = function(e) { ... }
+  this.playVideo = function(e) { ... }
+});
+      </code></pre>
+    </div>
+  </div>
+</div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('plugins_owl-carousel.html');
+  </script>
+</body>
+</html>

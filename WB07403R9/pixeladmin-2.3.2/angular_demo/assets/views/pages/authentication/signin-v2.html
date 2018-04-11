@@ -1,0 +1,136 @@
+<!-- Custom styling -->
+<style>
+  .page-signin-header,
+  .page-signin-container {
+    position: relative;
+    z-index: 10;
+  }
+
+  .page-signin-header {
+    box-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+  }
+
+  .px-content > div > .page-signin-header {
+    margin-top: -20px;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .page-signin-header .btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+  }
+
+  html[dir="rtl"] .page-signin-header .btn {
+    right: auto;
+    left: 15px;
+  }
+
+  .page-signin-container {
+    width: auto;
+    margin: 30px 10px;
+  }
+
+  .page-signin-container form {
+    border: 0;
+    box-shadow: 0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+  }
+
+  responsive-bg {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    z-index: -1;
+  }
+
+  @media (min-width: 544px) {
+    .page-signin-container {
+      width: 350px;
+      margin: 60px auto;
+    }
+  }
+
+  .page-signin-social-btn {
+    width: 40px;
+    padding: 0;
+    line-height: 40px;
+    text-align: center;
+    border: none !important;
+  }
+
+  #page-signin-forgot-form { display: none; }
+</style>
+<!-- / Custom styling -->
+
+<div ng-controller="PagesSignInCtrl as ctrl">
+  <div class="page-signin-header p-a-2 text-sm-center bg-white">
+    <a ui-sref="dashboards.default" class="px-demo-brand px-demo-brand-lg text-default"><span class="px-demo-logo bg-primary m-t-0"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>PixelAdmin</a>
+    <a ui-sref="authentication.signup2" class="btn btn-primary">Sign Up</a>
+  </div>
+
+  <!-- Sign In form -->
+
+  <div class="page-signin-container" ng-show="!passwordResetView">
+    <h2 class="authentication-v2-header m-t-0 m-b-4 text-xs-center font-weight-semibold font-size-20">Sign In to your Account</h2>
+
+    <form name="signInForm" ng-submit="ctrl.signIn()" class="panel p-a-4" novalidate>
+
+      <div class="alert alert-danger alert-dark p-y-1" ng-show="(signInForm.$submitted || signInForm.$touched) && signInForm.$invalid">
+        Invalid credentials.
+      </div>
+
+      <fieldset class=" form-group form-group-lg" ng-class="{ 'has-error': (signInForm.$submitted || signInForm.$touched) && signInForm.$invalid }">
+        <input ng-model="ctrl.credentials.login" required minlength="3" maxlength="20" name="login" type="text" class="form-control" placeholder="Username or Email">
+      </fieldset>
+
+      <fieldset class=" form-group form-group-lg" ng-class="{ 'has-error': (signInForm.$submitted || signInForm.$touched) && signInForm.$invalid }">
+        <input ng-model="ctrl.credentials.password" required minlength="6" maxlength="32" type="password" class="form-control" placeholder="Password">
+      </fieldset>
+
+      <div class="clearfix">
+        <label class="custom-control custom-checkbox pull-xs-left">
+          <input ng-model="ctrl.credentials.rememberMe" type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          Remember me
+        </label>
+        <a href="javascript:void(0)" class="font-size-12 text-muted pull-xs-right" ng-click="passwordResetView = true">Forgot your password?</a>
+      </div>
+
+      <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3">Sign In</button>
+    </form>
+
+    <h4 class="authentication-v2-social m-y-3 text-xs-center font-weight-semibold text-muted">or sign in with</h4>
+
+    <div class="text-xs-center">
+      <a ui-sref="dashboards.default" class="page-signin-social-btn btn btn-success btn-rounded" uib-tooltip="Facebook"><i class="fa fa-facebook"></i></a>&nbsp;&nbsp;&nbsp;
+      <a ui-sref="dashboards.default" class="page-signin-social-btn btn btn-info btn-rounded" uib-tooltip="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;&nbsp;&nbsp;
+      <a ui-sref="dashboards.default" class="page-signin-social-btn btn btn-danger btn-rounded" uib-tooltip="Google+"><i class="fa fa-google-plus"></i></a>
+    </div>
+  </div>
+
+  <!-- / Sign In form -->
+
+  <!-- Reset form -->
+
+  <div class="page-signin-container" ng-show="passwordResetView">
+    <h2 class="authentication-v2-header m-t-0 m-b-4 text-xs-center font-weight-semibold font-size-20">Password reset</h2>
+
+    <form name="resetForm" ng-submit="ctrl.sendResetLink()" class="panel p-a-4" novalidate>
+      <fieldset class="form-group form-group-lg" ng-class="{ 'has-error': (resetForm.$submitted || resetForm.$touched) && resetForm.$invalid }">
+        <input ng-model="ctrl.resetEmail" required type="email" class="form-control" placeholder="Your Email">
+      </fieldset>
+
+      <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3">Send password reset link</button>
+      <div class="m-t-2 text-muted">
+        <a href="javascript:void(0)" ng-click="passwordResetView = false">&larr; Back</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- / Reset form -->
+</div>
+
+<responsive-bg background-image="null" />

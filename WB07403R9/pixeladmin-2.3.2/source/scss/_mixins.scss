@@ -1,0 +1,63 @@
+
+// Core
+
+@import 'mixins/tools';
+@import 'mixins/grid';
+@import 'mixins/utilities';
+@import 'mixins/base';
+@import 'mixins/tables';
+@import 'mixins/forms';
+@import 'mixins/buttons';
+
+// Elements
+
+@import 'mixins/dropdowns';
+@import 'mixins/navs';
+@import 'mixins/pagination';
+@import 'mixins/labels';
+@import 'mixins/thumbnails';
+@import 'mixins/alerts';
+@import 'mixins/progress-bars';
+@import 'mixins/list-group';
+@import 'mixins/panels';
+@import 'mixins/tooltip';
+@import 'mixins/popovers';
+@import 'mixins/button-label';
+@import 'mixins/accordions';
+@import 'mixins/notes';
+@import 'mixins/switchers';
+@import 'mixins/custom-forms';
+@import 'mixins/px-navbar';
+@import 'mixins/px-nav';
+@import 'mixins/px-footer';
+@import 'mixins/px-wizard';
+
+// Plugins
+
+@import 'mixins/plugins/px-expanding-input';
+@import 'mixins/plugins/select2';
+@import 'mixins/plugins/ui-select';
+@import 'mixins/plugins/bootstrap-datepicker';
+@import 'mixins/plugins/bootstrap-timepicker';
+@import 'mixins/plugins/jquery-minicolors';
+@import 'mixins/plugins/growl';
+@import 'mixins/plugins/dropzone';
+@import 'mixins/plugins/ion.rangeSlider';
+@import 'mixins/plugins/bootstrap-touchspin';
+@import 'mixins/plugins/toastr';
+@import 'mixins/plugins/bootstrap-daterangepicker';
+@import 'mixins/plugins/bootstrap-tagsinput';
+@import 'mixins/plugins/ng-tags-input';
+@import 'mixins/plugins/bootstrap-slider';
+@import 'mixins/plugins/nouislider';
+@import 'mixins/plugins/owl.carousel';
+
+// Widgets
+
+@import 'mixins/widgets/pricing';
+@import 'mixins/widgets/timeline';
+
+// Global
+
+@import 'mixins/pixeladmin';
+@import 'mixins/widgets';

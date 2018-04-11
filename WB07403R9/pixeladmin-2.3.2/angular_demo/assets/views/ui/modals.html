@@ -1,0 +1,165 @@
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Modals</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+
+    <div class="panel" ng-controller="UiModalsDefaultCtrl as ctrl">
+      <div class="panel-heading">
+        <div class="panel-title">Default modal</div>
+      </div>
+      <div class="panel-body">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg" ng-click="ctrl.open(null, 'ui-default-modal.html')">
+          Launch demo modal
+        </button>
+
+        <script type="text/ng-template" id="ui-default-modal.html">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="$ctrl.cancel()">×</button>
+            <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <h4 class="m-t-0">Text in a modal</h4>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+
+            <h4>Popover in a modal</h4>
+            <p>This <button type="button" class="btn popover-test" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</button> should trigger a popover on click.</p>
+
+            <h4>Tooltips in a modal</h4>
+            <p><a href="#" class="tooltip-test" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
+
+            <hr>
+
+            <h4>Overflowing text to show scroll behavior</h4>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+            <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn" ng-click="$ctrl.cancel()">Close</button>
+            <button type="button" class="btn btn-primary" ng-click="$ctrl.ok()">Save changes</button>
+          </div>
+        </script>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel" ng-controller="UiModalsDefaultCtrl as ctrl">
+      <div class="panel-heading">
+        <div class="panel-title">Sizes</div>
+      </div>
+      <div class="panel-body">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn" ng-click="ctrl.open('sm', 'ui-small-modal.html')">
+          Small
+        </button>&nbsp;&nbsp;
+
+        <script type="text/ng-template" id="ui-small-modal.html">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="$ctrl.cancel()">×</button>
+            <h4 class="modal-title">Small modal</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+        </script>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn" ng-click="ctrl.open('lg', 'ui-large-modal.html')">
+          Large
+        </button>
+
+        <script type="text/ng-template" id="ui-large-modal.html">
+          <div class="modal-header">
+            <button type="button" class="close" ng-click="$ctrl.cancel()">×</button>
+            <h4 class="modal-title">Large modal</h4>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+        </script>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panel" ng-controller="UiModalsDefaultCtrl as ctrl">
+  <div class="panel-heading">
+    <div class="panel-title">States</div>
+  </div>
+  <div class="panel-body">
+
+    <button type="button" class="btn btn-success" ng-click="ctrl.open(null, 'ui-success-modal.html', 'modal-alert modal-success')">Success</button>&nbsp;&nbsp;
+
+    <script type="text/ng-template" id="ui-success-modal.html">
+      <div class="modal-header"><i class="fa fa-check-circle"></i></div>
+      <div class="modal-title">Some alert title</div>
+      <div class="modal-body">Some alert text</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" ng-click="$ctrl.cancel()">OK</button>
+      </div>
+    </script>
+
+    <button type="button" class="btn btn-danger" ng-click="ctrl.open(null, 'ui-danger-modal.html', 'modal-alert modal-danger')">Danger</button>&nbsp;&nbsp;
+
+    <script type="text/ng-template" id="ui-danger-modal.html">
+      <div class="modal-header"><i class="fa fa-times-circle"></i></div>
+      <div class="modal-title">Some alert title</div>
+      <div class="modal-body">Some alert text</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" ng-click="$ctrl.cancel()">OK</button>
+      </div>
+    </script>
+
+    <button type="button" class="btn btn-warning" ng-click="ctrl.open(null, 'ui-warning-modal.html', 'modal-alert modal-warning')">Warning</button>&nbsp;&nbsp;
+
+    <script type="text/ng-template" id="ui-warning-modal.html">
+      <div class="modal-header"><i class="fa fa-warning"></i></div>
+      <div class="modal-title">Some alert title</div>
+      <div class="modal-body">Some alert text</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" ng-click="$ctrl.cancel()">OK</button>
+      </div>
+    </script>
+
+    <button type="button" class="btn btn-info" ng-click="ctrl.open(null, 'ui-info-modal.html', 'modal-alert modal-info')">Info</button>&nbsp;&nbsp;
+
+    <script type="text/ng-template" id="ui-info-modal.html">
+      <div class="modal-header"><i class="fa fa-info-circle"></i></div>
+      <div class="modal-title">Some alert title</div>
+      <div class="modal-body">Some alert text</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" ng-click="$ctrl.cancel()">OK</button>
+      </div>
+    </script>
+
+  </div>
+</div>
+
+<div class="panel" ng-controller="UiModalsBootboxCtrl as ctrl">
+  <div class="panel-heading">
+    <div class="panel-title">Bootbox</div>
+  </div>
+  <div class="panel-body">
+
+    <button class="btn btn-warning" ng-click="ctrl.alert()"><i class="btn-label-icon left fa fa-play"></i>Alert</button>&nbsp;&nbsp;
+
+    <button class="btn btn-danger" ng-click="ctrl.confirm()"><i class="btn-label-icon left fa fa-play"></i>Confirm</button>&nbsp;&nbsp;
+
+    <button class="btn btn-success" ng-click="ctrl.prompt()"><i class="btn-label-icon left fa fa-play"></i>Prompt</button>&nbsp;&nbsp;
+
+    <button class="btn btn-info" ng-click="ctrl.custom()"><i class="btn-label-icon left fa fa-play"></i>Custom dialog</button>
+
+  </div>
+</div>

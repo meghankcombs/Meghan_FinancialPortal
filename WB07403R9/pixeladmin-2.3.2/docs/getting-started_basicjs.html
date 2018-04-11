@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Basic JS - Getting started - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <h1 class="doc-header">Utilities</h1>
+
+<h4 class="doc-description">
+  PixelAdmin package contains Javascript utilities that you can use
+  in your code.
+</h4>
+
+<h4 class="doc-subheader">js/src/pixeladmin.js</h4>
+
+<p>
+  <strong>pixeladmin.js</strong> is a core script that performs some initial setup and defines
+  basic <code>PixelAdmin</code> object.
+</p>
+
+<div class="alert alert-info">
+  After loading, <strong>pixeladmin.js</strong> script will fire up window resize event.
+</div>
+
+<div class="alert alert-warning">
+  <strong>RequireJS warning:</strong> You need to load core pixeladmin.js file
+  before PixelAdmin components:
+
+  <div class="example nocode">
+    <pre><code data-lang="js">
+require(['px/pixeladmin', 'px/plugins/px-file'], function() {
+  ...
+});
+    </code></pre>
+  </div>
+</div>
+
+<h5 class="doc-subheader">Usage</h5>
+<div class="example nocode">
+  <pre><code data-lang="js">
+PixelAdmin.methodName();
+  </code></pre>
+</div>
+
+<h5 class="doc-subheader">Usage<span class="requirejs-mark"></span></h5>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+require(['px/pixeladmin'], function(px) {
+  px.methodName();
+
+  // or
+
+  window.PixelAdmin.methodName();
+  PixelAdmin.methodName();
+});
+  </code></pre>
+</div>
+
+<h5 class="doc-subheader">Attributes</h5>
+
+<p>
+  You can access to an attribute of PixelAdmin object using the syntax:
+</p>
+
+<div class="example nocode" data-accent="(attributeName)">
+  <pre><code data-lang="js">
+PixelAdmin.attributeName
+  </code></pre>
+</div>
+
+<br>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-light">
+    <thead>
+      <th>Attribute name</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>isRtl</th>
+        <td><code>true</code> if the <code>&lt;html&gt;</code> element has <code>dir="rtl"</code> attribute, otherwise <code>false</code>.</td>
+      </tr>
+      <tr>
+        <th>isMobile</th>
+        <td><code>true</code> if <code>navigator.userAgent</code> attribute contains mobile-specific string, otherwise <code>false</code>.</td>
+      </tr>
+      <tr>
+        <th>isLocalStorageSupported</th>
+        <td><code>true</code> if browser supports <strong>Local Storage</strong>, otherwise <code>false</code>.</td>
+      </tr>
+      <tr>
+        <th>options</th>
+        <td>
+          <p>
+            Application-wide options:
+          </p>
+          <div class="example nocode">
+            <pre><code data-lang="js">
+{
+  resizeDelay:      100,     // Delayed resize timer
+  storageKeyPrefix: 'px_s_', // Prefix for stored keys in the Local Storage
+  cookieKeyPrefix:  'px_c_', // Prefix for stored keys in the Cookies
+}
+            </code></pre>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h5 class="doc-subheader">Methods</h5>
+
+<p>
+  You can call a public method of PixelAdmin object using the syntax:
+</p>
+
+<div class="example nocode" data-accent="(methodName)">
+  <pre><code data-lang="js">
+PixelAdmin.methodName(argumentOne, argumentTwo)
+  </code></pre>
+</div>
+
+<br>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-light">
+    <thead>
+      <th>Method name</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>getScreenSize</th>
+        <td>
+          <p>Returns current screen size. Returning values:</p>
+          <ul>
+            <li><strong>xs</strong> - extra small screen size.</li>
+            <li><strong>sm</strong> - small screen size.</li>
+            <li><strong>md</strong> - medium screen size.</li>
+            <li><strong>lg</strong> - large screen size.</li>
+            <li><strong>xl</strong> - extra large screen size.</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <th>storage.set(key, value)</th>
+        <td>
+          <p>
+            Store key/value pair in the <strong>Local Storage</strong>.
+            To store multiple key/value pairs, pass a hash object as a first parameter to the method.
+          </p>
+          <p>
+            <strong>Note:</strong> If <strong>Local Storage</strong> is not supported
+            by the browser, then values will be stored in the <strong>Cookies</strong>.
+          </p>
+
+          <div class="example nocode">
+            <pre><code data-lang="js">
+// Local storage will contain "px_s_one" key
+PixelAdmin.storage.set('one', 1);
+
+// Local storage will contain "px_s_two", "px_s_three", "px_s_four" keys
+PixelAdmin.storage.set({
+  two: 2,
+  three: 3,
+  four: 4
+});
+            </code></pre>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>storage.get(key)</th>
+        <td>
+          <p>
+            Get value from the <strong>Local Storage</strong> by key.
+            To get multiple values, pass an array of keys as a first parameter to the method.
+            If key is not exists, then <code>null</code> will be returned.
+          </p>
+          <p>
+            <strong>Note:</strong> If <strong>Local Storage</strong> is not supported
+            by the browser, then values will be loaded from the <strong>Cookies</strong>.
+          </p>
+
+          <div class="example nocode">
+            <pre><code data-lang="js">
+// Returns 1
+PixelAdmin.storage.get('one');
+
+// Returns null
+PixelAdmin.storage.get('one-one');
+
+// Returns
+// {
+//   two: 2,
+//   three: 3,
+//   four: 4
+// }
+PixelAdmin.storage.get(['two', 'three', 'four']);
+            </code></pre>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>cookies.set(key, value)</th>
+        <td>
+          <p>
+            Store key/value pair in the <strong>Cookies</strong>.
+            To store multiple key/value pairs, pass a hash object as a first parameter to the method.
+          </p>
+
+          <div class="example nocode">
+            <pre><code data-lang="js">
+// Cookies will contain "px_c_five" key
+PixelAdmin.cookies.set('five', 5);
+
+// Cookies will contain "px_c_six", "px_c_seven", "px_c_eight" keys
+PixelAdmin.cookies.set({
+  six: 6,
+  seven: 7,
+  eight: 8
+});
+            </code></pre>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>cookies.get(key)</th>
+        <td>
+          <p>
+            Get value from the <strong>Cookies</strong> by key.
+            To get multiple values, pass an array of keys as a first parameter to the method.
+            If key is not exists, then <code>null</code> will be returned.
+          </p>
+
+          <div class="example nocode">
+            <pre><code data-lang="js">
+// Returns '5'
+PixelAdmin.cookies.get('five');
+
+// Returns null
+PixelAdmin.cookies.get('five-five');
+
+// Returns
+// {
+//   six: '6',
+//   seven: '7',
+//   eight: '8'
+// }
+PixelAdmin.cookies.get(['six', 'seven', 'eight']);
+            </code></pre>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h5 class="doc-subheader">Events</h5>
+<p>
+  <strong>pixeladmin.js</strong> script fires some events on <code>window</code>
+  object. You can subscribe on those events using the syntax:
+</p>
+
+<div class="example nocode" data-accent="(event)">
+  <pre><code data-lang="js">
+$(window).on('px.event', function(e) {
+  // ...
+});
+  </code></pre>
+</div>
+
+<br>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-light">
+    <thead>
+      <th>Event</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>load</th>
+        <td>
+          This event is fired when the basic setup is completed.
+        </td>
+      </tr>
+      <tr>
+        <th>resize</th>
+        <td>
+          Delayed resize event, fired when window resize is complete.
+        </td>
+      </tr>
+      <tr>
+        <th>resize.xs</th>
+        <td>
+          This event is fired when screen size is changed to extra small.
+        </td>
+      </tr>
+      <tr>
+        <th>resize.sm</th>
+        <td>
+          This event is fired when screen size is changed to small.
+        </td>
+      </tr>
+      <tr>
+        <th>resize.md</th>
+        <td>
+          This event is fired when screen size is changed to medium.
+        </td>
+      </tr>
+      <tr>
+        <th>resize.lg</th>
+        <td>
+          This event is fired when screen size is changed to large.
+        </td>
+      </tr>
+      <tr>
+        <th>resize.xl</th>
+        <td>
+          This event is fired when screen size is changed to extra large.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 class="doc-subheader">js/src/util.js</h4>
+
+<p>
+  <strong>util.js</strong> script defines <code>pxUtil</code> object that contains
+  utility methods.
+</p>
+
+<h5 class="doc-subheader">Usage</h5>
+<div class="example nocode">
+  <pre><code data-lang="js">
+pxUtil.methodName();
+  </code></pre>
+</div>
+
+<h5 class="doc-subheader">Usage<span class="requirejs-mark"></span></h5>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+require(['px/util'], function(pxUtil) {
+  pxUtil.methodName();
+});
+  </code></pre>
+</div>
+
+<h5 class="doc-subheader">Methods</h5>
+
+<p>
+  You can call a public method of pxUtil object using the syntax:
+</p>
+
+<div class="example nocode" data-accent="(methodName)">
+  <pre><code data-lang="js">
+pxUtil.methodName(argumentOne, argumentTwo)
+  </code></pre>
+</div>
+
+<br>
+
+<div class="table-responsive">
+  <table class="table table-bordered table-light">
+    <thead>
+      <th>Method name</th>
+      <th>Description</th>
+    </thead>
+    <tbody>
+      <tr>
+        <th>generateUniqueId</th>
+        <td>
+          Returns unique ID.
+        </td>
+      </tr>
+      <tr>
+        <th>escapeRegExp(str)</th>
+        <td>
+          Returns RegEx-safe string.
+        </td>
+      </tr>
+      <tr>
+        <th>hexToRgba(color, opacity)</th>
+        <td>
+          Convert HEX <code>color</code> to RGBA color with given <code>opacity</code>.
+          Returns string <code>rgba(...)</code>.
+        </td>
+      </tr>
+      <tr>
+        <th>triggerResizeEvent</th>
+        <td>
+          Trigger window resize event. Do not require <strong>jQuery</strong>.
+        </td>
+      </tr>
+      <tr>
+        <th>hasClass(elem, className)</th>
+        <td>
+          Returns <code>true</code> if the DOM <code>elem</code> are assigned the given <code>className</code>,
+          otherwise returns <code>false</code>. Do not require <strong>jQuery</strong>.
+        </td>
+      </tr>
+      <tr>
+        <th>addClass(elem, classes)</th>
+        <td>
+          Adds the specified <code>classes</code> to the DOM <code>elem</code>.
+          <code>classes</code> - One or more space-separated classes / array of classes
+          to be added to the class attribute of DOM <code>elem</code>.
+          Do not require <strong>jQuery</strong>.
+        </td>
+      </tr>
+      <tr>
+        <th>removeClass(elem, classes)</th>
+        <td>
+          Removes the specified <code>classes</code> from the DOM <code>elem</code>.
+          <code>classes</code> - One or more space-separated classes / array of classes
+          to be removed from the class attribute of DOM <code>elem</code>.
+          Do not require <strong>jQuery</strong>.
+        </td>
+      </tr>
+      <tr>
+        <th>toggleClass(elem, classes)</th>
+        <td>
+          Adds or removes the specified <code>classes</code> from the DOM <code>elem</code>,
+          depending on the class's presence.
+          <code>classes</code> - One or more space-separated classes / array of classes
+          to be added/removed from the class attribute of DOM <code>elem</code>.
+          Do not require <strong>jQuery</strong>.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('getting-started_basicjs.html');
+  </script>
+</body>
+</html>

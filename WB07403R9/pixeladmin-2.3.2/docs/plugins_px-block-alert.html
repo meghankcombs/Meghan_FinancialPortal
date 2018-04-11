@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Block-alert - Plugins - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <h1 class="doc-header">Block-alert</h1>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <h4 class="doc-subheader">Basic</h4>
+
+      <div class="example">
+<div id="block-alert-basic" class="m-b-3"></div>
+
+<button type="button" class="btn" id="block-alert-default">Add default</button>
+<button type="button" class="btn" id="block-alert-success">Add success</button>
+<button type="button" class="btn" id="block-alert-success-dark">Add dark success</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-basic');
+    var content    = '<h4 class="alert-heading">Alert header</h4><p>Alert content</p>';
+
+    $container.pxBlockAlert(content);
+    $container.pxBlockAlert(content, { type: 'success' });
+    $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+
+    $('#block-alert-default').on('click', function() {
+      $container.pxBlockAlert(content);
+    });
+
+    $('#block-alert-success').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success' });
+    });
+
+    $('#block-alert-success-dark').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Without close button</h4>
+
+      <div class="example">
+<div id="block-alert-without-close-btn"></div>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-without-close-btn');
+    var content    = 'Alert content';
+
+    $container.pxBlockAlert(content, { closeButton: false });
+    $container.pxBlockAlert(content, { type: 'success', closeButton: false });
+    $container.pxBlockAlert(content, { type: 'success', style: 'dark', closeButton: false });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Without animation</h4>
+
+      <div class="example">
+<div id="block-alert-without-animation" class="m-b-3"></div>
+
+<button type="button" class="btn" id="block-alert-without-animation-btn">Add</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-without-animation');
+    var content    = 'Alert content';
+
+    $container.pxBlockAlert(content, { animate: false });
+
+    $('#block-alert-without-animation-btn').on('click', function() {
+      $container.pxBlockAlert(content, { animate: false });
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">With timer</h4>
+
+      <div class="example">
+<div id="block-alert-with-timer" class="m-b-3"></div>
+
+<button type="button" class="btn" id="block-alert-with-timer-btn">Add</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-with-timer');
+    var content    = 'Alert content';
+
+    // Close alert after 3 seconds
+    $container.pxBlockAlert(content, { timer: 3 });
+
+    $('#block-alert-with-timer-btn').on('click', function() {
+      // Close alert after 3 seconds
+      $container.pxBlockAlert(content, { timer: 3 });
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Namespaces</h4>
+
+      <div class="example">
+<div id="block-alert-namespaces" class="m-b-3"></div>
+
+<button type="button" class="btn" id="block-alert-namespace-1">Add to "one"</button>
+<button type="button" class="btn" id="block-alert-namespace-2">Add to "two"</button>
+<button type="button" class="btn" id="block-alert-namespace-3">Add to "three"</button>
+|
+<button type="button" class="btn" id="block-alert-clear-namespace-1">Clear "one"</button>
+<button type="button" class="btn" id="block-alert-clear-namespace-2">Clear "two"</button>
+<button type="button" class="btn" id="block-alert-clear-namespace-3">Clear "three"</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-namespaces');
+    var content    = 'Alert content';
+
+    $container.pxBlockAlert(content, { namespace: 'one' });
+    $container.pxBlockAlert(content, { namespace: 'two', type: 'success' });
+    $container.pxBlockAlert(content, { namespace: 'three', type: 'success', style: 'dark' });
+
+    // Add alerts
+
+    $('#block-alert-namespace-1').on('click', function() {
+      $container.pxBlockAlert(content, { namespace: 'one' });
+    });
+
+    $('#block-alert-namespace-2').on('click', function() {
+      $container.pxBlockAlert(content, { namespace: 'two', type: 'success' });
+    });
+
+    $('#block-alert-namespace-3').on('click', function() {
+      $container.pxBlockAlert(content, { namespace: 'three', type: 'success', style: 'dark' });
+    });
+
+    // Clear alerts
+
+    $('#block-alert-clear-namespace-1').on('click', function() {
+      $container.pxBlockAlert('clear', 'one');
+    });
+
+    $('#block-alert-clear-namespace-2').on('click', function() {
+      $container.pxBlockAlert('clear', 'two');
+    });
+
+    $('#block-alert-clear-namespace-3').on('click', function() {
+      $container.pxBlockAlert('clear', 'three');
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Custom position</h4>
+      <p>
+        By default, PxBlockAlert plugin places alerts at the top of the container.
+        To change this behavior, you need to insert the <code>.px-block-alerts</code>
+        element to targeted position manually.
+      </p>
+
+      <div class="example" data-accent="(px-block-alerts) ||(px-block-alerts-empty)">
+<div id="block-alert-custom-position" class="m-b-3">
+  <ul class="nav nav-tabs">
+    <li class="active">
+      <a href="#">
+        Home <span class="label label-success">12</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        Profile <span class="badge badge-primary">12</span>
+      </a>
+    </li>
+  </ul>
+
+  <div class="px-block-alerts px-block-alerts-empty"></div>
+
+  <div class="tab-content tab-content-bordered">
+    <div class="tab-pane fade in active">
+      <p>
+        Tab content
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#block-alert-custom-position').pxBlockAlert('Alert content', { type: 'success', style: 'dark' });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Within <code>.px-content</code></h4>
+
+      <div class="example" data-accent="''(px-content)''">
+<div id="block-alert-px-content" class="px-content">
+  Some page content
+</div>
+
+<script>
+  $(function() {
+    $('#block-alert-px-content').pxBlockAlert('Alert content', { type: 'success' });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Within panel</h4>
+
+      <div class="example" data-accent="''(panel)''">
+<div class="panel" id="block-alert-panel">
+  <div class="panel-heading">
+    <span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Panel title</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
+
+<button type="button" class="btn" id="block-alert-panel-default">Add default</button>
+<button type="button" class="btn" id="block-alert-panel-success">Add success</button>
+<button type="button" class="btn" id="block-alert-panel-success-dark">Add dark success</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-panel');
+    var content    = 'Alert content';
+
+    $container.pxBlockAlert(content);
+    $container.pxBlockAlert(content, { type: 'success' });
+    $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+
+    $('#block-alert-panel-default').on('click', function() {
+      $container.pxBlockAlert(content);
+    });
+
+    $('#block-alert-panel-success').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success' });
+    });
+
+    $('#block-alert-panel-success-dark').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="''(panel)''">
+<div class="panel" id="block-alert-panel2">
+  <div class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Panel title</div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+
+<button type="button" class="btn" id="block-alert-panel2-default">Add default</button>
+<button type="button" class="btn" id="block-alert-panel2-success">Add success</button>
+<button type="button" class="btn" id="block-alert-panel2-success-dark">Add dark success</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-panel2');
+    var content    = 'Alert content';
+
+    $container.pxBlockAlert(content);
+    $container.pxBlockAlert(content, { type: 'success' });
+    $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+
+    $('#block-alert-panel2-default').on('click', function() {
+      $container.pxBlockAlert(content);
+    });
+
+    $('#block-alert-panel2-success').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success' });
+    });
+
+    $('#block-alert-panel2-success-dark').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="''(panel)''">
+<div class="panel" id="block-alert-panel3">
+  <div class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Panel title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+
+<button type="button" class="btn" id="block-alert-panel3-default">Add default</button>
+<button type="button" class="btn" id="block-alert-panel3-success">Add success</button>
+<button type="button" class="btn" id="block-alert-panel3-success-dark">Add dark success</button>
+
+<script>
+  $(function() {
+    var $container = $('#block-alert-panel3');
+    var content    = 'Alert content';
+
+    $container.pxBlockAlert(content);
+    $container.pxBlockAlert(content, { type: 'success' });
+    $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+
+    $('#block-alert-panel3-default').on('click', function() {
+      $container.pxBlockAlert(content);
+    });
+
+    $('#block-alert-panel3-success').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success' });
+    });
+
+    $('#block-alert-panel3-success-dark').on('click', function() {
+      $container.pxBlockAlert(content, { type: 'success', style: 'dark' });
+    });
+  });
+</script>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+
+      <h4 class="doc-subheader">Creating an alert</h4>
+      <div class="alert alert-info">
+        The PxBlockAlert plugin isn't creates/stores a class instance.
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$('#element').pxBlockAlert('<p>Alert content</p>', options);
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Option</th>
+            <th>Default</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>type</th>
+              <td>null</td>
+              <td>
+                Alert type:
+                <ul class="m-y-1">
+                  <li><code>null</code> - default alert;</li>
+                  <li><code>success</code>;</li>
+                  <li><code>info</code>;</li>
+                  <li><code>warning</code>;</li>
+                  <li><code>danger</code>.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>style</th>
+              <td>null</td>
+              <td>
+                Alert style:
+                <ul class="m-y-1">
+                  <li><code>null</code> - light alert;</li>
+                  <li><code>dark</code>.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <th>namespace</th>
+              <td>default</td>
+              <td>
+                Add alert to the given namespace.
+              </td>
+            </tr>
+            <tr>
+              <th>animate</th>
+              <td>true</td>
+              <td>Animate alert.</td>
+            </tr>
+            <tr>
+              <th>timer</th>
+              <td>0</td>
+              <td>Automatically close alert after <code>timer</code> seconds. 0 - do not close alert automatically.</td>
+            </tr>
+            <tr>
+              <th>closeButton</th>
+              <td>true</td>
+              <td>Show close button.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/plugins/px-block-alert'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Methods</h4>
+
+      <div class="example nocode" data-accent="(methodName)">
+        <pre><code data-lang="js">
+$('#element').pxBlockAlert('methodName', arg1, arg2, ...);
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Method name</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>remove($alert, animate = true)</th>
+              <td>Remove the given <em>$alert</em>.</td>
+            </tr>
+            <tr>
+              <th>clear(namespace = 'default', animate = true)</th>
+              <td>Remove all alerts within the given <em>namespace</em>.</td>
+            </tr>
+            <tr>
+              <th>clearAll(animate = true)</th>
+              <td>Remove all alerts.</td>
+            </tr>
+            <tr>
+              <th>destroy</th>
+              <td>Remove the <code>.px-block-alerts</code> container with all alerts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>PxBlockAlert</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/pixeladmin/plugins/px-block-alert.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-px-block-alert.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['px-block-alert']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>PxBlockAlert</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'px-block-alert',
+    files: [
+      'path/to/js/pixeladmin/plugins/px-block-alert.js',
+      'path/to/js/pixeladmin/directives/angular-px-block-alert.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>$pxBlockAlert</code> service</h4>
+
+      <p>
+        Inject <code>$pxBlockAlert</code> service into a controller to create alerts.
+        By default it comes with five methods:
+      </p>
+
+      <ul>
+        <li>add(content, options)</li>
+        <li>remove($alert, animate, options)</li>
+        <li>clear(namespace, animate, options)</li>
+        <li>clearAll(animate, options)</li>
+        <li>destroy(options)</li>
+      </ul>
+
+      <p>
+        <strong>NOTE:</strong> Define <code>options.container</code> attribute to
+        specify parent container (<em>Default: </em> <code>.px-content</code>).
+        For example, the next lines of code are equivalent:
+      </p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+// jQuery
+$('#some-block').pxBlockAlert('Alert text.', { type: 'danger', closeButton: false });
+
+// Angular
+$pxBlockAlert.add('Alert text.', { container: '#some-block', type: 'danger', closeButton: false });
+        </code></pre>
+      </div>
+
+
+      <div class="example">
+<div ng-app="ngBlockAlertApp" ng-controller="ngBlockAlertAppCtrl as ctrl">
+  <div id="ng-alerts"></div>
+
+  <br>
+
+  <button class="btn btn-default" ng-click="ctrl.default()">Default</button>
+  <button class="btn btn-success" ng-click="ctrl.successLight()">Light</button>
+  <button class="btn btn-danger" ng-click="ctrl.dangerLight()">Light</button>
+  <button class="btn btn-info" ng-click="ctrl.infoLight()">Light</button>
+  <button class="btn btn-warning" ng-click="ctrl.warningLight()">Light</button>
+  <button class="btn btn-success" ng-click="ctrl.successDark()">Dark</button>
+  <button class="btn btn-danger" ng-click="ctrl.dangerDark()">Dark</button>
+  <button class="btn btn-info" ng-click="ctrl.infoDark()">Dark</button>
+  <button class="btn btn-warning" ng-click="ctrl.warningDark()">Dark</button>
+
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+
+  <button class="btn btn-default" ng-click="ctrl.removeFirst()">Remove first</button>
+  <button class="btn btn-default" ng-click="ctrl.removeAll()">Remove all</button>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/pixeladmin/plugins/px-block-alert.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-px-block-alert.js"></script>
+
+<script>
+  angular.module('ngBlockAlertApp', [ 'px-block-alert' ])
+    .controller('ngBlockAlertAppCtrl', function($pxBlockAlert) {
+      this.default      = function() { $pxBlockAlert.add('Default alert.',       { container: '#ng-alerts' }); };
+      this.successLight = function() { $pxBlockAlert.add('Success-light alert.', { container: '#ng-alerts', type: 'success' }); };
+      this.dangerLight  = function() { $pxBlockAlert.add('Danger-light alert.',  { container: '#ng-alerts', type: 'danger' }); };
+      this.infoLight    = function() { $pxBlockAlert.add('Info-light alert.',    { container: '#ng-alerts', type: 'info' }); };
+      this.warningLight = function() { $pxBlockAlert.add('Warning-light alert.', { container: '#ng-alerts', type: 'warning' }); };
+      this.successDark  = function() { $pxBlockAlert.add('Success-dark alert.',  { container: '#ng-alerts', style: 'dark', type: 'success' }); };
+      this.dangerDark   = function() { $pxBlockAlert.add('Danger-dark alert.',   { container: '#ng-alerts', style: 'dark', type: 'danger' }); };
+      this.infoDark     = function() { $pxBlockAlert.add('Info-dark alert.',     { container: '#ng-alerts', style: 'dark', type: 'info' }); };
+      this.warningDark  = function() { $pxBlockAlert.add('Warning-dark alert.',  { container: '#ng-alerts', style: 'dark', type: 'warning' }); };
+
+      this.removeFirst  = function() { $pxBlockAlert.remove($('#ng-alerts .alert:first-child'), true, { container : '#ng-alerts' }); };
+      this.removeAll    = function() { $pxBlockAlert.clearAll(true, { container : '#ng-alerts' }); };
+    });
+</script>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('plugins_px-block-alert.html');
+  </script>
+</body>
+</html>

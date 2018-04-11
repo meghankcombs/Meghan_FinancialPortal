@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <script>document.getElementsByTagName('html')[0].setAttribute('dir', 'ltr');</script>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Color Generator - PixelAdmin: Responsive Bootstrap Template</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <!-- Data -->
+  <script>window.less = { async: false, fileAsync: false };</script>
+  <script src="assets/less.min.js"></script>
+  <script src="assets/data.js"></script>
+  <script src="assets/color-generator.js"></script>
+  <link href="assets/color-generator.css" rel="stylesheet" type="text/css">
+  <script src="assets/highlight.js"></script>
+  <link href="assets/highlight.css" rel="stylesheet" type="text/css">
+
+  <!-- Generated stylesheets -->
+  <style id="cg-generated-style"></style>
+
+
+</head>
+<body>
+  <div class="px-sidebar-left open" id="cg-sidebar" data-width="235" style="width: 235px">
+    <div class="px-sidebar-content">
+
+      <div class="font-size-18 p-y-4 p-x-3 clearfix bg-white darker b-b-1">
+        <h1 class="font-size-18 font-weight-semibold m-a-0 pull-xs-left"><i class="ion-aperture m-r-1 font-size-22"></i>Color Generator</h1>
+      </div>
+
+      <div class="p-x-4 p-y-3 b-b-1 border-panel">
+        <div class="font-size-11 font-weight-semibold text-muted m-b-1">COLOR NAME</div>
+        <input id="cg-color-name" value="" type="text" class="form-control">
+      </div>
+
+      <div class="p-x-4 p-y-3 b-b-1 border-panel">
+        <div class="font-size-11 font-weight-semibold text-muted m-b-1">CHOOSE COLOR</div>
+        <div class="clearfix position-relative">
+          <input id="cg-color" value="" type="text" class="form-control cg-control" maxlength="7">
+          <div id="cg-cur-color"></div>
+        </div>
+        <input id="cg-palette" value="" type="text" class="form-control cg-control">
+      </div>
+
+      <div class="p-x-4 p-y-3 b-b-1 border-panel">
+        <div class="font-size-11 font-weight-semibold text-muted m-b-1">TEXT COLOR</div>
+        <div class="clearfix position-relative">
+          <input id="cg-text-color" value="" type="text" class="form-control cg-control" maxlength="7">
+        </div>
+      </div>
+
+      <div class="p-x-4 p-y-3 b-b-1 border-panel clearfix position-relative">
+        <div class="font-size-11 font-weight-semibold text-muted m-b-1">SELECTED COLORS <button class="btn btn-xs pull-xs-right btn-outline btn-outline-colorless" id="cg-selected-colors-edit">EDIT</button></div>
+        <div class="colors-list clearfix" id="cg-selected-colors"></div>
+        <div class="clearfix" style="clear: both;"><button class="btn btn-outline btn-cg-generated" id="colors-list-add" disabled>+ Current color</button></div>
+      </div>
+
+      <div class="p-x-4 p-y-3 clearfix">
+        <div class="font-size-11 font-weight-semibold text-muted m-b-1">EXAMPLE COLORS</div>
+        <div class="colors-list clearfix" id="cg-predefined-colors"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="px-content">
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+
+        <div class="panel">
+          <div class="panel-title">Utility classes <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body cg-example" data-accent="(text-cg-generated)||(bg-cg-generated)||(border-cg-generated)">
+<p class="text-cg-generated">
+  Sed tempus tincidunt mi. <a href="#"><strong>Mauris</strong></a> eu lacus at metus dapibus dignissim ut eget
+  velit. Morbi quis bibendum orci. Curabitur metus nisl, efficitur sit amet
+  eleifend ut, sodales quis odio. <a href="#"><strong>Curabitur</strong></a> tortor ex, fermentum a rutrum
+  vulputate, consequat sed dui.
+</p>
+
+<br>
+
+<div class="bg-cg-generated">Default</div>
+<div class="bg-cg-generated darken">Darken</div>
+<div class="bg-cg-generated darker">Darker</div>
+
+<br>
+
+<div class="border-cg-generated">Border</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Table <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body cg-example" data-accent="(table-cg-generated)">
+<div class="table-cg-generated">
+  <div class="table-header">
+    <div class="table-caption">
+      Table Header
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-footer">
+    Footer
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Navs <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(nav-cg-generated)">
+<ul class="nav nav-tabs nav-cg-generated">
+  <li class="active">
+    <a href="#">Home<span class="label label-warning">14</span></a>
+  </li>
+  <li>
+    <a href="#">Help<span class="badge badge-danger">16</span></a>
+  </li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav nav-tabs nav-tabs-simple nav-cg-generated">
+  <li class="active">
+    <a href="#">Home<span class="label label-warning">14</span></a>
+  </li>
+  <li>
+    <a href="#">Help<span class="badge badge-danger">16</span></a>
+  </li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </li>
+</ul>
+
+<ul class="nav nav-pills nav-cg-generated">
+  <li class="active">
+    <a href="#">Home<span class="label label-warning">14</span></a>
+  </li>
+  <li>
+    <a href="#">Help<span class="badge badge-danger">16</span></a>
+  </li>
+  <li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+    <ul class="dropdown-menu">
+      <li><a href="#">Action</a></li>
+      <li><a href="#">Another action</a></li>
+      <li><a href="#">Something else here</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Separated link</a></li>
+    </ul>
+  </li>
+</ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Progress bars <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(progress-bar-cg-generated)">
+<div class="progress">
+  <div class="progress-bar progress-bar-cg-generated" style="width: 40%"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-cg-generated" style="width: 20%"></div>
+</div>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active progress-bar-cg-generated" style="width: 60%"></div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">List groups <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(list-group-cg-generated)">
+<div class="list-group list-group-cg-generated">
+  <a href="#" class="list-group-item"><i class="list-group-icon fa fa-at"></i>Cras justo odio<span class="label label-success">14</span></a>
+  <a href="#" class="list-group-item active"><i class="list-group-icon fa fa-at"></i>Dapibus ac facilisis in<span class="label label-danger label-pill">2</span></a>
+  <a href="#" class="list-group-item"><i class="list-group-icon fa fa-at"></i>Morbi leo risus</a>
+  <a href="#" class="list-group-item"><i class="list-group-icon fa fa-at"></i>Porta ac consectetur ac<span class="label label-warning label-pill">12</span></a>
+  <a href="#" class="list-group-item"><i class="list-group-icon fa fa-at"></i>Vestibulum at eros</a>
+</div>
+
+<div class="list-group list-group-cg-generated">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading">List group item heading</h4>
+    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+  </a>
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">List group item heading</h4>
+    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+  </a>
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">List group item heading</h4>
+    <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+  </a>
+</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Checkboxes &amp; Radios <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(custom-control-cg-generated)">
+<div class="row">
+  <div class="col-xs-6">
+    <label class="custom-control custom-checkbox custom-control-cg-generated" for="custom-checkbox-1">
+      <input type="checkbox" id="custom-checkbox-1" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      1
+    </label>
+    <label class="custom-control custom-checkbox custom-control-cg-generated" for="custom-checkbox-2">
+      <input type="checkbox" id="custom-checkbox-2" class="custom-control-input" checked>
+      <span class="custom-control-indicator"></span>
+      2
+    </label>
+  </div>
+  <div class="col-xs-6">
+    <label class="custom-control custom-radio custom-control-cg-generated" for="custom-radio-1">
+      <input type="radio" id="custom-radio-1" name="custom-radios-1" class="custom-control-input" checked>
+      <span class="custom-control-indicator"></span>
+      1
+    </label>
+    <label class="custom-control custom-radio custom-control-cg-generated" for="custom-radio-2">
+      <input type="radio" id="custom-radio-2" name="custom-radios-1" class="custom-control-input">
+      <span class="custom-control-indicator"></span>
+      2
+    </label>
+  </div>
+</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <div class="panel">
+          <div class="panel-title">Labels, badges and tags <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body cg-example" data-accent="(label-cg-generated)">
+<a href="#" class="label label-cg-generated">Label</a>
+<a href="#" class="label label-pill label-cg-generated">Pill</a>
+<a href="#" class="label label-tag label-cg-generated">Tag</a>
+<a href="#" class="label label-success label-cg-generated">
+  <img src="assets/demo/avatars/3.jpg" class="label-image left">
+  With image
+</a>
+<a href="#" class="label label-outline label-cg-generated">Outline</a>
+<a href="#" class="label label-pill label-outline label-cg-generated">Outline pill</a>
+<a href="#" class="label label-outline label-cg-generated">
+  <img src="assets/demo/avatars/3.jpg" class="label-image left">
+  Outline with image
+</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Buttons <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body cg-example" data-accent="(btn-cg-generated)">
+<div>
+  <button type="button" class="btn btn-xl btn-cg-generated">Default</button>
+  <button type="button" class="btn btn-lg btn-cg-generated">Default</button>
+  <button type="button" class="btn btn btn-cg-generated">Default</button>
+  <button type="button" class="btn btn-sm btn-cg-generated">Default</button>
+  <button type="button" class="btn btn-xs btn-cg-generated">Default</button>
+</div>
+
+<div>
+  <button type="button" class="btn btn-rounded btn-xl btn-cg-generated">Rounded</button>
+  <button type="button" class="btn btn-rounded btn-lg btn-cg-generated">Rounded</button>
+  <button type="button" class="btn btn-rounded btn btn-cg-generated">Rounded</button>
+  <button type="button" class="btn btn-rounded btn-sm btn-cg-generated">Rounded</button>
+  <button type="button" class="btn btn-rounded btn-xs btn-cg-generated">Rounded</button>
+</div>
+
+<div>
+  <button type="button" class="btn btn-3d btn-xl btn-cg-generated">3D</button>
+  <button type="button" class="btn btn-3d btn-lg btn-cg-generated">3D</button>
+  <button type="button" class="btn btn-3d btn btn-cg-generated">3D</button>
+  <button type="button" class="btn btn-3d btn-sm btn-cg-generated">3D</button>
+  <button type="button" class="btn btn-3d btn-xs btn-cg-generated">3D</button>
+</div>
+
+<div>
+  <button type="button" class="btn btn-outline btn-xl btn-cg-generated">Outline</button>
+  <button type="button" class="btn btn-outline btn-lg btn-cg-generated">Outline</button>
+  <button type="button" class="btn btn-outline btn btn-cg-generated">Outline</button>
+  <button type="button" class="btn btn-outline btn-sm btn-cg-generated">Outline</button>
+  <button type="button" class="btn btn-outline btn-xs btn-cg-generated">Outline</button>
+</div>
+
+<div>
+  <button type="button" class="btn btn-outline btn-outline-colorless btn-xl btn-cg-generated">Outline colorless</button>
+  <button type="button" class="btn btn-outline btn-outline-colorless btn-lg btn-cg-generated">Outline colorless</button>
+  <button type="button" class="btn btn-outline btn-outline-colorless btn btn-cg-generated">Outline colorless</button>
+  <button type="button" class="btn btn-outline btn-outline-colorless btn-sm btn-cg-generated">Outline colorless</button>
+  <button type="button" class="btn btn-outline btn-outline-colorless btn-xs btn-cg-generated">Outline colorless</button>
+</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Dropdown menu <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(dropdown-menu-cg-generated)">
+<ul class="dropdown-menu dropdown-menu-cg-generated">
+  <li><a href="#"><span class="label label-success pull-right">34</span>Action</a></li>
+  <li class="active"><a href="#"><span class="badge badge-info pull-right">16</span>Another action</a></li>
+  <li><a href="#">Something else here</a></li>
+  <li class="divider"></li>
+  <li class="dropdown-header">Dropdown header</li>
+  <li><a href="#"><i class="fa fa-cloud"></i>&nbsp;&nbsp;With icon</a></li>
+  <li><a href="#">Last action</a></li>
+</ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Alerts <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(alert-cg-generated)">
+<div class="alert alert-dark alert-cg-generated">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4 class="alert-heading">Email confirmation sent</h4>
+  <p>Please check your <a href="#" class="alert-link">email@example.com</a> inbox.</p>
+</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Tooltips &amp; Popovers <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example cg-example-tooltips" data-accent="(data-state=''cg-generated'')">
+<button type="button" class="btn" data-toggle="tooltip" data-state="cg-generated" data-placement="top" title="Tooltip on top">
+  Tooltip
+</button>
+
+<br><br>
+
+<button type="button" class="btn" data-container="body" data-toggle="popover" data-state="cg-generated" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Primary title">
+  Primary
+</button>
+<button type="button" class="btn" data-container="body" data-toggle="popover" data-state="cg-generated" data-style="colorful" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Primary title">
+  Primary
+</button>
+<button type="button" class="btn" data-container="body" data-toggle="popover" data-state="cg-generated" data-style="dark" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Primary title">
+  Primary
+</button>
+<button type="button" class="btn" data-container="body" data-toggle="popover" data-state="cg-generated" data-style="dark colorful" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-title="Primary title">
+  Primary
+</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Accordion <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(panel-group-cg-generated)">
+<div class="panel-group panel-group-dark panel-group-cg-generated" id="accordion-example">
+  <div class="panel">
+    <div class="panel-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-example" href="#collapseOne">
+        Collapsible Group Item #1
+      </a>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-heading">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-example" href="#collapseTwo">
+        Collapsible Group Item #2
+      </a>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+      </div>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="panel-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-example" href="#collapseThree">
+        Collapsible Group Item #3
+      </a>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse in">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+      </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">Switchers <button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <hr class="m-y-0">
+          <div class="panel-body clearfix cg-example" data-accent="(switcher-cg-generated)">
+<label for="switcher-small" class="switcher switcher-sm switcher-cg-generated">
+  <input type="checkbox" id="switcher-small" checked>
+  <div class="switcher-indicator">
+    <div class="switcher-yes">YES</div>
+    <div class="switcher-no">NO</div>
+  </div>
+  Small switcher
+</label>
+<label for="switcher-default" class="switcher switcher-cg-generated">
+  <input type="checkbox" id="switcher-default" checked>
+  <div class="switcher-indicator">
+    <div class="switcher-yes">YES</div>
+    <div class="switcher-no">NO</div>
+  </div>
+  Default switcher
+</label>
+<label for="switcher-large" class="switcher switcher-lg switcher-cg-generated">
+  <input type="checkbox" id="switcher-large" checked>
+  <div class="switcher-indicator">
+    <div class="switcher-yes">YES</div>
+    <div class="switcher-no">NO</div>
+  </div>
+  Large switcher
+</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <hr class="page-wide-block">
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-title">Title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <img class="panel-img" data-src="holder.js/100px180" alt="Panel image cap">
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Panel header</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Title icon</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">List group</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+  </ul>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Table</span>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Tabs</span>
+    <ul class="nav nav-tabs nav-xs">
+      <li class="active"><a href="#" data-toggle="tab">Home</a></li>
+      <li><a href="#" data-toggle="tab">Profile</a></li>
+      <li><a href="#" data-toggle="tab">More</a></li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Alerts</span>
+  </div>
+  <div class="px-block-alerts">
+    <div class="alert alert-success alert-dark">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Buttons</span>
+    <div class="panel-heading-controls">
+      <button class="btn btn-xs btn-success btn-outline btn-outline-colorless"><i class="fa fa-check"></i> Apply</button>
+      <button class="btn btn-xs btn-danger btn-outline"><i class="fa fa-close"></i></button>
+      <div class="btn-group btn-group-xs">
+        <button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-cog"></i></button>
+        <ul class="dropdown-menu dropdown-menu-right">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Pagination</span>
+    <div class="panel-heading-controls">
+      <ul class="pagination pagination-xs">
+        <li><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Progress</span>
+    <div class="panel-heading-controls" style="width: 30%; max-width: 140px;">
+      <div class="progress progress-striped active" style="width: 100%">
+        <div class="progress-bar progress-bar-danger" style="width: 60%;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Input group</span>
+    <div class="panel-heading-controls col-sm-4">
+      <form action="">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" placeholder="Search..." name="s">
+          <span class="input-group-btn">
+            <button class="btn" type="submit">
+              <span class="fa fa-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-title">Wizard title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <div class="wizard panel-wizard" id="wizard-1">
+    <div class="wizard-wrapper">
+      <ul class="wizard-steps">
+        <li data-target="#wizard-panel2-step1" class="completed">
+          <span class="wizard-step-number">1</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 1
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel2-step2" class="active">
+          <span class="wizard-step-number">2</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 2
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel2-step3">
+          <span class="wizard-step-number">3</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 3
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel2-step4">
+          <span class="wizard-step-number">4</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Finish
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="wizard-content">
+      <div class="wizard-pane" id="wizard-panel2-step1"></div>
+      <div class="wizard-pane active" id="wizard-panel2-step2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="wizard-pane" id="wizard-panel2-step3"></div>
+      <div class="wizard-pane" id="wizard-panel2-step4"></div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Some body content.
+  </div>
+</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12 col-lg-6">
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-title">Title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <img class="panel-img" data-src="holder.js/100px180" alt="Panel image cap">
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Panel header</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <div class="panel-footer">Panel footer</div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title"><i class="panel-title-icon fa fa-flask"></i>Title icon</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">List group</span>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+  <ul class="list-group">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Morbi leo risus</li>
+  </ul>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Table</span>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Tabs</span>
+    <ul class="nav nav-tabs nav-xs">
+      <li class="active"><a href="#" data-toggle="tab">Home</a></li>
+      <li><a href="#" data-toggle="tab">Profile</a></li>
+      <li><a href="#" data-toggle="tab">More</a></li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Alerts</span>
+  </div>
+  <div class="px-block-alerts">
+    <div class="alert alert-success alert-dark">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <strong>Well done!</strong> You successfully read this important alert message.
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Labels</span>
+    <div class="panel-heading-controls">
+      <span class="label label-tag label-success">Tag</span>
+      <span class="label label-danger">Label</span>
+      <span class="label label-pill label-info">Badge</span>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Pager</span>
+    <div class="panel-heading-controls">
+      <ul class="pager pager-xs">
+        <li class="disabled"><a href="#">← Older</a></li>
+        <li><a href="#">Newer →</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">With text</span>
+    <div class="panel-heading-controls">
+      <span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+      <button class="btn btn-xs">Button</button>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-cg-generated">
+  <div class="panel-heading">
+    <span class="panel-title">Input</span>
+    <div class="panel-heading-controls">
+      <select class="form-control input-sm custom-select">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+    </div>
+  </div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+  </div>
+</div>
+          </div>
+        </div>
+
+        <div class="panel panel-transparent">
+          <div class="panel-title p-a-0 clearfix">&nbsp;<button class="btn btn-xs pull-xs-right cg-example-show-code" data-toggle="tooltip" data-placement="top" title="Code"><i class="fa fa-code"></i></button></div>
+          <div class="panel-body clearfix cg-example p-x-0 p-b-0 m-t-0" data-accent="(panel-cg-generated)">
+<div class="panel panel-dark panel-body-colorful panel-cg-generated">
+  <div class="panel-title">Wizard title</div>
+  <small class="panel-subtitle text-muted">Support panel subtitle</small>
+  <div class="wizard panel-wizard" id="wizard-2">
+    <div class="wizard-wrapper">
+      <ul class="wizard-steps">
+        <li data-target="#wizard-panel2-step1" class="completed">
+          <span class="wizard-step-number">1</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 1
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel2-step2" class="active">
+          <span class="wizard-step-number">2</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 2
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel2-step3">
+          <span class="wizard-step-number">3</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Step 3
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+        <li data-target="#wizard-panel2-step4">
+          <span class="wizard-step-number">4</span>
+          <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+          <span class="wizard-step-caption">
+            Finish
+            <span class="wizard-step-description">Description</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="wizard-content">
+      <div class="wizard-pane" id="wizard-panel2-step1"></div>
+      <div class="wizard-pane active" id="wizard-panel2-step2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+      <div class="wizard-pane" id="wizard-panel2-step3"></div>
+      <div class="wizard-pane" id="wizard-panel2-step4"></div>
+    </div>
+  </div>
+  <div class="panel-body">
+    Some body content.
+  </div>
+</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="px-footer p-a-0 px-footer-fixed border-panel b-t-1" id="px-color_generator-footer">
+    <div class="bg-white darker p-x-3 p-y-2 clearfix">
+      <small class="m-b-1 text-default display-block">Insert the next line into your SCSS code (<a href="../docs/getting-started_customization.html#custom-colors" target="_blank" class="text-info text-underlined">see the docs</a>):</small>
+      <code class="font-size-12 p-x-2 display-block" id="cg-code">//</code>
+    </div>
+  </div>
+
+
+
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+<script>
+  $('#px-color_generator-footer')
+    .addClass('px-demo-footer-fixed')
+    .pxFooter();
+</script>
+
+
+  <script>
+    $(function() {
+      $('#cg-sidebar').pxSidebar();
+      $('#px-demo-footer').pxFooter();
+      $('.cg-example-show-code').tooltip();
+
+      // Initialize
+      ColorGenerator();
+
+      $('.wizard').pxWizard();
+      $('*[data-toggle="tooltip"][data-state="cg-generated"]').tooltip();
+      $('*[data-toggle="popover"][data-state="cg-generated"]').popover();
+    });
+  </script>
+
+</body>
+</html>

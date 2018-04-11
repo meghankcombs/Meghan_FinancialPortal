@@ -1,0 +1,239 @@
+<!-- Custom styling -->
+<style>
+  .sortable-example ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sortable-example li {
+    list-style: none;
+    border-width: 2px;
+    padding: 6px 10px;
+  }
+
+  .sortable-example li + li {
+    margin-top: 10px;
+  }
+
+  .sortable-example ul li {
+    margin-top: 10px;
+  }
+
+  .sortable-example i.fa-unsorted {
+    cursor: move;
+  }
+
+  .sortable-example tr.placeholder {
+    height: 20px;
+  }
+
+  .sortablejs ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .sortablejs li {
+    padding: 6px 10px;
+    margin-bottom: 8px;
+    list-style: none;
+  }
+
+  .sortablejs-inline li {
+    margin-right: 8px;
+    display: inline-block;
+  }
+
+  #sortablejs-images {
+    width: 220px;
+  }
+
+  #sortablejs-images img {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    width: 100px;
+    height: 100px;
+    border-radius: 999px;
+    display: block;
+    float: left;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Sortable</h1>
+</div>
+
+<div class="panel" ng-controller="UIJquerySortableCtrl as ctrl">
+  <div class="panel-heading">
+    <div class="panel-title">jQuery Sortable</div>
+  </div>
+  <div class="panel-body sortable-example">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DEFAULT</h6>
+        <ul jquery-sortable>
+          <li class="bg-default">Item 1<ul></ul></li>
+          <li class="bg-primary">
+            Item 2
+            <ul>
+              <li class="bg-success">Item 3<ul></ul></li>
+              <li class="bg-info">
+                Item 4
+                <ul>
+                  <li class="bg-danger">Item 6<ul></ul></li>
+                </ul>
+              </li>
+            </ul>
+            </li><li class="bg-warning">Item 5<ul></ul></li>
+
+          <li class="bg-black">Item 7<ul></ul></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SORT HANDLE</h6>
+        <ul jquery-sortable options="{{ ctrl.handleOptions }}">
+          <li class="bg-default"><i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 1<ul></ul></li>
+          <li class="bg-primary">
+            <i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 2
+            <ul>
+              <li class="bg-success"><i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 3<ul></ul></li>
+              <li class="bg-info">
+                <i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 4
+                <ul>
+                  <li class="bg-danger"><i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 6<ul></ul></li>
+                </ul>
+              </li>
+            </ul>
+            </li><li class="bg-warning"><i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 5<ul></ul></li>
+
+          <li class="bg-black"><i class="fa fa-unsorted"></i>&nbsp;&nbsp;&nbsp;Item 7<ul></ul></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr class="m-a-0">
+  <div class="panel-body sortable-example">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SORTABLE ROWS</h6>
+        <table jquery-sortable options="{{ ctrl.rowsOptions }}" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>A Column</th>
+              <th>B Column</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A Item 1</td>
+              <td>B Item 1</td>
+            </tr>
+            <tr>
+              <td>A Item 2</td>
+              <td>B Item 2</td>
+            </tr>
+            <tr>
+              <td>A Item 3</td>
+              <td>B Item 3</td>
+            </tr>
+            <tr>
+              <td>A Item 4</td>
+              <td>B Item 4</td>
+            </tr>
+            <tr>
+              <td>A Item 5</td>
+              <td>B Item 5</td>
+            </tr>
+            <tr>
+              <td>A Item 6</td>
+              <td>B Item 6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SORTABLE COLUMN HEADS</h6>
+        <table class="table table-striped table-bordered">
+          <thead jquery-sortable-columns>
+            <tr>
+              <th>A Column</th>
+              <th>B Column</th>
+              <th>C Column</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A Item 1</td>
+              <td>B Item 1</td>
+              <td>C Item 1</td>
+            </tr>
+            <tr>
+              <td>A Item 2</td>
+              <td>B Item 2</td>
+              <td>C Item 2</td>
+            </tr>
+            <tr>
+              <td>A Item 3</td>
+              <td>B Item 3</td>
+              <td>C Item 3</td>
+            </tr>
+            <tr>
+              <td>A Item 4</td>
+              <td>B Item 4</td>
+              <td>C Item 4</td>
+            </tr>
+            <tr>
+              <td>A Item 5</td>
+              <td>B Item 5</td>
+              <td>C Item 5</td>
+            </tr>
+            <tr>
+              <td>A Item 6</td>
+              <td>B Item 6</td>
+              <td>C Item 6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" ng-controller="UISortableCtrl as ctrl">
+  <div class="panel-heading">
+    <div class="panel-title">Sortable.js</div>
+  </div>
+  <div class="panel-body sortable-example">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 sortablejs">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DEFAULT</h6>
+        <ul ng-sortable="{ animation: 150 }">
+          <li ng-repeat="item in ctrl.sortableItems" ng-class="item.cls">{{ item.text }}</li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-md-6 sortablejs sortablejs-inline">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">INLINE</h6>
+        <ul ng-sortable="{ animation: 150 }">
+          <li ng-repeat="item in ctrl.sortableItems" ng-class="item.cls">{{ item.text }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr class="m-a-0">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">IMAGES</h6>
+        <div ng-sortable="{ animation: 150 }" id="sortablejs-images">
+          <img ng-repeat="src in ctrl.sortableImages" ng-src="{{ src }}" alt="">
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 sortablejs">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DRAG HANDLE</h6>
+        <ul ng-sortable="{ animation: 150, handle: '.fa' }">
+          <li ng-repeat="item in ctrl.sortableItems" ng-class="item.cls"><i class="fa fa-unsorted m-r-1"></i>{{ item.text }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

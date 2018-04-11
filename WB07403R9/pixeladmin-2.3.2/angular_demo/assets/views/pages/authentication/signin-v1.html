@@ -1,0 +1,162 @@
+<!-- Custom styling -->
+<style>
+  .page-signin-modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+  }
+
+  .page-signin-form-group { position: relative; }
+
+  .page-signin-icon {
+    position: absolute;
+    line-height: 21px;
+    width: 36px;
+    border-color: rgba(0, 0, 0, .14);
+    border-right-width: 1px;
+    border-right-style: solid;
+    left: 1px;
+    top: 9px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .alert{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .box,
+  .box-cell,
+  .modal {
+    overflow: visible !important;
+  }
+
+  responsive-bg {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  html[dir="rtl"] .page-signin-icon {
+    border-right: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+    left: auto;
+    right: 1px;
+  }
+
+  html:not([dir="rtl"]) .page-signin-icon + .page-signin-form-control { padding-left: 50px; }
+  html[dir="rtl"] .page-signin-icon + .page-signin-form-control { padding-right: 50px; }
+
+  /* Margins */
+
+  .page-signin-modal > .modal-dialog { margin: 30px 10px; }
+
+  @media (min-width: 544px) {
+    .page-signin-modal > .modal-dialog { margin: 60px auto; }
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-signin-modal modal" ng-controller="PagesSignInCtrl as ctrl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="box m-a-0">
+        <div class="box-row">
+
+          <div class="box-cell col-md-5 bg-primary p-a-4">
+            <div class="text-xs-center text-md-left">
+              <a ui-sref="dashboards.default" class="px-demo-brand px-demo-brand-lg"><span class="px-demo-logo bg-primary m-t-0"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span><span class="font-size-20 line-height-1">PixelAdmin</span></a>
+              <div class="font-size-15 m-t-1 line-height-1">Simple. Flexible. Powerful.</div>
+            </div>
+            <ul class="list-group m-t-3 m-b-0 visible-md visible-lg visible-xl">
+              <li class="list-group-item p-x-0 p-b-0 b-a-0"><i class="list-group-icon fa fa-sitemap text-white"></i> Flexible modular structure</li>
+              <li class="list-group-item p-x-0 p-b-0 b-a-0"><i class="list-group-icon fa fa-file-text-o text-white"></i> SCSS source files</li>
+              <li class="list-group-item p-x-0 p-b-0 b-a-0"><i class="list-group-icon fa fa-outdent text-white"></i> RTL direction support</li>
+              <li class="list-group-item p-x-0 p-b-0 b-a-0"><i class="list-group-icon fa fa-heart text-white"></i> Crafted with love</li>
+            </ul>
+          </div>
+
+          <div class="box-cell col-md-7">
+
+            <!-- Sign In form -->
+
+            <form name="signInForm" ng-show="!passwordResetView" ng-submit="ctrl.signIn()" class="p-a-4" novalidate>
+              <h4 class="m-t-0 m-b-4 text-xs-center font-weight-semibold">Sign In to your Account</h4>
+
+              <div class="alert alert-danger alert-dark p-y-1" ng-show="(signInForm.$submitted || signInForm.$touched) && signInForm.$invalid">
+                Invalid credentials.
+              </div>
+
+              <fieldset class="page-signin-form-group form-group form-group-lg" ng-class="{ 'has-error': (signInForm.$submitted || signInForm.$touched) && signInForm.$invalid }">
+                <div class="page-signin-icon text-muted"><i class="ion-person"></i></div>
+                <input ng-model="ctrl.credentials.login" required minlength="3" maxlength="20" name="login" type="text" class="page-signin-form-control form-control" placeholder="Username or Email">
+              </fieldset>
+
+              <fieldset class="page-signin-form-group form-group form-group-lg" ng-class="{ 'has-error': (signInForm.$submitted || signInForm.$touched) && signInForm.$invalid }">
+                <div class="page-signin-icon text-muted"><i class="ion-asterisk"></i></div>
+                <input ng-model="ctrl.credentials.password" required minlength="6" maxlength="32" name="password" type="password" class="page-signin-form-control form-control" placeholder="Password">
+              </fieldset>
+
+              <div class="clearfix">
+                <label class="custom-control custom-checkbox pull-xs-left">
+                  <input ng-model="ctrl.credentials.rememberMe" type="checkbox" class="custom-control-input" name="rememberMe">
+                  <span class="custom-control-indicator"></span>
+                  Remember me
+                </label>
+                <a href="javascript:void(0)" class="font-size-12 text-muted pull-xs-right" ng-click="passwordResetView = true">Forgot your password?</a>
+              </div>
+
+              <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3">Sign In</button>
+            </form>
+
+            <div class="p-y-3 p-x-4 b-t-1 bg-white darken" ng-show="!passwordResetView">
+              <a ui-sref="dashboards.default" class="btn btn-block btn-lg btn-info font-size-13"><span class="btn-label-icon left fa fa-twitter"></span>Sign In with <strong>Twitter</strong></a>
+            </div>
+
+            <!-- / Sign In form -->
+
+            <!-- Reset form -->
+
+            <form name="resetForm" ng-submit="ctrl.sendResetLink()" ng-show="passwordResetView" class="p-a-4" novalidate>
+              <h4 class="m-t-0 m-b-4 text-xs-center font-weight-semibold">Password reset</h4>
+
+              <fieldset class="page-signin-form-group form-group form-group-lg" ng-class="{ 'has-error': (resetForm.$submitted || resetForm.$touched) && resetForm.$invalid }">
+                <div class="page-signin-icon text-muted"><i class="ion-at"></i></div>
+                <input ng-model="ctrl.resetEmail" required type="email" class="page-signin-form-control form-control" placeholder="Your Email">
+              </fieldset>
+
+              <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3">Send password reset link</button>
+
+              <div class="m-t-2 text-muted">
+                <a href="javascript:void(0)" ng-click="passwordResetView = false">&larr; Back</a>
+              </div>
+            </form>
+
+            <!-- / Reset form -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-xs-center m-t-2 font-weight-bold font-size-14 text-white" id="px-demo-signup-link">
+      Not a member? <a ui-sref="authentication.signup1" class="text-white"><u>Sign Up now</u></a>
+    </div>
+  </div>
+</div>
+
+<responsive-bg background-image="'assets/demo/bgs/1.jpg'" overlay="'#000'" opacity="0.2" />

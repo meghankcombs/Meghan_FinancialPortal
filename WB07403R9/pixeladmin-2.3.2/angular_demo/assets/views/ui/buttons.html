@@ -1,0 +1,671 @@
+<!-- Custom styling -->
+<style>
+  html:not([dir="rtl"]) .panel .btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  html[dir="rtl"] .panel .btn {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  html:not([dir="rtl"]) .panel .btn-group,
+  html:not([dir="rtl"]) .panel .btn-group-vertical {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  html[dir="rtl"] .panel .btn-group,
+  html[dir="rtl"] .panel .btn-group-vertical {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  html:not([dir="rtl"]) .panel .btn-group .btn,
+  html:not([dir="rtl"]) .panel .btn-group .btn-group,
+  html:not([dir="rtl"]) .panel .btn-group-vertical .btn,
+  html:not([dir="rtl"]) .panel .btn-group-vertical .btn-group {
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+
+  html[dir="rtl"] .panel .btn-group .btn,
+  html[dir="rtl"] .panel .btn-group .btn-group,
+  html[dir="rtl"] .panel .btn-group-vertical .btn,
+  html[dir="rtl"] .panel .btn-group-vertical .btn-group {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Buttons</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Default buttons</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn">Secondary</button>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Rounded buttons</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-rounded">Secondary</button>
+        <button type="button" class="btn btn-primary btn-rounded">Primary</button>
+        <button type="button" class="btn btn-success btn-rounded">Success</button>
+        <button type="button" class="btn btn-warning btn-rounded">Warning</button>
+        <button type="button" class="btn btn-info btn-rounded">Info</button>
+        <button type="button" class="btn btn-danger btn-rounded">Danger</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">3D buttons</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-3d">Secondary</button>
+        <button type="button" class="btn btn-primary btn-3d">Primary</button>
+        <button type="button" class="btn btn-success btn-3d">Success</button>
+        <button type="button" class="btn btn-warning btn-3d">Warning</button>
+        <button type="button" class="btn btn-info btn-3d">Info</button>
+        <button type="button" class="btn btn-danger btn-3d">Danger</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Sizes</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-xs">Secondary</button>
+        <button type="button" class="btn btn-xs btn-primary btn-rounded">Primary</button>
+        <button type="button" class="btn btn-xs btn-success btn-3d">Success</button>
+        <button type="button" class="btn btn-xs btn-warning btn-outline">Warning</button>
+        <button type="button" class="btn btn-xs btn-info btn-outline btn-rounded">Info</button>
+        <button type="button" class="btn btn-xs btn-danger btn-outline btn-3d">Danger</button>
+        <button type="button" class="btn btn-xs btn-success btn-outline btn-outline-colorless">Success</button>
+        <button type="button" class="btn btn-xs btn-warning btn-outline btn-rounded btn-outline-colorless">Warning</button>
+        <button type="button" class="btn btn-xs btn-info btn-outline btn-3d btn-outline-colorless">Info</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-sm">Secondary</button>
+        <button type="button" class="btn btn-sm btn-primary btn-rounded">Primary</button>
+        <button type="button" class="btn btn-sm btn-success btn-3d">Success</button>
+        <button type="button" class="btn btn-sm btn-warning btn-outline">Warning</button>
+        <button type="button" class="btn btn-sm btn-info btn-outline btn-rounded">Info</button>
+        <button type="button" class="btn btn-sm btn-danger btn-outline btn-3d">Danger</button>
+        <button type="button" class="btn btn-sm btn-success btn-outline btn-outline-colorless">Success</button>
+        <button type="button" class="btn btn-sm btn-warning btn-outline btn-rounded btn-outline-colorless">Warning</button>
+        <button type="button" class="btn btn-sm btn-info btn-outline btn-3d btn-outline-colorless">Info</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-lg">Secondary</button>
+        <button type="button" class="btn btn-lg btn-primary btn-rounded">Primary</button>
+        <button type="button" class="btn btn-lg btn-success btn-3d">Success</button>
+        <button type="button" class="btn btn-lg btn-warning btn-outline">Warning</button>
+        <button type="button" class="btn btn-lg btn-info btn-outline btn-rounded">Info</button>
+        <button type="button" class="btn btn-lg btn-danger btn-outline btn-3d">Danger</button>
+        <button type="button" class="btn btn-lg btn-success btn-outline btn-outline-colorless">Success</button>
+        <button type="button" class="btn btn-lg btn-warning btn-outline btn-rounded btn-outline-colorless">Warning</button>
+        <button type="button" class="btn btn-lg btn-info btn-outline btn-3d btn-outline-colorless">Info</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-xl">Secondary</button>
+        <button type="button" class="btn btn-xl btn-primary btn-rounded">Primary</button>
+        <button type="button" class="btn btn-xl btn-success btn-3d">Success</button>
+        <button type="button" class="btn btn-xl btn-warning btn-outline">Warning</button>
+        <button type="button" class="btn btn-xl btn-info btn-outline btn-rounded">Info</button>
+        <button type="button" class="btn btn-xl btn-danger btn-outline btn-3d">Danger</button>
+        <button type="button" class="btn btn-xl btn-success btn-outline btn-outline-colorless">Success</button>
+        <button type="button" class="btn btn-xl btn-warning btn-outline btn-rounded btn-outline-colorless">Warning</button>
+        <button type="button" class="btn btn-xl btn-info btn-outline btn-3d btn-outline-colorless">Info</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Active state</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn active">Secondary</button>
+        <button type="button" class="btn btn-primary btn-rounded active">Primary</button>
+        <button type="button" class="btn btn-success btn-3d active">Success</button>
+        <button type="button" class="btn btn-warning btn-outline active">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-rounded active">Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-3d active">Danger</button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless active">Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-rounded btn-outline-colorless active">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-3d btn-outline-colorless active">Info</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Disabled state</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn" disabled>Secondary</button>
+        <button type="button" class="btn btn-primary btn-rounded" disabled>Primary</button>
+        <button type="button" class="btn btn-success btn-3d" disabled>Success</button>
+        <button type="button" class="btn btn-warning btn-outline" disabled>Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-rounded" disabled>Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-3d" disabled>Danger</button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless" disabled>Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-rounded btn-outline-colorless" disabled>Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-3d btn-outline-colorless" disabled>Info</button>
+      </div>
+      <div class="panel-body bg-black">
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless-inverted" disabled>Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-rounded btn-outline-colorless-inverted" disabled>Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-3d btn-outline-colorless-inverted" disabled>Info</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Split buttons</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-primary">
+          <span class="btn-label left">1,307</span>Primary
+        </button>
+        <button type="button" class="btn btn-success">
+          <span class="btn-label right">1,307</span>Success
+        </button>
+        <button type="button" class="btn btn-info">
+          <span class="btn-label-icon left fa fa-camera-retro"></span>Info
+        </button>
+        <button type="button" class="btn btn-warning">
+          <span class="btn-label-icon right fa fa-camera-retro"></span>Warning
+        </button>
+
+        <button type="button" class="btn btn-danger btn-outline">
+          <span class="btn-label left">1,307</span>Danger
+        </button>
+        <button type="button" class="btn btn-primary btn-outline">
+          <span class="btn-label right">1,307</span>Primary
+        </button>
+        <button type="button" class="btn btn-success btn-outline">
+          <span class="btn-label-icon left fa fa-camera-retro"></span>Success
+        </button>
+        <button type="button" class="btn btn-info btn-outline">
+          <span class="btn-label-icon right fa fa-camera-retro"></span>Info
+        </button>
+
+        <button type="button" class="btn btn-warning btn-outline btn-outline-colorless">
+          <span class="btn-label left">1,307</span>Warning
+        </button>
+        <button type="button" class="btn btn-danger btn-outline btn-outline-colorless">
+          <span class="btn-label right">1,307</span>Danger
+        </button>
+        <button type="button" class="btn btn-primary btn-outline btn-outline-colorless">
+          <span class="btn-label-icon left fa fa-camera-retro"></span>Primary
+        </button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless">
+          <span class="btn-label-icon right fa fa-camera-retro"></span>Success
+        </button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Button dropdowns</div>
+      </div>
+      <div class="panel-body">
+        <!-- Extra Large -->
+        <div uib-dropdown class="btn-group btn-group-xl">
+          <button type="button" class="btn btn-info">Extra Large</button>
+          <button uib-dropdown-toggle type="button" class="btn btn-info"></button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Large -->
+        <div uib-dropdown class="btn-group btn-group-lg">
+          <button type="button" class="btn btn-warning">Large</button>
+          <button uib-dropdown-toggle type="button" class="btn btn-warning"></button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Default -->
+        <div uib-dropdown class="btn-group">
+          <button type="button" class="btn btn-primary btn-3d">Default</button>
+          <button uib-dropdown-toggle type="button" class="btn btn-primary btn-3d"></button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Small -->
+        <div uib-dropdown class="btn-group btn-group-sm">
+          <button type="button" class="btn btn-danger btn-outline">Small</button>
+          <button uib-dropdown-toggle type="button" class="btn btn-danger btn-outline"></button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Extra small -->
+        <div uib-dropdown class="btn-group btn-group-xs">
+          <button type="button" class="btn btn-success btn-outline btn-outline-colorless">Extra small</button>
+          <button uib-dropdown-toggle type="button" class="btn btn-success btn-outline btn-outline-colorless"></button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Button group with icons</div>
+      </div>
+      <div class="panel-body">
+        <div>
+          <div class="btn-group">
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-pause"></span>Pause</button>
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-play"></span>Play</button>
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-random"></span>Shuffle</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="btn-group">
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-chevron-left"></span>Prev</button>
+            <button type="button" class="btn"><span class="btn-label-icon right fa fa-chevron-right"></span>Next</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-pause"></span>Pause</button>
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-play"></span>Play</button>
+            <button type="button" class="btn"><span class="btn-label-icon left fa fa-random"></span>Shuffle</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Outline buttons</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-outline">Secondary</button>
+        <button type="button" class="btn btn-primary btn-outline">Primary</button>
+        <button type="button" class="btn btn-success btn-outline">Success</button>
+        <button type="button" class="btn btn-warning btn-outline">Warning</button>
+        <button type="button" class="btn btn-info btn-outline">Info</button>
+        <button type="button" class="btn btn-danger btn-outline">Danger</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-outline btn-rounded">Secondary</button>
+        <button type="button" class="btn btn-primary btn-outline btn-rounded">Primary</button>
+        <button type="button" class="btn btn-success btn-outline btn-rounded">Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-rounded">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-rounded">Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-rounded">Danger</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-outline btn-3d">Secondary</button>
+        <button type="button" class="btn btn-primary btn-outline btn-3d">Primary</button>
+        <button type="button" class="btn btn-success btn-outline btn-3d">Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-3d">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-3d">Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-3d">Danger</button>
+      </div>
+    </div>
+
+    <div class="panel" ng-controller="UIButtonsOutlineBoxCtrl as ctrl">
+      <div class="panel-heading">
+        <span class="panel-title">Colorless outline buttons</span>
+        <div class="panel-heading-controls">
+          <label for="btn-outline-colorless-switcher" class="panel-heading-text font-size-11 font-weight-semibold"><span class="valign-middle">DARK&nbsp;</span></label>
+          <label for="btn-outline-colorless-switcher" class="switcher switcher-rounded switcher-sm switcher-success switcher-blank">
+            <input type="checkbox" id="btn-outline-colorless-switcher" ng-model="ctrl.darkBg" ng-change="ctrl.changeBg()">
+            <div class="switcher-indicator">
+              <div class="switcher-yes">ON</div>
+              <div class="switcher-no">OFF</div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-outline btn-outline-colorless">Secondary</button>
+        <button type="button" class="btn btn-primary btn-outline btn-outline-colorless">Primary</button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless">Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-outline-colorless">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-outline-colorless">Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-outline-colorless">Danger</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-outline btn-outline-colorless btn-rounded">Secondary</button>
+        <button type="button" class="btn btn-primary btn-outline btn-outline-colorless btn-rounded">Primary</button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless btn-rounded">Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-outline-colorless btn-rounded">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-outline-colorless btn-rounded">Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-outline-colorless btn-rounded">Danger</button>
+
+        <hr class="panel-wide-block">
+
+        <button type="button" class="btn btn-outline btn-outline-colorless btn-3d">Secondary</button>
+        <button type="button" class="btn btn-primary btn-outline btn-outline-colorless btn-3d">Primary</button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless btn-3d">Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-outline-colorless btn-3d">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-outline-colorless btn-3d">Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-outline-colorless btn-3d">Danger</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Block-level</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-lg btn-primary btn-block">Block level button</button>
+        <button type="button" class="btn btn-lg btn-block">Block level button</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Loading</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-loading">Secondary</button>
+        <button type="button" class="btn btn-primary btn-loading">Primary</button>
+        <button type="button" class="btn btn-success btn-3d btn-loading">Success</button>
+        <button type="button" class="btn btn-xs btn-warning btn-loading">Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-loading">Info</button>
+        <button type="button" class="btn btn-lg btn-danger btn-outline btn-outline-colorless btn-loading">Danger</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Active + Disabled state</div>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn active" disabled>Secondary</button>
+        <button type="button" class="btn btn-primary btn-rounded active" disabled>Primary</button>
+        <button type="button" class="btn btn-success btn-3d active" disabled>Success</button>
+        <button type="button" class="btn btn-warning btn-outline active" disabled>Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-rounded active" disabled>Info</button>
+        <button type="button" class="btn btn-danger btn-outline btn-3d active" disabled>Danger</button>
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless active" disabled>Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-rounded btn-outline-colorless active" disabled>Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-3d btn-outline-colorless active" disabled>Info</button>
+      </div>
+      <div class="panel-body bg-black">
+        <button type="button" class="btn btn-success btn-outline btn-outline-colorless-inverted active" disabled>Success</button>
+        <button type="button" class="btn btn-warning btn-outline btn-rounded btn-outline-colorless-inverted active" disabled>Warning</button>
+        <button type="button" class="btn btn-info btn-outline btn-3d btn-outline-colorless-inverted active" disabled>Info</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Bootstrap buttons</div>
+      </div>
+      <div class="panel-body">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">TOGGLE STATES</h6>
+        <button uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-model="uibBtnCheckbox" type="button" class="btn btn-primary">
+          Single toggle
+        </button>
+
+        <hr class="page-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">CHECKBOX & RADIO</h6>
+        <div class="btn-group" ng-init="checkModel = {left:false,middle:true,right:false}">
+          <label class="btn btn-primary" ng-model="checkModel.left" uib-btn-checkbox>Left</label>
+          <label class="btn btn-primary" ng-model="checkModel.middle" uib-btn-checkbox>Middle</label>
+          <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Right</label>
+        </div>
+
+        <div class="btn-group" ng-init="radioModel = 'Middle'">
+          <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Left'">Left</label>
+          <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Middle'">Middle</label>
+          <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'Right'">Right</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Button dropdowns</div>
+      </div>
+      <div class="panel-body">
+        <!-- Extra Large -->
+        <div uib-dropdown class="btn-group">
+          <button uib-dropdown-toggle type="button" class="btn btn-info btn-xl">Extra Large</button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Large -->
+        <div uib-dropdown class="btn-group">
+          <button uib-dropdown-toggle type="button" class="btn btn-warning btn-lg btn-rounded">Large</button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Default -->
+        <div uib-dropdown class="btn-group">
+          <button uib-dropdown-toggle type="button" class="btn btn-primary btn-3d">Default</button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Small -->
+        <div uib-dropdown class="btn-group">
+          <button uib-dropdown-toggle type="button" class="btn btn-sm btn-danger btn-outline">Small</button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+
+        <!-- Extra small -->
+        <div uib-dropdown class="btn-group">
+          <button uib-dropdown-toggle type="button" class="btn btn-xs btn-success btn-outline btn-outline-colorless">Extra small</button>
+          <ul uib-dropdown-menu>
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Button groups</div>
+      </div>
+      <div class="panel-body">
+        <div>
+          <div class="btn-group">
+            <button type="button" class="btn">Left</button>
+            <button type="button" class="btn">Middle</button>
+            <button type="button" class="btn">Right</button>
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn">
+                Dropdown
+              </button>
+              <ul uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="btn-toolbar">
+            <div class="btn-group">
+              <button type="button" class="btn">1</button>
+              <button type="button" class="btn">2</button>
+              <button type="button" class="btn">3</button>
+              <button type="button" class="btn">4</button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn">5</button>
+              <button type="button" class="btn">6</button>
+              <button type="button" class="btn">7</button>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn">8</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-info btn-outline">1</button>
+            <button type="button" class="btn btn-info btn-outline">2</button>
+
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn btn-info btn-outline">
+                Dropdown
+              </button>
+              <div uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-info btn-outline btn-outline-colorless">1</button>
+            <button type="button" class="btn btn-info btn-outline btn-outline-colorless">2</button>
+
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn btn-info btn-outline btn-outline-colorless">
+                Dropdown
+              </button>
+              <div uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="btn-group-vertical">
+            <button type="button" class="btn">Button</button>
+            <button type="button" class="btn">Button</button>
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn">
+                Dropdown
+              </button>
+              <div uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </div>
+            </div>
+            <button type="button" class="btn">Button</button>
+            <button type="button" class="btn">Button</button>
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn">
+                Dropdown
+              </button>
+              <div uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </div>
+            </div>
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn">
+                Dropdown
+              </button>
+              <div uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </div>
+            </div>
+            <div uib-dropdown class="btn-group">
+              <button uib-dropdown-toggle type="button" class="btn">
+                Dropdown
+              </button>
+              <div uib-dropdown-menu>
+                <li><a href="#">Dropdown link</a></li>
+                <li><a href="#">Dropdown link</a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

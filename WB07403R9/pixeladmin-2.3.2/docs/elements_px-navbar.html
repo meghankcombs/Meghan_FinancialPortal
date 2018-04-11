@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>PxNavbar - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <style>
+    .px-navbar {
+      z-index: 100;
+    }
+
+    .px-nav {
+      z-index: 102;
+    }
+
+    .px-nav-dimmer {
+      z-index: 101;
+    }
+
+    @media (min-width: 992px) {
+      .px-nav {
+        z-index: 99;
+      }
+    }
+
+    #px-navbar-nav,
+    #px-navbar-nav + .px-navbar,
+    .px-nav-toggle,
+    .px-nav-dimmer {
+      position: absolute !important;
+    }
+
+    @media (max-width: 543px) {
+      .px-nav-left .px-nav-toggle { left: 100%; }
+      .px-nav-left.px-nav-expand .px-nav-toggle { left: 0; width: 100%; }
+    }
+  </style>
+
+  <h1 class="doc-header">PxNavbar</h1>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <div class="alert alert-info doc-base-alert">
+        PxNavbar extends the default <a href="http://getbootstrap.com/components/#navbar" class="alert-link">Bootstrap's navbar</a>.
+      </div>
+
+      <h4 class="doc-subheader">Basic</h4>
+
+      <div class="example" data-accent="''(navbar) ||(px-navbar)''||''(collapse) ||(navbar-collapse)">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <div class="collapse navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Buttons</h4>
+
+      <div class="example" data-accent="(navbar-btn)">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-buttons-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" aria-expanded="false" id="px-navbar-buttons-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button type="button" class="btn btn-primary navbar-btn">Sign In</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Forms</h4>
+
+      <div class="example" data-accent="''(navbar-form)''">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-forms-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" aria-expanded="false" id="px-navbar-forms-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <form class="navbar-form" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+            </div>
+          </form>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Text</h4>
+
+      <div class="example" data-accent="''(navbar-text)''||''(navbar-link)''">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-text-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-text-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav navbar-right">
+        <p class="navbar-text">Signed in as <a href="#" class="navbar-link">John Doe</a></p>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Navs</h4>
+
+      <div class="example">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-navs-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-navs-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Nav with image</h4>
+
+      <div class="example" data-accent="(px-navbar-image)||(<span>)||(<span class=''.+?''>)||(</span>)">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-with-image-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-with-image-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="px-navbar-image">
+            <span class="hidden-md hidden-lg hidden-xl">Link</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/demo/avatars/3.jpg" alt="" class="px-navbar-image">
+            <span>Link</span>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="px-navbar-image">
+            <span>Dropdown</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Icon</h4>
+
+      <div class="example" data-accent="(px-navbar-icon) ||(px-navbar-icon-label)">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-icon-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-icon-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">
+            <i class="px-navbar-icon fa fa-plus-circle"></i>
+            <span class="px-navbar-icon-label">Link</span>
+          </a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="px-navbar-icon fa fa fa-star"></i>
+            <span class="px-navbar-icon-label">Dropdown</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Labels</h4>
+
+      <div class="example" data-accent="(px-navbar-label) ">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-labels-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-labels-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#">
+            Link
+            <span class="px-navbar-label label label-success">5</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <img src="assets/demo/avatars/2.jpg" alt="" class="px-navbar-image">
+            <span>Link</span>
+            <span class="px-navbar-label label label-danger">8</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="px-navbar-icon fa fa-plus-circle"></i>
+            <span class="px-navbar-icon-label">Link</span>
+            <span class="px-navbar-label label label-info">12</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader">Custom dropdown content</h4>
+      <p>
+        On extra small and small screens, a <code>.dropdown-toggle</code> element
+        with <code>[href!='#']</code> will behave as a regular link.
+      </p>
+
+      <div class="example" data-accent="(href=''.+?'') class">
+<div style="position: relative; height: 200px;" class="clearfix">
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-custom-dropdown-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-custom-dropdown-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <!-- Default dropdown -->
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu p-a-3" style="width: 300px;">
+            Custom dropdown content
+          </div>
+        </li>
+        <li class="dropdown">
+          <!-- Behave as a regular link on xs and sm screens -->
+          <a href="https://google.com" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown 2</a>
+          <div class="dropdown-menu p-a-3" style="width: 300px;">
+            Custom dropdown content
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+      </div>
+
+      <h4 class="doc-subheader"><a name="px-navbar-fixed"></a>Fixed</h4>
+      <p>
+        To make the navbar fixed on top of the page, add the <code>.px-navbar-fixed</code>
+        class to the <code>.px-navbar</code>'s parent element.
+      </p>
+
+      <div class="example nocode" data-accent="(px-navbar-fixed)">
+        <pre><code class="html hljs xml">
+&lt;body class="px-navbar-fixed"&gt;
+  &lt;nav class="navbar px-navbar"&gt;
+    ...
+  &lt;/nav&gt;
+&lt;/body&gt;
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Using with PxNav</h4>
+      <p>
+        For the proper positioning, place the the <code>.px-navbar</code> between
+        <code>.px-nav</code> and <code>.px-content</code> elements.
+      </p>
+      <div class="alert alert-warning">
+        If you are using fixed-positioned nav, you also need to <a href="#px-navbar-fixed" class="alert-link">make the navbar fixed</a>.
+      </div>
+
+      <div class="example">
+<div style="position: relative; height: 200px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-navbar-nav">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Brand</a>
+    </div>
+    <!-- Navbar toggle -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-using-with-nav-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+    <!-- Collapse -->
+    <div class="navbar-collapse collapse" id="px-navbar-using-with-nav-collapse" aria-expanded="false">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-navbar-nav').pxNav();
+  });
+</script>
+      </div>
+    </div>
+    <div class="tab-pane" id="usage">
+      <h4 class="doc-subheader">Initializing</h4>
+      <div class="alert alert-info">
+        PxNavbar plugin has no custom options.
+      </div>
+      <p>PxNavbar plugin is initialized on pre-existing markup.</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$('#navbar').pxNavbar();
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/plugins/px-navbar'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Lazy initialization</h4>
+      <p>
+        In common cases, you don't need to initialize PxNavbar instance manually &ndash;
+        it will be initialized automatically on the <code>.navbar-toggle</code>
+        button click.
+      </p>
+
+      <div class="example nocode" data-accent="''(navbar-toggle) ||(data-target=''#px-navbar-collapse'')||(id=''px-navbar-collapse'')">
+        <pre><code class="html hljs xml">
+&lt;nav class="navbar px-navbar"&gt;
+  &lt;div class="navbar-header"&gt;
+    ...
+  &lt;/div&gt;
+
+  &lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-navbar-collapse" aria-expanded="false"&gt;&lt;i class="navbar-toggle-icon"&gt;&lt;/i&gt;&lt;/button&gt;
+
+  &lt;div class="navbar-collapse collapse" id="px-navbar-collapse" aria-expanded="false"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/nav&gt;
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Methods</h4>
+      <p>
+        You can call a public method of PxNavbar instance using the syntax:
+      </p>
+
+      <div class="example nocode" data-accent="(methodName)">
+        <pre><code data-lang="js">
+$('#navbar').pxNavbar('methodName');
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Method name</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>updateScrollbar</th>
+              <td>
+                Update the navbar's scrollbar.
+              </td>
+            </tr>
+            <tr>
+              <th>destroy</th>
+              <td>Destroy the PxNavbar instance.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>PxNavbar</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/pixeladmin/plugins/px-navbar.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-px-navbar.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['px-navbar']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>PxNavbar</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'px-navbar',
+    files: [
+      'path/to/js/pixeladmin/plugins/px-navbar.js',
+      'path/to/js/pixeladmin/directives/angular-px-navbar.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>px-navbar</code> directive</h4>
+
+      <div class="alert alert-info">
+        <p>
+          Specify <code>template-url</code> attribute on the element to
+          load navbar content from a template.
+        </p>
+
+        <p>
+          <strong>NOTE:</strong> The <code>template-url</code> attribute
+          expects an angular expression instead of a literal string.
+        </p>
+
+        <div class="example nocode">
+          <pre><code>
+&lt;px-navbar&gt;...content...&lt;/px-navbar&gt;
+&lt;px-navbar template-url="'path/to/navbar/template.html'"&gt;&lt;/px-navbar&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <p>
+        You can use <code>px-navbar</code> directive where you want.
+        And when the scope is destroyed the directive will be destroyed.
+      </p>
+
+      <div class="example" data-accent="<(px-navbar)||(template-url=''.+?'')">
+<div ng-app="ngNavbarApp">
+  <!-- Default navbar -->
+  <div style="position: relative; height: 200px;" class="clearfix">
+    <px-navbar>
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Default</a>
+      </div>
+      <div class="collapse navbar-collapse"></div>
+    </px-navbar>
+    <div class="px-content">Content</div>
+  </div>
+
+  <br>
+
+  <!-- Navbar with template -->
+  <div style="position: relative; height: 200px;" class="clearfix">
+    <px-navbar template-url="'docs/navbar/template.html'"></px-navbar>
+    <div class="px-content">Content</div>
+  </div>
+
+  <script id="docs/navbar/template.html" type="text/ng-template">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Template</a>
+    </div>
+    <div class="collapse navbar-collapse"></div>
+  </script>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/pixeladmin/plugins/px-navbar.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-px-navbar.js"></script>
+
+<script>
+  angular.module('ngNavbarApp', [ 'px-navbar' ]);
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Instance</h4>
+
+      <p>
+        You can define <code>instance</code> attribute to get a pointer to PxNavbar element:
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-navbar instance="ctrl.$navbar"&gt;...&lt;/px-navbar&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  // Pointer
+  this.$navbar = null;
+
+  // ...
+
+  // Then, after the initialization, you can call plugin methods:
+  this.$navbar('updateScrollbar');
+});
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_px-navbar.html');
+  </script>
+</body>
+</html>

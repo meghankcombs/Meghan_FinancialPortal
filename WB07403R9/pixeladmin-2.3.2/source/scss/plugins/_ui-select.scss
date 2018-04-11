@@ -1,0 +1,434 @@
+//
+// Plugins / UI Select
+// --------------------------------------------------
+
+.ui-select-highlight { font-weight: bold; }
+
+.ui-select-offscreen {
+  position: absolute !important;
+  top: 0px !important;
+  left: 0px !important;
+
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+.ui-select-search-hidden{
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  opacity: 0 !important;
+  border:0 !important;
+}
+
+
+// Common
+//
+
+.ui-select-container {
+  @include ui-select-size-base($font-size-base, $line-height-base, $border-radius-base, $padding-base-vertical, $padding-base-horizontal);
+  @include clearfix();
+
+  * { outline: none !important; }
+
+  &.direction-up .ui-select-choices,
+  &.direction-up .ui-select-no-choice {
+    border-top-width: 1px;
+    border-bottom-width: 0;
+    border-radius: $border-radius-base;
+
+    @include border-bottom-radius(0);
+  }
+}
+
+
+// Inside an input group
+.input-group > .ui-select-container {
+  &.dropdown { position: static; }
+
+  > input.ui-select-search.form-control {
+    border-radius: $border-radius-base !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  > input.ui-select-search.form-control.direction-up {
+    border-radius: $border-radius-base !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+}
+
+
+// Elements
+//
+
+.ui-select-placeholder { color: $input-color-placeholder !important; }
+
+.ui-select-toggle {
+  position: relative;
+
+  height: auto;
+
+  cursor: text;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    color: $input-color !important;
+    border: 1px solid $input-border;
+    background: $input-bg !important;
+    box-shadow: none !important;
+  }
+
+  > .caret {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+
+    height: 10px;
+    margin-top: -2px;
+  }
+}
+
+.ui-select-search {
+  height: auto;
+
+  background: none !important;
+
+  .ui-select-container:not(.ui-select-multiple) & { width: 100% !important; }
+}
+
+.ui-select-match {
+  > .btn { text-align: left; }
+
+  > .caret {
+    position: absolute;
+    top: 45%;
+    right: 15px;
+  }
+}
+
+/* See Scrollable Menu with Bootstrap 3 http://stackoverflow.com/questions/19227496 */
+.ui-select-choices,
+.ui-select-no-choice {
+  overflow-x: hidden;
+
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  margin: 0;
+
+  border-width: 1px;
+  border-color: $input-border;
+  border-top-width: 0;
+  border-radius: $border-radius-base;
+
+  @include border-top-radius(0);
+}
+
+.ui-select-choices .divider { margin: 0; }
+
+.ui-select-choices-group-label {
+  padding: $dropdown-item-padding-y $dropdown-item-padding-x $dropdown-item-padding-y ($dropdown-item-padding-x - 4px);
+
+  text-transform: none;
+
+  color: $text-color;
+
+  font-size: $font-size-base;
+  font-weight: 600;
+}
+
+.ui-select-no-choice li { padding: $dropdown-item-padding-y $dropdown-item-padding-x; }
+
+.ui-select-choices-row {
+  > span {
+    display: block;
+    clear: both;
+
+    padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    color: $text-color;
+
+    font-weight: 400;
+    line-height: $line-height-base;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+
+      color: $text-color;
+      background-color: $dropdown-link-hover-bg;
+    }
+  }
+
+  &.active > span {
+    text-decoration: none;
+
+    outline: 0;
+  }
+
+  &.disabled > span,
+  &.active.disabled > span {
+    color: $dropdown-link-disabled-color;
+    background-color: transparent;
+  }
+}
+
+body > .ui-select-container.open {
+  z-index: 1000; /* Standard Bootstrap dropdown z-index */
+}
+
+
+// Multiple
+//
+
+.ui-select-multiple {
+  height: auto;
+  padding: ($padding-base-vertical - $select2-choice-spacer) ($padding-base-vertical - $select2-choice-spacer) $padding-base-vertical $padding-base-vertical;
+
+  .ui-select-choices,
+  .ui-select-no-choice {
+    right: -1px;
+    left: -1px;
+
+    width: auto;
+    margin-top: 1px;
+  }
+
+  &.direction-up {
+    border-bottom-width: 1px;
+
+    .ui-select-choices,
+    .ui-select-no-choice {
+      margin-top: -1px;
+    }
+  }
+
+  input.ui-select-search {
+    display: block;
+    float: left;
+
+    padding: 0;
+    padding-left: $padding-base-horizontal - $padding-base-vertical;
+
+    border: none;
+    background: transparent !important;
+  }
+
+  &.ng-not-empty input.ui-select-search { padding-left: 0; }
+
+  .ui-select-match .close {
+    width: 20px;
+    margin-right: -7px;
+
+    cursor: pointer;
+    text-align: center;
+
+    opacity: 1;
+    color: #fff;
+    text-shadow: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
+
+    &:after { content: "\00a0"; }
+  }
+
+  .ui-select-match-item {
+    position: relative;
+
+    display: block;
+    float: left;
+
+    padding: 0 .545em;
+
+    cursor: default;
+    vertical-align: inherit;
+
+    color: #fff !important;
+    border: none !important;
+    border-radius: 2px;
+    outline: 0;
+    box-shadow: none !important;
+
+    font-weight: 600;
+  }
+
+  .ui-select-match-item.dropping .ui-select-match-close {
+    pointer-events: none;
+  }
+
+  &:hover .ui-select-match-item.dropping-before:before {
+    position: absolute;
+    top: 0;
+    right: 100%;
+
+    height: 100%;
+    margin-right: 2px;
+
+    content: "";
+
+    border-left: 1px solid #428bca;
+  }
+
+  &:hover .ui-select-match-item.dropping-after:after {
+    position: absolute;
+    top: 0;
+    left: 100%;
+
+    height: 100%;
+    margin-left: 2px;
+
+    content: "";
+
+    border-right: 1px solid #428bca;
+  }
+}
+
+
+/* fix hide/show angular animation */
+.ui-select-match.ng-hide-add,
+.ui-select-search.ng-hide-add {
+    display: none !important;
+}
+
+.ui-select-match-text {
+  width: 100%;
+  padding-right: 1em;
+
+  span {
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+  }
+}
+
+.ui-select-toggle > a.btn {
+  position: absolute;
+  right: 10px;
+
+  height: 10px;
+  margin-top: -2px;
+}
+
+
+// Disabled state
+//
+
+.ui-select-container[disabled] .ui-select-toggle,
+.ui-select-multiple[disabled] {
+  opacity: 1 !important;
+  border-color: $input-border !important;
+  background: $input-bg-disabled !important;
+}
+
+.ui-select-container[disabled],
+.ui-select-container[disabled] * { cursor: not-allowed;}
+.ui-select-match-item[disabled] { opacity: 1 !important; }
+
+
+// Colors
+//
+
+// Default color
+.ui-select-container {
+  @include ui-select-base($label-default-bg);
+}
+
+@include ui-select-variant(success, $label-success-bg);
+@include ui-select-variant(info, $label-info-bg);
+@include ui-select-variant(warning, $label-warning-bg);
+@include ui-select-variant(danger, $label-danger-bg);
+
+
+// States
+//
+
+@include ui-select-state-variant(error, $brand-danger);
+@include ui-select-state-variant(warning, $brand-warning);
+@include ui-select-state-variant(success, $brand-success);
+
+.ui-select-container.ng-dirty.ng-invalid,
+.ui-select-container.ng-dirty.ng-invalid .ui-select-toggle {
+  border-color: $brand-danger;
+}
+
+
+// Sizes
+//
+
+@include ui-select-size(sm, $font-size-small, $line-height-small, $border-radius-small, $padding-small-vertical, $padding-small-horizontal, ($select2-choice-spacer - 1px), 85%, 1.667em);
+@include ui-select-size(lg, $font-size-large, $line-height-large, $border-radius-large, $padding-large-vertical, $padding-large-horizontal, ($select2-choice-spacer + 2px), 73.4%);
+
+
+// Spinner
+//
+
+.ui-select-refreshing {
+    position: absolute;
+    top: 1px;
+    right: 0;
+
+    display: inline-block;
+
+    padding: 8px 27px;
+
+    font-family: 'Glyphicons Halflings';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+
+    -webkit-font-smoothing:antialiased;
+ }
+
+@-webkit-keyframes ui-select-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes ui-select-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+.ui-select-spin {
+  -webkit-animation: ui-select-spin 2s infinite linear;
+  animation: ui-select-spin 2s infinite linear;
+}
+
+.ui-select-refreshing.ng-animate {
+  -webkit-animation: none 0s;
+}

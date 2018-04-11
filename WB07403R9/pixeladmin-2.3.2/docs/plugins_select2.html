@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Select2 / UI-Select - Plugins - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  .example-sizes.example.show-code-block > pre {
+    max-height: 8000px;
+  }
+</style>
+
+  <h1 class="doc-header">
+    Select2 / UI-Select
+    <a href="https://select2.github.io" target="_blank" class="doc-header-url">https://select2.github.io</a>
+  </h1>
+
+  <h4 class="doc-description">
+    Select2 gives you a customizable select box with support for searching,
+    tagging, remote data sets, infinite scrolling, and many other highly used options.
+  </h4>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <h4 class="doc-subheader">Base</h4>
+
+      <div class="example">
+<select id="select2-base" class="form-control" style="width: 100%" data-allow-clear="true">
+  <option></option>
+  <option value="AK">Alaska</option>
+  <option value="HI">Hawaii</option>
+  <option value="CA">California</option>
+  <option value="NV">Nevada</option>
+  <option value="OR">Oregon</option>
+  <option value="WA">Washington</option>
+  <option value="AZ">Arizona</option>
+  <option value="CO">Colorado</option>
+  <option value="ID">Idaho</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NM">New Mexico</option>
+  <option value="ND">North Dakota</option>
+  <option value="UT">Utah</option>
+  <option value="WY">Wyoming</option>
+  <option value="AL">Alabama</option>
+  <option value="AR">Arkansas</option>
+  <option value="IL">Illinois</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="OK">Oklahoma</option>
+  <option value="SD">South Dakota</option>
+  <option value="TX">Texas</option>
+  <option value="TN">Tennessee</option>
+  <option value="WI">Wisconsin</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="IN">Indiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="OH">Ohio</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WV">West Virginia</option>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-base').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Multiple</h4>
+
+      <div class="example" data-accent=" (multiple) ">
+<select id="select2-multiple" class="form-control" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-multiple').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Colors</h4>
+
+      <div class="example" data-accent="(select2-primary)">
+<select id="select2-colors-primary" class="form-control select2-primary" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-colors-primary').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="(select2-success)">
+<select id="select2-colors-success" class="form-control select2-success" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-colors-success').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="(select2-info)">
+<select id="select2-colors-info" class="form-control select2-info" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-colors-info').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="(select2-warning)">
+<select id="select2-colors-warning" class="form-control select2-warning" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-colors-warning').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent="(select2-danger)">
+<select id="select2-colors-danger" class="form-control select2-danger" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-colors-danger').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Disabled</h4>
+
+      <div class="example" data-accent=" (disabled)">
+<select id="select2-disabled" class="form-control" style="width: 100%" data-allow-clear="true" disabled>
+  <option></option>
+  <option value="AK">Alaska</option>
+  <option value="HI">Hawaii</option>
+  <option value="CA">California</option>
+  <option value="NV">Nevada</option>
+  <option value="OR">Oregon</option>
+  <option value="WA">Washington</option>
+  <option value="AZ">Arizona</option>
+  <option value="CO">Colorado</option>
+  <option value="ID">Idaho</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NM">New Mexico</option>
+  <option value="ND">North Dakota</option>
+  <option value="UT">Utah</option>
+  <option value="WY">Wyoming</option>
+  <option value="AL">Alabama</option>
+  <option value="AR">Arkansas</option>
+  <option value="IL">Illinois</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="OK">Oklahoma</option>
+  <option value="SD">South Dakota</option>
+  <option value="TX">Texas</option>
+  <option value="TN">Tennessee</option>
+  <option value="WI">Wisconsin</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="IN">Indiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="OH">Ohio</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WV">West Virginia</option>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-disabled').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent=" (disabled)">
+<select id="select2-multiple-disabled" class="form-control" multiple style="width: 100%" disabled>
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('#select2-multiple-disabled').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Success</h4>
+
+      <div class="example" data-accent=" (has-success)">
+<div class="form-group has-success">
+  <select id="select2-success" class="form-control" style="width: 100%" data-allow-clear="true">
+    <option></option>
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA">Washington</option>
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </select>
+</div>
+
+<script>
+  $(function() {
+    $('#select2-success').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent=" (has-success)">
+<div class="form-group has-success">
+  <select id="select2-multiple-success" class="form-control" multiple style="width: 100%">
+    <optgroup label="Alaskan/Hawaiian Time Zone">
+      <option value="AK">Alaska</option>
+      <option value="HI">Hawaii</option>
+    </optgroup>
+    <optgroup label="Pacific Time Zone">
+      <option value="CA">California</option>
+      <option value="NV">Nevada</option>
+      <option value="OR">Oregon</option>
+      <option value="WA" selected>Washington</option>
+    </optgroup>
+    <optgroup label="Mountain Time Zone">
+      <option value="AZ">Arizona</option>
+      <option value="CO">Colorado</option>
+      <option value="ID">Idaho</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NM">New Mexico</option>
+      <option value="ND">North Dakota</option>
+      <option value="UT">Utah</option>
+      <option value="WY">Wyoming</option>
+    </optgroup>
+    <optgroup label="Central Time Zone">
+      <option value="AL">Alabama</option>
+      <option value="AR">Arkansas</option>
+      <option value="IL">Illinois</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="OK">Oklahoma</option>
+      <option value="SD">South Dakota</option>
+      <option value="TX">Texas</option>
+      <option value="TN">Tennessee</option>
+      <option value="WI">Wisconsin</option>
+    </optgroup>
+    <optgroup label="Eastern Time Zone">
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="IN">Indiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="NH" selected>New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="OH">Ohio</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WV">West Virginia</option>
+    </optgroup>
+  </select>
+</div>
+
+<script>
+  $(function() {
+    $('#select2-multiple-success').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Warning</h4>
+
+      <div class="example" data-accent=" (has-warning)">
+<div class="form-group has-warning">
+  <select id="select2-warning" class="form-control" style="width: 100%" data-allow-clear="true">
+    <option></option>
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA">Washington</option>
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </select>
+</div>
+
+<script>
+  $(function() {
+    $('#select2-warning').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent=" (has-warning)">
+<div class="form-group has-warning">
+  <select id="select2-multiple-warning" class="form-control" multiple style="width: 100%">
+    <optgroup label="Alaskan/Hawaiian Time Zone">
+      <option value="AK">Alaska</option>
+      <option value="HI">Hawaii</option>
+    </optgroup>
+    <optgroup label="Pacific Time Zone">
+      <option value="CA">California</option>
+      <option value="NV">Nevada</option>
+      <option value="OR">Oregon</option>
+      <option value="WA" selected>Washington</option>
+    </optgroup>
+    <optgroup label="Mountain Time Zone">
+      <option value="AZ">Arizona</option>
+      <option value="CO">Colorado</option>
+      <option value="ID">Idaho</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NM">New Mexico</option>
+      <option value="ND">North Dakota</option>
+      <option value="UT">Utah</option>
+      <option value="WY">Wyoming</option>
+    </optgroup>
+    <optgroup label="Central Time Zone">
+      <option value="AL">Alabama</option>
+      <option value="AR">Arkansas</option>
+      <option value="IL">Illinois</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="OK">Oklahoma</option>
+      <option value="SD">South Dakota</option>
+      <option value="TX">Texas</option>
+      <option value="TN">Tennessee</option>
+      <option value="WI">Wisconsin</option>
+    </optgroup>
+    <optgroup label="Eastern Time Zone">
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="IN">Indiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="NH" selected>New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="OH">Ohio</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WV">West Virginia</option>
+    </optgroup>
+  </select>
+</div>
+
+<script>
+  $(function() {
+    $('#select2-multiple-warning').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Error</h4>
+
+      <div class="example" data-accent=" (has-error)">
+<div class="form-group has-error">
+  <select id="select2-error" class="form-control" style="width: 100%" data-allow-clear="true">
+    <option></option>
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA">Washington</option>
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH">New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </select>
+</div>
+
+<script>
+  $(function() {
+    $('#select2-error').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent=" (has-error)">
+<div class="form-group has-error">
+  <select id="select2-multiple-error" class="form-control" multiple style="width: 100%">
+    <optgroup label="Alaskan/Hawaiian Time Zone">
+      <option value="AK">Alaska</option>
+      <option value="HI">Hawaii</option>
+    </optgroup>
+    <optgroup label="Pacific Time Zone">
+      <option value="CA">California</option>
+      <option value="NV">Nevada</option>
+      <option value="OR">Oregon</option>
+      <option value="WA" selected>Washington</option>
+    </optgroup>
+    <optgroup label="Mountain Time Zone">
+      <option value="AZ">Arizona</option>
+      <option value="CO">Colorado</option>
+      <option value="ID">Idaho</option>
+      <option value="MT">Montana</option>
+      <option value="NE">Nebraska</option>
+      <option value="NM">New Mexico</option>
+      <option value="ND">North Dakota</option>
+      <option value="UT">Utah</option>
+      <option value="WY">Wyoming</option>
+    </optgroup>
+    <optgroup label="Central Time Zone">
+      <option value="AL">Alabama</option>
+      <option value="AR">Arkansas</option>
+      <option value="IL">Illinois</option>
+      <option value="IA">Iowa</option>
+      <option value="KS">Kansas</option>
+      <option value="KY">Kentucky</option>
+      <option value="LA">Louisiana</option>
+      <option value="MN">Minnesota</option>
+      <option value="MS">Mississippi</option>
+      <option value="MO">Missouri</option>
+      <option value="OK">Oklahoma</option>
+      <option value="SD">South Dakota</option>
+      <option value="TX">Texas</option>
+      <option value="TN">Tennessee</option>
+      <option value="WI">Wisconsin</option>
+    </optgroup>
+    <optgroup label="Eastern Time Zone">
+      <option value="CT">Connecticut</option>
+      <option value="DE">Delaware</option>
+      <option value="FL">Florida</option>
+      <option value="GA">Georgia</option>
+      <option value="IN">Indiana</option>
+      <option value="ME">Maine</option>
+      <option value="MD">Maryland</option>
+      <option value="MA">Massachusetts</option>
+      <option value="MI">Michigan</option>
+      <option value="NH" selected>New Hampshire</option>
+      <option value="NJ">New Jersey</option>
+      <option value="NY">New York</option>
+      <option value="NC">North Carolina</option>
+      <option value="OH">Ohio</option>
+      <option value="PA">Pennsylvania</option>
+      <option value="RI">Rhode Island</option>
+      <option value="SC">South Carolina</option>
+      <option value="VT">Vermont</option>
+      <option value="VA">Virginia</option>
+      <option value="WV">West Virginia</option>
+    </optgroup>
+  </select>
+</div>
+
+<script>
+  $(function() {
+    $('#select2-multiple-error').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Sizes</h4>
+
+      <div class="example example-sizes" data-accent=" (select2-sm)">
+<select class="form-control select2-sm" style="width: 100%" data-allow-clear="true">
+  <option></option>
+  <option value="AK">Alaska</option>
+  <option value="HI">Hawaii</option>
+  <option value="CA">California</option>
+  <option value="NV">Nevada</option>
+  <option value="OR">Oregon</option>
+  <option value="WA">Washington</option>
+  <option value="AZ">Arizona</option>
+  <option value="CO">Colorado</option>
+  <option value="ID">Idaho</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NM">New Mexico</option>
+  <option value="ND">North Dakota</option>
+  <option value="UT">Utah</option>
+  <option value="WY">Wyoming</option>
+  <option value="AL">Alabama</option>
+  <option value="AR">Arkansas</option>
+  <option value="IL">Illinois</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="OK">Oklahoma</option>
+  <option value="SD">South Dakota</option>
+  <option value="TX">Texas</option>
+  <option value="TN">Tennessee</option>
+  <option value="WI">Wisconsin</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="IN">Indiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="OH">Ohio</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WV">West Virginia</option>
+</select>
+
+<br>
+<br>
+
+<select class="form-control select2-sm" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('.select2-sm').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+      <div class="example example-sizes" data-accent=" (select2-lg)">
+<select class="form-control select2-lg" style="width: 100%" data-allow-clear="true">
+  <option></option>
+  <option value="AK">Alaska</option>
+  <option value="HI">Hawaii</option>
+  <option value="CA">California</option>
+  <option value="NV">Nevada</option>
+  <option value="OR">Oregon</option>
+  <option value="WA">Washington</option>
+  <option value="AZ">Arizona</option>
+  <option value="CO">Colorado</option>
+  <option value="ID">Idaho</option>
+  <option value="MT">Montana</option>
+  <option value="NE">Nebraska</option>
+  <option value="NM">New Mexico</option>
+  <option value="ND">North Dakota</option>
+  <option value="UT">Utah</option>
+  <option value="WY">Wyoming</option>
+  <option value="AL">Alabama</option>
+  <option value="AR">Arkansas</option>
+  <option value="IL">Illinois</option>
+  <option value="IA">Iowa</option>
+  <option value="KS">Kansas</option>
+  <option value="KY">Kentucky</option>
+  <option value="LA">Louisiana</option>
+  <option value="MN">Minnesota</option>
+  <option value="MS">Mississippi</option>
+  <option value="MO">Missouri</option>
+  <option value="OK">Oklahoma</option>
+  <option value="SD">South Dakota</option>
+  <option value="TX">Texas</option>
+  <option value="TN">Tennessee</option>
+  <option value="WI">Wisconsin</option>
+  <option value="CT">Connecticut</option>
+  <option value="DE">Delaware</option>
+  <option value="FL">Florida</option>
+  <option value="GA">Georgia</option>
+  <option value="IN">Indiana</option>
+  <option value="ME">Maine</option>
+  <option value="MD">Maryland</option>
+  <option value="MA">Massachusetts</option>
+  <option value="MI">Michigan</option>
+  <option value="NH">New Hampshire</option>
+  <option value="NJ">New Jersey</option>
+  <option value="NY">New York</option>
+  <option value="NC">North Carolina</option>
+  <option value="OH">Ohio</option>
+  <option value="PA">Pennsylvania</option>
+  <option value="RI">Rhode Island</option>
+  <option value="SC">South Carolina</option>
+  <option value="VT">Vermont</option>
+  <option value="VA">Virginia</option>
+  <option value="WV">West Virginia</option>
+</select>
+
+<br>
+<br>
+
+<select class="form-control select2-lg" multiple style="width: 100%">
+  <optgroup label="Alaskan/Hawaiian Time Zone">
+    <option value="AK">Alaska</option>
+    <option value="HI">Hawaii</option>
+  </optgroup>
+  <optgroup label="Pacific Time Zone">
+    <option value="CA">California</option>
+    <option value="NV">Nevada</option>
+    <option value="OR">Oregon</option>
+    <option value="WA" selected>Washington</option>
+  </optgroup>
+  <optgroup label="Mountain Time Zone">
+    <option value="AZ">Arizona</option>
+    <option value="CO">Colorado</option>
+    <option value="ID">Idaho</option>
+    <option value="MT">Montana</option>
+    <option value="NE">Nebraska</option>
+    <option value="NM">New Mexico</option>
+    <option value="ND">North Dakota</option>
+    <option value="UT">Utah</option>
+    <option value="WY">Wyoming</option>
+  </optgroup>
+  <optgroup label="Central Time Zone">
+    <option value="AL">Alabama</option>
+    <option value="AR">Arkansas</option>
+    <option value="IL">Illinois</option>
+    <option value="IA">Iowa</option>
+    <option value="KS">Kansas</option>
+    <option value="KY">Kentucky</option>
+    <option value="LA">Louisiana</option>
+    <option value="MN">Minnesota</option>
+    <option value="MS">Mississippi</option>
+    <option value="MO">Missouri</option>
+    <option value="OK">Oklahoma</option>
+    <option value="SD">South Dakota</option>
+    <option value="TX">Texas</option>
+    <option value="TN">Tennessee</option>
+    <option value="WI">Wisconsin</option>
+  </optgroup>
+  <optgroup label="Eastern Time Zone">
+    <option value="CT">Connecticut</option>
+    <option value="DE">Delaware</option>
+    <option value="FL">Florida</option>
+    <option value="GA">Georgia</option>
+    <option value="IN">Indiana</option>
+    <option value="ME">Maine</option>
+    <option value="MD">Maryland</option>
+    <option value="MA">Massachusetts</option>
+    <option value="MI">Michigan</option>
+    <option value="NH" selected>New Hampshire</option>
+    <option value="NJ">New Jersey</option>
+    <option value="NY">New York</option>
+    <option value="NC">North Carolina</option>
+    <option value="OH">Ohio</option>
+    <option value="PA">Pennsylvania</option>
+    <option value="RI">Rhode Island</option>
+    <option value="SC">South Carolina</option>
+    <option value="VT">Vermont</option>
+    <option value="VA">Virginia</option>
+    <option value="WV">West Virginia</option>
+  </optgroup>
+</select>
+
+<script>
+  $(function() {
+    $('.select2-lg').select2({
+      placeholder: 'Select value',
+    });
+  });
+</script>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+      <div class="doc-external-link alert">
+        See the usage documentation at <a href="https://select2.github.io" target="_blank">https://select2.github.io</a>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px-libs/select2.full'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <div class="doc-external-link alert">
+        See the documentation at <a href="https://github.com/angular-ui/ui-select" target="_blank">https://github.com/angular-ui/ui-select</a>
+      </div>
+
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>ui-select</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/libs/select.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['ui.select']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>ui-select</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'ui.select',
+    files: [
+      'path/to/js/libs/select.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Example</h4>
+
+      <div class="example" data-accent="(ui-select-(?:sm|lg|primary|danger))">
+<div ng-app="ngUiSelectApp" ng-controller="ngUiSelectAppCtrl as ctrl">
+  <ui-select ng-model="ctrl.single" class="ui-select-sm">
+    <ui-select-match placeholder="Select value">
+      <span ng-bind="$select.selected.title"></span>
+    </ui-select-match>
+    <ui-select-choices repeat="item in (ctrl.data | filter: $select.search) track by item.id">
+        <span ng-bind="item.title"></span>
+    </ui-select-choices>
+    <ui-select-no-choice>
+      No results found.
+    </ui-select-no-choice>
+  </ui-select>
+
+  <br>
+
+  <ui-select multiple ng-model="ctrl.multiple" class="ui-select-lg">
+    <ui-select-match placeholder="Select value">
+      <span>{{$item.title}}</span>
+    </ui-select-match>
+    <ui-select-choices repeat="item in (ctrl.data | filter: $select.search) track by item.id">
+        <span ng-bind="item.title"></span>
+    </ui-select-choices>
+    <ui-select-no-choice>
+      No results found.
+    </ui-select-no-choice>
+  </ui-select>
+
+  <hr>
+
+  <ui-select multiple ng-model="ctrl.multiple" class="ui-select-primary">
+    <ui-select-match placeholder="Select value">
+      <span>{{$item.title}}</span>
+    </ui-select-match>
+    <ui-select-choices repeat="item in (ctrl.data | filter: $select.search) track by item.id">
+        <span ng-bind="item.title"></span>
+    </ui-select-choices>
+    <ui-select-no-choice>
+      No results found.
+    </ui-select-no-choice>
+  </ui-select>
+
+  <br>
+
+  <ui-select multiple ng-model="ctrl.multiple" class="ui-select-danger">
+    <ui-select-match placeholder="Select value">
+      <span>{{$item.title}}</span>
+    </ui-select-match>
+    <ui-select-choices repeat="item in (ctrl.data | filter: $select.search) track by item.id">
+        <span ng-bind="item.title"></span>
+    </ui-select-choices>
+    <ui-select-no-choice>
+      No results found.
+    </ui-select-no-choice>
+  </ui-select>
+</div>
+
+<!-- Load script -->
+<script src="assets/js/angular/libs/select.js"></script>
+
+<script>
+  angular.module('ngUiSelectApp', ['ui.select'])
+    .controller('ngUiSelectAppCtrl', function() {
+      this.data = [
+        { id: 1, title: 'One' },
+        { id: 2, title: 'Two' },
+        { id: 3, title: 'Three' },
+        { id: 4, title: 'Four' },
+        { id: 5, title: 'Five' },
+        { id: 6, title: 'Six' },
+        { id: 7, title: 'Seven' },
+        { id: 8, title: 'Eight' },
+        { id: 9, title: 'Nine' },
+      ];
+
+      this.single = this.data[2];
+      this.multiple = [ this.data[1], this.data[4], this.data[5], this.data[8] ];
+    });
+</script>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('plugins_select2.html');
+  </script>
+</body>
+</html>

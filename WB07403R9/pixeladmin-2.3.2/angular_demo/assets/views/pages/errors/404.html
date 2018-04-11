@@ -1,0 +1,107 @@
+<!-- Custom styling -->
+<style>
+  .page-404-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .page-404-header,
+  .page-404-error-code,
+  .page-404-subheader,
+  .page-404-text,
+  .page-404-form {
+    position: relative;
+
+    padding: 0 30px;
+
+    text-align: center;
+  }
+
+  .page-404-header {
+    padding: 20px 0;
+    margin: -20px -20px 0 -20px;
+
+    box-shadow: 0 4px 0 rgba(0,0,0,.1);
+  }
+
+  .page-404-error-code {
+    margin-top: 60px;
+
+    color: #fff;
+    text-shadow: 0 4px 0 rgba(0,0,0,.1);
+
+    font-size: 120px;
+    font-weight: 700;
+    line-height: 140px;
+  }
+
+  .page-404-subheader,
+  .page-404-text {
+    margin-bottom: 60px;
+
+    color: rgba(0,0,0,.5);
+
+    font-weight: 600;
+  }
+
+  .page-404-subheader {
+    font-size: 50px;
+  }
+
+  .page-404-subheader:after {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+
+    display: block;
+
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+
+    content: "";
+
+    background: rgba(0,0,0,.2);
+  }
+
+  .page-404-text {
+    font-size: 20px;
+  }
+
+  .page-404-form {
+    max-width: 500px;
+    margin: 0 auto 60px auto;
+  }
+
+  .page-404-form * {
+    margin: 0 !important;
+
+    border: none !important;
+  }
+
+  .page-404-form .btn {
+    background: rgba(0, 0, 0, .3);
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-404-bg bg-warning"></div>
+<div class="page-404-header bg-white">
+  <a ui-sref="dashboards.default" class="px-demo-brand px-demo-brand-lg text-default"><span class="px-demo-logo bg-black"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>PixelAdmin</a>
+</div>
+<h1 class="page-404-error-code"><strong>404</strong></h1>
+<h2 class="page-404-subheader">OOPS!</h2>
+<h3 class="page-404-text">
+  SOMETHING WENT WRONG, OR THAT PAGE DOESN'T EXIST... YET
+</h3>
+<form class="page-404-form">
+  <div class="input-group input-group-lg">
+    <input type="text" class="form-control">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-warning font-weight-bold font-size-14">Search</button>
+    </span>
+  </div>
+</form>

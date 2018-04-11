@@ -1,0 +1,577 @@
+<!-- Custom template -->
+<script id="px/pages/search-results.html" type="text/ng-template">
+  <div>
+    <ul class="search-nav nav nav-tabs nav-tabs-simple nav-sm page-block panel m-b-0 p-y-0 b-a-0 border-radius-0" ng-transclude></ul>
+
+    <hr class="page-wide-block m-y-0 b-t-2">
+
+    <div class="tab-content m-t-3 p-y-0">
+      <div class="tab-pane" ng-repeat="tab in tabset.tabs" ng-class="{active: tabset.active === tab.index}" uib-tab-content-transclude="tab"></div>
+    </div>
+  </div>
+</script>
+<!-- / Custom template -->
+
+<!-- Custom styling -->
+<style>
+  .nav.search-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header panel m-b-0 p-y-0 b-a-0 border-radius-0">
+  <form class="input-group input-group-lg p-y-3">
+    <input type="text" name="s" class="form-control" placeholder="Search for...">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+    </span>
+  </form>
+  <hr class="page-wide-block m-y-0">
+</div>
+
+<uib-tabset template-url="px/pages/search-results.html" px-tab-resize>
+  <uib-tab heading="Pages">
+
+    <!-- Pages -->
+
+    <div class="m-b-3 text-muted font-size-12"><strong>125</strong> pages found (0.47 seconds)</div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+        <div class="p-b-2 text-success"><a href="#">http://example.com/some/page</a></div>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </div>
+      <div class="panel-footer font-size-12">
+        <a href="#" class="label label-outline">Lorem</a>
+        <a href="#" class="label label-outline">Ipsum</a>
+        <a href="#" class="label label-outline">Dolor</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+        <div class="p-b-2 text-success"><a href="#">http://example.com/some/page</a></div>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="p-b-2 font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </div>
+      <div class="panel-footer font-size-12">
+        <a href="#" class="label label-outline">Lorem</a>
+        <a href="#" class="label label-outline">Ipsum</a>
+        <a href="#" class="label label-outline">Dolor</a>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="p-b-2 font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+        <div class="text-success"><a href="#">http://example.com/some/page</a></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+        <div class="p-b-2 clearfix font-size-12">
+          <!-- Rating widget -->
+          <div class="widget-rating pull-xs-left m-r-2">
+            <input type="radio" value="5" name="widget-rating-1" id="widget-rating-1_star-5" disabled>
+            <label for="widget-rating-1_star-5"><i class="fa fa-star"></i></label>
+
+            <input type="radio" value="4" name="widget-rating-1" id="widget-rating-1_star-4" disabled checked>
+            <label for="widget-rating-1_star-4"><i class="fa fa-star"></i></label>
+
+            <input type="radio" value="3" name="widget-rating-1" id="widget-rating-1_star-3" disabled>
+            <label for="widget-rating-1_star-3"><i class="fa fa-star"></i></label>
+
+            <input type="radio" value="2" name="widget-rating-1" id="widget-rating-1_star-2" disabled>
+            <label for="widget-rating-1_star-2"><i class="fa fa-star"></i></label>
+
+            <input type="radio" value="1" name="widget-rating-1" id="widget-rating-1_star-1" disabled>
+            <label for="widget-rating-1_star-1"><i class="fa fa-star"></i></label>
+          </div>
+          <!-- / Rating widget -->
+
+          <div class="pull-xs-left text-muted">Rating: 8.4/10 - ‎530,521 votes</div>
+        </div>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-body">
+        <div class="p-b-2 font-weight-semibold font-size-16"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></div>
+
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </div>
+      <div class="panel-footer">
+        <button type="button" class="btn btn-xs btn-outline"><i class="fa fa-thumbs-up text-success"></i> Like</button>
+        <button type="button" class="btn btn-xs btn-outline"><i class="fa fa-link text-info"></i> Share</button>
+        <button type="button" class="btn btn-xs btn-outline"><i class="fa fa-star text-warning"></i> Favorite</button>
+      </div>
+    </div>
+
+    <nav class="pagination pagination-sm m-a-0">
+      <li class="disabled"><a href="#">«</a></li>
+      <li class="active"><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">»</a></li>
+    </nav>
+
+    <!-- / Pages -->
+
+  </uib-tab>
+  <uib-tab heading="Products">
+
+    <!-- Products -->
+
+    <div class="m-b-3 text-muted font-size-12"><strong>39</strong> products found (0.47 seconds)</div>
+    <div class="row">
+      <div class="clearfix">
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/1.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/2.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/3.jpg">
+            <span class="widget-products-overlay"></span>
+            <span class="label label-ribbon right label-danger">HOT</span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/4.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/5.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/6.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/7.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+          <a href="#" class="widget-products-image">
+            <img src="assets/demo/thumbs/8.jpg">
+            <span class="widget-products-overlay"></span>
+          </a>
+          <a href="#" class="widget-products-title">
+            Some product
+            <span class="widget-products-price pull-xs-right label label-tag label-success">$22</span>
+          </a>
+          <div class="widget-products-footer text-muted">
+            <i class="fa fa-shopping-cart"></i> 1,121
+            <i class="fa fa-thumbs-up p-l-1"></i> 2,423
+            <i class="fa fa-comments p-l-1"></i> 523
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-12">
+        <a href="#" class="widget-more-link p-y-3 b-a-1 font-size-14 font-weight-normal">Load more</a>
+      </div>
+    </div>
+
+    <!-- / Products -->
+
+  </uib-tab>
+  <uib-tab heading="People">
+
+    <div class="m-b-3 text-muted font-size-12"><strong>120</strong> persons found (0.47 seconds)</div>
+    <div class="row">
+
+      <!-- People -->
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/1.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">John Doe</a>
+          <a href="#" class="widget-followers-username">@jdoe</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/1.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">John Doe</a>
+          <a href="#" class="widget-followers-username">@jdoe</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-6 col-lg-4 col-xl-4">
+        <div class="panel widget-followers-item bg-transparent">
+          <img src="assets/demo/avatars/1.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">John Doe</a>
+          <a href="#" class="widget-followers-username">@jdoe</a>
+        </div>
+      </div>
+
+    </div>
+    <a href="#" class="widget-more-link p-y-3 b-a-1 font-size-14 font-weight-normal">Load more</a>
+
+    <!-- / People -->
+
+  </uib-tab>
+  <uib-tab heading="Comments">
+
+    <!-- Comments -->
+
+    <div class="m-b-3 text-muted font-size-12"><strong>368</strong> comments found (0.47 seconds)</div>
+    <div class="panel">
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/5.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/3.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Michelle Bortz</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/2.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Robert Jang</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/4.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Timothy Owens</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/5.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/3.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Michelle Bortz</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/2.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Robert Jang</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-comments-item">
+        <img src="assets/demo/avatars/4.jpg" alt="" class="widget-comments-avatar">
+        <div class="widget-comments-header">
+          <a href="#" title="">Timothy Owens</a> commented on <a href="#" title="">Article Name</a>
+        </div>
+        <div class="widget-comments-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-comments-footer">2 hours ago</div>
+      </div>
+
+    </div>
+    <nav>
+      <ul class="pagination pagination-sm m-a-0">
+        <li class="disabled"><a href="#">«</a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    </nav>
+
+    <!-- / Comments -->
+
+  </uib-tab>
+</uib-tabset>

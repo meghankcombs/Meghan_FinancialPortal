@@ -1,0 +1,807 @@
+<!-- Custom styling -->
+<style>
+  #metrics > .box-row > .box-cell {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+  }
+
+  #metrics > .box-row:last-child > .box-cell:last-child {
+    border-bottom-width: 0;
+  }
+
+  #devices-chart { height: 120px !important; }
+
+  @media (min-width: 768px) {
+    #metrics > .box-row > .box-cell + .box-cell {
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+
+    html[dir="rtl"] #metrics > .box-row > .box-cell + .box-cell {
+      border-left: 0;
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+
+    #metrics > .box-row:last-child > .box-cell {
+      border-bottom-width: 0;
+    }
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-4">
+      <h1><i class="page-header-icon ion-ios-pie"></i>Analytics <span class="text-muted font-weight-light">Dashboard</span></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <!-- Stats -->
+
+  <div class="col-md-3">
+    <div class="box bg-info darken">
+      <div class="box-cell p-x-3 p-y-1">
+        <div class="font-weight-semibold font-size-12">USERS</div>
+        <div class="font-weight-bold font-size-20">51,723</div>
+        <i class="box-bg-icon middle right font-size-52 ion-ios-people"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="box bg-danger darken">
+      <div class="box-cell p-x-3 p-y-1">
+        <div class="font-weight-semibold font-size-12">PRODUCTS</div>
+        <div class="font-weight-bold font-size-20">1,268</div>
+        <i class="box-bg-icon middle right font-size-52 ion-ios-box"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="box bg-warning darken">
+      <div class="box-cell p-x-3 p-y-1">
+        <div class="font-weight-semibold font-size-12">TOTAL SALES</div>
+        <div class="font-weight-bold font-size-20">14,254</div>
+        <i class="box-bg-icon middle right font-size-52 ion-ios-cart"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="box bg-success darken">
+      <div class="box-cell p-x-3 p-y-1">
+        <div class="font-weight-semibold font-size-12">TOTAL INCOME</div>
+        <div class="font-weight-bold font-size-20"><small class="font-weight-light">$</small>231,500</div>
+        <i class="box-bg-icon middle right font-size-52 ion-arrow-graph-up-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- / Stats -->
+
+</div>
+
+<hr class="page-wide-block m-y-0">
+
+<!-- Metrics -->
+
+<div class="page-wide-block" ng-controller="AnalyticsDashboardChartsCtrl as charts">
+  <div class="box m-a-0 border-radius-0" id="metrics">
+    <div class="box-row valign-top">
+
+      <!-- Fast buttons -->
+      <div class="box-cell col-md-4">
+        <div class="box-container text-xs-center text-primary">
+
+          <div class="box-row valign-middle">
+            <a href="#" class="box-cell p-y-1 b-r-1 bg-white">
+              <i class="ion-ios-box-outline font-size-52 line-height-1"></i>
+              <div class="font-size-12">Products</div>
+            </a>
+            <a href="#" class="box-cell p-y-1 bg-white">
+              <i class="ion-ios-people-outline font-size-52 line-height-1"></i>
+              <div class="font-size-12">Users</div>
+            </a>
+          </div>
+
+          <div class="box-row valign-middle">
+            <a href="#" class="box-cell p-y-1 b-r-1 b-t-1 bg-white">
+              <i class="ion-ios-toggle-outline font-size-52 line-height-1"></i>
+              <div class="font-size-12">Control Panel</div>
+            </a>
+            <a href="#" class="box-cell p-y-1 b-t-1 bg-white">
+              <i class="ion-ios-gear-outline font-size-52 line-height-1"></i>
+              <div class="font-size-12">Settings</div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <!-- / Fast butons -->
+
+      <div class="box-cell col-md-4 p-x-4 p-t-3 p-b-4">
+        <div class="pull-xs-right label label-success">+ 12%</div>
+        <div class="font-size-20"><strong>3,654</strong></div>
+        <div class="text-muted font-weight-semibold font-size-11">MONTHLY SALES</div>
+        <div px-sparkline ng-model="charts.sparklineData[0].data" options="charts.sparklineData[0].options" class="m-t-4"></div>
+      </div>
+
+      <div class="box-cell col-md-4 p-x-4 p-t-3 p-b-4">
+        <div class="pull-xs-right label label-danger">+ 5%</div>
+        <div class="font-size-20"><small>$</small><strong>24,732</strong></div>
+        <div class="text-muted font-weight-semibold font-size-11">MONTHLY INCOME</div>
+        <div px-sparkline ng-model="charts.sparklineData[1].data" options="charts.sparklineData[1].options" class="m-t-4"></div>
+      </div>
+
+    </div>
+    <div class="box-row valign-top">
+
+      <div class="box-cell col-md-4 p-x-4 p-t-3 p-b-4">
+        <div class="font-size-20">800,654</div>
+        <div class="text-muted font-weight-semibold font-size-11">MONTHLY VISITS</div>
+        <div px-sparkline ng-model="charts.sparklineData[2].data" options="charts.sparklineData[2].options" class="m-t-4"></div>
+      </div>
+
+      <div class="box-cell col-md-4 p-x-4 p-t-3 p-b-4">
+        <div class="font-size-20">2,325</div>
+        <div class="text-muted font-weight-semibold font-size-11">MONTHLY SIGN UPS</div>
+        <div px-sparkline ng-model="charts.sparklineData[3].data" options="charts.sparklineData[3].options" class="m-t-4"></div>
+      </div>
+
+      <div class="box-cell col-md-4 p-x-4 p-t-3 p-b-4">
+        <div class="m-b-1 text-muted font-weight-semibold font-size-11">DEVICES</div>
+        <c3chart bindto-id="devices-chart">
+          <chart-legend show-legend="true" legend-position="right"/>
+          <chart-colors color-pattern="{{ charts.c3Options.colorPattern.join(',') }}"/>
+          <chart-column column-id="Mobile" column-values="{{ charts.c3Data[0] }}" column-type="pie"/>
+          <chart-column column-id="Tablets" column-values="{{ charts.c3Data[1] }}" column-type="pie"/>
+          <chart-column column-id="Desktops" column-values="{{ charts.c3Data[2] }}" column-type="pie"/>
+        </c3chart>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- / Metrics -->
+
+<hr class="page-wide-block m-t-0">
+
+<div class="row">
+  <div class="col-md-8">
+
+    <!-- Trending categories -->
+
+    <div class="panel" ng-controller="AnalyticsDashboardTrendingCtrl as trending">
+      <div class="panel-heading">
+        <div class="panel-title">Trending categories</div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped valign-middle">
+          <thead>
+            <th>Category</th>
+            <th class="text-xs-right">Views</th>
+            <th class="text-xs-right">Purchases</th>
+            <th></th>
+          </thead>
+          <tr>
+            <td><a href="#">Landing pages</a></td>
+            <td class="text-xs-right">131,315</td>
+            <td class="text-xs-right">4,132</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[0].data" options="trending.chartData[0].options"></div></td>
+          </tr>
+          <tr>
+            <td><a href="#">Admin & Dashboards</a></td>
+            <td class="text-xs-right">101,315</td>
+            <td class="text-xs-right">3,132</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[1].data" options="trending.chartData[1].options"></div></td>
+          </tr>
+          <tr>
+            <td><a href="#">E-Commerce</a></td>
+            <td class="text-xs-right">95,315</td>
+            <td class="text-xs-right">2,935</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[2].data" options="trending.chartData[2].options"></div></td>
+          </tr>
+          <tr>
+            <td><a href="#">Business</a></td>
+            <td class="text-xs-right">90,339</td>
+            <td class="text-xs-right">2,832</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[3].data" options="trending.chartData[3].options"></div></td>
+          </tr>
+          <tr>
+            <td><a href="#">Blogs</a></td>
+            <td class="text-xs-right">85,315</td>
+            <td class="text-xs-right">2,555</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[4].data" options="trending.chartData[4].options"></div></td>
+          </tr>
+          <tr>
+            <td><a href="#">Portfolios</a></td>
+            <td class="text-xs-right">78,315</td>
+            <td class="text-xs-right">2,329</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[5].data" options="trending.chartData[5].options"></div></td>
+          </tr>
+          <tr>
+            <td><a href="#">CMS</a></td>
+            <td class="text-xs-right">69,315</td>
+            <td class="text-xs-right">2,111</td>
+            <td class="text-xs-right"><div px-sparkline ng-model="trending.chartData[6].data" options="trending.chartData[6].options"></div></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- Trending categories -->
+
+  </div>
+  <div class="col-md-4">
+
+    <!-- References -->
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">References</div>
+      </div>
+
+      <div class="box m-y-2">
+        <div class="box-cell valign-middle text-xs-center" style="width: 60px">
+          <i class="ion-social-twitter font-size-28 line-height-1 text-info"></i>
+        </div>
+        <div class="box-cell p-r-3">
+          Twitter <span class="text-muted">-</span> <strong>40%</strong>
+          <div class="progress m-b-0" style="height: 5px; margin-top: 5px;">
+            <div class="progress-bar progress-bar-info" style="width: 40%"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="m-a-0">
+
+      <div class="box m-y-2">
+        <div class="box-cell valign-middle text-xs-center" style="width: 60px">
+          <i class="ion-social-facebook font-size-28 line-height-1 text-warning"></i>
+        </div>
+        <div class="box-cell p-r-3">
+          Facebook <span class="text-muted">-</span> <strong>25%</strong>
+          <div class="progress m-b-0" style="height: 5px; margin-top: 5px;">
+            <div class="progress-bar progress-bar-warning" style="width: 25%"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="m-a-0">
+
+      <div class="box m-y-2">
+        <div class="box-cell valign-middle text-xs-center" style="width: 60px">
+          <i class="ion-social-googleplus font-size-28 line-height-1 text-danger"></i>
+        </div>
+        <div class="box-cell p-r-3">
+          Google+ <span class="text-muted">-</span> <strong>5%</strong>
+          <div class="progress m-b-0" style="height: 5px; margin-top: 5px;">
+            <div class="progress-bar progress-bar-danger" style="width: 5%"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="m-a-0">
+
+      <div class="box m-y-2">
+        <div class="box-cell valign-middle text-xs-center" style="width: 60px">
+          <i class="ion-social-pinterest font-size-28 line-height-1 text-success"></i>
+        </div>
+        <div class="box-cell p-r-3">
+          Pinterest <span class="text-muted">-</span> <strong>15%</strong>
+          <div class="progress m-b-0" style="height: 5px; margin-top: 5px;">
+            <div class="progress-bar progress-bar-success" style="width: 15%"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="m-a-0">
+
+      <div class="box m-y-2">
+        <div class="box-cell valign-middle text-xs-center" style="width: 60px">
+          <i class="ion-chatboxes font-size-28 line-height-1 text-muted"></i>
+        </div>
+        <div class="box-cell p-r-3">
+          Other <span class="text-muted">-</span> <strong>5%</strong>
+          <div class="progress m-b-0" style="height: 5px; margin-top: 5px;">
+            <div class="progress-bar progress-bar-primary" style="width: 5%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- / References -->
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+
+    <!-- Latest orders -->
+
+    <!-- Use activity widget -->
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Latest orders
+        </div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/5.jpg" alt="">
+          <div class="widget-activity-icon fa fa-usd bg-success"></div>
+        </div>
+        <div class="pull-xs-right p-l-1 font-size-16"><small>$</small><strong>22</strong></div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Denise Steiner</a> bought <a href="#" title="">Product 1</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/3.jpg" alt="">
+          <div class="widget-activity-icon fa fa-usd bg-success"></div>
+        </div>
+        <div class="pull-xs-right p-l-1 font-size-16"><small>$</small><strong>22</strong></div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Michelle Bortz</a> bought <a href="#" title="">Product 2</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/2.jpg" alt="">
+          <div class="widget-activity-icon fa fa-usd bg-success"></div>
+        </div>
+        <div class="pull-xs-right p-l-1 font-size-16"><small>$</small><strong>84</strong></div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Robert Jang</a> bought <a href="#" title="">Product 3</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/4.jpg" alt="">
+          <div class="widget-activity-icon fa fa-usd bg-success"></div>
+        </div>
+        <div class="pull-xs-right p-l-1 font-size-16"><small>$</small><strong>22</strong></div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Timothy Owens</a> bought <a href="#" title="">Product 4</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/4.jpg" alt="">
+          <div class="widget-activity-icon fa fa-usd bg-success"></div>
+        </div>
+        <div class="pull-xs-right p-l-1 font-size-16"><small>$</small><strong>1000</strong></div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Timothy Owens</a> bought <a href="#" title="">Product 5</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <a href="#" class="widget-more-link">MORE TRANSACTIONS</a>
+
+    </div>
+
+    <!-- / Latest orders -->
+
+  </div>
+  <div class="col-md-6">
+
+    <!-- Top sellers -->
+
+    <!-- Use followers widget -->
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Top sellers
+        </div>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+        <div class="pull-xs-right p-l-1 text-xs-right">
+          <div class="text-muted font-weight-semibold font-size-11">ITEMS SOLD</div>
+          <div class="font-size-14"><strong>23,423</strong></div>
+        </div>
+        <a href="#" class="widget-followers-name">Robert Jang</a>
+        <a href="#" class="widget-followers-username">@rjang</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+        <div class="pull-xs-right p-l-1 text-xs-right">
+          <div class="text-muted font-weight-semibold font-size-11">ITEMS SOLD</div>
+          <div class="font-size-14"><strong>21,567</strong></div>
+        </div>
+        <a href="#" class="widget-followers-name">Michelle Bortz</a>
+        <a href="#" class="widget-followers-username">@mbortz</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+        <div class="pull-xs-right p-l-1 text-xs-right">
+          <div class="text-muted font-weight-semibold font-size-11">ITEMS SOLD</div>
+          <div class="font-size-14"><strong>19,543</strong></div>
+        </div>
+        <a href="#" class="widget-followers-name">Timothy Owens</a>
+        <a href="#" class="widget-followers-username">@towens</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+        <div class="pull-xs-right p-l-1 text-xs-right">
+          <div class="text-muted font-weight-semibold font-size-11">ITEMS SOLD</div>
+          <div class="font-size-14"><strong>17,423</strong></div>
+        </div>
+        <a href="#" class="widget-followers-name">Denise Steiner</a>
+        <a href="#" class="widget-followers-username">@dsteiner</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/1.jpg" alt="" class="widget-followers-avatar">
+        <div class="pull-xs-right p-l-1 text-xs-right">
+          <div class="text-muted font-weight-semibold font-size-11">ITEMS SOLD</div>
+          <div class="font-size-14"><strong>16,401</strong></div>
+        </div>
+        <a href="#" class="widget-followers-name">John Doe</a>
+        <a href="#" class="widget-followers-username">@jdoe</a>
+      </div>
+
+      <a href="#" class="widget-more-link">MORE SELLERS</a>
+
+    </div>
+
+    <!-- / Top sellers -->
+
+  </div>
+</div>
+
+<hr class="page-wide-block m-y-0">
+
+<h3 class="m-y-4 font-weight-semibold">
+  <i class="ion-star p-x-1 text-warning"></i>Top products
+</h3>
+
+<uib-tabset class="nav-lg nav-tabs-simple">
+
+  <uib-tab heading="Most sold">
+    <div class="row p-t-1">
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/1.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/2.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/3.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/4.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/5.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/6.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/7.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/8.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+
+  <uib-tab heading="Most viewed">
+    <div class="row p-t-1">
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/8.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/7.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/6.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/5.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/4.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/3.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/2.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/1.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+
+  <uib-tab heading="Most commented">
+    <div class="row p-t-1">
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/6.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/3.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/2.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/8.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/1.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/5.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/7.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+
+      <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+        <a href="#" class="widget-products-image">
+          <img src="assets/demo/thumbs/4.jpg">
+          <span class="widget-products-overlay"></span>
+        </a>
+        <a href="#" class="widget-products-title">Some product</a>
+        <div class="widget-products-footer text-muted">
+          <i class="fa fa-usd"></i> 12,423
+          <i class="fa fa-shopping-cart p-l-1"></i> 1,121
+          <i class="fa fa-comments p-l-1"></i> 523
+        </div>
+      </div>
+    </div>
+  </uib-tab>
+
+</uib-tabset>

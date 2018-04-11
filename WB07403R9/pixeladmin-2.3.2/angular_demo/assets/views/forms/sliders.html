@@ -1,0 +1,190 @@
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Sliders</h1>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Ion.RangeSlider</div>
+  </div>
+  <div class="panel-body" ng-init="ionModel = { from: 1150000, to: 1600000 }">
+    <div class="m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-bullet m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-primary m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-bullet px-irs-primary m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-success m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-bullet px-irs-success m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-info m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-bullet px-irs-info m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-warning m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-bullet px-irs-warning m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-danger m-b-4">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+    <div class="px-irs-bullet px-irs-danger">
+      <ion-range-slider irs-type="'double'" min="1000000" max="2000000" from="ionModel.from" to="ionModel.to" grid="true" grid-snap="true" step="50000" />
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Seiyria Bootstrap Slider</div>
+  </div>
+  <div class="panel-body" ng-controller="FormsSlidersBsSliderCtrl as ctrl">
+    <div ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" formatter="ctrl.formatter" reversed="ctrl._isRtl" />
+    </div>
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">RANGE SELECTOR</h6>
+
+    <div class="clearfix">
+      <p>Filter by price interval:</p>
+      <bootstrap-slider value="ctrl.range.val" range="true" min="ctrl.range.min" max="ctrl.range.max" step="1" reversed="ctrl._isRtl" />
+      <b class="pull-xs-left">€ 10</b>
+      <b class="pull-xs-right">€ 1000</b>
+    </div>
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">REVERSED</h6>
+
+    <div ng-class="{'slider-reversed': !ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="!ctrl._isRtl" />
+    </div>
+    <br>
+    <div class="slider-reversed">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" orientation="'vertical'" reversed="true" />
+    </div>
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DISABLED</h6>
+
+    <div ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" enabled="false" />
+    </div>
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">TICK MARKS AND LABELS</h6>
+
+    <div ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+
+    <br>
+    <div class="slider-reversed">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="true" orientation="'vertical'" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+    <div class="slider-primary" ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+    <div class="slider-success" ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+    <div class="slider-info" ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+    <div class="slider-warning" ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+    <div class="slider-danger" ng-class="{'slider-reversed': ctrl._isRtl}">
+      <bootstrap-slider value="ctrl.single.val" min="ctrl.single.min" max="ctrl.single.max" step="1" reversed="ctrl._isRtl" ticks="ctrl.ticks.values" ticks-labels="ctrl.ticks.labels" ticks-snap-bounds="10" />
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">noUiSlider</div>
+  </div>
+  <div class="panel-body" ng-controller="FormsSlidersNoUiSliderCtrl as ctrl">
+    <nouislider start="ctrl.singleValue" range="ctrl.singleRange" direction="ctrl.direction" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">VERTICAL</h6>
+
+    <nouislider start="ctrl.singleValue" range="ctrl.singleRange" direction="'rtl'" orientation="'vertical'" style="height: 400px; margin: 0 auto 30px;" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DIRECTION</h6>
+
+    <div class="clearfix">
+      <nouislider start="ctrl.singleValue" range="ctrl.singleRange" direction="ctrl.direction === 'rtl' ? 'ltr' : 'rtl'" />
+      <br>
+      Value: <strong ng-bind="ctrl.singleValue"></strong>
+    </div>
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">RANGE</h6>
+
+    <nouislider start="ctrl.multipleValue" range="ctrl.multipleRange" direction="ctrl.direction" />
+    <br>
+    <nouislider start="ctrl.multipleValue" range="ctrl.multipleRange" connect="true" direction="ctrl.direction" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">TOOLTIPS</h6>
+
+    <nouislider start="ctrl.tooltipsValue" range="ctrl.tooltipsRange" tooltips="ctrl.tooltipsTltps" connect="true" direction="ctrl.direction" />
+    <br>
+    <nouislider start="ctrl.tooltipsValue" range="ctrl.tooltipsRange" tooltips="ctrl.tooltipsTltps" connect="true" direction="'rtl'" orientation="'vertical'" style="height: 400px; margin: 0 auto 30px;" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DRAG + TAP</h6>
+
+    <nouislider start="ctrl.dragtapValue" range="ctrl.dragtapRange" connect="true" behaviour="'drag-tap'" direction="ctrl.direction" />
+    <br>
+    <nouislider start="ctrl.dragtapValue" range="ctrl.dragtapRange" connect="true" behaviour="'drag-tap'" direction="'rtl'" orientation="'vertical'" style="height: 400px; margin: 0 auto 30px;" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">FULL EXAMPLE</h6>
+
+    <nouislider start="ctrl.full.value" range="ctrl.full.range" connect="ctrl.full.connect" behaviour="ctrl.full.behaviour" step="ctrl.full.step" tooltips="ctrl.full.tooltips" pips="ctrl.full.pips" direction="ctrl.direction" />
+    <br><br><br>
+    <nouislider start="ctrl.full.value" range="ctrl.full.range" connect="ctrl.full.connect" behaviour="ctrl.full.behaviour" step="ctrl.full.step" tooltips="ctrl.full.tooltips" pips="ctrl.full.pips" direction="'rtl'" orientation="'vertical'" style="height: 400px; margin: 0 auto 30px;" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DISABLED</h6>
+
+    <nouislider disable="true" start="ctrl.full.value" range="ctrl.full.range" connect="ctrl.full.connect" behaviour="ctrl.full.behaviour" step="ctrl.full.step" tooltips="ctrl.full.tooltips" pips="ctrl.full.pips" direction="ctrl.direction" />
+    <br><br><br>
+    <nouislider disable="true" start="ctrl.full.value" range="ctrl.full.range" connect="ctrl.full.connect" behaviour="ctrl.full.behaviour" step="ctrl.full.step" tooltips="ctrl.full.tooltips" pips="ctrl.full.pips" direction="'rtl'" orientation="'vertical'" style="height: 400px; margin: 0 auto 30px;" />
+
+    <hr class="panel-wide-block">
+    <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+    <nouislider class="noUi-primary" start="ctrl.colors.value" range="ctrl.colors.range" connect="ctrl.colors.connect" behaviour="ctrl.colors.behaviour" step="ctrl.colors.step" tooltips="ctrl.colors.tooltips" pips="ctrl.colors.pips" direction="ctrl.direction" />
+    <br><br><br><br>
+    <nouislider class="noUi-success" start="ctrl.colors.value" range="ctrl.colors.range" connect="ctrl.colors.connect" behaviour="ctrl.colors.behaviour" step="ctrl.colors.step" tooltips="ctrl.colors.tooltips" pips="ctrl.colors.pips" direction="ctrl.direction" />
+    <br><br><br><br>
+    <nouislider class="noUi-info" start="ctrl.colors.value" range="ctrl.colors.range" connect="ctrl.colors.connect" behaviour="ctrl.colors.behaviour" step="ctrl.colors.step" tooltips="ctrl.colors.tooltips" pips="ctrl.colors.pips" direction="ctrl.direction" />
+    <br><br><br><br>
+    <nouislider class="noUi-warning" start="ctrl.colors.value" range="ctrl.colors.range" connect="ctrl.colors.connect" behaviour="ctrl.colors.behaviour" step="ctrl.colors.step" tooltips="ctrl.colors.tooltips" pips="ctrl.colors.pips" direction="ctrl.direction" />
+    <br><br><br><br>
+    <nouislider class="noUi-danger" start="ctrl.colors.value" range="ctrl.colors.range" connect="ctrl.colors.connect" behaviour="ctrl.colors.behaviour" step="ctrl.colors.step" tooltips="ctrl.colors.tooltips" pips="ctrl.colors.pips" direction="ctrl.direction" />
+    <br><br>
+
+  </div>
+</div>

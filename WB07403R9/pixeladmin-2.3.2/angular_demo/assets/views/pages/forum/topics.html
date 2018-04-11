@@ -1,0 +1,407 @@
+<!-- Custom styling -->
+<style>
+  .page-forum-topics-item,
+  .page-forum-topics-item .box,
+  .page-forum-topics-item .box-cell {
+    overflow: visible !important;
+    -webkit-mask-image: none !important;
+  }
+
+  .page-forum-topics-title {
+    margin-bottom: 2px;
+  }
+
+  .page-forum-topics-title .label {
+    vertical-align: text-bottom;
+    font-weight: bold;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header p-y-4">
+  <div class="box m-a-0 bg-transparent">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9">
+      <div class="font-size-12 text-muted line-height-1 font-weight-bold"><a ui-sref="pages.forum.forums-list">FORUMS</a> /</div>
+      <h1 class="font-weight-bold">General Web Design</h1>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle">
+      <form class="input-group">
+        <input type="text" name="s" class="form-control" placeholder="Search">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+        </span>
+      </form>
+    </div>
+  </div>
+</div>
+
+<h6 class="font-weight-semibold m-y-3">STICKY</h6>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</a>
+        <span class="font-size-11"><span class="label label-info">Info</span></span>
+        &nbsp;&nbsp;<span class="text-muted"><i class="fa fa-lock" uib-tooltip="Locked"></i>&nbsp;&nbsp;<i class="fa fa-dot-circle-o" uib-tooltip="Sticky"></i></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 1y ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 1y ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>25</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>812</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>12</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Cras sagittis, erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor velit eget odio</a>
+        <span class="font-size-11"><span class="label label-warning">Help</span></span>
+        &nbsp;&nbsp;<span class="text-muted"><i class="fa fa-dot-circle-o" uib-tooltip="Sticky"></i></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>100</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>4,321</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>238</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="page-wide-block m-t-0">
+
+<h6 class="font-weight-semibold m-y-3">DISCUSSIONS</h6>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Ut at nunc rhoncus, dignissim metus id, posuere sem</a>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's col-lg-4 col-xl-3 height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-muted"><strong>0</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>24</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14 text-muted"><strong>0</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Phasellus venenatis eu turpis id vehicula</a>
+        &nbsp;&nbsp;<span class="text-success"><i class="fa fa-check" uib-tooltip="Solved"></i></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>2</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>311</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>19</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Fusce tristique quam blandit lorem malesuada euismod</a>
+        &nbsp;&nbsp;<span class="text-muted"><i class="fa fa-lock" uib-tooltip="Locked"></i></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>7</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>555</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>65</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Nunc et dui quis lacus tristique ullamcorper quis sit amet massa</a>
+        <span class="font-size-11"><span class="label label-danger">Bug</span></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>5</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>1,223</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>74</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Ut at nunc rhoncus, dignissim metus id, posuere sem</a>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's col-lg-4 col-xl-3 height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-muted"><strong>0</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>24</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14 text-muted"><strong>0</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Phasellus venenatis eu turpis id vehicula</a>
+        &nbsp;&nbsp;<span class="text-success"><i class="fa fa-check" uib-tooltip="Solved"></i></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>2</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>311</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>19</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Fusce tristique quam blandit lorem malesuada euismod</a>
+        &nbsp;&nbsp;<span class="text-muted"><i class="fa fa-lock" uib-tooltip="Locked"></i></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>7</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>555</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>65</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-forum-topics-item box panel p-y-2 p-x-3">
+  <div class="box-row">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9 p-r-4">
+      <div class="page-forum-topics-title font-size-14">
+        <a ui-sref="pages.forum.thread" class="font-weight-semibold">Nunc et dui quis lacus tristique ullamcorper quis sit amet massa</a>
+        <span class="font-size-11"><span class="label label-danger">Bug</span></span>
+      </div>
+      <div class="font-size-11 text-muted">by <a href="#"><strong>John Doe</strong></a> &middot; 25d ago&nbsp;&nbsp;|&nbsp;&nbsp;last reply  by <a href="#"><strong>Robert Jang</strong></a> · 15m ago</div>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm m-y-2">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle text-md-center">
+      <!-- Reset container's height by wrapping in a div -->
+      <div class="pull-md-right">
+        <div class="box-container width-md-auto valign-middle">
+          <div class="box-cell p-l-1 p-r-3">
+            <div class="font-size-14 text-primary"><strong>5</strong></div>
+            <div class="font-size-11 text-muted line-height-1">replies</div>
+          </div>
+          <div class="box-cell p-x-3 b-l-1">
+            <div class="font-size-14"><strong>1,223</strong></div>
+            <div class="font-size-11 text-muted line-height-1">vews</div>
+          </div>
+          <div class="box-cell p-l-3 p-r-1 b-l-1">
+            <div class="font-size-14"><strong>74</strong></div>
+            <div class="font-size-11 text-muted line-height-1">likes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <ul class="pagination pagination-sm m-y-0">
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><span class="b-a-0">...</span></li>
+    <li><a href="#">21</a></li>
+  </ul>
+</nav>

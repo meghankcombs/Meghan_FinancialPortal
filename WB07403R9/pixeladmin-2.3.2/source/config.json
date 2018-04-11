@@ -1,0 +1,27 @@
+{
+  "paths": {
+    "distCss": "dist/css",
+    "distConcatenated": "dist/js",
+    "distAmd": "dist/js/amd",
+    "distAngular": "dist/js/angular"
+  },
+  "dist": {
+    "versions": [ "concatenated", "amd", "angular" ],
+    "compileCss": true,
+    "minifyCss": true,
+    "keepUnminifiedCss": true,
+    "compileJs": true,
+    "minifyJs": true,
+    "keepUnminifiedJs": true,
+    "rtlSupport": true
+  },
+  "production": {
+    "paths": {},
+    "dist": {
+      "minifyCss": true,
+      "keepUnminifiedCss": false,
+      "minifyJs": true,
+      "keepUnminifiedJs": false
+    }
+  }
+}

@@ -95,29 +95,29 @@ namespace Meghan_FinancialPortal.Controllers
         }
 
         // GET: Budgets/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Budget budget = db.Budgets.Find(id);
-            if (budget == null)
-            {
-                return HttpNotFound();
-            }
-            return View(budget);
-        }
+        //public ActionResult Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Budget budget = db.Budgets.Find(id);
+        //    if (budget == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(budget);
+        //}
 
         // POST: Budgets/Delete/5
         [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             Budget budget = db.Budgets.Find(id);
             db.Budgets.Remove(budget);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            ViewBag.PreviousUrl = System.Web.HttpContext.Current.Request.UrlReferrer.ToString();
+            return Redirect(ViewBag.PreviousUrl);
         }
 
         protected override void Dispose(bool disposing)

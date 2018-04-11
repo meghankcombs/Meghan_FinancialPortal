@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Validate - Plugins - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  #jquery-validation-example.example.show-code-block > pre {
+    max-height: 8000px;
+  }
+</style>
+
+  <h1 class="doc-header">Validate</h1>
+  <h4 class="doc-description">
+    The plugin is a wrapper for the <a href="https://jqueryvalidation.org" target="_blank">jQuery Validation plugin</a>.
+    It changes some default options to make the validation output compatible with Bootstrap's markup.
+  </h4>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <div class="alert alert-warning">
+        The plugin requires the <a href="https://jqueryvalidation.org" target="_blank" class="alert-link">jQuery Validation plugin</a> included.
+      </div>
+
+      <h4 class="doc-subheader">Basic</h4>
+
+      <div class="alert alert-warning">
+        For proper positioning of error messages, you need to add
+        the <code>.form-help-text</code> class to an each help block of the form.
+      </div>
+
+      <div class="example" id="jquery-validation-example" data-accent="(form-help-text)||(form-message-light)||(form-message-dark)">
+<form class="form-horizontal" id="validation-form">
+  <div class="form-group">
+    <label for="validation-email" class="col-sm-3 control-label">Email</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="validation-email" name="validation-email" placeholder="Email">
+      <small class="text-muted form-help-text">Example block-level help text here.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-password" class="col-sm-3 control-label">Password</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="validation-password" name="validation-password" placeholder="Password">
+      <small class="text-muted form-help-text">Example block-level help text here.</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-password-confirmation" class="col-sm-3 control-label">Confirm password</label>
+    <div class="col-sm-9">
+      <input type="password" class="form-control" id="validation-password-confirmation" name="validation-password-confirmation" placeholder="Confirm password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-required" class="col-sm-3 control-label">Required</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="validation-required" name="validation-required" placeholder="Required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-url" class="col-sm-3 control-label">URL</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="validation-url" name="validation-url" placeholder="Url">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-phone" class="col-sm-3 control-label">Phone</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="validation-phone" name="validation-phone" placeholder="Phone: (999) 999-9999">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-select" class="col-sm-3 control-label">Select</label>
+    <div class="col-sm-9">
+      <select class="form-control" id="validation-select" name="validation-select">
+        <option value="">Select gear...</option>
+        <optgroup label="Climbing">
+          <option value="pitons">Pitons</option>
+          <option value="cams">Cams</option>
+          <option value="nuts">Nuts</option>
+          <option value="bolts">Bolts</option>
+          <option value="stoppers">Stoppers</option>
+          <option value="sling">Sling</option>
+        </optgroup>
+        <optgroup label="Skiing">
+          <option value="skis">Skis</option>
+          <option value="skins">Skins</option>
+          <option value="poles">Poles</option>
+        </optgroup>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-multiselect" class="col-sm-3 control-label">Multiselect</label>
+    <div class="col-sm-9">
+      <select class="form-control" name="validation-multiselect" id="validation-multiselect" multiple="multiple">
+        <optgroup label="Climbing">
+          <option value="pitons">Pitons</option>
+          <option value="cams">Cams</option>
+          <option value="nuts">Nuts</option>
+          <option value="bolts">Bolts</option>
+          <option value="stoppers">Stoppers</option>
+          <option value="sling">Sling</option>
+        </optgroup>
+        <optgroup label="Skiing">
+          <option value="skis">Skis</option>
+          <option value="skins">Skins</option>
+          <option value="poles">Poles</option>
+        </optgroup>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-select2" class="col-sm-3 control-label">Select2</label>
+    <div class="col-sm-9">
+      <select class="form-control" name="validation-select2" id="validation-select2">
+        <option></option>
+        <option value="ANGULAR">AngularJS</option>
+        <option value="REACT">React</option>
+        <option value="BACKBONE">Backbone</option>
+        <option value="EMBER">Ember</option>
+        <option value="TODOMVC">TodoMVC</option>
+        <option value="POLYMER">Polymer</option>
+        <option value="KNOCKOUT">Knockout</option>
+        <option value="AURELIA">Aurelia</option>
+        <option value="SPINE">Spine</option>
+        <option value="BRICK">Brick</option>
+        <option value="NUCLEAR">Nuclear.js</option>
+        <option value="DOJO">Dojo</option>
+        <option value="MATRESHKA">Matreshka</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-select2-multi" class="col-sm-3 control-label">Select2 Multiple</label>
+    <div class="col-sm-9">
+      <select class="form-control" name="validation-select2-multi" id="validation-select2-multi" multiple="multiple">
+        <optgroup label="Climbing">
+          <option value="pitons">Pitons</option>
+          <option value="cams">Cams</option>
+          <option value="nuts">Nuts</option>
+          <option value="bolts">Bolts</option>
+          <option value="stoppers">Stoppers</option>
+          <option value="sling">Sling</option>
+        </optgroup>
+        <optgroup label="Skiing">
+          <option value="skis">Skis</option>
+          <option value="skins">Skins</option>
+          <option value="poles">Poles</option>
+        </optgroup>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-text" class="col-sm-3 control-label">Text</label>
+    <div class="col-sm-9">
+      <textarea class="form-control" name="validation-text" id="validation-text"></textarea>
+    </div>
+  </div>
+  <div class="form-group form-message-light">
+    <label for="validation-message-light" class="col-sm-3 control-label">Light error</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="validation-message-light" name="validation-message-light" placeholder="Required">
+      <small class="text-muted form-help-text">Example block-level help text here.</small>
+    </div>
+  </div>
+  <div class="form-group form-message-dark">
+    <label for="validation-message-dark" class="col-sm-3 control-label">Dark error</label>
+    <div class="col-sm-9">
+      <input type="text" class="form-control" id="validation-message-dark" name="validation-message-dark" placeholder="Required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-file" class="col-sm-3 control-label">File</label>
+    <div class="col-sm-9">
+      <input type="file" class="validation-file" id="validation-file" name="validation-file">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="validation-file-custom" class="col-sm-3 control-label">Custom file</label>
+    <div class="col-sm-9">
+      <label id="validation-file-custom-label" class="custom-file px-file" for="validation-file-custom">
+        <input type="file" id="validation-file-custom" name="validation-file-custom" class="custom-file-input">
+        <span class="custom-file-control form-control">Choose file...</span>
+        <div class="px-file-buttons">
+          <button type="button" class="btn btn-xs px-file-clear">Clear</button>
+          <button type="button" class="btn btn-primary btn-xs px-file-browse">Browse</button>
+        </div>
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Switcher</label>
+    <div class="col-sm-9">
+      <label for="validation-switcher" class="switcher switcher-success">
+        <input type="checkbox" id="validation-switcher" name="validation-switcher">
+        <div class="switcher-indicator">
+          <div class="switcher-yes">YES</div>
+          <div class="switcher-no">NO</div>
+        </div>
+        Check me
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Radios</label>
+    <div class="col-sm-9">
+      <div class="radio">
+        <label>
+          <input type="radio" name="validation-radios">
+          Option one is this and that—be sure to include why it's great
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="validation-radios">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+      </div>
+      <div class="radio disabled">
+        <label>
+          <input type="radio" name="validation-radios">
+          Option three is disabled
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Custom radios</label>
+    <div class="col-sm-9">
+      <label class="custom-control custom-radio" for="validation-radios-custom-1">
+        <input type="radio" id="validation-radios-custom-1" name="validation-radios-custom" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        Option one is this and that—be sure to include why it's great
+      </label>
+      <label class="custom-control custom-radio" for="validation-radios-custom-2">
+        <input type="radio" id="validation-radios-custom-2" name="validation-radios-custom" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        Option two can be something else and selecting it will deselect option one
+      </label>
+      <label class="custom-control custom-radio" for="validation-radios-custom-3">
+        <input type="radio" id="validation-radios-custom-3" name="validation-radios-custom" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        Option three is disabled
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Checkbox</label>
+    <div class="col-sm-9">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="validation-checkbox"> Check me out
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Checkbox group</label>
+    <div class="col-sm-9">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="validation-checkbox-group-1"> One
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="validation-checkbox-group-2"> Two
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Custom checkbox</label>
+    <div class="col-md-9">
+      <label class="custom-control custom-checkbox" for="validation-checkbox-custom">
+        <input type="checkbox" id="validation-checkbox-custom" name="validation-checkbox-custom" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        Check me out
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-md-3 control-label">Custom checkbox group</label>
+    <div class="col-md-9">
+      <label class="custom-control custom-checkbox" for="validation-checkbox-custom-group-1">
+        <input type="checkbox" id="validation-checkbox-custom-group-1" name="validation-checkbox-custom-group-1" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        One
+      </label>
+      <label class="custom-control custom-checkbox" for="validation-checkbox-custom-group-2">
+        <input type="checkbox" id="validation-checkbox-custom-group-2" name="validation-checkbox-custom-group-2" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        Two
+      </label>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+<script>
+  $(function() {
+    // Initialize Select2 select box
+    $('#validation-select2').select2({
+      allowClear:  true,
+      placeholder: 'Select a framework...',
+    }).change(function() {
+      $(this).valid();
+    });
+
+    // Initialize Select2 multiselect box
+    $('#validation-select2-multi').select2({
+      placeholder: 'Select gear...',
+    }).change(function() {
+      $(this).valid();
+    });
+
+    // Initialize custom file input
+    $('#validation-file-custom-label').pxFile();
+
+    // Add phone validator
+    $.validator.addMethod(
+      'phone_format',
+      function(value, element) {
+        return this.optional(element) || /^\(\d{3}\)[ ]\d{3}\-\d{4}$/.test(value);
+      },
+      'Invalid phone number.'
+    );
+
+    // Initialize validator
+    $('#validation-form').pxValidate({
+      ignore: '.ignore, .select2-input',
+      focusInvalid: false,
+      rules: {
+        'validation-email': {
+          required: true,
+          email: true
+        },
+        'validation-password': {
+          required: true,
+          minlength: 6,
+          maxlength: 20
+        },
+        'validation-password-confirmation': {
+          required: true,
+          minlength: 6,
+          equalTo: '#validation-password'
+        },
+        'validation-required': {
+          required: true
+        },
+        'validation-url': {
+          required: true,
+          url: true
+        },
+        'validation-phone': {
+          required: true,
+          phone_format: true
+        },
+        'validation-select': {
+          required: true
+        },
+        'validation-multiselect': {
+          required: true,
+          minlength: 2
+        },
+        'validation-select2': {
+          required: true
+        },
+        'validation-select2-multi': {
+          required: true,
+          minlength: 2
+        },
+        'validation-text': {
+          required: true
+        },
+        'validation-message-light': {
+          required: true
+        },
+        'validation-message-dark': {
+          required: true
+        },
+        'validation-file': {
+          required: true
+        },
+        'validation-file-custom': {
+          required: true
+        },
+        'validation-switcher': {
+          required: true
+        },
+        'validation-radios': {
+          required: true
+        },
+        'validation-radios-custom': {
+          required: true
+        },
+        'validation-checkbox': {
+          required: true
+        },
+        'validation-checkbox-custom': {
+          required: true
+        },
+
+        // Checkbox groups
+        //
+
+        'validation-checkbox-group-1': {
+          require_from_group: [1, 'input[name="validation-checkbox-group-1"], input[name="validation-checkbox-group-2"]']
+        },
+        'validation-checkbox-group-2': {
+          require_from_group: [1, 'input[name="validation-checkbox-group-1"], input[name="validation-checkbox-group-2"]']
+        },
+
+        'validation-checkbox-custom-group-1': {
+          require_from_group: [1, 'input[name="validation-checkbox-custom-group-1"], input[name="validation-checkbox-custom-group-2"]']
+        },
+        'validation-checkbox-custom-group-2': {
+          require_from_group: [1, 'input[name="validation-checkbox-custom-group-1"], input[name="validation-checkbox-custom-group-2"]']
+        },
+      },
+    });
+  });
+</script>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+
+      <div class="doc-external-link alert">
+        See the usage documentation of the jQuery Validation plugin at <a href="https://jqueryvalidation.org" target="_blank">https://jqueryvalidation.org</a>
+      </div>
+
+      <h4 class="doc-subheader">Initializing</h4>
+      <p>PxValidate plugin is initialized on pre-existing markup.</p>
+      <div class="alert alert-info">
+        Options can be passed via data attributes or JavaScript. For data attributes,
+        append the option name to <code>data-</code>, for example:
+        <code>&lt;form method="POST" action="" data-wrapper="li"&gt;</code>.
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$('form').pxValidate(jqueryValidationOptions);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/plugins/px-validate'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('plugins_px-validate.html');
+  </script>
+</body>
+</html>

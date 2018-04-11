@@ -1,0 +1,339 @@
+<!-- Custom styling -->
+<style>
+  html:not([dir="rtl"]) .panel .btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+
+  html[dir="rtl"] .panel .btn {
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Alerts & Tooltips</h1>
+</div>
+
+<div class="row" ng-controller="UIAlertsCtrl as ctrl">
+  <div class="col-md-6">
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Alerts</div>
+      </div>
+      <div class="panel-body">
+        <div uib-alert ng-repeat="alert in ctrl.alerts" ng-class="alert.cls || ''" close="ctrl.closeAlert($index)">{{alert.msg}}</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Dark alerts</div>
+      </div>
+      <div class="panel-body">
+        <div uib-alert ng-repeat="alert in ctrl.darkAlerts" ng-class="alert.cls || ''" close="ctrl.closeDarkAlert($index)">{{alert.msg}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panel" ng-controller="UIAlertsBlockCtrl as ctrl">
+  <div class="panel-heading">
+    <span class="panel-title">Page alerts</span>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">LIGHT</h6>
+        <button ng-click="ctrl.addPageAlert('Default alert', null, 'light')" class="btn">Default</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', 'warning', 'light')" class="btn btn-warning">Warning</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Oh snap!</strong> Change a few things up and try submitting again.', 'danger', 'light')" class="btn btn-danger">Error</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Well done!</strong> You successfully read this important alert message.', 'success', 'light')" class="btn btn-success">Success</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Heads up!</strong> This alert needs your attention, but it\'s not super important.', 'info', 'light')" class="btn btn-info">Info</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', 'warning', 'light', 3)" class="btn btn-primary">With timer</button>
+        <button class="btn" ng-click="ctrl.clearPageAlerts('light')">Clear</button>
+      </div>
+      <div class="col-md-6">
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DARK</h6>
+        <button ng-click="ctrl.addPageAlert('<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', 'warning', 'dark')" class="btn btn-warning">Warning</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Oh snap!</strong> Change a few things up and try submitting again.', 'danger', 'dark')" class="btn btn-danger">Error</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Well done!</strong> You successfully read this important alert message.', 'success', 'dark')" class="btn btn-success">Success</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Heads up!</strong> This alert needs your attention, but it\'s not super important.', 'info', 'dark')" class="btn btn-info">Info</button>
+        <button ng-click="ctrl.addPageAlert('<strong>Warning!</strong> Best check yo self, you\'re not looking too good.', 'warning', 'dark', 3)" class="btn btn-primary">With timer</button>
+        <button class="btn" ng-click="ctrl.clearPageAlerts('dark')">Clear</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel" ng-controller="UIAlertsGrowlsCtrl as ctrl">
+  <div class="panel-heading">
+    <span class="panel-title">Growl notifications</span>
+  </div>
+  <div class="panel-body">
+    <button ng-click="ctrl.showGrowl('default', { title: 'Growl', message: 'The kitten is awake!' })" class="btn">Default</button>
+    <button ng-click="ctrl.showGrowl('error', { message: 'The kitten is attacking!' })" class="btn btn-danger">Error</button>
+    <button ng-click="ctrl.showGrowl('notice', { message: 'The kitten is cute!' })" class="btn btn-success">Notice</button>
+    <button ng-click="ctrl.showGrowl('warning', { message: 'The kitten is ugly!' })" class="btn btn-warning">Warning</button>
+
+    <button ng-click="ctrl.showGrowl('default', { title: 'Growl', message: 'The kitten is awake!', size: 'small' })" class="btn">Small</button>
+    <button ng-click="ctrl.showGrowl('default', { title: 'Growl', message: 'The kitten is awake!', size: 'large' })" class="btn">Large</button>
+
+    <button ng-click="ctrl.showGrowl('default', { title: 'Growl', message: 'The kitten is awake!', duration: 9999 * 9999 })" class="btn">Static</button>
+  </div>
+</div>
+
+<div class="panel" ng-controller="UIAlertsToastrCtrl as ctrl">
+  <div class="panel-heading">
+    <span class="panel-title">Toastr</span>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-xs-12 col-md-7">
+        <div class="form-group">
+          <label for="toastr-title">Title</label>
+          <input ng-model="ctrl.toastrTitle" id="toastr-title" type="text" class="form-control" placeholder="Enter a title...">
+        </div>
+        <div class="form-group">
+          <label for="toastr-message">Message</label>
+          <input ng-model="ctrl.toastrMessage" id="toastr-message" type="text" class="form-control" placeholder="Enter a message...">
+        </div>
+        <div class="form-group">
+          <label for="toastr-type">Type</label>
+          <select ng-model="ctrl.toastrType" class="custom-select form-control" id="toastr-type">
+            <option value="success">Success</option>
+            <option value="info">Info</option>
+            <option value="warning">Warning</option>
+            <option value="error">Error</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="custom-control custom-checkbox" for="toastr-close-button">
+            <input ng-model="ctrl.toastrOptions.closeButton" type="checkbox" id="toastr-close-button" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            Close button
+          </label>
+          <label class="custom-control custom-checkbox" for="toastr-progress-bar">
+            <input ng-model="ctrl.toastrOptions.progressBar" type="checkbox" id="toastr-progress-bar" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            Progress bar
+          </label>
+          <label class="custom-control custom-checkbox" for="toastr-prevent-duplicates">
+            <input ng-model="ctrl.toastrOptions.preventDuplicates" type="checkbox" id="toastr-prevent-duplicates" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            Prevent duplicates
+          </label>
+          <label class="custom-control custom-checkbox" for="toastr-newest-on-top">
+            <input ng-model="ctrl.toastrOptions.newestOnTop" type="checkbox" id="toastr-newest-on-top" class="custom-control-input">
+            <span class="custom-control-indicator"></span>
+            Newest on top
+          </label>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-5">
+        <div class="form-group">
+          <label>Position</label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-top-right">
+            <span class="custom-control-indicator"></span>
+            Top Right
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-bottom-right">
+            <span class="custom-control-indicator"></span>
+            Bottom Right
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-bottom-left">
+            <span class="custom-control-indicator"></span>
+            Bottom Left
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-top-left">
+            <span class="custom-control-indicator"></span>
+            Top Left
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-top-full-width">
+            <span class="custom-control-indicator"></span>
+            Top Full Width
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-bottom-full-width">
+            <span class="custom-control-indicator"></span>
+            Bottom Full Width
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-top-center">
+            <span class="custom-control-indicator"></span>
+            Top Center
+          </label>
+          <label class="custom-control custom-radio">
+            <input ng-model="ctrl.toastrOptions.positionClass" type="radio" class="custom-control-input" value="toast-bottom-center">
+            <span class="custom-control-indicator"></span>
+            Bottom Center
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <button class="btn btn-primary m-r-1" ng-click="ctrl.showToast()">Show toast</button>
+    <button class="btn m-r-1" ng-click="ctrl.clearToasts()">Clear toasts</button>
+  </div>
+</div>
+
+<script>
+</script>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Default tooltips</span>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn" uib-tooltip="Tooltip on top" tooltip-placement="top">
+          Tooltip on top
+        </button>
+        <button type="button" class="btn" uib-tooltip="Tooltip on right" tooltip-placement="right">
+          Tooltip on right
+        </button>
+        <button type="button" class="btn" uib-tooltip="Tooltip on bottom" tooltip-placement="bottom">
+          Tooltip on bottom
+        </button>
+        <button type="button" class="btn" uib-tooltip="Tooltip on left" tooltip-placement="left">
+          Tooltip on left
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Colored tooltips</span>
+      </div>
+      <div class="panel-body">
+        <button type="button" class="btn btn-primary" uib-tooltip="Tooltip on top" tooltip-placement="top" tooltip-class="tooltip-primary">
+          Primary Tooltip
+        </button>
+        <button type="button" class="btn btn-success" uib-tooltip="Tooltip on left" tooltip-placement="left" tooltip-class="tooltip-success">
+          Success Tooltip
+        </button>
+        <button type="button" class="btn btn-danger" uib-tooltip="Tooltip on top" tooltip-placement="top" tooltip-class="tooltip-danger">
+          Danger Tooltip
+        </button>
+        <button type="button" class="btn btn-warning" uib-tooltip="Tooltip on bottom" tooltip-placement="bottom" tooltip-class="tooltip-warning">
+          Warning Tooltip
+        </button>
+        <button type="button" class="btn btn-info" uib-tooltip="Tooltip on right" tooltip-placement="right" tooltip-class="tooltip-info">
+          Info Tooltip
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel position-relative">
+  <div class="panel-heading">
+    <span class="panel-title">Default popovers</span>
+  </div>
+  <div class="panel-body">
+    <button type="button" class="btn" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-placement="top">
+      Popover on top
+    </button>
+    <button type="button" class="btn" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-placement="left">
+      Popover on left
+    </button>
+    <button type="button" class="btn" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-placement="right">
+      Popover on right
+    </button>
+    <button type="button" class="btn" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-placement="bottom">
+      Popover on bottom
+    </button>
+  </div>
+</div>
+
+<div class="panel position-relative">
+  <div class="panel-heading">
+    <span class="panel-title">Colored popovers</span>
+  </div>
+  <div class="panel-body">
+    <button type="button" class="btn btn-primary" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Primary title" popover-placement="top" popover-class="popover-primary">
+      Primary
+    </button>
+    <button type="button" class="btn btn-success" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Success title" popover-placement="top" popover-class="popover-success">
+      Success
+    </button>
+    <button type="button" class="btn btn-danger" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Danger title" popover-placement="left" popover-class="popover-danger">
+      Danger
+    </button>
+    <button type="button" class="btn btn-warning" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Warning title" popover-placement="right" popover-class="popover-warning">
+      Warning
+    </button>
+    <button type="button" class="btn btn-info" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Info title" popover-placement="bottom" popover-class="popover-info">
+      Info
+    </button>
+
+    <hr class="page-wide-block">
+
+    <button type="button" class="btn btn-primary" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Primary title" popover-placement="top" popover-class="popover-primary popover-colorful">
+      Primary
+    </button>
+    <button type="button" class="btn btn-success" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Success title" popover-placement="top" popover-class="popover-success popover-colorful">
+      Success
+    </button>
+    <button type="button" class="btn btn-danger" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Danger title" popover-placement="left" popover-class="popover-danger popover-colorful">
+      Danger
+    </button>
+    <button type="button" class="btn btn-warning" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Warning title" popover-placement="right" popover-class="popover-warning popover-colorful">
+      Warning
+    </button>
+    <button type="button" class="btn btn-info" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Info title" popover-placement="bottom" popover-class="popover-info popover-colorful">
+      Info
+    </button>
+
+    <hr class="page-wide-block">
+
+    <button type="button" class="btn btn-primary" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Primary title" popover-placement="top" popover-class="popover-primary popover-dark">
+      Primary
+    </button>
+    <button type="button" class="btn btn-success" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Success title" popover-placement="top" popover-class="popover-success popover-dark">
+      Success
+    </button>
+    <button type="button" class="btn btn-danger" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Danger title" popover-placement="left" popover-class="popover-danger popover-dark">
+      Danger
+    </button>
+    <button type="button" class="btn btn-warning" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Warning title" popover-placement="right" popover-class="popover-warning popover-dark">
+      Warning
+    </button>
+    <button type="button" class="btn btn-info" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Info title" popover-placement="bottom" popover-class="popover-info popover-dark">
+      Info
+    </button>
+
+    <hr class="page-wide-block">
+
+    <button type="button" class="btn btn-primary" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Primary title" popover-placement="top" popover-class="popover-primary popover-dark popover-colorful">
+      Primary
+    </button>
+    <button type="button" class="btn btn-success" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Success title" popover-placement="top" popover-class="popover-success popover-dark popover-colorful">
+      Success
+    </button>
+    <button type="button" class="btn btn-danger" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Danger title" popover-placement="left" popover-class="popover-danger popover-dark popover-colorful">
+      Danger
+    </button>
+    <button type="button" class="btn btn-warning" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Warning title" popover-placement="right" popover-class="popover-warning popover-dark popover-colorful">
+      Warning
+    </button>
+    <button type="button" class="btn btn-info" uib-popover="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." popover-title="Info title" popover-placement="bottom" popover-class="popover-info popover-dark popover-colorful">
+      Info
+    </button>
+  </div>
+</div>

@@ -1,0 +1,2474 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>PxNav - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+    <style>
+    .px-navbar {
+      z-index: 100;
+    }
+
+    .px-nav {
+      z-index: 101;
+      height: 100%;
+    }
+
+    .px-nav-expand {
+      z-index: 103;
+    }
+
+    .px-nav-dimmer {
+      z-index: 102;
+    }
+
+    @media (min-width: 992px) {
+      .px-nav {
+      z-index: 99 !important;
+      }
+    }
+
+    .px-nav,
+    .px-navbar,
+    .px-nav-toggle,
+    .px-nav-dimmer {
+      position: absolute !important;
+    }
+
+    @media (max-width: 543px) {
+      .px-nav-left .px-nav-toggle { left: 100%; }
+      .px-nav-left.px-nav-expand .px-nav-toggle { left: 0; width: 100%; }
+
+      .px-nav-right .px-nav-toggle { right: 100%; }
+      .px-nav-right.px-nav-expand .px-nav-toggle { right: 0; width: 100%; }
+    }
+
+    @media (min-width: 544px) and (max-width: 991px) {
+      .px-nav-off-canvas.px-nav-left .px-nav-toggle { left: 100%; }
+      .px-nav-off-canvas.px-nav-left.px-nav-expand .px-nav-toggle { left: 0; width: 100%; }
+
+      .px-nav-off-canvas.px-nav-right .px-nav-toggle { right: 100%; }
+      .px-nav-off-canvas.px-nav-right.px-nav-expand .px-nav-toggle { right: 0; width: 100%; }
+    }
+
+    @media (max-width: 543px) {
+      #methods-table {
+        table-layout: auto !important;
+      }
+
+      #methods-table th {
+        width: auto !important;
+      }
+    }
+
+    #pxnavjs-log {
+      border: 1px solid #e4e4e4;
+      padding: 20px 0 0 0;
+      border-radius: 3px;
+      position: relative;
+      margin: 0 0 20px 0;
+      height: 200px;
+      overflow-y: auto;
+    }
+
+    #pxnavjs-log:before {
+      content: "EVENT LOG";
+      background: #ebebeb;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 2px;
+      position: absolute;
+      display: block;
+      line-height: 20px;
+      height: 20px;
+      left: 0;
+      right: 0;
+      top: 0;
+      color: #555;
+      font-size: 10px;
+      font-weight: bold;
+      padding: 0 20px;
+    }
+
+    #pxnavjs-log li {
+      padding: 5px 20px;
+      margin: 0;
+      list-style: none;
+    }
+
+    #pxnavjs-log li:nth-of-type(odd) {
+      background: #f9f9f9;
+    }
+
+    #pxnavjs-log li.blink {
+      background: #b5cc18;
+    }
+
+    #pxnavjs-log li.animted {
+      transition: background 1s;
+    }
+
+    .event-label {
+      font-size:10px;
+      display:inline-block;
+      margin-right:20px;
+      font-weight: bold;
+    }
+
+    .px-nav-control-buttons .btn {
+      display: block;
+      float: left;
+      margin: 0 6px 6px 0;
+    }
+
+    .px-nav-code-block.example.show-code-block > pre {
+      max-height: 10000px;
+    }
+  </style>
+
+  <h1 class="doc-header">PxNav</h1>
+
+  <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+    <li class="active">
+      <a href="#definition" data-toggle="tab">Definition</a>
+    </li>
+    <li>
+      <a href="#usage" data-toggle="tab">Usage</a>
+    </li>
+    <li>
+      <a href="#angular" data-toggle="tab">Angular 1.x</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="tab-pane active" id="definition">
+
+      <h4 class="doc-subheader">Basic</h4>
+      <p>
+        For the proper positioning, place the <code>.px-nav</code>s before <code>.px-navbar</code> and <code>.px-content</code> elements.
+      </p>
+      <p>
+        Add <code>.px-nav-left</code> or <code>.px-nav-right</code> to the
+        <code>.px-nav</code> element to place it left or right.
+      </p>
+
+      <div class="example" data-accent="(px-nav) ||(px-nav-left)||''(px-nav-toggle)''||''(px-nav-content)''||(px-nav-item)||(px-nav-label)||(px-nav-icon)">
+<div style="position: relative; min-height: 250px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-base-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="px-nav px-nav-right" id="px-nav-base-right">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-base-left').pxNav();
+    $('#px-nav-base-right').pxNav();
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Dropdowns</h4>
+
+      <div class="example" data-accent=" (px-nav-dropdown)''||(px-nav-dropdown-menu)">
+<div style="position: relative; min-height: 350px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-dropdowns-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown1</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link1</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link2</span></a></li>
+        </ul>
+      </li>
+
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Dropdown2 (Multilevel)</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown3</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link4</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown4</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item px-nav-dropdown">
+                <a href="#"><span class="px-nav-label">Dropdown5</span></a>
+
+                <ul class="px-nav-dropdown-menu">
+                  <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link5</span></a></li>
+                  <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link6</span></a></li>
+                </ul>
+              </li>
+
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link7</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link8</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link9</span></a></li>
+        </ul>
+      </li>
+
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link10</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-dropdowns-left').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent=" (px-nav-dropdown)''||(px-nav-dropdown-menu)">
+<div style="position: relative; min-height: 350px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-right" id="px-nav-dropdowns-right">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown1</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link1</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link2</span></a></li>
+        </ul>
+      </li>
+
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Dropdown2 (Multilevel)</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown3</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link4</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown4</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item px-nav-dropdown">
+                <a href="#"><span class="px-nav-label">Dropdown5</span></a>
+
+                <ul class="px-nav-dropdown-menu">
+                  <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link5</span></a></li>
+                  <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link6</span></a></li>
+                </ul>
+              </li>
+
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link7</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link8</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link9</span></a></li>
+        </ul>
+      </li>
+
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link10</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-dropdowns-right').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Labels</h4>
+
+      <div class="example" data-accent="''(label)|| (label-pill)||(label-[a-z]+)''">
+<div style="position: relative; min-height: 350px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-labels-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1<span class="label label-danger">22</span></span></a>
+      </li>
+
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown1<span class="label label-pill label-success">22</span></span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link1<span class="label label-pill label-info">22</span></span></a></li>
+
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown3<span class="label label-warning">22</span></span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3<span class="label label-primary">22</span></span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-labels-left').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Nav-box</h4>
+      <p>
+        Use <code>.px-nav-box</code> elements to add custom content.
+      </p>
+
+      <div class="example" data-accent="(px-nav-box) ">
+<div style="position: relative; min-height: 350px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-box-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <div class="px-nav-box p-y-2 p-x-3 b-b-1">
+        <span class="font-size-16 font-weight-light">Hello, <strong>User</strong>!</span>
+      </div>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+      <div class="px-nav-box p-y-2 p-x-3 b-t-1">
+        <button type="button" class="btn btn-success btn-block b-a-0"><span class="btn-label-icon left">+</span>Add project</button>
+      </div>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-box-left').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Collapsed by default</h4>
+      <p>
+        If you want make the <code>.px-nav</code> element collapsed by default,
+        just add the <code>.px-nav-collapse</code> class to the <code>.px-nav</code>.
+      </p>
+
+      <div class="example" data-accent=" (px-nav-collapse)''">
+<div style="position: relative; min-height: 250px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left px-nav-collapse" id="px-nav-collapsed-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-collapsed-left').pxNav();
+  });
+</script>
+      </div>
+
+      <div class="alert alert-info">
+        <strong>Note:</strong> Even if you set the <code>.px-nav-collapse</code> class,
+        it will have effect only if the nav state is not stored before, because
+        the PxNav plugin restores the previous nav state by default. To prevent this
+        behaviour, you need to turn off the <code>storeState</code> option.
+      </div>
+
+      <div class="example" data-accent=" (px-nav-collapse)''||(storeState: false)">
+<div style="position: relative; min-height: 250px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left px-nav-collapse" id="px-nav-collapsed-no-state-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-collapsed-no-state-left').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Off canvas</h4>
+      <p>
+        Add the <code>.px-nav-off-canvas</code> class to hide the <code>.px-nav</code>
+        when collapsed. If you want hide the nav only on large and extra large
+        screen sizes, use the <code>.px-nav-off-canvas-desktops</code> class
+        instead of <code>.px-nav-off-canvas</code>.
+      </p>
+
+      <div class="example" data-accent=" (px-nav-off-canvas)''">
+<div style="position: relative; min-height: 250px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left px-nav-collapse px-nav-off-canvas" id="px-nav-off-canvas-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-off-canvas-left').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <div class="example" data-accent=" (px-nav-off-canvas)''">
+<div style="position: relative; min-height: 250px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-right px-nav-collapse px-nav-off-canvas" id="px-nav-off-canvas-right">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Link2</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-off-canvas-right').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Static</h4>
+      <p>
+        Add the <code>.px-nav-static</code> class to the <code>.px-nav</code>
+        to make all <code>.px-nav-dropdown</code>s permanently expanded.
+      </p>
+
+      <div class="example" data-accent=" (px-nav-static)''">
+<div style="position: relative; min-height: 300px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left px-nav-static" id="px-nav-static-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Dropdown1</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link1</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link2</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown2</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link4</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Dropdown3</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown4</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link5</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link6</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link7</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link8</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-static-left').pxNav({
+      storeState: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Disabled accordion behaviour</h4>
+
+      <div class="example" data-accent="(accordion: false)">
+<div style="position: relative; min-height: 300px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-no-accordion-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Dropdown1</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link1</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link2</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown2</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link4</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Dropdown3</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown4</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link5</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link6</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link7</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link8</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-no-accordion-left').pxNav({
+      storeState: false,
+      accordion: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Disabled tooltips</h4>
+
+      <div class="example" data-accent="(enableTooltips: false)">
+<div style="position: relative; min-height: 300px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left px-nav-collapse" id="px-nav-no-tooltips-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Link1</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Link3</span></a>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown2</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link4</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-no-tooltips-left').pxNav({
+      storeState: false,
+      enableTooltips: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Disabled animations</h4>
+
+      <div class="example" data-accent="(animate: false)">
+<div style="position: relative; min-height: 300px; overflow: hidden;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-no-animate-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Dropdown1</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link1</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link2</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-peace-o"></i><span class="px-nav-label">Dropdown2</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link3</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link4</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon fa fa-hand-paper-o"></i><span class="px-nav-label">Dropdown3</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Dropdown4</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link5</span></a></li>
+              <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link6</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link7</span></a></li>
+          <li class="px-nav-item"><a href="#"><span class="px-nav-label">Link8</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<script>
+  $(function() {
+    $('#px-nav-no-animate-left').pxNav({
+      storeState: false,
+      animate: false,
+    });
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Fixed</h4>
+      <p>
+        To make the nav fixed, add the <code>.px-nav-fixed</code> class.
+      </p>
+      <div class="alert alert-warning">
+        You also need to <a href="elements_px-navbar.html#px-navbar-fixed" class="alert-link">make the navbar fixed</a>.
+      </div>
+
+      <div class="example nocode" data-accent="(px-navbar-fixed)||(px-nav-fixed)">
+        <pre><code class="html hljs xml">
+&lt;body class="px-navbar-fixed"&gt;
+  &lt;nav class="px-nav px-nav-fixed"&gt;
+    ...
+  &lt;/nav&gt;
+
+  &lt;nav class="navbar px-navbar"&gt;
+    ...
+  &lt;/nav&gt;
+
+  &lt;div class="px-content"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/body&gt;
+        </code></pre>
+      </div>
+
+    </div>
+    <div class="tab-pane" id="usage">
+
+      <h4 class="doc-subheader">Initializing</h4>
+      <p>PxNav plugin is initialized on pre-existing markup.</p>
+      <div class="alert alert-info">
+        Options can be passed via data attributes or JavaScript. For data attributes,
+        append the option name to <code>data-</code>, for example:
+        <code>&lt;nav class="px-nav px-nav-left" data-accordion="false" data-store-state="false"&gt;...&lt;/nav&gt;</code>.
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$('.px-nav').pxNav(options);
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Option</th>
+            <th>Default</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>accordion</th>
+              <td>true</td>
+              <td>Enable accordion behaviour.</td>
+            </tr>
+            <tr>
+              <th>transitionDuration</th>
+              <td>300</td>
+              <td>
+                Transition duration (milliseconds) - used for the transition fallback.
+                Must be equal to SCSS's variable <code>$px-nav-transition-duration</code>.
+              </td>
+            </tr>
+            <tr>
+              <th>dropdownCloseDelay</th>
+              <td>400</td>
+              <td>Delay in milliseconds before closing a dropdown menu (after <code>mouseleave</code> event triggered).</td>
+            </tr>
+            <tr>
+              <th>enableTooltips</th>
+              <td>true</td>
+              <td>Enable tooltips.</td>
+            </tr>
+            <tr>
+              <th>animate</th>
+              <td>true</td>
+              <td>Enable animations.</td>
+            </tr>
+            <tr>
+              <th>storeState</th>
+              <td>true</td>
+              <td>Store/restore the nav state.</td>
+            </tr>
+            <tr>
+              <th>storagePrefix</th>
+              <td>'px-nav.'</td>
+              <td>Storage key prefix.</td>
+            </tr>
+            <tr>
+              <th>modes</th>
+              <td>
+                {<br>
+                &nbsp;&nbsp;phone:&nbsp;['xs'],<br>
+                &nbsp;&nbsp;tablet:&nbsp;['sm',&nbsp;'md'],<br>
+                &nbsp;&nbsp;desktop:&nbsp;['lg',&nbsp;'xl'],<br>
+                }
+              </td>
+              <td>The nav mode breakpoints. See <a href="#explanation-of-modes">more info below</a>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader">Usage<span class="requirejs-mark"></span></h4>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+require(['jquery', 'px/plugins/px-nav'], function($) {
+  ...
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><a name="explanation-of-modes"></a>Explanation of modes</h4>
+      <p>
+        The PxNav plugin works in three modes:
+      </p>
+      <ul>
+        <li><strong>phone</strong> - the nav is hidden, fixed and collapsed by default; expands with a dimmer.</li>
+        <li><strong>tablet</strong> - the nav is fixed and collapsed by default; expands with a dimmer.</li>
+        <li><strong>desktop</strong> - the nav is expanded by default.</li>
+      </ul>
+      <p>
+        The nav modes are activated according to the current viewport breakpoint.
+        Look at the <code>modes</code> config option:
+      </p>
+      <ul>
+        <li>phone:&nbsp;['xs'] - <strong>phone</strong> mode is activated on extra small screens.</li>
+        <li>tablet:&nbsp;['sm',&nbsp;'md'] - <strong>tablet</strong> mode is activated on small and medium screens.</li>
+        <li>desktop:&nbsp;['lg',&nbsp;'xl'] - <strong>desktop</strong> mode is activated on large and extra large screens.</li>
+      </ul>
+      <p>For example, to activate <strong>desktop</strong> mode (instead of <strong>tablet</strong> mode) on medium screen sizes:</p>
+      <ol>
+        <li>
+          <p>
+            Edit the <code>_variables.scss</code> file and assign a lower breakpoint value
+            to the <code>$px-nav-tablets-breakpoint</code>/<code>$px-nav-desktops-breakpoint</code>
+            variable (according to the mode which you want to change):
+          </p>
+
+          <div class="example nocode m-b-3">
+            <pre><code data-lang="scss">
+// Default:
+//   $px-nav-desktops-breakpoint: $screen-lg-min;
+
+$px-nav-desktops-breakpoint: $screen-md-min;
+            </code></pre>
+          </div>
+        </li>
+        <li>Recompile SCSS.</li>
+        <li>
+          <p>Init the PxNav plugin with updated config:</p>
+
+          <div class="example nocode">
+            <pre><code data-lang="js">
+// Default:
+//   tablet: [ 'sm', 'md' ]
+//   desktop: [ 'lg', 'xl' ]
+
+$('.px-nav').pxNav({
+  modes: {
+    tablet:  [ 'sm' ],
+    desktop: [ 'md', 'lg', 'xl' ],
+  },
+});
+            </code></pre>
+          </div>
+        </li>
+      </ol>
+
+      <h4 class="doc-subheader">Methods</h4>
+      <p>
+        You can call a public method of PxNav instance using the syntax:
+      </p>
+
+      <div class="example nocode" data-accent="(methodName)">
+        <pre><code data-lang="js">
+$('.px-nav').pxNav('methodName');
+        </code></pre>
+      </div>
+
+      <div class="alert alert-info">
+        <p>
+          <strong>[1]</strong> The parameter can be a string, jQuery object or DOM
+          element. For example the next calls are equivalent:
+        </p>
+        <div class="example nocode">
+          <pre><code data-lang="js">
+$('.px-nav').pxNav('activateItem', '#some-nav-item');
+$('.px-nav').pxNav('activateItem', $('#some-nav-item'));
+$('.px-nav').pxNav('activateItem', document.getElementById('some-nav-item'));
+          </code></pre>
+        </div>
+      </div>
+      <div class="alert alert-info">
+        <p>
+          <strong>[2]</strong> Root dropdown - a dropdown which is a direct child of the <code>.px-nav-content</code> element:
+        </p>
+        <div class="example nocode" data-accent="(px-nav-content)||(px-nav-dropdown)''> <">
+          <pre><code class="html hljs xml">
+&lt;nav class="px-nav"&gt;
+  &lt;ul class="px-nav-content"&gt;
+    &lt;li class="px-nav-item px-nav-dropdown"&gt; &lt;!-- Root dropdown --&gt;
+      &lt;a href="#"&gt;...&lt;/a&gt;
+      &lt;ul class="px-nav-dropdown-menu"&gt;
+        &lt;li class="px-nav-item px-nav-dropdown"&gt;...&lt;/li&gt;
+        &lt;li class="px-nav-item px-nav-dropdown"&gt;...&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="px-nav-item px-nav-dropdown"&gt; &lt;!-- Root dropdown --&gt;
+      &lt;a href="#"&gt;...&lt;/a&gt;
+      &lt;ul class="px-nav-dropdown-menu"&gt;
+        &lt;li class="px-nav-item px-nav-dropdown"&gt;...&lt;/li&gt;
+        &lt;li class="px-nav-item px-nav-dropdown"&gt;...&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light" style="table-layout: fixed" id="methods-table">
+          <thead>
+            <th>Method name</th>
+            <th class="col-sm-7 col-md-8 col-lg-9">Description</th>
+          </thead>
+          <tbody>
+              <th>toggle</th>
+              <td>
+                Toggle the nav state.
+              </td>
+            </tr>
+            <tr>
+              <th>expand</th>
+              <td>Expand the nav.</td>
+            </tr>
+            <tr>
+              <th>collapse</th>
+              <td>Collapse the nav.</td>
+            </tr>
+            <tr>
+              <th>isFixed</th>
+              <td>Returns <code>true</code> if the nav is fixed, otherwise returns <code>false</code>.</td>
+            </tr>
+            <tr>
+              <th>isStatic</th>
+              <td>Returns <code>true</code> if the nav has the <code>.px-nav-static</code> class, otherwise returns <code>false</code>.</td>
+            </tr>
+            <tr>
+              <th>isCollapsed</th>
+              <td>Returns <code>true</code> if the nav is collapsed, otherwise returns <code>false</code>.</td>
+            </tr>
+            <tr>
+              <th>activateItem(el<sup>[1]</sup>)</th>
+              <td>
+                <p>Make the <code>el</code> active and expand all parent dropdowns.
+                All other active nav items will be deactivated.</p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-item</code> class. Dropdowns cannot be activated.
+              </td>
+            </tr>
+            <tr>
+              <th>openDropdown(el<sup>[1]</sup>, showDropdown = true)</th>
+              <td>
+                <p>
+                  Show/expand the <code>el</code> and show/expand all parent dropdowns.
+                </p>
+                <p>
+                  If the <code>el</code> is a root dropdown<sup>[2]</sup> and the nav
+                  is collapsed and <code>showDropdown=false</code> then nothing will happen.
+                </p>
+                <p>
+                  If the <code>el</code> is <strong>not</strong> a root dropdown<sup>[2]</sup> and the nav
+                  is collapsed and <code>showDropdown=false</code> then all parent non-root dropdowns
+                  will be expanded, but the parent root dropdown will not be shown.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>closeDropdown(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Hide/collapse the <code>el</code>.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>toggleDropdown(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Open/hide the <code>el</code> (see the <code>openDropdown</code> and <code>closeDropdown</code> methods).
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>closeAllDropdowns(parent<sup>[1]</sup> = $('.px-nav-content'))</th>
+              <td>
+                <p>
+                  Close all opened dropdowns inside the <code>parent</code>. If the method is called
+                  without parameters then all opened nav dropdowns will be closed.
+                </p>
+                <strong><em>Note:</em></strong> The <code>parent</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>freezeDropdown(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Freeze the <code>el</code>. When the nav is collapsed and the mouse
+                  pointer leaves an opened root dropdown<sup>[2]</sup>, the "normal" (non-frozen)
+                  dropdown will be closed on a timer. The frozen dropdown prevents
+                  this behaviour.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>unfreezeDropdown(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Unfreeze the <code>el</code>.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>isFloatingDropdown(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Returns <code>true</code> if the nav is collapsed and the <code>el</code>
+                  is a root dropdown<sup>[2]</sup>, otherwise returns <code>false</code>.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>getDropdownContainer(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Returns the dropdown container. If the <code>el</code> is a floating
+                  dropdown and shown then returns the <code>.px-nav-dropdown-menu-wrapper</code>
+                  element, otherwise returns the <code>.px-nav-dropdown-menu</code> element.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>isDropdownOpened(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Returns <code>true</code> if the <code>el</code> is opened, otherwise returns <code>false</code>.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>isDropdownFrozen(el<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Returns <code>true</code> if the <code>el</code> is frozen, otherwise returns <code>false</code>.
+                </p>
+                <strong><em>Note:</em></strong> The <code>el</code> must have the <code>.px-nav-dropdown</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>append(item, parent<sup>[1]</sup> = $('.px-nav-content'))</th>
+              <td>
+                Insert the <code>item</code> to the end of the <code>parent</code> element. See the <code>insert</code> method.
+              </td>
+            </tr>
+            <tr>
+              <th>prepend(item, parent<sup>[1]</sup> = $('.px-nav-content'))</th>
+              <td>
+                Insert the <code>item</code> to the beginning of the <code>parent</code> element. See the <code>insert</code> method.
+              </td>
+            </tr>
+            <tr>
+              <th>insert(item, position, parent<sup>[1]</sup> = $('.px-nav-content')))</th>
+              <td>
+                <p>
+                  Insert the <code>item</code> at the <code>position</code> in the <code>parent</code> element.
+                </p>
+                <p>
+                  The <code>item</code> can be an HTML string, jQuery object or DOM element.
+                </p>
+                <p>
+                  The <code>position</code> is a number. The index of the first
+                  item is 0, and the index of the last item is <code>numberOfItems - 1</code>.
+                  If the <code>position</code> paremeter is not passed or equals to <code>null</code> then the <code>item</code> will be inserted
+                  to the end of the <code>parent</code> element, else the <code>item</code> will be inserted
+                  before the given position.
+                </p>
+                <p>
+                  The <code>parent</code> must have the <code>.px-nav-dropdown</code> class. If the
+                  <code>parent</code> paremeter is not passed then the <code>item</code>
+                  will be inserted into the <code>.px-nav-content</code> element (root).
+                </p>
+                <p>Examples:</p>
+                <div class="example nocode">
+                  <pre><code data-lang="js">
+// Insert an item to the beginning of the root (use prepend instead)
+$('.px-nav').pxNav('insert', '<li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li>', 0);
+
+// Insert an item to the end of the root (use append instead)
+$('.px-nav').pxNav('insert', $('<li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li>'));
+
+// Insert an item before the third item in the root
+$('.px-nav').pxNav('insert', '#item-to-insert', 2);
+
+// Insert an item to the beginning of the specified dropdown (use prepend instead)
+$('.px-nav').pxNav('insert', '<li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li>', 0, '#targeted-dropdown');
+
+// Insert an item to the end of the specified dropdown (use append instead)
+$('.px-nav').pxNav('insert', $('<li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li>', $('#targeted-dropdown')));
+
+// Insert an item before the third item in the specified dropdown
+$('.px-nav').pxNav('insert', '#item-to-insert', 2, document.getElementById('targeted-dropdown'));
+
+// Insert an item before the specified item
+var indexToInsertBefore = $('#targeted-item').parent().find('> .px-nav-item').index($('#targeted-item'));
+$('.px-nav').pxNav('insert', '#item-to-insert', indexToInsertBefore);
+
+// Insert an item after the specified item
+var indexToInsertAfter = $('#targeted-item').parent().find('> .px-nav-item').index($('#targeted-item')) + 1;
+$('.px-nav').pxNav('insert', '#item-to-insert', indexToInsertAfter);
+
+// Insert a dropdown
+$('.px-nav').pxNav('insert', '<li class="px-nav-item px-nav-dropdown"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some dropdown</span></a><ul class="px-nav-dropdown-menu"></ul></li>');
+
+// Insert several items
+$('.px-nav').pxNav('insert', '<li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li><li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li><li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li>');
+$('.px-nav').pxNav('insert', $('<li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li><li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li><li class="px-nav-item"><a href="#"><i class="px-nav-icon fa fa-check"></i><span class="px-nav-label">Some item</span></a></li>'));
+                  </code></pre>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>remove(item<sup>[1]</sup>)</th>
+              <td>
+                <p>
+                  Remove the <code>item</code>.
+                </p>
+                <strong><em>Note:</em></strong> The <code>item</code> must have the <code>.px-nav-item</code> class.
+              </td>
+            </tr>
+            <tr>
+              <th>destroy</th>
+              <td>
+                Destroy the PxNav instance.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="doc-subheader">Events</h4>
+      <p>
+        You can subscribe on PxNav events using the syntax:
+      </p>
+
+      <div class="example nocode" data-accent="(event)\.">
+        <pre><code data-lang="js">
+$('.px-nav').on('event.px.nav', function(e) {
+  // ...
+
+  // Preventable events can be prevented:
+  // e.preventDefault();
+});
+        </code></pre>
+      </div>
+
+      <br>
+
+      <div class="alert alert-info">
+        Events marked with <span style="color: red">*</span> are preventable.
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-light">
+          <thead>
+            <th>Event</th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>expand<span style="color: red">*</span></th>
+              <td>
+                <p>This event is fired immediately when the <code>expand()</code> method is called.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>expanded</th>
+              <td>
+                <p>This event is fired when the nav has expanded.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>collapse<span style="color: red">*</span></th>
+              <td>
+                <p>This event is fired immediately when the <code>collapse()</code> method is called.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>collapsed</th>
+              <td>
+                <p>This event is fired when the nav has collapsed.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>destroy<span style="color: red">*</span></th>
+              <td>
+                <p>This event is fired immediately when the <code>destroy()</code> method is called.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>dropdown-open<span style="color: red">*</span></th>
+              <td>
+                <p>This event is fired immediately when the <code>openDropdown()</code> method is called.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>dropdown-opened</th>
+              <td>
+                <p>This event is fired when the dropdown has opened.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>dropdown-close<span style="color: red">*</span></th>
+              <td>
+                <p>This event is fired immediately when the <code>closeDropdown()</code> method is called.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>dropdown-closed</th>
+              <td>
+                <p>This event is fired when the dropdown has closed.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>dropdown-frozen</th>
+              <td>
+                <p>This event is fired when the dropdown has frozen.</p>
+              </td>
+            </tr>
+            <tr>
+              <th>dropdown-unfrozen</th>
+              <td>
+                <p>This event is fired when the dropdown has unfrozen.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="m-t-3">
+        In addition, you can subscribe on <code>initialized</code> event, which is fired when
+        a nav is initialized:
+      </p>
+      <div class="example nocode" data-accent="(event)\.">
+        <pre><code data-lang="js">
+$('.px-nav').on('initialized', function() {
+  // ...
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Control Examples</h4>
+
+      <div class="example px-nav-code-block">
+<div style="position: relative; min-height: 400px; overflow: hidden; margin-bottom: 20px;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-control-example">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-item px-nav-dropdown" id="dropdown1">
+        <a href="#"><i class="px-nav-icon fa fa-bar-chart"></i><span class="px-nav-label">#dropdown1</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown" id="dropdown2">
+            <a href="#"><span class="px-nav-label">#dropdown2</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item" id="link1"><a href="#"><span class="px-nav-label">#link1</span></a></li>
+              <li class="px-nav-item" id="link2"><a href="#"><span class="px-nav-label">#link2</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item" id="link3"><a href="#"><span class="px-nav-label">#link3</span></a></li>
+          <li class="px-nav-item" id="link4"><a href="#"><span class="px-nav-label">#link4</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item" id="link5">
+        <a href="#"><i class="px-nav-icon fa fa-battery-full"></i><span class="px-nav-label">#link5</span></a>
+      </li>
+      <li class="px-nav-item px-nav-dropdown" id="dropdown3">
+        <a href="#"><i class="px-nav-icon fa fa-binoculars"></i><span class="px-nav-label">#dropdown3</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown" id="dropdown4">
+            <a href="#"><span class="px-nav-label">#dropdown4</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item" id="link6"><a href="#"><span class="px-nav-label">#link6</span></a></li>
+              <li class="px-nav-item" id="link7"><a href="#"><span class="px-nav-label">#link7</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item" id="link8"><a href="#"><span class="px-nav-label">#link8</span></a></li>
+          <li class="px-nav-item" id="link9"><a href="#"><span class="px-nav-label">#link9</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item" id="link10">
+        <a href="#"><i class="px-nav-icon fa fa-camera"></i><span class="px-nav-label">#link10</span></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-control-expand">expand()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-collapse">collapse()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-toggle">toggle()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-collapsed">isCollapsed()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-fixed">isFixed()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-destroy">destroy()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-initialize">Initialize</button>
+</p>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-control-activate-link5">activateItem('#link5')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-activate-link4">activateItem('#link4')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-activate-link10">activateItem('#link10')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-activate-link6">activateItem('#link6')</button>
+</p>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-control-toggle-dropdown1">toggleDropdown('#dropdown1')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-toggle-dropdown2">toggleDropdown('#dropdown2')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-open-dropdown3">openDropdown('#dropdown3')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-open-dropdown4">openDropdown('#dropdown4')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-open-dropdown3-no-root">openDropdown('#dropdown3', false)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-open-dropdown4-no-root">openDropdown('#dropdown4', false)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-close-dropdown3">closeDropdown('#dropdown3')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-close-dropdown4">closeDropdown('#dropdown4')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-close-all">closeAllDropdowns()</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-close-all-inside-dropdown">closeAllDropdowns('#dropdown1')</button>
+</p>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-floating-dropdown1">isFloatingDropdown('#dropdown1')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-floating-dropdown2">isFloatingDropdown('#dropdown2')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-opened-dropdown1">isDropdownOpened('#dropdown1')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-opened-dropdown2">isDropdownOpened('#dropdown2')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-opened-dropdown3">isDropdownOpened('#dropdown3')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-opened-dropdown4">isDropdownOpened('#dropdown4')</button>
+</p>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-control-freeze-dropdown1">openDropdown('#dropdown1') & freezeDropdown('#dropdown1')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-unfreeze-dropdown1">unfreezeDropdown('#dropdown1')</button>
+  <button type="button" class="btn btn-sm" id="px-nav-control-is-frozen-dropdown1">isDropdownFrozen('#dropdown1')</button>
+</p>
+
+<ul id="pxnavjs-log"></ul>
+
+<script>
+  function addLogEvent(text, isEvent) {
+    var $logEvent = $('<li class="blink animted">' + (isEvent ? '<span class="event-label text-muted">EVENT</span>' : '') + text + '</li>');
+
+    $('#pxnavjs-log').prepend($logEvent);
+
+    setTimeout(function() {
+      $logEvent.removeClass('blink');
+      setTimeout(function() { $logEvent.removeClass('animted'); }, 1000);
+    }, 100);
+  }
+
+  $(function() {
+    $('#px-nav-control-example').on('initialized', function() {
+      addLogEvent('The nav instance is initialized.', true);
+
+      $('#px-nav-control-example').on('expand.px.nav', function(_e) {
+        // You can prevent expanding by calling:
+        // _e.preventDefault();
+
+        addLogEvent('The nav is expanding.', true);
+      });
+
+      $('#px-nav-control-example').on('expanded.px.nav', function() {
+        addLogEvent('The nav has been expanded.', true);
+      });
+
+      $('#px-nav-control-example').on('collapse.px.nav', function(_e) {
+        // You can prevent collapsing by calling:
+        // _e.preventDefault();
+
+        addLogEvent('The nav is collapsing.', true);
+      });
+
+      $('#px-nav-control-example').on('collapsed.px.nav', function() {
+        addLogEvent('The nav has been collapsed.', true);
+      });
+
+      $('#px-nav-control-example').on('destroy.px.nav', function(_e) {
+        // You can prevent destroying by calling:
+        // _e.preventDefault();
+
+        addLogEvent('The nav instance is destroying.', true);
+
+        // Deactivate buttons
+        $('.px-nav-control-buttons .btn').attr('disabled', 'disabled');
+        $('#px-nav-control-initialize').removeAttr('disabled');
+      });
+
+      $('#px-nav-control-example').on('dropdown-open.px.nav', '.px-nav-dropdown', function(e, data) {
+        // You can prevent dropdown opening by calling:
+        // e.preventDefault();
+
+        e.stopPropagation();
+
+        addLogEvent('The #' + e.target.id + ' is opening.', true);
+      });
+
+      $('#px-nav-control-example').on('dropdown-opened.px.nav', '.px-nav-dropdown', function(e) {
+        e.stopPropagation();
+
+        addLogEvent('The #' + e.target.id + ' is opened.', true);
+      });
+
+      $('#px-nav-control-example').on('dropdown-close.px.nav', '.px-nav-dropdown', function(e, data) {
+        // You can prevent dropdown closing by calling:
+        // e.preventDefault();
+
+        e.stopPropagation();
+
+        addLogEvent('The #' + e.target.id + ' is closing.', true);
+      });
+
+      $('#px-nav-control-example').on('dropdown-closed.px.nav', '.px-nav-dropdown', function(e) {
+        e.stopPropagation();
+
+        addLogEvent('The #' + e.target.id + ' is closed.', true);
+      });
+
+      // Activate buttons
+      $('.px-nav-control-buttons .btn').removeAttr('disabled');
+      $('#px-nav-control-initialize').attr('disabled', 'disabled');
+    });
+
+
+    // Initialize nav
+    $('#px-nav-control-example').pxNav();
+
+
+    // Button hanblers
+    //
+
+    $('#px-nav-control-expand').on('click', function() {
+      $('#px-nav-control-example').pxNav('expand');
+    });
+
+    $('#px-nav-control-collapse').on('click', function() {
+      $('#px-nav-control-example').pxNav('collapse');
+    });
+
+    $('#px-nav-control-toggle').on('click', function() {
+      $('#px-nav-control-example').pxNav('toggle');
+    });
+
+    $('#px-nav-control-is-collapsed').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isCollapsed');
+
+      addLogEvent('The nav is' + ( result ? '' : ' <strong>not</strong>' ) + ' collapsed');
+    });
+
+    $('#px-nav-control-is-fixed').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isFixed');
+
+      addLogEvent('The nav is' + ( result ? '' : ' <strong>not</strong>' ) + ' fixed');
+    });
+
+    $('#px-nav-control-destroy').on('click', function() {
+      $('#px-nav-control-example').pxNav('destroy');
+    });
+
+    $('#px-nav-control-initialize').on('click', function() {
+      $('#px-nav-control-example').pxNav();
+    });
+
+    $('#px-nav-control-activate-link5').on('click', function() {
+      $('#px-nav-control-example').pxNav('activateItem', '#link5');
+    });
+
+    $('#px-nav-control-activate-link4').on('click', function() {
+      $('#px-nav-control-example').pxNav('activateItem', $('#link4'));
+    });
+
+    $('#px-nav-control-activate-link10').on('click', function() {
+      $('#px-nav-control-example').pxNav('activateItem', document.getElementById('link10'));
+    });
+
+    $('#px-nav-control-activate-link6').on('click', function() {
+      $('#px-nav-control-example').pxNav('activateItem', '#link6');
+    });
+
+    $('#px-nav-control-toggle-dropdown1').on('click', function() {
+      $('#px-nav-control-example').pxNav('toggleDropdown', '#dropdown1');
+    });
+
+    $('#px-nav-control-toggle-dropdown2').on('click', function() {
+      $('#px-nav-control-example').pxNav('toggleDropdown', '#dropdown2');
+    });
+
+    $('#px-nav-control-open-dropdown3').on('click', function() {
+      $('#px-nav-control-example').pxNav('openDropdown', '#dropdown3');
+    });
+
+    $('#px-nav-control-open-dropdown4').on('click', function() {
+      $('#px-nav-control-example').pxNav('openDropdown', '#dropdown4');
+    });
+
+    $('#px-nav-control-open-dropdown3-no-root').on('click', function() {
+      $('#px-nav-control-example').pxNav('openDropdown', '#dropdown3', false);
+    });
+
+    $('#px-nav-control-open-dropdown4-no-root').on('click', function() {
+      $('#px-nav-control-example').pxNav('openDropdown', '#dropdown4', false);
+    });
+
+    $('#px-nav-control-close-dropdown3').on('click', function() {
+      $('#px-nav-control-example').pxNav('closeDropdown', '#dropdown3');
+    });
+
+    $('#px-nav-control-close-dropdown4').on('click', function() {
+      $('#px-nav-control-example').pxNav('closeDropdown', '#dropdown4');
+    });
+
+    $('#px-nav-control-close-all').on('click', function() {
+      $('#px-nav-control-example').pxNav('closeAllDropdowns');
+    });
+
+    $('#px-nav-control-close-all-inside-dropdown').on('click', function() {
+      $('#px-nav-control-example').pxNav('closeAllDropdowns', '#dropdown1');
+    });
+
+    $('#px-nav-control-is-floating-dropdown1').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isFloatingDropdown', '#dropdown1');
+
+      addLogEvent('The #dropdown1 is' + ( result ? '' : ' <strong>not</strong>' ) + ' floating');
+    });
+
+    $('#px-nav-control-is-floating-dropdown2').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isFloatingDropdown', '#dropdown2');
+
+      addLogEvent('The #dropdown2 is' + ( result ? '' : ' <strong>not</strong>' ) + ' floating');
+    });
+
+    $('#px-nav-control-is-opened-dropdown1').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isDropdownOpened', '#dropdown1');
+
+      addLogEvent('The #dropdown1 is' + ( result ? '' : ' <strong>not</strong>' ) + ' opened');
+    });
+
+    $('#px-nav-control-is-opened-dropdown2').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isDropdownOpened', '#dropdown2');
+
+      addLogEvent('The #dropdown2 is' + ( result ? '' : ' <strong>not</strong>' ) + ' opened');
+    });
+
+    $('#px-nav-control-is-opened-dropdown3').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isDropdownOpened', '#dropdown3');
+
+      addLogEvent('The #dropdown3 is' + ( result ? '' : ' <strong>not</strong>' ) + ' opened');
+    });
+
+    $('#px-nav-control-is-opened-dropdown4').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isDropdownOpened', '#dropdown4');
+
+      addLogEvent('The #dropdown4 is' + ( result ? '' : ' <strong>not</strong>' ) + ' opened');
+    });
+
+    $('#px-nav-control-freeze-dropdown1').on('click', function() {
+      $('#px-nav-control-example').pxNav('openDropdown', '#dropdown1');
+      $('#px-nav-control-example').pxNav('freezeDropdown', '#dropdown1');
+
+    });
+
+    $('#px-nav-control-unfreeze-dropdown1').on('click', function() {
+      $('#px-nav-control-example').pxNav('unfreezeDropdown', '#dropdown1');
+    });
+
+    $('#px-nav-control-is-frozen-dropdown1').on('click', function() {
+      var result = $('#px-nav-control-example').pxNav('isDropdownFrozen', '#dropdown1');
+
+      addLogEvent('The #dropdown1 is' + ( result ? '' : ' <strong>not</strong>' ) + ' frozen');
+    });
+
+  });
+</script>
+      </div>
+
+      <h4 class="doc-subheader">DOM Manipulation Examples</h4>
+
+      <div class="example px-nav-code-block">
+<div style="position: relative; min-height: 400px; overflow: hidden; margin-bottom: 20px;" class="clearfix">
+  <nav class="px-nav px-nav-left" id="px-nav-dom-example">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content"></ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+    <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+    <div class="navbar-collapse"></div>
+  </nav>
+
+  <div class="px-content">
+    Page content.
+  </div>
+</div>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-dom-append-item-root">append(item, parent = root)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-append-dropdown-root">append(dropdown, parent = root)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-prepend-item-root">prepend(item, parent = root)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-prepend-dropdown-root">prepend(dropdown, parent = root)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-insert-item-root">insert(item, 3, parent = root)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-insert-dropdown-root">insert(dropdown, 3, parent = root)</button>
+</p>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-dom-append-item-lastDropdown">append(item, parent = lastDropdown)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-append-dropdown-lastDropdown">append(dropdown, parent = lastDropdown)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-prepend-item-lastDropdown">prepend(item, parent = lastDropdown)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-prepend-dropdown-lastDropdown">prepend(dropdown, parent = lastDropdown)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-insert-item-lastDropdown">insert(item, 3, parent = lastDropdown)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-insert-dropdown-lastDropdown">insert(dropdown, 3, parent = lastDropdown)</button>
+</p>
+
+<p class="px-nav-control-buttons clearfix">
+  <button type="button" class="btn btn-sm" id="px-nav-dom-remove-item">remove(lastItem)</button>
+  <button type="button" class="btn btn-sm" id="px-nav-dom-remove-item-dropdown">remove(lastItemInTheLastDropdown)</button>
+</p>
+
+<script>
+  var itemCount = 0;
+  var dropdownCount = 0;
+  var icons = [
+    'briefcase',
+    'area-chart',
+    'cloud',
+    'check',
+    'comment',
+    'futbol-o',
+    'life-bouy',
+    'paper-plane-o',
+    'television',
+    'file-o',
+  ];
+
+  function getRandomIcon() {
+    return icons[pxDemo.getRandomData(9, 0)];
+  }
+
+  function createItem(root) {
+    itemCount++;
+
+    return '<li class="px-nav-item" id="link' + itemCount + '">' +
+             '<a href="#">' + (root ? ('<i class="px-nav-icon fa fa-' + getRandomIcon() + '"></i>') : '') + '<span class="px-nav-label">#item' + itemCount + '</span></a>' +
+           '</li>';
+  }
+
+  function createDropdown(root) {
+    dropdownCount++;
+
+    return '<li class="px-nav-item px-nav-dropdown" id="dropdown' + dropdownCount + '">' +
+             '<a href="#">' + (root ? ('<i class="px-nav-icon fa fa-' + getRandomIcon() + '"></i>') : '') + '<span class="px-nav-label">#dropdown' + dropdownCount + '</span></a>' +
+             '<ul class="px-nav-dropdown-menu"></ul>' +
+           '</li>';
+  }
+
+  function getLastDropdown() {
+    return $('#px-nav-dom-example .px-nav-content > .px-nav-dropdown').last();
+  }
+
+  function getLastItem($parent) {
+    if ($parent) {
+      if (!$parent.length) { return null; }
+
+      $parent = $('#px-nav-dom-example').pxNav('getDropdownContainer', $parent);
+    } else {
+      $parent = $('#px-nav-dom-example .px-nav-content');
+    }
+
+    return $parent.find('> .px-nav-item').last();
+  }
+
+  $(function() {
+    // Initialize nav
+    $('#px-nav-dom-example').pxNav();
+
+    // Button hanblers
+    //
+
+    $('#px-nav-dom-append-item-root').on('click', function() {
+      $('#px-nav-dom-example').pxNav('append', createItem(true));
+    });
+
+    $('#px-nav-dom-append-dropdown-root').on('click', function() {
+      $('#px-nav-dom-example').pxNav('append', createDropdown(true));
+    });
+
+    $('#px-nav-dom-prepend-item-root').on('click', function() {
+      $('#px-nav-dom-example').pxNav('prepend', createItem(true));
+    });
+
+    $('#px-nav-dom-prepend-dropdown-root').on('click', function() {
+      $('#px-nav-dom-example').pxNav('prepend', createDropdown(true));
+    });
+
+    $('#px-nav-dom-insert-item-root').on('click', function() {
+      $('#px-nav-dom-example').pxNav('insert', createItem(true), 3);
+    });
+
+    $('#px-nav-dom-insert-dropdown-root').on('click', function() {
+      $('#px-nav-dom-example').pxNav('insert', createDropdown(true), 3);
+    });
+
+    $('#px-nav-dom-append-item-lastDropdown').on('click', function() {
+      var $dropdown = getLastDropdown();
+
+      if (!$dropdown.length) { return; }
+
+      $('#px-nav-dom-example').pxNav('append', createItem(), $dropdown);
+    });
+
+    $('#px-nav-dom-append-dropdown-lastDropdown').on('click', function() {
+      var $dropdown = getLastDropdown();
+
+      if (!$dropdown.length) { return; }
+
+      var $dropdown = $('#px-nav-dom-example').pxNav('append', createDropdown(), $dropdown);
+
+      // Append subitems
+      $('#px-nav-dom-example').pxNav('append', createItem() + createItem() + createItem(), $dropdown);
+    });
+
+    $('#px-nav-dom-prepend-item-lastDropdown').on('click', function() {
+      var $dropdown = getLastDropdown();
+
+      if (!$dropdown.length) { return; }
+
+      $('#px-nav-dom-example').pxNav('prepend', createItem(), $dropdown);
+    });
+
+    $('#px-nav-dom-prepend-dropdown-lastDropdown').on('click', function() {
+      var $dropdown = getLastDropdown();
+
+      if (!$dropdown.length) { return; }
+
+      var $dropdown = $('#px-nav-dom-example').pxNav('prepend', createDropdown(), $dropdown);
+
+      // Append subitems
+      $('#px-nav-dom-example').pxNav('append', createItem() + createItem() + createItem(), $dropdown);
+    });
+
+    $('#px-nav-dom-insert-item-lastDropdown').on('click', function() {
+      var $dropdown = getLastDropdown();
+
+      if (!$dropdown.length) { return; }
+
+      $('#px-nav-dom-example').pxNav('insert', createItem(), 3, $dropdown);
+    });
+
+    $('#px-nav-dom-insert-dropdown-lastDropdown').on('click', function() {
+      var $dropdown = getLastDropdown();
+
+      if (!$dropdown.length) { return; }
+
+      var $dropdown = $('#px-nav-dom-example').pxNav('insert', createDropdown(), 3, $dropdown);
+
+      // Append subitems
+      $('#px-nav-dom-example').pxNav('append', createItem() + createItem() + createItem(), $dropdown);
+    });
+
+    $('#px-nav-dom-remove-item').on('click', function() {
+      var $item = getLastItem();
+
+      if (!$item || !$item.length) { return; }
+
+      $('#px-nav-dom-example').pxNav('remove', $item);
+    });
+
+    $('#px-nav-dom-remove-item-dropdown').on('click', function() {
+      var $item = getLastItem(getLastDropdown());
+
+      if (!$item || !$item.length) { return; }
+
+      $('#px-nav-dom-example').pxNav('remove', $item);
+    });
+  });
+</script>
+      </div>
+
+    </div>
+
+    <div class="tab-pane" id="angular">
+      <h4 class="doc-subheader">Usage</h4>
+
+      <p>To use <strong>PxNav</strong> plugin, you need to include the next scripts:</p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;script src="path/to/js/pixeladmin/plugins/px-nav.js"&gt;&lt;/script&gt;
+&lt;script src="path/to/js/pixeladmin/directives/angular-px-nav.js"&gt;&lt;/script&gt;
+        </code></pre>
+      </div>
+
+      <p>Then inject the plugin into your angular application:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">angular.module('yourApp', ['px-nav']);</code></pre>
+      </div>
+
+      <p>Alternatively, you can include <strong>PxNav</strong> plugin using <strong>ocLazyLoad</strong> plugin:</p>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+$ocLazyLoad.load([
+  {
+    name: 'px-nav',
+    files: [
+      'path/to/js/pixeladmin/plugins/px-nav.js',
+      'path/to/js/pixeladmin/directives/angular-px-nav.js',
+    ],
+  },
+]);
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader"><code>px-nav</code> directive</h4>
+
+      <div class="alert alert-info">
+        <p>
+          Specify <code>template-url</code> attribute on the element to
+          load nav content from a template.
+        </p>
+
+        <p>
+          <strong>NOTE:</strong> The <code>template-url</code> attribute
+          expects an angular expression instead of a literal string.
+        </p>
+
+        <div class="example nocode">
+          <pre><code>
+&lt;px-nav&gt;...content...&lt;/px-nav&gt;
+&lt;px-nav template-url="'path/to/nav/template.html'"&gt;&lt;/px-nav&gt;
+          </code></pre>
+        </div>
+      </div>
+
+      <p>
+        You can use <code>px-nav</code> directive where you want.
+        And when the scope is destroyed the directive will be destroyed.
+      </p>
+
+      <div class="example" data-accent="<(px-nav)||(template-url=''.+?'')">
+<div ng-app="ngNavApp">
+  <div style="position: relative; min-height: 250px; overflow: hidden;" class="clearfix">
+    <!-- Default nav -->
+    <px-nav class="px-nav-left">
+      <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+        <span class="px-nav-toggle-arrow"></span>
+        <span class="navbar-toggle-icon"></span>
+        <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+      </button>
+
+      <ul class="px-nav-content">
+        <li class="px-nav-item">
+          <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">Default</span></a>
+        </li>
+      </ul>
+    </px-nav>
+
+    <!-- Nav with template -->
+    <px-nav class="px-nav-right" template-url="'docs/nav/template.html'"></px-nav>
+
+    <script id="docs/nav/template.html" type="text/ng-template">
+      <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+        <span class="px-nav-toggle-arrow"></span>
+        <span class="navbar-toggle-icon"></span>
+        <span class="px-nav-toggle-label" style="font-size: 11px;">HIDE MENU</span>
+      </button>
+
+      <ul class="px-nav-content">
+        <li class="px-nav-item">
+          <a href="#"><i class="px-nav-icon fa fa-hand-grab-o"></i><span class="px-nav-label">With template</span></a>
+        </li>
+      </ul>
+    </script>
+
+    <nav class="navbar px-navbar">
+      <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+      <button type="button" class="navbar-toggle collapsed"><i class="navbar-toggle-icon"></i></button>
+      <div class="navbar-collapse"></div>
+    </nav>
+
+    <div class="px-content">
+      Page content.
+    </div>
+  </div>
+</div>
+
+<!-- Load scripts -->
+<!-- <script src="assets/js/angular/pixeladmin/plugins/px-nav.js"></script> -->
+<script src="assets/js/angular/pixeladmin/directives/angular-px-nav.js"></script>
+
+<script>
+  angular.module('ngNavApp', [ 'px-nav' ]);
+</script>
+      </div>
+
+      <h4 class="doc-subheader">Instance</h4>
+
+      <p>
+        You can define <code>instance</code> attribute to get a pointer to PxNav element:
+      </p>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-nav instance="ctrl.$nav"&gt;...&lt;/px-nav&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  // Pointer
+  this.$nav = null;
+
+  // ...
+
+  // Then, after the initialization, you can call plugin methods:
+  this.$nav('expand');
+  this.$nav('isFixed');
+  this.$nav('append', $item);
+});
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Options</h4>
+
+      <p>
+        <strong>PxNav</strong>'s options can be specified as attributes.
+        All options expect an angular expression instead of a literal string.
+      </p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>accordion</li>
+            <li>animate</li>
+            <li>dropdown-close-delay</li>
+            <li>enable-tooltips</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>modes</li>
+            <li>storage-prefix</li>
+            <li>store-state</li>
+            <li>transition-duration</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-nav accordion="false"
+        enable-tooltips="false"
+        storage-prefix="'main-nav.'"&gt;...&lt;/px-nav&gt;
+        </code></pre>
+      </div>
+
+      <h4 class="doc-subheader">Events</h4>
+
+      <p>
+        Event handlers can be bound using attributes:
+      </p>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>on-collapse</li>
+            <li>on-collapsed</li>
+            <li>on-destroy</li>
+            <li>on-dropdown-close</li>
+            <li>on-dropdown-closed</li>
+            <li>on-dropdown-frozen</li>
+          </ul>
+        </div>
+        <div class="col-sm-6">
+          <ul class="options-list">
+            <li>on-dropdown-open</li>
+            <li>on-dropdown-opened</li>
+            <li>on-dropdown-unfrozen</li>
+            <li>on-expand</li>
+            <li>on-expanded</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="example nocode">
+        <pre><code>
+&lt;px-nav on-collapse="ctrl.collapse"
+        on-dropdown-open="ctrl.dropdownOpen"&gt;...&lt;/px-nav&gt;
+        </code></pre>
+      </div>
+
+      <div class="example nocode">
+        <pre><code data-lang="js">
+function SomeController() {
+  this.collapse = function(e) { ... }
+  this.dropdownOpen = function(e) { ... }
+});
+        </code></pre>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_px-nav.html');
+  </script>
+</body>
+</html>

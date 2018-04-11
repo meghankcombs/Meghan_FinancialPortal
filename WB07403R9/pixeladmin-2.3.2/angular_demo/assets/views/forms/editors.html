@@ -1,0 +1,43 @@
+<div ng-controller="FormsEditorsCtrl as editorsCtrl">
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Editors</h1>
+  </div>
+
+  <div class="panel" ng-controller="FormsEditorsMarkdownCtrl as ctrl">
+    <div class="panel-heading">
+      <span class="panel-title">Markdown</span>
+      <div class="panel-heading-controls">
+        <label for="markdown-layout-switcher" class="panel-heading-text font-size-11 font-weight-semibold"><span class="valign-middle">BOXED&nbsp;</span></label>
+        <label for="markdown-layout-switcher" class="switcher switcher-rounded switcher-sm switcher-success switcher-blank">
+          <input type="checkbox" id="markdown-layout-switcher" ng-click="editorsCtrl.switchLayout($event)">
+          <div class="switcher-indicator">
+            <div class="switcher-yes">ON</div>
+            <div class="switcher-no">OFF</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="panel-body">
+      <textarea markdown-editor ng-model="ctrl.text" footer="ctrl.footer" on-change="ctrl.onChange" class="form-control" rows="10"></textarea>
+    </div>
+  </div>
+
+  <div class="panel" ng-controller="FormsEditorsSummernoteCtrl as ctrl">
+    <div class="panel-heading">
+      <span class="panel-title">Summernote</span>
+      <div class="panel-heading-controls">
+        <label for="summernote-layout-switcher" class="panel-heading-text font-size-11 font-weight-semibold"><span class="valign-middle">BOXED&nbsp;</span></label>
+        <label for="summernote-layout-switcher" class="switcher switcher-rounded switcher-sm switcher-success switcher-blank">
+          <input type="checkbox" id="summernote-layout-switcher" ng-click="editorsCtrl.switchLayout($event)">
+          <div class="switcher-indicator">
+            <div class="switcher-yes">ON</div>
+            <div class="switcher-no">OFF</div>
+          </div>
+        </label>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div summernote height="200" config="ctrl.options">Summernote Editor</div>
+    </div>
+  </div>
+</div>

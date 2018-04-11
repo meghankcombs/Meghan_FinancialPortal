@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <title>Validation - Forms - PixelAdmin: Responsive Bootstrap Template</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+    _pxDemo_loadStylesheet('assets/css/widgets.min.css', 'px-demo-stylesheet-widgets');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <!-- Pace.js -->
+  <script src="assets/pace/pace.min.js"></script>
+
+  <script src="assets/demo/demo.js"></script>
+</head>
+<body>
+  <nav class="px-nav px-nav-left">
+    <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+      <span class="px-nav-toggle-arrow"></span>
+      <span class="navbar-toggle-icon"></span>
+      <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+    </button>
+
+    <ul class="px-nav-content">
+      <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <img src="assets/demo/avatars/1.jpg" alt="" class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
+        <div class="font-size-16"><span class="font-weight-light">Welcome, </span><strong>John</strong></div>
+        <div class="btn-group" style="margin-top: 4px;">
+          <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-envelope"></i></a>
+          <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-user"></i></a>
+          <a href="#" class="btn btn-xs btn-primary btn-outline"><i class="fa fa-cog"></i></a>
+          <a href="#" class="btn btn-xs btn-danger btn-outline"><i class="fa fa-power-off"></i></a>
+        </div>
+      </li>
+
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-ios-pulse-strong"></i><span class="px-nav-label">Dashboards<span class="label label-danger">5</span></span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="index.html"><span class="px-nav-label">Default</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-analytics.html"><span class="px-nav-label">Analytics</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-videos.html"><span class="px-nav-label">Videos</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-financial.html"><span class="px-nav-label">Financial</span></a></li>
+          <li class="px-nav-item"><a href="dashboards-blog.html"><span class="px-nav-label">Blog</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item">
+        <a href="boxes.html"><i class="px-nav-icon ion-ios-analytics"></i><span class="px-nav-label">Boxes</span></a>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-erlenmeyer-flask"></i><span class="px-nav-label">Widgets</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="widgets-lists.html"><span class="px-nav-label">Lists</span></a></li>
+          <li class="px-nav-item"><a href="widgets-pricing.html"><span class="px-nav-label">Pricing</span></a></li>
+          <li class="px-nav-item"><a href="widgets-timeline.html"><span class="px-nav-label">Timeline</span></a></li>
+          <li class="px-nav-item"><a href="widgets-misc.html"><span class="px-nav-label">Misc</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item">
+        <a href="utilities.html"><i class="px-nav-icon ion-cube"></i><span class="px-nav-label">Utilities</span></a>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-monitor"></i><span class="px-nav-label">UI elements</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="ui-buttons.html"><span class="px-nav-label">Buttons</span></a></li>
+          <li class="px-nav-item"><a href="ui-tabs.html"><span class="px-nav-label">Tabs & Accordions</span></a></li>
+          <li class="px-nav-item"><a href="ui-modals.html"><span class="px-nav-label">Modals</span></a></li>
+          <li class="px-nav-item"><a href="ui-alerts.html"><span class="px-nav-label">Alerts & Tooltips</span></a></li>
+          <li class="px-nav-item"><a href="ui-panels.html"><span class="px-nav-label">Panels</span></a></li>
+          <li class="px-nav-item"><a href="ui-sortable.html"><span class="px-nav-label">Sortable</span></a></li>
+          <li class="px-nav-item"><a href="ui-carousel.html"><span class="px-nav-label">Carousel</span></a></li>
+          <li class="px-nav-item"><a href="ui-misc.html"><span class="px-nav-label">Misc</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-android-checkbox-outline"></i><span class="px-nav-label">Forms</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="forms-layout.html"><span class="px-nav-label">Layout</span></a></li>
+          <li class="px-nav-item"><a href="forms-controls.html"><span class="px-nav-label">Controls</span></a></li>
+          <li class="px-nav-item"><a href="forms-components.html"><span class="px-nav-label">Components</span></a></li>
+          <li class="px-nav-item"><a href="forms-advanced.html"><span class="px-nav-label">Advanced</span></a></li>
+          <li class="px-nav-item"><a href="forms-sliders.html"><span class="px-nav-label">Sliders</span></a></li>
+          <li class="px-nav-item"><a href="forms-pickers.html"><span class="px-nav-label">Pickers</span></a></li>
+          <li class="px-nav-item"><a href="forms-editors.html"><span class="px-nav-label">Editors</span></a></li>
+          <li class="px-nav-item"><a href="forms-validation.html"><span class="px-nav-label">Validation</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-ios-keypad"></i><span class="px-nav-label">Tables</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="tables-bootstrap.html"><span class="px-nav-label">Bootstrap</span></a></li>
+          <li class="px-nav-item"><a href="tables-datatables.html"><span class="px-nav-label">DataTables</span></a></li>
+          <li class="px-nav-item"><a href="tables-editable-table.html"><span class="px-nav-label">editableTableWidget</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-stats-bars"></i><span class="px-nav-label">Charts</span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item"><a href="charts-flot.html"><span class="px-nav-label">Flot.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-morris.html"><span class="px-nav-label">Morris.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-chart.html"><span class="px-nav-label">Chart.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-chartist.html"><span class="px-nav-label">Chartist</span></a></li>
+          <li class="px-nav-item"><a href="charts-c3.html"><span class="px-nav-label">C3.js</span></a></li>
+          <li class="px-nav-item"><a href="charts-sparkline.html"><span class="px-nav-label">Sparkline</span></a></li>
+          <li class="px-nav-item"><a href="charts-easy-pie-chart.html"><span class="px-nav-label">Easy Pie Chart</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item px-nav-dropdown">
+        <a href="#"><i class="px-nav-icon ion-ios-paper"></i><span class="px-nav-label">Pages<span class="label label-info">22</span></span></a>
+
+        <ul class="px-nav-dropdown-menu">
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Authentication</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-signin-v1.html"><span class="px-nav-label">Sign In v1</span></a></li>
+              <li class="px-nav-item"><a href="pages-signin-v2.html"><span class="px-nav-label">Sign In v2</span></a></li>
+              <li class="px-nav-item"><a href="pages-signup-v1.html"><span class="px-nav-label">Sign Up v1</span></a></li>
+              <li class="px-nav-item"><a href="pages-signup-v2.html"><span class="px-nav-label">Sign Up v2</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Blog</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-blog-posts.html"><span class="px-nav-label">Posts</span></a></li>
+              <li class="px-nav-item"><a href="pages-blog-post.html"><span class="px-nav-label">Post</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Error pages</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-404.html"><span class="px-nav-label">404</span></a></li>
+              <li class="px-nav-item"><a href="pages-500.html"><span class="px-nav-label">500</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Forum</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-forum-forums-list.html"><span class="px-nav-label">Forums list</span></a></li>
+              <li class="px-nav-item"><a href="pages-forum-topics.html"><span class="px-nav-label">Topics</span></a></li>
+              <li class="px-nav-item"><a href="pages-forum-thread.html"><span class="px-nav-label">Thread</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item px-nav-dropdown">
+            <a href="#"><span class="px-nav-label">Messages</span></a>
+
+            <ul class="px-nav-dropdown-menu">
+              <li class="px-nav-item"><a href="pages-messages-list.html"><span class="px-nav-label">List</span></a></li>
+              <li class="px-nav-item"><a href="pages-messages-item.html"><span class="px-nav-label">Item</span></a></li>
+              <li class="px-nav-item"><a href="pages-messages-new.html"><span class="px-nav-label">New message</span></a></li>
+            </ul>
+          </li>
+          <li class="px-nav-item"><a href="pages-about-us.html"><span class="px-nav-label">About Us</span></a></li>
+          <li class="px-nav-item"><a href="pages-account.html"><span class="px-nav-label">Account</span></a></li>
+          <li class="px-nav-item"><a href="pages-invoice.html"><span class="px-nav-label">Invoice</span></a></li>
+          <li class="px-nav-item"><a href="pages-pricing.html"><span class="px-nav-label">Pricing</span></a></li>
+          <li class="px-nav-item"><a href="pages-profile-v1.html"><span class="px-nav-label">Profile v1</span></a></li>
+          <li class="px-nav-item"><a href="pages-profile-v2.html"><span class="px-nav-label">Profile v2</span></a></li>
+          <li class="px-nav-item"><a href="pages-search-results.html"><span class="px-nav-label">Search results</span></a></li>
+          <li class="px-nav-item"><a href="pages-support-center.html"><span class="px-nav-label">Support center</span></a></li>
+          <li class="px-nav-item"><a href="pages-blank.html"><span class="px-nav-label">Blank</span></a></li>
+        </ul>
+      </li>
+      <li class="px-nav-item">
+        <a href="../color_generator/index.html"><i class="px-nav-icon ion-aperture"></i><span class="px-nav-label">Color Generator</span></a>
+      </li>
+      <li class="px-nav-item">
+        <a href="../docs/index.html" target="_blank" class="bg-success text-white b-a-0"><i class="px-nav-icon ion-social-buffer"></i><span class="px-nav-label">Docs</span></a>
+      </li>
+      <li class="px-nav-box b-t-1 p-a-2">
+        <a href="pages-invoice.html" class="btn btn-primary btn-block btn-outline">Create Invoice</a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar px-navbar">
+    <!-- Header -->
+    <div class="navbar-header">
+      <a class="navbar-brand px-demo-brand" href="index.html"><span class="px-demo-logo bg-primary"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>PixelAdmin</a>
+    </div>
+
+    <!-- Navbar togglers -->
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-demo-navbar-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="px-demo-navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+          <div class="dropdown-multi-column">
+            <ul class="dropdown-menu dropdown-column col-md-4">
+              <li class="dropdown-header">Business</li>
+              <li><a href="#">Design &amp; Urban Ecologies</a></li>
+              <li><a href="#">Fine Art</a></li>
+              <li><a href="#">Fashion Design</a></li>
+              <li><a href="#">Strategic Design</a></li>
+            </ul>
+            <ul class="dropdown-menu dropdown-column col-md-4">
+              <li class="dropdown-header">Liberal Arts</li>
+              <li><a href="#">Anthropology</a></li>
+              <li><a href="#">Media Studies</a></li>
+              <li><a href="#">Philosophy</a></li>
+            </ul>
+            <ul class="dropdown-menu dropdown-column col-md-4">
+              <li class="dropdown-header">Social Sciences</li>
+              <li><a href="#">Food Studies</a></li>
+              <li><a href="#">Journalism</a></li>
+              <li><a href="#">Non Profit Management</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bookmark m-r-1"></i>Links</a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-toggle">
+              <a href>Products</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Recent</a></li>
+                <li><a href="#">Featured</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-plus m-r-1"></i>Add product</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-toggle">
+              <a href>Users</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Recent</a></li>
+                <li><a href="#">Banned</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-user-plus m-r-1"></i>Create user</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-toggle">
+              <a href>Blog</a>
+              <ul class="dropdown-menu">
+                <li><a href="#">All</a></li>
+                <li><a href="#">Popular</a></li>
+                <li class="divider"></li>
+                <li><a href="#"><i class="fa fa-edit m-r-1"></i>New blog post</a></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li><a href="#">Overview</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="https://stackoverflow.com" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="px-navbar-icon fa fa-bullhorn font-size-14"></i>
+            <span class="px-navbar-icon-label">Notifications</span>
+            <span class="px-navbar-label label label-success">5</span>
+          </a>
+          <div class="dropdown-menu p-a-0" style="width: 300px">
+            <div id="navbar-notifications" style="height: 280px; position: relative;">
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-danger">SYSTEM</div>
+                <div class="widget-notifications-description"><strong>Error 500</strong>: Syntax error in index.php at line <strong>461</strong>.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-hdd-o bg-danger"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-info">STORE</div>
+                <div class="widget-notifications-description">You have <strong>9</strong> new orders.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-truck bg-info"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-default">CRON DAEMON</div>
+                <div class="widget-notifications-description">Job <strong>"Clean DB"</strong> has been completed.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-clock-o bg-default"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-success">SYSTEM</div>
+                <div class="widget-notifications-description">Server <strong>up</strong>.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-hdd-o bg-success"></div>
+              </div>
+
+              <div class="widget-notifications-item">
+                <div class="widget-notifications-title text-warning">SYSTEM</div>
+                <div class="widget-notifications-description"><strong>Warning</strong>: Processor load <strong>92%</strong>.</div>
+                <div class="widget-notifications-date">12h ago</div>
+                <div class="widget-notifications-icon fa fa-hdd-o bg-warning"></div>
+              </div>
+            </div>
+
+            <a href="#" class="widget-more-link">MORE NOTIFICATIONS</a>
+          </div>
+        </li>
+
+        <li class="dropdown">
+          <a href="https://google.com" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <i class="px-navbar-icon fa fa-envelope font-size-14"></i>
+            <span class="px-navbar-icon-label">Income messages</span>
+            <span class="px-navbar-label label label-danger">8</span>
+          </a>
+          <div class="dropdown-menu p-a-0" style="width: 300px;">
+            <div id="navbar-messages" style="height: 280px; position: relative;">
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/2.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Robert Jang</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/3.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Michelle Bortz</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/4.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Timothy Owens</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/5.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Denise Steiner</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/2.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Robert Jang</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/3.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Michelle Bortz</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/4.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Timothy Owens</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+
+              <div class="widget-messages-alt-item">
+                <img src="assets/demo/avatars/5.jpg" alt="" class="widget-messages-alt-avatar">
+                <a href="#" class="widget-messages-alt-subject text-truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a>
+                <div class="widget-messages-alt-description">from <a href="#">Denise Steiner</a></div>
+                <div class="widget-messages-alt-date">2h ago</div>
+              </div>
+            </div>
+
+            <a href="#" class="widget-more-link">MORE MESSAGES</a>
+          </div> <!-- / .dropdown-menu -->
+        </li>
+
+        <li>
+          <form class="navbar-form" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" style="width: 140px;">
+            </div>
+          </form>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/demo/avatars/1.jpg" alt="" class="px-navbar-image">
+            <span class="hidden-md">John Doe</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="pages-profile-v2.html"><span class="label label-warning pull-xs-right"><i class="fa fa-asterisk"></i></span>Profile</a></li>
+            <li><a href="pages-account.html">Account</a></li>
+            <li><a href="pages-messages-list.html"><i class="dropdown-icon fa fa-envelope"></i>&nbsp;&nbsp;Messages</a></li>
+            <li class="divider"></li>
+            <li><a href="pages-signin-v1.html"><i class="dropdown-icon fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav>
+
+  <div class="px-content">
+    <div class="page-header">
+      <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Validation</h1>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Example</span>
+      </div>
+      <div class="panel-body">
+        <form class="form-horizontal" id="validation-form">
+          <div class="form-group">
+            <label for="validation-email" class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="validation-email" name="validation-email" placeholder="Email">
+              <small class="text-muted form-help-text">Example block-level help text here.</small>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="validation-password" name="validation-password" placeholder="Password">
+              <small class="text-muted form-help-text">Example block-level help text here.</small>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-password-confirmation" class="col-sm-3 control-label">Confirm password</label>
+            <div class="col-sm-9">
+              <input type="password" class="form-control" id="validation-password-confirmation" name="validation-password-confirmation" placeholder="Confirm password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-required" class="col-sm-3 control-label">Required</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="validation-required" name="validation-required" placeholder="Required">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-url" class="col-sm-3 control-label">URL</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="validation-url" name="validation-url" placeholder="Url">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-phone" class="col-sm-3 control-label">Phone</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="validation-phone" name="validation-phone" placeholder="Phone: (999) 999-9999">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-select" class="col-sm-3 control-label">Select</label>
+            <div class="col-sm-9">
+              <select class="form-control" id="validation-select" name="validation-select">
+                <option value="">Select gear...</option>
+                <optgroup label="Climbing">
+                  <option value="pitons">Pitons</option>
+                  <option value="cams">Cams</option>
+                  <option value="nuts">Nuts</option>
+                  <option value="bolts">Bolts</option>
+                  <option value="stoppers">Stoppers</option>
+                  <option value="sling">Sling</option>
+                </optgroup>
+                <optgroup label="Skiing">
+                  <option value="skis">Skis</option>
+                  <option value="skins">Skins</option>
+                  <option value="poles">Poles</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-multiselect" class="col-sm-3 control-label">Multiselect</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="validation-multiselect" id="validation-multiselect" multiple="multiple">
+                <optgroup label="Climbing">
+                  <option value="pitons">Pitons</option>
+                  <option value="cams">Cams</option>
+                  <option value="nuts">Nuts</option>
+                  <option value="bolts">Bolts</option>
+                  <option value="stoppers">Stoppers</option>
+                  <option value="sling">Sling</option>
+                </optgroup>
+                <optgroup label="Skiing">
+                  <option value="skis">Skis</option>
+                  <option value="skins">Skins</option>
+                  <option value="poles">Poles</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-select2" class="col-sm-3 control-label">Select2</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="validation-select2" id="validation-select2">
+                <option></option>
+                <option value="ANGULAR">AngularJS</option>
+                <option value="REACT">React</option>
+                <option value="BACKBONE">Backbone</option>
+                <option value="EMBER">Ember</option>
+                <option value="TODOMVC">TodoMVC</option>
+                <option value="POLYMER">Polymer</option>
+                <option value="KNOCKOUT">Knockout</option>
+                <option value="AURELIA">Aurelia</option>
+                <option value="SPINE">Spine</option>
+                <option value="BRICK">Brick</option>
+                <option value="NUCLEAR">Nuclear.js</option>
+                <option value="DOJO">Dojo</option>
+                <option value="MATRESHKA">Matreshka</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-select2-multi" class="col-sm-3 control-label">Select2 Multiple</label>
+            <div class="col-sm-9">
+              <select class="form-control" name="validation-select2-multi" id="validation-select2-multi" multiple="multiple">
+                <optgroup label="Climbing">
+                  <option value="pitons">Pitons</option>
+                  <option value="cams">Cams</option>
+                  <option value="nuts">Nuts</option>
+                  <option value="bolts">Bolts</option>
+                  <option value="stoppers">Stoppers</option>
+                  <option value="sling">Sling</option>
+                </optgroup>
+                <optgroup label="Skiing">
+                  <option value="skis">Skis</option>
+                  <option value="skins">Skins</option>
+                  <option value="poles">Poles</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-text" class="col-sm-3 control-label">Text</label>
+            <div class="col-sm-9">
+              <textarea class="form-control" name="validation-text" id="validation-text"></textarea>
+            </div>
+          </div>
+          <div class="form-group form-message-light">
+            <label for="validation-message-light" class="col-sm-3 control-label">Light error</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="validation-message-light" name="validation-message-light" placeholder="Required">
+              <small class="text-muted form-help-text">Example block-level help text here.</small>
+            </div>
+          </div>
+          <div class="form-group form-message-dark">
+            <label for="validation-message-dark" class="col-sm-3 control-label">Dark error</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="validation-message-dark" name="validation-message-dark" placeholder="Required">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-file" class="col-sm-3 control-label">File</label>
+            <div class="col-sm-9">
+              <input type="file" class="validation-file" id="validation-file" name="validation-file">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="validation-file-custom" class="col-sm-3 control-label">Custom file</label>
+            <div class="col-sm-9">
+              <label id="validation-file-custom-label" class="custom-file px-file" for="validation-file-custom">
+                <input type="file" id="validation-file-custom" name="validation-file-custom" class="custom-file-input">
+                <span class="custom-file-control form-control">Choose file...</span>
+                <div class="px-file-buttons">
+                  <button type="button" class="btn btn-xs px-file-clear">Clear</button>
+                  <button type="button" class="btn btn-primary btn-xs px-file-browse">Browse</button>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Switcher</label>
+            <div class="col-sm-9">
+              <label for="validation-switcher" class="switcher switcher-success">
+                <input type="checkbox" id="validation-switcher" name="validation-switcher">
+                <div class="switcher-indicator">
+                  <div class="switcher-yes">YES</div>
+                  <div class="switcher-no">NO</div>
+                </div>
+                Check me
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Radios</label>
+            <div class="col-sm-9">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="validation-radios">
+                  Option one is this and that—be sure to include why it's great
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="validation-radios">
+                  Option two can be something else and selecting it will deselect option one
+                </label>
+              </div>
+              <div class="radio disabled">
+                <label>
+                  <input type="radio" name="validation-radios">
+                  Option three is disabled
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Custom radios</label>
+            <div class="col-sm-9">
+              <label class="custom-control custom-radio" for="validation-radios-custom-1">
+                <input type="radio" id="validation-radios-custom-1" name="validation-radios-custom" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Option one is this and that—be sure to include why it's great
+              </label>
+              <label class="custom-control custom-radio" for="validation-radios-custom-2">
+                <input type="radio" id="validation-radios-custom-2" name="validation-radios-custom" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Option two can be something else and selecting it will deselect option one
+              </label>
+              <label class="custom-control custom-radio" for="validation-radios-custom-3">
+                <input type="radio" id="validation-radios-custom-3" name="validation-radios-custom" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Option three is disabled
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Checkbox</label>
+            <div class="col-sm-9">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="validation-checkbox"> Check me out
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-3 control-label">Checkbox group</label>
+            <div class="col-sm-9">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="validation-checkbox-group-1"> One
+                </label>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="validation-checkbox-group-2"> Two
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Custom checkbox</label>
+            <div class="col-md-9">
+              <label class="custom-control custom-checkbox" for="validation-checkbox-custom">
+                <input type="checkbox" id="validation-checkbox-custom" name="validation-checkbox-custom" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Check me out
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Custom checkbox group</label>
+            <div class="col-md-9">
+              <label class="custom-control custom-checkbox" for="validation-checkbox-custom-group-1">
+                <input type="checkbox" id="validation-checkbox-custom-group-1" name="validation-checkbox-custom-group-1" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                One
+              </label>
+              <label class="custom-control custom-checkbox" for="validation-checkbox-custom-group-2">
+                <input type="checkbox" id="validation-checkbox-custom-group-2" name="validation-checkbox-custom-group-2" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Two
+              </label>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Within wizard</span>
+      </div>
+      <div class="wizard panel-wizard" id="wizard-validation">
+        <div class="wizard-wrapper">
+          <ul class="wizard-steps">
+            <li data-target="#wizard-account" class="active">
+              <span class="wizard-step-number">1</span>
+              <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+              <span class="wizard-step-caption">
+                Account
+                <span class="wizard-step-description">Setup your account</span>
+              </span>
+            </li>
+            <li data-target="#wizard-profile">
+              <span class="wizard-step-number">2</span>
+              <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+              <span class="wizard-step-caption">
+                Profile
+                <span class="wizard-step-description">Configure profile</span>
+              </span>
+            </li>
+            <li data-target="#wizard-credit-card">
+              <span class="wizard-step-number">3</span>
+              <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+              <span class="wizard-step-caption">
+                Credit card
+                <span class="wizard-step-description">Credit card info</span>
+              </span>
+            </li>
+            <li data-target="#wizard-finish">
+              <span class="wizard-step-number">4</span>
+              <span class="wizard-step-complete"><i class="fa fa-check"></i></span>
+              <span class="wizard-step-caption">
+                Finish
+              </span>
+            </li>
+          </ul>
+        </div>
+        <div class="wizard-content">
+          <form class="wizard-pane active" id="wizard-account">
+            <fieldset class="form-group">
+              <label for="wizard-username">Username</label>
+              <input type="text" name="wizard-username" class="form-control" id="wizard-username">
+            </fieldset>
+            <div class="row">
+              <div class="col-md-6">
+                <fieldset class="form-group">
+                  <label for="wizard-password">Password</label>
+                  <input type="password" name="wizard-password" class="form-control" id="wizard-password">
+                </fieldset>
+              </div>
+              <div class="col-md-6">
+                <fieldset class="form-group">
+                  <label for="wizard-repeat-password">Repeat password</label>
+                  <input type="password" name="wizard-repeat-password" class="form-control" id="wizard-repeat-password">
+                </fieldset>
+              </div>
+            </div>
+            <fieldset class="form-group">
+              <label for="wizard-email">E-mail</label>
+              <input type="email" name="wizard-email" class="form-control" id="wizard-email">
+            </fieldset>
+
+            <div class="panel-wide-block p-x-3 p-t-3 b-t-1 bg-white text-xs-right">
+              <button type="button" class="btn btn-primary" data-wizard-action="next">Next step</button>
+            </div>
+          </form>
+          <form class="wizard-pane" id="wizard-profile">
+            <fieldset class="form-group">
+              <label for="wizard-full-name">Full name</label>
+              <input type="text" name="wizard-full-name" class="form-control" id="wizard-full-name">
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label>Gender</label>
+              <div>
+                <label class="custom-control custom-radio radio-inline" for="wizard-gender-1">
+                  <input type="radio" id="wizard-gender-1" name="wizard-gender" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  Male
+                </label>
+                <label class="custom-control custom-radio radio-inline" for="wizard-gender-2">
+                  <input type="radio" id="wizard-gender-2" name="wizard-gender" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  Female
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label for="wizard-country">Country</label>
+              <select class="form-control" name="wizard-country" id="wizard-country" style="width: 100%" data-allow-clear="true">
+                <option></option>
+                <option value="AF">Afghanistan</option>
+                <option value="AX">&Aring;land Islands</option>
+                <option value="AL">Albania</option>
+                <option value="DZ">Algeria</option>
+                <option value="AS">American Samoa</option>
+                <option value="AD">Andorra</option>
+                <option value="AO">Angola</option>
+                <option value="AI">Anguilla</option>
+                <option value="AQ">Antarctica</option>
+                <option value="AG">Antigua and Barbuda</option>
+                <option value="AR">Argentina</option>
+                <option value="AM">Armenia</option>
+                <option value="AW">Aruba</option>
+                <option value="AU">Australia</option>
+                <option value="AT">Austria</option>
+                <option value="AZ">Azerbaijan</option>
+                <option value="BS">Bahamas</option>
+                <option value="BH">Bahrain</option>
+                <option value="BD">Bangladesh</option>
+                <option value="BB">Barbados</option>
+                <option value="BY">Belarus</option>
+                <option value="BE">Belgium</option>
+                <option value="BZ">Belize</option>
+                <option value="BJ">Benin</option>
+                <option value="BM">Bermuda</option>
+                <option value="BT">Bhutan</option>
+                <option value="BO">Bolivia, Plurinational State of</option>
+                <option value="BA">Bosnia and Herzegovina</option>
+                <option value="BW">Botswana</option>
+                <option value="BV">Bouvet Island</option>
+                <option value="BR">Brazil</option>
+                <option value="IO">British Indian Ocean Territory</option>
+                <option value="BN">Brunei Darussalam</option>
+                <option value="BG">Bulgaria</option>
+                <option value="BF">Burkina Faso</option>
+                <option value="BI">Burundi</option>
+                <option value="KH">Cambodia</option>
+                <option value="CM">Cameroon</option>
+                <option value="CA">Canada</option>
+                <option value="CV">Cape Verde</option>
+                <option value="KY">Cayman Islands</option>
+                <option value="CF">Central African Republic</option>
+                <option value="TD">Chad</option>
+                <option value="CL">Chile</option>
+                <option value="CN">China</option>
+                <option value="CX">Christmas Island</option>
+                <option value="CC">Cocos (Keeling) Islands</option>
+                <option value="CO">Colombia</option>
+                <option value="KM">Comoros</option>
+                <option value="CG">Congo</option>
+                <option value="CD">Congo, the Democratic Republic of the</option>
+                <option value="CK">Cook Islands</option>
+                <option value="CR">Costa Rica</option>
+                <option value="CI">C&ocirc;te d'Ivoire</option>
+                <option value="HR">Croatia</option>
+                <option value="CU">Cuba</option>
+                <option value="CY">Cyprus</option>
+                <option value="CZ">Czech Republic</option>
+                <option value="DK">Denmark</option>
+                <option value="DJ">Djibouti</option>
+                <option value="DM">Dominica</option>
+                <option value="DO">Dominican Republic</option>
+                <option value="EC">Ecuador</option>
+                <option value="EG">Egypt</option>
+                <option value="SV">El Salvador</option>
+                <option value="GQ">Equatorial Guinea</option>
+                <option value="ER">Eritrea</option>
+                <option value="EE">Estonia</option>
+                <option value="ET">Ethiopia</option>
+                <option value="FK">Falkland Islands (Malvinas)</option>
+                <option value="FO">Faroe Islands</option>
+                <option value="FJ">Fiji</option>
+                <option value="FI">Finland</option>
+                <option value="FR">France</option>
+                <option value="GF">French Guiana</option>
+                <option value="PF">French Polynesia</option>
+                <option value="TF">French Southern Territories</option>
+                <option value="GA">Gabon</option>
+                <option value="GM">Gambia</option>
+                <option value="GE">Georgia</option>
+                <option value="DE">Germany</option>
+                <option value="GH">Ghana</option>
+                <option value="GI">Gibraltar</option>
+                <option value="GR">Greece</option>
+                <option value="GL">Greenland</option>
+                <option value="GD">Grenada</option>
+                <option value="GP">Guadeloupe</option>
+                <option value="GU">Guam</option>
+                <option value="GT">Guatemala</option>
+                <option value="GG">Guernsey</option>
+                <option value="GN">Guinea</option>
+                <option value="GW">Guinea-Bissau</option>
+                <option value="GY">Guyana</option>
+                <option value="HT">Haiti</option>
+                <option value="HM">Heard Island and McDonald Islands</option>
+                <option value="VA">Holy See (Vatican City State)</option>
+                <option value="HN">Honduras</option>
+                <option value="HK">Hong Kong</option>
+                <option value="HU">Hungary</option>
+                <option value="IS">Iceland</option>
+                <option value="IN">India</option>
+                <option value="ID">Indonesia</option>
+                <option value="IR">Iran, Islamic Republic of</option>
+                <option value="IQ">Iraq</option>
+                <option value="IE">Ireland</option>
+                <option value="IM">Isle of Man</option>
+                <option value="IL">Israel</option>
+                <option value="IT">Italy</option>
+                <option value="JM">Jamaica</option>
+                <option value="JP">Japan</option>
+                <option value="JE">Jersey</option>
+                <option value="JO">Jordan</option>
+                <option value="KZ">Kazakhstan</option>
+                <option value="KE">Kenya</option>
+                <option value="KI">Kiribati</option>
+                <option value="KP">Korea, Democratic People's Republic of</option>
+                <option value="KR">Korea, Republic of</option>
+                <option value="KW">Kuwait</option>
+                <option value="KG">Kyrgyzstan</option>
+                <option value="LA">Lao People's Democratic Republic</option>
+                <option value="LV">Latvia</option>
+                <option value="LB">Lebanon</option>
+                <option value="LS">Lesotho</option>
+                <option value="LR">Liberia</option>
+                <option value="LY">Libyan Arab Jamahiriya</option>
+                <option value="LI">Liechtenstein</option>
+                <option value="LT">Lithuania</option>
+                <option value="LU">Luxembourg</option>
+                <option value="MO">Macao</option>
+                <option value="MK">Macedonia, the former Yugoslav Republic of</option>
+                <option value="MG">Madagascar</option>
+                <option value="MW">Malawi</option>
+                <option value="MY">Malaysia</option>
+                <option value="MV">Maldives</option>
+                <option value="ML">Mali</option>
+                <option value="MT">Malta</option>
+                <option value="MH">Marshall Islands</option>
+                <option value="MQ">Martinique</option>
+                <option value="MR">Mauritania</option>
+                <option value="MU">Mauritius</option>
+                <option value="YT">Mayotte</option>
+                <option value="MX">Mexico</option>
+                <option value="FM">Micronesia, Federated States of</option>
+                <option value="MD">Moldova, Republic of</option>
+                <option value="MC">Monaco</option>
+                <option value="MN">Mongolia</option>
+                <option value="ME">Montenegro</option>
+                <option value="MS">Montserrat</option>
+                <option value="MA">Morocco</option>
+                <option value="MZ">Mozambique</option>
+                <option value="MM">Myanmar</option>
+                <option value="NA">Namibia</option>
+                <option value="NR">Nauru</option>
+                <option value="NP">Nepal</option>
+                <option value="NL">Netherlands</option>
+                <option value="AN">Netherlands Antilles</option>
+                <option value="NC">New Caledonia</option>
+                <option value="NZ">New Zealand</option>
+                <option value="NI">Nicaragua</option>
+                <option value="NE">Niger</option>
+                <option value="NG">Nigeria</option>
+                <option value="NU">Niue</option>
+                <option value="NF">Norfolk Island</option>
+                <option value="MP">Northern Mariana Islands</option>
+                <option value="NO">Norway</option>
+                <option value="OM">Oman</option>
+                <option value="PK">Pakistan</option>
+                <option value="PW">Palau</option>
+                <option value="PS">Palestinian Territory, Occupied</option>
+                <option value="PA">Panama</option>
+                <option value="PG">Papua New Guinea</option>
+                <option value="PY">Paraguay</option>
+                <option value="PE">Peru</option>
+                <option value="PH">Philippines</option>
+                <option value="PN">Pitcairn</option>
+                <option value="PL">Poland</option>
+                <option value="PT">Portugal</option>
+                <option value="PR">Puerto Rico</option>
+                <option value="QA">Qatar</option>
+                <option value="RE">R&eacute;union</option>
+                <option value="RO">Romania</option>
+                <option value="RU">Russian Federation</option>
+                <option value="RW">Rwanda</option>
+                <option value="BL">Saint Barth&eacute;lemy</option>
+                <option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+                <option value="KN">Saint Kitts and Nevis</option>
+                <option value="LC">Saint Lucia</option>
+                <option value="MF">Saint Martin (French part)</option>
+                <option value="PM">Saint Pierre and Miquelon</option>
+                <option value="VC">Saint Vincent and the Grenadines</option>
+                <option value="WS">Samoa</option>
+                <option value="SM">San Marino</option>
+                <option value="ST">Sao Tome and Principe</option>
+                <option value="SA">Saudi Arabia</option>
+                <option value="SN">Senegal</option>
+                <option value="RS">Serbia</option>
+                <option value="SC">Seychelles</option>
+                <option value="SL">Sierra Leone</option>
+                <option value="SG">Singapore</option>
+                <option value="SK">Slovakia</option>
+                <option value="SI">Slovenia</option>
+                <option value="SB">Solomon Islands</option>
+                <option value="SO">Somalia</option>
+                <option value="ZA">South Africa</option>
+                <option value="GS">South Georgia and the South Sandwich Islands</option>
+                <option value="ES">Spain</option>
+                <option value="LK">Sri Lanka</option>
+                <option value="SD">Sudan</option>
+                <option value="SR">Suriname</option>
+                <option value="SJ">Svalbard and Jan Mayen</option>
+                <option value="SZ">Swaziland</option>
+                <option value="SE">Sweden</option>
+                <option value="CH">Switzerland</option>
+                <option value="SY">Syrian Arab Republic</option>
+                <option value="TW">Taiwan, Province of China</option>
+                <option value="TJ">Tajikistan</option>
+                <option value="TZ">Tanzania, United Republic of</option>
+                <option value="TH">Thailand</option>
+                <option value="TL">Timor-Leste</option>
+                <option value="TG">Togo</option>
+                <option value="TK">Tokelau</option>
+                <option value="TO">Tonga</option>
+                <option value="TT">Trinidad and Tobago</option>
+                <option value="TN">Tunisia</option>
+                <option value="TR">Turkey</option>
+                <option value="TM">Turkmenistan</option>
+                <option value="TC">Turks and Caicos Islands</option>
+                <option value="TV">Tuvalu</option>
+                <option value="UG">Uganda</option>
+                <option value="UA">Ukraine</option>
+                <option value="AE">United Arab Emirates</option>
+                <option value="GB">United Kingdom</option>
+                <option value="US">United States</option>
+                <option value="UM">United States Minor Outlying Islands</option>
+                <option value="UY">Uruguay</option>
+                <option value="UZ">Uzbekistan</option>
+                <option value="VU">Vanuatu</option>
+                <option value="VE">Venezuela, Bolivarian Republic of</option>
+                <option value="VN">Viet Nam</option>
+                <option value="VG">Virgin Islands, British</option>
+                <option value="VI">Virgin Islands, U.S.</option>
+                <option value="WF">Wallis and Futuna</option>
+                <option value="EH">Western Sahara</option>
+                <option value="YE">Yemen</option>
+                <option value="ZM">Zambia</option>
+                <option value="ZW">Zimbabwe</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="form-group">
+              <label>Subscribe to</label>
+              <div>
+                <label class="custom-control custom-checkbox checkbox-inline">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  Latest news and announcements
+                </label>
+                <label class="custom-control custom-checkbox checkbox-inline">
+                  <input type="checkbox" class="custom-control-input">
+                  <span class="custom-control-indicator"></span>
+                  Product offers and discounts
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="panel-wide-block p-x-3 p-t-3 b-t-1 bg-white text-xs-right">
+              <button type="button" class="btn" data-wizard-action="prev">Back</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" data-wizard-action="next">Next step</button>
+            </div>
+          </form>
+          <form class="wizard-pane" id="wizard-credit-card">
+            <div class="row">
+              <fieldset class="form-group col-md-3">
+                <label for="wizard-postal-code">Postal code</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                  <input type="text" name="wizard-postal-code" placeholder="999999" class="form-control" id="wizard-postal-code">
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group col-md-6">
+                <label for="wizard-credit-card-number">Credit card number</label>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+                  <input type="text" name="wizard-credit-card-number" placeholder="9999 9999 9999 9999" class="form-control" id="wizard-credit-card-number">
+                </div>
+              </fieldset>
+
+              <fieldset class="form-group col-md-3">
+                <label for="wizard-csv">CSV</label>
+                <div class="has-feedback">
+                  <input type="text" name="wizard-csv" placeholder="999" class="form-control" id="wizard-csv">
+                  <a href="javascript:void(0)" class="fa fa-question-circle form-control-feedback" data-toggle="tooltip" data-placement="left" title="The credit code security code is a three-digit number printed on the back of your card, at the top of the signature field."></a>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="panel-wide-block p-x-3 p-t-3 b-t-1 bg-white text-xs-right">
+              <button type="button" class="btn" data-wizard-action="prev">Back</button>&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" data-wizard-action="next">Next step</button>
+            </div>
+          </form>
+          <div class="wizard-pane" id="wizard-finish">
+            <div class="text-xs-center m-y-4">
+              <i class="ion-checkmark-round text-success font-size-52 line-height-1"></i>
+              <h4 class="font-weight-semibold font-size-20 m-x-0 m-t-1 m-b-0">We're almost done</h4>
+              <button type="button" class="btn btn-primary m-t-4" data-wizard-action="finish">Finish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="px-footer px-footer-bottom p-t-0">
+    <div class="box m-a-0 bg-transparent">
+      <div class="box-cell col-md-3 p-t-3">
+        <h5 class="m-t-0 m-b-1 font-size-13">About Us</h5>
+        <a href="#">Who we are</a><br>
+        <a href="#">Jobs</a><br>
+        <a href="#">Newsletters</a><br>
+      </div>
+      <div class="box-cell col-md-3 p-t-3">
+        <h5 class="m-t-0 m-b-1 font-size-13">Help</h5>
+        <a href="#">Support Center</a><br>
+        <a href="#">Terms of Use</a><br>
+        <a href="#">Privacy Policy</a><br>
+      </div>
+      <div class="box-cell col-md-3 p-t-3">
+        <h5 class="m-t-0 m-b-1 font-size-13">Products</h5>
+        <a href="#">Popular</a><br>
+        <a href="#">Most rated</a><br>
+        <a href="#">Recent</a><br>
+      </div>
+      <div class="box-cell col-md-3 p-t-3 valign-middle">
+        <a href="#" class="display-block m-b-1 text-nowrap"><i class="fa fa-twitter"></i>&nbsp;&nbsp;@pixeladmin</a>
+        <a href="#" class="display-block m-b-1 text-nowrap"><i class="fa fa-facebook"></i>&nbsp;&nbsp;PixelAdmin</a>
+        <a href="#" class="display-block text-nowrap"><i class="fa fa-envelope"></i>&nbsp;&nbsp;support@pixeladmin.com</a>
+      </div>
+    </div>
+
+    <hr class="page-wide-block">
+
+    <span class="text-muted">Copyright © 2017 PixelAdmin LLC. All rights reserved.</span>
+  </footer>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+  <script type="text/javascript">
+    // -------------------------------------------------------------------------
+    // Initialize DEMO
+
+    $(function() {
+      var file = String(document.location).split('/').pop();
+
+      // Remove unnecessary file parts
+      file = file.replace(/(\.html).*/i, '$1');
+
+      if (!/.html$/i.test(file)) {
+        file = 'index.html';
+      }
+
+      // Activate current nav item
+      $('body > .px-nav')
+        .find('.px-nav-item > a[href="' + file + '"]')
+        .parent()
+        .addClass('active');
+
+      $('body > .px-nav').pxNav();
+      $('body > .px-footer').pxFooter();
+
+      $('#navbar-notifications').perfectScrollbar();
+      $('#navbar-messages').perfectScrollbar();
+    });
+  </script>
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize validation example
+
+    $(function() {
+      // Initialize Select2 select box
+      $('#validation-select2').select2({
+        allowClear:  true,
+        placeholder: 'Select a framework...',
+      }).change(function() {
+        $(this).valid();
+      });
+
+      // Initialize Select2 multiselect box
+      $('#validation-select2-multi').select2({
+        placeholder: 'Select gear...',
+      }).change(function() {
+        $(this).valid();
+      });
+
+      // Initialize custom file input
+      $('#validation-file-custom-label').pxFile();
+
+      // Add phone validator
+      $.validator.addMethod(
+        'phone_format',
+        function(value, element) {
+          return this.optional(element) || /^\(\d{3}\)[ ]\d{3}\-\d{4}$/.test(value);
+        },
+        'Invalid phone number.'
+      );
+
+      // Initialize validator
+      $('#validation-form').pxValidate({
+        ignore: '.ignore, .select2-input',
+        focusInvalid: false,
+        rules: {
+          'validation-email': {
+            required: true,
+            email: true
+          },
+          'validation-password': {
+            required: true,
+            minlength: 6,
+            maxlength: 20
+          },
+          'validation-password-confirmation': {
+            required: true,
+            minlength: 6,
+            equalTo: '#validation-password'
+          },
+          'validation-required': {
+            required: true
+          },
+          'validation-url': {
+            required: true,
+            url: true
+          },
+          'validation-phone': {
+            required: true,
+            phone_format: true
+          },
+          'validation-select': {
+            required: true
+          },
+          'validation-multiselect': {
+            required: true,
+            minlength: 2
+          },
+          'validation-select2': {
+            required: true
+          },
+          'validation-select2-multi': {
+            required: true,
+            minlength: 2
+          },
+          'validation-text': {
+            required: true
+          },
+          'validation-message-light': {
+            required: true
+          },
+          'validation-message-dark': {
+            required: true
+          },
+          'validation-file': {
+            required: true
+          },
+          'validation-file-custom': {
+            required: true
+          },
+          'validation-switcher': {
+            required: true
+          },
+          'validation-radios': {
+            required: true
+          },
+          'validation-radios-custom': {
+            required: true
+          },
+          'validation-checkbox': {
+            required: true
+          },
+          'validation-checkbox-custom': {
+            required: true
+          },
+
+          // Checkbox groups
+          //
+
+          'validation-checkbox-group-1': {
+            require_from_group: [1, 'input[name="validation-checkbox-group-1"], input[name="validation-checkbox-group-2"]']
+          },
+          'validation-checkbox-group-2': {
+            require_from_group: [1, 'input[name="validation-checkbox-group-1"], input[name="validation-checkbox-group-2"]']
+          },
+
+          'validation-checkbox-custom-group-1': {
+            require_from_group: [1, 'input[name="validation-checkbox-custom-group-1"], input[name="validation-checkbox-custom-group-2"]']
+          },
+          'validation-checkbox-custom-group-2': {
+            require_from_group: [1, 'input[name="validation-checkbox-custom-group-1"], input[name="validation-checkbox-custom-group-2"]']
+          },
+        },
+      });
+    });
+
+    // -------------------------------------------------------------------------
+    // Initialize wizard validation example
+
+    $(function() {
+      var $wizard = $('#wizard-validation');
+
+      $wizard.pxWizard();
+
+      // Init plugins
+      $('#wizard-country').select2({
+        placeholder: 'Select your country...'
+      }).change(function() { $(this).valid(); });
+      $('#wizard-postal-code').mask("999999");
+      $('#wizard-credit-card-number').mask("9999 9999 9999 9999");
+      $('#wizard-csv').mask("999");
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Rules
+
+      $('#wizard-account').pxValidate({
+        ignore: '.ignore',
+        focusInvalid: false,
+        rules: {
+          'wizard-username': {
+            required:  true,
+            minlength: 3,
+            maxlength: 20,
+          },
+          'wizard-password': {
+            required:  true,
+            minlength: 6,
+            maxlength: 20,
+          },
+          'wizard-repeat-password': {
+            required:  true,
+            minlength: 6,
+            equalTo:   'input[name="wizard-password"]',
+          },
+          'wizard-email': {
+            required: true,
+            email:    true,
+          },
+        },
+      });
+
+      $("#wizard-profile").pxValidate({
+        ignore: '.ignore, .select2-input',
+        focusInvalid: true,
+        rules: {
+          'wizard-full-name': {
+            required: true,
+          },
+          'wizard-country': {
+            required: true,
+          },
+          'wizard-gender': {
+            required: true,
+          },
+        },
+      });
+
+      $("#wizard-credit-card").pxValidate({
+        ignore: '.ignore',
+        focusInvalid: true,
+        rules: {
+          'wizard-postal-code': {
+            required:    true,
+            digits:      true,
+            rangelength: [6, 6],
+          },
+          'wizard-credit-card-number': {
+            required:   true,
+            creditcard: true,
+          },
+          'wizard-csv': {
+            required:    true,
+            digits:      true,
+            rangelength: [3, 3],
+          },
+        },
+      });
+
+      // Validate
+
+      $wizard.on('stepchange.px.wizard', function(e, data) {
+        // Validate only if jump to the forward step
+        if (data.nextStepIndex < data.activeStepIndex) { return; }
+
+        var $form = $wizard.pxWizard('getActivePane');
+
+        if (!$form.valid()) {
+          e.preventDefault();
+        }
+      });
+
+      // Finish
+
+      $wizard.on('finished.px.wizard', function() {
+        //
+        // Collect and send data...
+        //
+
+        $('#wizard-finish').find('.ion-checkmark-round').removeClass('ion-checkmark-round').addClass('ion-checkmark-circled');
+        $('#wizard-finish').find('h4').text('Thank You!');
+        $('#wizard-finish').find('button').remove();
+      });
+
+    });
+  </script>
+</body>
+</html>

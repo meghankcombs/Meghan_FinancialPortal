@@ -1,44 +1,166 @@
-﻿<!DOCTYPE html>
+﻿@using Meghan_FinancialPortal.Models.Helpers
+
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 
+    <title>Financial Portal</title>
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image.png" href="~/MyImages/cat--5-512-85909.png" />
+
+    <!-- FONTS -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <!-- MY GOOGLE FONT -->
+    <link href="http://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+
+    <!-- Core stylesheets -->
+    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/pixeladmin.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/css/widgets.min.css" rel="stylesheet" type="text/css">
+    <link href="~/assets/demo/demo.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Theme -->
+    <link href="~/assets/css/themes/clean.min.css" rel="stylesheet" type="text/css">
+
+    <!-- MY CSS -->
+    <link href="~/Content/sweetalert.css" rel="stylesheet" />
+    @*<link href="~/Content/jquery.dataTables.min.css" rel="stylesheet" />*@
+    <link href="~/Content/MKCcustom.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <!-- SIDE NAV -->
+    <nav class="px-nav px-nav-left">
+        <button type="button" class="px-nav-toggle" data-toggle="px-nav">
+            <span class="px-nav-toggle-arrow"></span>
+            <span class="navbar-toggle-icon"></span>
+            <span class="px-nav-toggle-label font-size-11">HIDE MENU</span>
+        </button>
+        <ul class="px-nav-content">
+            <li class="px-nav-box p-a-3 b-b-1" id="demo-px-nav-box">
+                <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <img src="~/MyImages/house-xxl.png" alt="" class="pull-xs-left m-r-2 border-round" style="width: 54px; height: 54px;">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="font-size-16"><span class="font-weight-light">Welcome, </span><strong>@UserHelper.UserFirstName()</strong></div>
+                }
+                <div class="font-size-16"><span class="font-weight-light">Welcome, </span><strong>Guest</strong></div>
+                <div class="btn-group" style="margin-top: 4px;">
+                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-xs btn-danger btn-outline" data-toggle="tooltip" title="Logout"><i class="fa fa-power-off"></i></a>
+                    }
+                </div>
+            </li>
+            <li class="px-nav-item">
+                <a href="@Url.Action("Index", "Home")"><i class="px-nav-icon fa fa-home"></i><span class="px-nav-label">Home</span></a>
+            </li>
+            <li class="px-nav-item px-nav-dropdown">
+                <a href="#"><i class="px-nav-icon fa fa-user-circle"></i><span class="px-nav-label">Manage Profile</span></a>
+                <ul class="px-nav-dropdown-menu">
+                    <li class="px-nav-item"><a href="@Url.Action("ChangePassword", "Manage")"><i class="px-nav-icon fa fa-lock"></i><span class="px-nav-label">Change Password</span></a></li>
                 </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
+            </li>
+            <li class="px-nav-item px-nav-dropdown">
+                <a href="#"><i class="px-nav-icon fa fa-balance-scale"></i><span class="px-nav-label">Household</span></a>
+                <ul class="px-nav-dropdown-menu">
+                    <li class="px-nav-item"><a href="@Url.Action()"><i class="px-nav-icon fa fa-info"></i><span class="px-nav-label">Details</span></a></li>
+                    <li class="px-nav-item"><a href="@Url.Action()"><i class="px-nav-icon fa fa-users"></i><span class="px-nav-label">Users</span></a></li>
+                    <li class="px-nav-item"><a href="@Url.Action()"><i class="px-nav-icon fa fa-area-chart"></i><span class="px-nav-label">Accounts</span></a></li>
+                    <li class="px-nav-item"><a href="@Url.Action()"><i class="px-nav-icon fa fa-dollar"></i><span class="px-nav-label">Budgets</span></a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!-- END SIDE NAV -->
+    <!-- UPPER NAV -->
+    <nav class="navbar px-navbar">
+        <!-- Header -->
+        <div class="navbar-header">
+            <a class="navbar-brand px-demo-brand" href="@Url.Action("Index", "Home")">
+                <span class="px-demo-logo bg-primary">
+                    <span class="px-demo-logo-1"></span>
+                    <span class="px-demo-logo-2"></span>
+                    <span class="px-demo-logo-3"></span>
+                    <span class="px-demo-logo-4"></span>
+                    <span class="px-demo-logo-5"></span>
+                    <span class="px-demo-logo-6"></span>
+                    <span class="px-demo-logo-7"></span>
+                    <span class="px-demo-logo-8"></span>
+                    <span class="px-demo-logo-9"></span>
+                </span>Financial Portal
+            </a>
         </div>
-    </div>
-    <div class="container body-content">
+        <!-- Navbar togglers -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#px-demo-navbar-collapse" aria-expanded="false"><i class="navbar-toggle-icon"></i></button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="px-demo-navbar-collapse">
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <ul class="nav navbar-nav">
+                    <li><a href="@Url.Action("Login", "Account")"><i class="fa fa-arrow-circle-right"></i> Login</a></li>
+                    <li><a href="@Url.Action("Register", "Account")"><i class="fa fa-user"></i> Register</a></li>
+                </ul>
+            }
+        </div><!-- /.navbar-collapse -->
+    </nav>
+    <!-- END UPPER NAV -->
+
+    <div class="px-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <footer class="px-footer px-footer-bottom p-t-0">
+        <div class="box m-a-0 bg-transparent">
+            <div class="box-cell col-md-3 p-t-3">
+                <h5 class="m-t-0 m-b-1 font-size-13">About Us</h5>
+                <a href="@Url.Action("About", "Home")">Financial Portal</a><br>
+            </div>
+            <div class="box-cell col-md-3 p-t-3">
+                <h5 class="m-t-0 m-b-1 font-size-13">Reach Out</h5>
+                <a href="@Url.Action("Contact", "Home")">Contact</a><br>
+            </div>
+            <div class="box-cell col-md-3 p-t-3">
+                <h5 class="m-t-0 m-b-1 font-size-13">Meghan's Info</h5>
+                <a href="http://mcombs-mvcportfolio.azurewebsites.net/">Portfolio</a><br>
+            </div>
+            <div class="box-cell col-md-3 p-t-3 valign-middle">
+                <a href="https://github.com/meghankcombs" class="display-block m-b-1 text-nowrap"><i class="fa fa-github"></i>GitHub</a>
+                <a href="https://www.linkedin.com/in/meghankcombs/" class="display-block m-b-1 text-nowrap"><i class="fa fa-linkedin"></i>LinkedIn</a>
+                <a href="@Url.Action("Contact", "Home")" class="display-block text-nowrap"><i class="fa fa-envelope"></i>Contact</a>
+            </div>
+        </div>
+        <hr class="page-wide-block">
+        <span class="text-muted">Copyright © 2017 PixelAdmin LLC, edited by Meghan Combs 2018.</span>
+    </footer>
+
+    <!-- TEMPLATE SCRIPTS -->
+    <!-- holder.js -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+    <!-- Pace.js -->
+    <script src="~/assets/pace/pace.min.js"></script>
+    <script src="~/assets/demo/demo.js"></script>
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/pixeladmin.min.js"></script>
+
+    <!-- MY SCRIPTS -->
+    <script src="~/Scripts/sweetalert.min.js"></script>
+    <script src="~/Scripts/MKCcustom.js"></script>
+
     @RenderSection("scripts", required: false)
+
 </body>
 </html>

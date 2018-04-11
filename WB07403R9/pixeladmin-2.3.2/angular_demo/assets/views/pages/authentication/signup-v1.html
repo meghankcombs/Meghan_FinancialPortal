@@ -1,0 +1,130 @@
+<!-- Custom styling -->
+<style>
+  .page-signup-modal {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    z-index: 1;
+    display: block;
+  }
+
+  .page-signup-form-group { position: relative; }
+
+  .page-signup-icon {
+    position: absolute;
+    line-height: 21px;
+    width: 36px;
+    border-color: rgba(0, 0, 0, .14);
+    border-right-width: 1px;
+    border-right-style: solid;
+    left: 1px;
+    top: 9px;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  responsive-bg {
+    position: fixed !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+  }
+
+  html[dir="rtl"] .page-signup-icon {
+    border-right: 0;
+    border-left-width: 1px;
+    border-left-style: solid;
+    left: auto;
+    right: 1px;
+  }
+
+  html:not([dir="rtl"]) .page-signup-icon + .page-signup-form-control { padding-left: 50px; }
+  html[dir="rtl"] .page-signup-icon + .page-signup-form-control { padding-right: 50px; }
+
+  /* Margins */
+
+  .page-signup-modal > .modal-dialog { margin: 30px 10px; }
+
+  @media (min-width: 544px) {
+    .page-signup-modal > .modal-dialog {
+      width: 400px;
+      margin: 60px auto;
+    }
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-signup-modal modal" ng-controller="PagesSignUpCtrl as ctrl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="text-xs-center bg-primary p-y-4">
+        <a ui-sref="dashboards.default" class="px-demo-brand px-demo-brand-lg"><span class="px-demo-logo bg-primary m-t-0"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span><span class="font-size-20 line-height-1">PixelAdmin</span></span></a>
+        <div class="font-size-15 m-t-1 line-height-1">Simple. Flexible. Powerful.</div>
+      </div>
+
+      <form name="signUpForm" ng-submit="ctrl.signUp()" class="p-a-4" novalidate>
+        <h4 class="m-t-0 m-b-4 text-xs-center font-weight-semibold">Create an Account</h4>
+
+        <fieldset class="page-signup-form-group form-group form-group-lg" ng-class="{ 'has-error': (signUpForm.$submitted || signUpForm.fullName.$touched) && signUpForm.fullName.$invalid }">
+          <div class="page-signup-icon text-muted"><i class="ion-information-circled"></i></div>
+          <input ng-model="ctrl.user.fullName" required name="fullName" type="text" class="page-signup-form-control form-control" placeholder="Full Name">
+          <div ng-show="signUpForm.$submitted || signUpForm.fullName.$touched">
+            <div class="form-message" ng-show="signUpForm.fullName.$error.required">Please enter your name.</div>
+          </div>
+        </fieldset>
+
+        <fieldset class="page-signup-form-group form-group form-group-lg" ng-class="{ 'has-error': (signUpForm.$submitted || signUpForm.email.$touched) && signUpForm.email.$invalid }">
+          <div class="page-signup-icon text-muted"><i class="ion-at"></i></div>
+          <input ng-model="ctrl.user.email" required name="email" type="email" class="page-signup-form-control form-control" placeholder="Email">
+          <div ng-show="signUpForm.$submitted || signUpForm.email.$touched">
+            <div class="form-message" ng-show="signUpForm.email.$error.required">Please enter your email.</div>
+            <div class="form-message" ng-show="signUpForm.email.$error.email">Email is invalid.</div>
+          </div>
+        </fieldset>
+
+        <fieldset class="page-signup-form-group form-group form-group-lg" ng-class="{ 'has-error': (signUpForm.$submitted || signUpForm.username.$touched) && signUpForm.username.$invalid }">
+          <div class="page-signup-icon text-muted"><i class="ion-person"></i></div>
+          <input ng-model="ctrl.user.username" required minlength="3" maxlength="20" name="username" type="text" class="page-signup-form-control form-control" placeholder="Username">
+          <div ng-show="signUpForm.$submitted || signUpForm.username.$touched">
+            <div class="form-message" ng-show="signUpForm.username.$error.required">Please enter your username.</div>
+            <div class="form-message" ng-show="signUpForm.username.$error.minlength">Please enter at least 3 characters.</div>
+            <div class="form-message" ng-show="signUpForm.username.$error.maxlength">Please enter no more than 20 characters.</div>
+          </div>
+        </fieldset>
+
+        <fieldset class="page-signup-form-group form-group form-group-lg" ng-class="{ 'has-error': (signUpForm.$submitted || signUpForm.password.$touched) && signUpForm.password.$invalid }">
+          <div class="page-signup-icon text-muted"><i class="ion-asterisk"></i></div>
+          <input ng-model="ctrl.user.password" required minlength="6" maxlength="32" name="password" type="password" class="page-signup-form-control form-control" placeholder="Password">
+          <div ng-show="signUpForm.$submitted || signUpForm.password.$touched">
+            <div class="form-message" ng-show="signUpForm.password.$error.required">Please enter password.</div>
+            <div class="form-message" ng-show="signUpForm.password.$error.minlength">Please enter at least 6 characters.</div>
+            <div class="form-message" ng-show="signUpForm.password.$error.maxlength">Please enter no more than 32 characters.</div>
+          </div>
+          <small class="text-muted" ng-hide="(signUpForm.$submitted || signUpForm.password.$touched) && signUpForm.password.$invalid">Minimum 6 characters</small>
+        </fieldset>
+
+        <label class="custom-control custom-checkbox" ng-class="{ 'has-error': (signUpForm.$submitted || signUpForm.agreed.$touched) && signUpForm.agreed.$invalid }">
+          <input ng-model="agreed" required name="agreed" type="checkbox" class="custom-control-input">
+          <span class="custom-control-indicator"></span>
+          I agree with the <a href="#" target="_blank">Terms and Conditions</a>
+        </label>
+
+        <button type="submit" class="btn btn-block btn-lg btn-primary m-t-3">Sign Up</button>
+      </form>
+
+      <div class="p-y-3 p-x-4 b-t-1 bg-white darken">
+        <a ui-sref="dashboards.default" class="btn btn-block btn-lg btn-info font-size-13"><span class="btn-label-icon left fa fa-twitter"></span>Sign Up with <strong>Twitter</strong></a>
+      </div>
+    </div>
+
+    <div class="text-xs-center m-t-2 font-weight-bold font-size-14 text-white" id="px-demo-signin-link">
+      Already have an account? <a ui-sref="authentication.signin1" class="text-white"><u>Sign In</u></a>
+    </div>
+  </div>
+</div>
+
+<responsive-bg background-image="'assets/demo/bgs/1.jpg'" overlay="'#000'" opacity="0.2" />

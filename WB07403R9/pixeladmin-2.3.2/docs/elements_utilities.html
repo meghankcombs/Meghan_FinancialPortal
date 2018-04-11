@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Utility classes - Elements - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  #horizontal-centering-example > div,
+  #block-display-example > .display-block,
+  #block-display-example > .display-inline-block {
+    background: #eee;
+  }
+
+  .floating-example > div {
+    margin: 10px;
+  }
+
+  .colors-example > a + a,
+  .bgs-example > div + div:not(.clearfix),
+  .border-color-example > div + div:not(.clearfix) {
+    margin-top: 20px;
+  }
+
+  .colors-example > a {
+    display: block;
+  }
+
+  .bgs-example > div > a {
+    display: block;
+    float: left;
+    width: 33.3%;
+    padding: 10px;
+  }
+
+  html[dir="rtl"] .bgs-example > div > a {
+    float: right;
+  }
+
+  .bgs-example > div:before,
+  .bgs-example > div:after {
+    content: " ";
+    display: table;
+  }
+
+  .bgs-example > div:after {
+    clear: both;
+  }
+
+  .border-color-example > div:not(.clearfix) {
+    padding: 20px;
+  }
+
+  .border-radius-example > div:not(.clearfix) {
+    float: left;
+    padding: 20px;
+    background: #e0e0e0;
+  }
+
+  html[dir="rtl"] .border-radius-example > div:not(.clearfix) {
+    float: right;
+  }
+
+  .border-radius-example > div + div:not(.clearfix) {
+    margin-left: 20px;
+  }
+
+  html[dir="rtl"] .border-radius-example > div + div:not(.clearfix) {
+    margin-left: 0;
+    margin-right: 20px;
+  }
+
+  .valign-example > div:not(.clearfix) {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    padding: 0 10px;
+    height: 100px;
+    line-height: 100px;
+  }
+
+  .valign-example > div:not(.clearfix) > span {
+    line-height: 1;
+  }
+</style>
+
+<h1 class="doc-header">
+  Utility classes
+  <a href="http://getbootstrap.com/css/#helper-classes" target="_blank" class="doc-header-url">http://getbootstrap.com/css/#helper-classes</a>
+</h1>
+
+  <h4 class="doc-subheader">Spacing</h4>
+
+  <p>
+    Assign margin or padding to an element or a subset of its sides with
+    shorthand classes. Includes support for individual properties, all
+    properties, and vertical and horizontal properties. All classes are multiples
+    on the global default value, <code>10px</code>.
+  </p>
+  <p>The classes are named using the format: <code>{property}-{sides}-{size}</code></p>
+  <p>
+    Where <strong>property</strong> is one of:
+    <ul>
+      <li><strong>m</strong> - for classes that set margin</li>
+      <li><strong>p</strong> - for classes that set padding</li>
+    </ul>
+  </p>
+  <p>
+    Where <strong>sides</strong> is one of:
+    <ul>
+      <li>
+        <strong>t</strong> - for classes that set <code>*-top</code>
+      </li>
+      <li>
+        <strong>b</strong> - for classes that set <code>*-bottom</code>
+      </li>
+      <li>
+        <strong>l</strong> - for classes that set <code>*-left</code>
+      </li>
+      <li>
+        <strong>r</strong> - for classes that set <code>*-right</code>
+      </li>
+      <li>
+        <strong>x</strong> - for classes that set both <code>*-left</code> and <code>*-right</code>
+      </li>
+      <li>
+        <strong>y</strong> - for classes that set both <code>*-top</code> and <code>*-bottom</code>
+      </li>
+      <li>
+        <strong>a</strong> - for classes that set a margin or padding on all 4 sides of the element
+      </li>
+    </ul>
+  </p>
+  <p>
+    Where <strong>size</strong> is one of:
+    <ul>
+      <li>
+        <strong>0</strong> - for classes that eliminate the <code>margin</code> or <code>padding</code> by setting it to <code>0</code>
+      </li>
+      <li>
+        <strong>1</strong> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x</code> or <code>$spacer-y</code>
+      </li>
+      <li>
+        <strong>2</strong> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 1.5</code> or <code>$spacer-y * 1.5</code>
+      </li>
+      <li>
+        <strong>3</strong> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 2</code> or <code>$spacer-y * 2</code>
+      </li>
+      <li>
+        <strong>4</strong> - (by default) for classes that set the <code>margin</code> or <code>padding</code> to <code>$spacer-x * 3</code> or <code>$spacer-y * 3</code>
+      </li>
+    </ul>
+  </p>
+
+  <p>Here are some representative examples of these classes:</p>
+
+  <div class="example nocode">
+    <pre><code data-lang="css">
+.m-t-0 {
+  margin-top: 0 !important;
+}
+
+.m-l-1 {
+  margin-left: $spacer-x !important; /* 10px */
+}
+
+.p-x-2 {
+  padding-left: ($spacer-x * 1.5) !important; /* 15px */
+  padding-right: ($spacer-x * 1.5) !important; /* 15px */
+}
+
+.p-y-3 {
+  padding-top: ($spacer-y * 2) !important; /* 20px */
+  padding-bottom: ($spacer-y * 2) !important; /* 20px */
+}
+
+.p-a-4 {
+  padding: ($spacer-y * 3) ($spacer-x * 3) !important; /* 30px 30px */
+}
+    </code></pre>
+  </div>
+
+  <h4 class="doc-subheader">Horizontal centering</h4>
+  <p>
+    Additionally, PixelAdmin also includes an <code>.m-x-auto</code> class for
+    horizontally centering fixed-width block level content by setting the
+    horizontal margins to auto.
+  </p>
+  <div id="horizontal-centering-example" class="example" data-accent="(m-x-auto)">
+<div class="m-x-auto" style="width: 200px;">
+  Centered element
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Borders</h4>
+
+  <p>
+    Set borders to an element or a subset of its sides with shorthand classes.
+  </p>
+  <p>The classes are named using the format: <code>b-{sides}-{size}</code></p>
+  <p>
+    Where <strong>sides</strong> is one of:
+    <ul>
+      <li>
+        <strong>t</strong> - for classes that set <code>*-top</code>
+      </li>
+      <li>
+        <strong>b</strong> - for classes that set <code>*-bottom</code>
+      </li>
+      <li>
+        <strong>l</strong> - for classes that set <code>*-left</code>
+      </li>
+      <li>
+        <strong>r</strong> - for classes that set <code>*-right</code>
+      </li>
+      <li>
+        <strong>x</strong> - for classes that set both <code>*-left</code> and <code>*-right</code>
+      </li>
+      <li>
+        <strong>y</strong> - for classes that set both <code>*-top</code> and <code>*-bottom</code>
+      </li>
+      <li>
+        <strong>a</strong> - for classes that set a border on all 4 sides of the element
+      </li>
+    </ul>
+  </p>
+  <p>
+    Where <strong>size</strong> is one of:
+    <ul>
+      <li>
+        <strong>0</strong> - for classes that eliminate borders by setting its <code>border-width</code> to <code>0</code>
+      </li>
+      <li>
+        <strong>1</strong> - for classes that set the <code>border-width</code> to <code>1px</code>
+      </li>
+      <li>
+        <strong>2</strong> - for classes that set the <code>border-width</code> to <code>2px</code>
+      </li>
+      <li>
+        <strong>3</strong> - for classes that set the <code>border-width</code> to <code>3px</code>
+      </li>
+    </ul>
+  </p>
+
+  <p>Here are some representative examples of these classes:</p>
+
+  <div class="example nocode">
+    <pre><code data-lang="css">
+.b-t-0 {
+  border-top-width: 0 !important;
+}
+
+.b-l-1 {
+  border-left-width: 1px !important;
+  border-left-style: solid !important;
+}
+
+.b-x-2 {
+  border-left-width: 2px !important;
+  border-left-style: solid !important;
+
+  border-right-width: 2px !important;
+  border-right-style: solid !important;
+}
+
+.b-a-3 {
+  border-width: 3px !important;
+  border-style: solid !important;
+}
+    </code></pre>
+  </div>
+
+  <h4 class="doc-subheader">Blocks</h4>
+
+  <p>
+    <code>.page-block</code> - adds horizontal padding and negative horizontal margins (which equals <code>.px-content</code>'s horizontal padding) to the element.
+  </p>
+
+  <div class="example nocode" data-accent="(page-block)">
+    <pre><code data-lang="html">
+<!-- padding: 20px; -->
+<div class="px-content">
+  ...
+  <!-- padding-left: 20px; padding-right: 20px; margin-left: -20px; margin-right: -20px; -->
+  <div class="page-block"></div>
+  ...
+</div>
+    </code></pre>
+  </div>
+
+  <p>
+    <code>.page-wide-block</code> - adds negative horizontal margins (which equals <code>.px-content</code>'s horizontal padding) to the element.
+  </p>
+
+  <div class="example nocode" data-accent="(page-wide-block)">
+    <pre><code data-lang="html">
+<!-- padding: 20px; -->
+<div class="px-content">
+  ...
+  <!-- margin-left: -20px; margin-right: -20px; -->
+  <div class="page-wide-block"></div>
+  ...
+</div>
+    </code></pre>
+  </div>
+
+  <p>
+    <code>.panel-block</code> - adds horizontal padding (which equals <code>.panel-body</code>'s horizontal padding) to the element.
+    Also adds negative margins when the element is within a <code>.panel-body</code> block.
+  </p>
+
+  <div class="example nocode" data-accent="(panel-block)">
+    <pre><code data-lang="html">
+<div class="panel">
+  ...
+  <!-- padding-left: 20px; padding-right: 20px; -->
+  <div class="panel-block"></div>
+  ...
+  <!-- padding: 20px; -->
+  <div class="panel-body">
+    <!-- padding-left: 20px; padding-right: 20px; margin-left: -20px; margin-right: -20px; -->
+    <div class="panel-block"></div>
+  </div>
+  ...
+</div>
+    </code></pre>
+  </div>
+
+  <p>
+    <code>.panel-wide-block</code> - adds negative horizontal margins (which equals <code>.panel-body</code>'s horizontal padding) to the element.
+  </p>
+
+  <div class="example nocode" data-accent="(panel-wide-block)">
+    <pre><code data-lang="html">
+<div class="panel">
+  ...
+  <!-- padding: 20px; -->
+  <div class="panel-body">
+    <!-- margin-left: -20px; margin-right: -20px; -->
+    <div class="panel-wide-block"></div>
+  </div>
+  ...
+</div>
+    </code></pre>
+  </div>
+
+  <p>
+    <code>.width-{breakpoint}-auto</code> classes set element's <code>width</code>
+    property to <code>auto</code> depending on the current viewport size.
+  </p>
+  <p>
+    Where <strong>breakpoint</strong> is one of:
+    <ul>
+      <li>
+        <strong>xs</strong> - Extra small screens <span class="text-muted">(mobile)</span>
+      </li>
+      <li>
+        <strong>sm</strong> - Small screens <span class="text-muted">(tablets / mobile)</span>
+      </li>
+      <li>
+        <strong>md</strong> - Medium screens <span class="text-muted">(desktops / tablets)</span>
+      </li>
+      <li>
+        <strong>lg</strong> - Large screens <span class="text-muted">(desktops)</span>
+      </li>
+      <li>
+        <strong>xl</strong> - Extra large screens <span class="text-muted">(desktops)</span>
+      </li>
+    </ul>
+  </p>
+
+  <div class="example nocode" data-accent="(width-\w+-auto)">
+    <pre><code data-lang="html">
+<div class="width-sm-auto" style="width: 300px;">
+  Element will reset <code>width</code> property only if viewport width is between 479px and 768px
+</div>
+    </code></pre>
+  </div>
+
+  <h4 class="doc-subheader">Display</h4>
+  <p>
+    <code>.display-{mode}</code> classes set element's <code>display</code>
+    property to <code>mode</code>.
+  </p>
+  Where <strong>mode</strong> is one of:
+  <ul>
+    <li><strong>block</strong></li>
+    <li><strong>inline-block</strong></li>
+  </ul>
+
+  <div id="block-display-example" class="example" data-accent="(display-[\w-]+)">
+<span class="display-block">Block</span>
+<div class="display-inline-block">Inline-block</div>
+  </div>
+
+  <h4 class="doc-subheader">Position</h4>
+  <p>
+    <code>.position-{mode}</code> classes set element's <code>position</code>
+    property to <code>mode</code>.
+  </p>
+  Where <strong>mode</strong> is one of:
+  <ul>
+    <li><strong>static</strong></li>
+    <li><strong>relative</strong></li>
+    <li><strong>absolute</strong></li>
+  </ul>
+
+  <div class="example" data-accent="(position-[\w-]+)">
+<div class="position-static">Static</div>
+<div class="position-relative">Relative</div>
+<div class="position-absolute">Absolute</div>
+  </div>
+
+  <h4 class="doc-subheader">Inline image</h4>
+
+  <div class="example" data-accent="(image-inline)">
+<p><img src="assets/demo/avatars/2.jpg" class="image-inline"> Text with an inline image.</p>
+<h3><img src="assets/demo/avatars/3.jpg" class="image-inline"> Header with an inline image.</h3>
+  </div>
+
+  <h4 class="doc-subheader">Floating</h4>
+
+  <p>
+    These utility classes float an element to the left or right, or disable floating,
+    based on the current viewport size using the CSS <code>float</code> property.
+    <code>!important</code> is included to avoid specificity issues. These use the
+    same viewport width breakpoints as the grid system.
+  </p>
+
+  <div class="example floating-example clearfix" data-accent="(pull-\w+-\w+)">
+<div class="pull-xs-left">Float left on all viewport sizes</div>
+<div class="pull-xs-right">Float right on all viewport sizes</div>
+<div class="pull-xs-none">Don't float on all viewport sizes</div>
+
+<div class="pull-sm-left">Float left on viewports sized SM (small) or wider</div>
+<div class="pull-md-left">Float left on viewports sized MD (medium) or wider</div>
+<div class="pull-lg-left">Float left on viewports sized LG (large) or wider</div>
+<div class="pull-xl-left">Float left on viewports sized XL (extra-large) or wider</div>
+  </div>
+
+  <h4 class="doc-subheader">Vertical alignment</h4>
+
+  <p>
+    Easily set vertical alignment of the element.
+  </p>
+
+  <div class="example valign-example clearfix" data-accent="(valign-\w+)">
+<div><span class="valign-top">Top-aligned</span></div>
+<div><span class="valign-middle">Middle-aligned</span></div>
+<div><span class="valign-bottom">Bottom-aligned</span></div>
+  </div>
+
+  <h4 class="doc-subheader">Text alignment</h4>
+
+  <p>
+    Easily realign text to components with text alignment classes.
+  </p>
+
+  <div class="example" data-accent="(text-\w+)">
+<p class="text-justify">Justified text.</p>
+<p class="text-nowrap">No wrap text.</p>
+<p class="text-truncate">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet,
+  consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+  dolore magna aliqua.
+</p>
+  </div>
+
+  <p>
+    For left, right, and center alignment, responsive classes are available that
+    use the same viewport width breakpoints as the grid system.
+  </p>
+
+  <div class="example" data-accent="(text-\w+(?:-\w+)?)">
+<p class="text-xs-left">Left aligned text on all viewport sizes.</p>
+<p class="text-xs-center">Center aligned text on all viewport sizes.</p>
+<p class="text-xs-right">Right aligned text on all viewport sizes.</p>
+
+<p class="text-sm-right">Right aligned text on viewports sized SM (small) or wider.</p>
+<p class="text-md-right">Right aligned text on viewports sized MD (medium) or wider.</p>
+<p class="text-lg-right">Right aligned text on viewports sized LG (large) or wider.</p>
+<p class="text-xl-right">Right aligned text on viewports sized XL (extra-large) or wider.</p>
+  </div>
+
+  <h4 class="doc-subheader">Text transform</h4>
+
+  <p>
+    Transform text in components with text capitalization classes.
+  </p>
+
+  <div class="example" data-accent="(text-\w+)">
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">CapiTaliZed text.</p>
+  </div>
+
+  <h4 class="doc-subheader">Font weight and italics</h4>
+
+  <p>
+    Quickly change the weight (boldness) of text or italicize text.
+  </p>
+
+  <div class="example" data-accent="(font-\w+(?:-\w+)?)">
+<p class="font-weight-normal">Normal weight text.</p>
+<p class="font-weight-light">Light text.</p>
+<p class="font-weight-semibold">Semibold text.</p>
+<p class="font-weight-bold">Bold text.</p>
+<p class="font-italic">Italicized text.</p>
+  </div>
+
+  <h4 class="doc-subheader">Line height</h4>
+
+  <p>
+    Quickly change the <code>line-height</code> of text.
+  </p>
+
+  <div class="example" data-accent="(line-height-\d+)">
+<p class="line-height-1">Line height is 1.</p>
+  </div>
+
+  <h4 class="doc-subheader">Text-decoration</h4>
+
+  <div class="example" data-accent="(text-underlined)">
+<p class="text-underlined">Underlined text</p>
+  </div>
+
+  <h4 class="doc-subheader">Font sizes</h4>
+
+  <p>
+    Quickly change the font size of text.
+  </p>
+
+  <div class="example" data-accent="(font-size-\d+)">
+<p class="font-size-11">Font size - 11px</p>
+<p class="font-size-12">Font size - 12px</p>
+<p class="font-size-13">Font size - 13px</p>
+<p class="font-size-14">Font size - 14px</p>
+<p class="font-size-15">Font size - 15px</p>
+<p class="font-size-16">Font size - 16px</p>
+<p class="font-size-17">Font size - 17px</p>
+<p class="font-size-18">Font size - 18px</p>
+<p class="font-size-20">Font size - 20px</p>
+<p class="font-size-24">Font size - 24px</p>
+<p class="font-size-28">Font size - 28px</p>
+<p class="font-size-34">Font size - 34px</p>
+<p class="font-size-40">Font size - 40px</p>
+<p class="font-size-46">Font size - 46px</p>
+<p class="font-size-52">Font size - 52px</p>
+  </div>
+
+  <h4 class="doc-subheader">Border radius</h4>
+
+  <p>
+    Quickly change the <code>border-radius</code> of the element.
+  </p>
+
+  <div class="example border-radius-example clearfix" data-accent="(border-\w+)''||(border-radius-0)''">
+<div class="border-rounded"><code>.border-rounded</code></div>
+<div class="border-round"><code>.border-round</code></div>
+<div class="border-radius-0" style="border-radius: 999px"><code>.border-radius-0</code></div>
+  </div>
+
+  <h4 class="doc-subheader">Contextual text colors</h4>
+
+  <div class="example colors-example" data-accent="(text-\w+)">
+<a href="#" class="text-white" style="background: #666;">White text</a>
+<a href="#" class="text-default">Default text</a>
+<a href="#" class="text-muted">Muted text</a>
+<a href="#" class="text-light">Light text</a>
+<a href="#" class="text-primary">Primary text</a>
+<a href="#" class="text-success">Success text</a>
+<a href="#" class="text-danger">Danger text</a>
+<a href="#" class="text-warning">Warning text</a>
+<a href="#" class="text-info">Info text</a>
+  </div>
+
+  <h4 class="doc-subheader">Contextual backgrounds</h4>
+  <p>
+    <strong>Note:</strong> <code>.bg-*</code> classes also set the element's <code>border-color</code> property.
+  </p>
+
+  <div class="example bgs-example" data-accent="(bg-\w+)||(darke(?:n|r))''">
+<div>
+  <a href="#" class="bg-transparent">Transparent background</a>
+</div>
+<div>
+  <a href="#" class="bg-white">White background</a>
+  <a href="#" class="bg-white darken">White darken background</a>
+  <a href="#" class="bg-white darker">White darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-black">Black background</a>
+  <a href="#" class="bg-black darken">Black darken background</a>
+  <a href="#" class="bg-black darker">Black darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-default">Default background</a>
+  <a href="#" class="bg-default darken">Default darken background</a>
+  <a href="#" class="bg-default darker">Default darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-primary">Primary background</a>
+  <a href="#" class="bg-primary darken">Primary darken background</a>
+  <a href="#" class="bg-primary darker">Primary darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-success">Success background</a>
+  <a href="#" class="bg-success darken">Success darken background</a>
+  <a href="#" class="bg-success darker">Success darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-danger">Danger background</a>
+  <a href="#" class="bg-danger darken">Danger darken background</a>
+  <a href="#" class="bg-danger darker">Danger darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-warning">Warning background</a>
+  <a href="#" class="bg-warning darken">Warning darken background</a>
+  <a href="#" class="bg-warning darker">Warning darker background</a>
+</div>
+<div>
+  <a href="#" class="bg-info">Info background</a>
+  <a href="#" class="bg-info darken">Info darken background</a>
+  <a href="#" class="bg-info darker">Info darker background</a>
+</div>
+  </div>
+
+  <h4 class="doc-subheader">Contextual border colors</h4>
+
+  <div class="example border-color-example" data-accent="(border-\w+)">
+<div class="b-a-2 border-default">Default border color</div>
+<div class="b-a-2 border-panel">Panel border color</div>
+<div class="b-a-2 border-primary">Primary border color</div>
+<div class="b-a-2 border-success">Success border color</div>
+<div class="b-a-2 border-danger">Danger border color</div>
+<div class="b-a-2 border-warning">Warning border color</div>
+<div class="b-a-2 border-info">Info border color</div>
+  </div>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('elements_utilities.html');
+  </script>
+</body>
+</html>

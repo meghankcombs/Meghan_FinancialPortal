@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Changelog - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  .changelog-list {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  html[dir="rtl"] .changelog-list {
+    padding-right: 20px;
+    padding-left: 0;
+  }
+
+  .changelog-list li + li {
+    margin-top: 5px;
+  }
+</style>
+
+<h1 class="doc-header">
+  Changelog
+</h1>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.3.2
+</h4>
+
+<ul class="changelog-list">
+  <li>Update jQuery to v3.2.1</li>
+  <li>Update select2 to v4.0.4</li>
+  <li>Update bootstrap-datepicker to v1.7.1</li>
+  <li>Update jquery-minicolors to v2.2.6</li>
+  <li>Update jquery-validation to v1.17.0</li>
+  <li>Update datatables to v1.10.16</li>
+  <li>Update datatables-plugins to v1.10.16</li>
+  <li>Update dropzone to v5.1.1</li>
+  <li>Update summernote to v0.8.8</li>
+  <li>Update chart.js to v2.7.0</li>
+  <li>Update chartist to v0.11.0</li>
+  <li>Update c3 to v0.4.18</li>
+  <li>Update ionrangeslider to v2.2.0</li>
+  <li>Update sortablejs to v1.6.0</li>
+  <li>Update seiyria-bootstrap-slider to v9.9.0</li>
+  <li>Update nouislider to v10.1.0</li>
+  <li>Update angular to v1.6.6</li>
+  <li>Update angular-ui-router to v1.0.10</li>
+  <li>Update ui-bootstrap to v2.5.6</li>
+  <li>Update angular-perfect-scrollbar to v0.1.0</li>
+  <li>Update c3-angular to v1.4.0</li>
+  <li>Update angular-flot to v0.0.17</li>
+  <li>Update ngBootbox to v0.2.0</li>
+  <li>Update angular-ui-select to v0.19.8</li>
+  <li>Update ng-tags-input to v3.2.0</li>
+</ul>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.3.1
+</h4>
+
+<ul class="changelog-list">
+  <li>Now Builder asks for the PixelAdmin package path if it cannot be found automatically</li>
+  <li>Fix misspelling in "watch" task</li>
+</ul>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.3.0
+</h4>
+
+<ul class="changelog-list">
+  <li>Improve package structure (no breaking changes - see migration page in the docs)</li>
+  <li>Improve build system (Gulp tasks)</li>
+  <li>Add Gulp task that starts local server</li>
+  <li>Integrate PixelAdmin with <strong>Angular 1.x</strong> (demo and starter projects are available)</li>
+  <li>Add <strong>starter</strong> project for <strong>HTML5</strong>(concatenated) version</li>
+  <li>Add <strong>starter</strong> project for <strong>RequireJS</strong> version</li>
+  <li>Add landing page</li>
+  <li>Make "clean" theme main</li>
+  <li>Refactor Builder App</li>
+  <li>
+    Integrate 2 new plugins:
+    <ul>
+      <li>Owl.Carousel</li>
+      <li>Pace.js</li>
+    </ul>
+  </li>
+  <li>Update libraries</li>
+  <li>Update jQuery to v3.1.1</li>
+  <li>Update documentation</li>
+  <li>Switch from "animate-sass" lib to "animatewithsass"</li>
+  <li>PxResponsiveBg plugin - Add ability to use custom HTML as an overlay</li>
+  <li>PxResponsiveBg plugin - Add <code>backgroundPosition</code> option</li>
+  <li>Fix DataTables' server-side processing styling</li>
+  <li>Fix Sparkline bug in Safari</li>
+  <li>Fix screen detection bug</li>
+  <li>Fix few small bugs</li>
+</ul>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.2.0
+</h4>
+
+<ul class="changelog-list">
+  <li>Add <code>pixel-color-variant</code> mixin</li>
+  <li>Improve some mixins for better customization</li>
+  <li>Add <strong>Color Generator</strong> tool</li>
+  <li>Add <strong>moment</strong> into the default requirejs config</li>
+  <li>
+    Integrate 12 new plugins:
+    <ul>
+      <li>Bootstrap TouchSpin</li>
+      <li>Quick[select]</li>
+      <li>Bootstrap 3 Typeahead</li>
+      <li>Bootstrap Tags Input</li>
+      <li>Toastr</li>
+      <li>Date Range Picker</li>
+      <li>editableTableWidget</li>
+      <li>Sortable</li>
+      <li>jQuery Sortable</li>
+      <li>Ion.RangeSlider</li>
+      <li>Seiyria Bootstrap Slider</li>
+      <li>noUiSlider</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.1.0
+</h4>
+
+<ul class="changelog-list">
+  <li>Add RTL support</li>
+  <li>Add extensions for <strong>knob</strong>, <strong>bootstrap-datepicker</strong> and <strong>perfect-scrollbar</strong> plugins to fix some issues in RTL mode</li>
+  <li>Add a little bit more white space to <strong>px-nav</strong> and <strong>px-navbar</strong> elements</li>
+  <li>Add dark version of PixelAdmin</li>
+  <li>
+    Add 20 new themes:
+    <ul>
+      <li>Candy Black</li>
+      <li>Candy Blue</li>
+      <li>Candy Red</li>
+      <li>Candy Orange</li>
+      <li>Candy Green</li>
+      <li>Candy Purple</li>
+      <li>Candy Cyan</li>
+      <li>Mint Dark</li>
+      <li>Dark Blue</li>
+      <li>Dark Red</li>
+      <li>Dark Orange</li>
+      <li>Dark Green</li>
+      <li>Dark Purple</li>
+      <li>Dark Cyan</li>
+      <li>Darklight Blue</li>
+      <li>Darklight Red</li>
+      <li>Darklight Orange</li>
+      <li>Darklight Green</li>
+      <li>Darklight Purple</li>
+      <li>Darklight Cyan</li>
+    </ul>
+  </li>
+  <li>
+    Small changes in markup of some pages to make them compatible with RTL and dark version of PixelAdmin. The changed pages:
+    <ul>
+      <li>dashboards-analytics.html</li>
+      <li>dashboards-videos.html</li>
+      <li>pages-404.html</li>
+      <li>pages-500.html</li>
+      <li>pages-about-us.html</li>
+      <li>pages-blog-post.html</li>
+      <li>pages-forum-thread.html</li>
+      <li>pages-messages-item.html</li>
+      <li>pages-messages-list.html</li>
+      <li>pages-messages-new.html</li>
+      <li>pages-pricing.html</li>
+      <li>pages-profile-v2.html</li>
+      <li>pages-search-results.html</li>
+      <li>pages-signin-v1.html</li>
+      <li>pages-signin-v2.html</li>
+      <li>pages-signup-v1.html</li>
+      <li>pages-signup-v2.html</li>
+      <li>ui-alerts.html</li>
+      <li>ui-buttons.html</li>
+    </ul>
+  </li>
+  <li>
+    Add 3 new Builder options:
+    <ul>
+      <li>Include dark version</li>
+      <li>Minify AMD modules</li>
+      <li>Include RTL support</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.0.1
+</h4>
+
+<ul class="changelog-list">
+  <li><strong>builder</strong> directory is compressed with password to prevent removal of executable. See the password in the archive name</li>
+</ul>
+
+<h4 class="doc-subheader font-weight-bold font-size-18">
+  2.0.0
+</h4>
+
+<ul class="changelog-list">
+  <li>Change package directory structure</li>
+  <li>Drop IE8 support</li>
+  <li>Drop LESS support. For now, only SCSS is supported</li>
+  <li>For now, all Javascript sources are using ES6 instead of CoffeeScript</li>
+  <li>Replace Grunt task runner by Gulp</li>
+  <li>Add Asynchronous Module Definition(AMD) support</li>
+  <li>Update all package libs</li>
+  <li>Add Builder app which allows you easily create custom bundles</li>
+  <li>Remove dependency on FontAwesome. Now you can use any iconic font</li>
+  <li>Add documentation</li>
+  <li>Change HTML page structure to simplify markup</li>
+  <li>No need to add <code>theme-*</code> class to the <code>body</code> element - just include required theme file</li>
+  <li>Add support of extra large(xl) screen sizes >= 1200px</li>
+  <li>Change utility classes</li>
+  <li>Change core Javascript files (such as pixeladmin.js, util.js) - no need to call the <code>PixelAdmin.start()</code> method anymore</li>
+  <li>Change storage/cookies utility methods</li>
+  <li>Remove <code>.counter</code> element</li>
+  <li>Change default alert style; add styling for the inner elements</li>
+  <li>Add <code>.px-block-alerts</code> element</li>
+  <li>Replace <strong>alert</strong> plugin by <strong>px-block-alert</strong> plugin</li>
+  <li>Replace <strong>stat-panels</strong> by <strong>boxes</strong></li>
+  <li>Rename <code>.breadcrumb-dark</code> to <code>.breadcrumb-inverted</code></li>
+  <li>Rename <code>.breadcrumb-page</code> to <code>.page-breadcrumb</code></li>
+  <li>Rename <code>.btn-flat</code> to <code>.btn-3d</code></li>
+  <li>Outline buttons are colorful by default. Use <code>.btn-outline-colorless</code>/<code>.btn-outline-colorless-inverted</code> class to create a colorless outline button</li>
+  <li>Add button loading indicator</li>
+  <li>Add extra large <code>.btn</code> size</li>
+  <li>Change labeled button markup and styling; Add <code>.btn-label-icon</code> element</li>
+  <li>Add extra large <code>.btn-group</code> size</li>
+  <li>Add a chevron to all <code>.dropdown-toggle</code> buttons using <code>::after</code> pseudo-element</li>
+  <li>Remove <code>.dropdown-icon</code> class</li>
+  <li>Add multilevel dropdowns</li>
+  <li>Add multicolumn dropdowns</li>
+  <li>Add <code>label.required</code> class</li>
+  <li>Change form messages markup</li>
+  <li>Add <code>.form-control</code> state icons</li>
+  <li>Add form loading indicator</li>
+  <li>Change custom checkbox and custom radio markup and styling</li>
+  <li>Add <code>.custom-select</code> element</li>
+  <li>Replace <code>.pixel-file-input</code> element by <code>.custom-file</code> element</li>
+  <li>Replace <strong>file-input</strong> plugin by <strong>px-file</strong> plugin</li>
+  <li>Add small and large sizes to custom inputs</li>
+  <li>Restyle input group states</li>
+  <li>Add <code>.label-pill</code> class (use it instead of <code>.badge</code>)</li>
+  <li>Add outlined labels</li>
+  <li>Add <code>.label-image</code> element</li>
+  <li>Add <code>.label-corner</code> element</li>
+  <li>Add <code>.label-ribbon</code> element</li>
+  <li>Change <strong>modal</strong> extension. Remove modals with blurred background</li>
+  <li>Add large and extra large sizes to navs</li>
+  <li>Replace <code>.nav-tabs-{size}</code> and <code>.nav-pills-{size}</code> classes by <code>.nav-{size}</code></li>
+  <li>Add panels without <code>.panel-heading</code> element</li>
+  <li>Add styling for tables and list groups within a panel</li>
+  <li>Improve responsivity of panels</li>
+  <li>Remove <code>.popover-{state}</code> and <code>.popover-dark</code> classes. Use <code>data-state</code> and <code>data-style</code> attributes instead</li>
+  <li>Add <strong>px-footer</strong> plugin</li>
+  <li>Replace <strong>main-menu</strong> plugin by <strong>px-nav</strong> plugin. Note: the markup is changed</li>
+  <li>Replace <strong>main-navbar</strong> plugin by <strong>px-navbar</strong> plugin. Note: the markup is changed</li>
+  <li>Add <strong>px-sidebar</strong> plugin</li>
+  <li>Remove <strong>switcher</strong> plugin</li>
+  <li>Add CSS-only switchers</li>
+  <li>Remove <code>.tooltip-{state}</code> classes. Use <code>data-state</code> attribute instead</li>
+  <li>Replace <strong>wizard</strong> plugin by <strong>px-wizard</strong> plugin. Note: the markup is changed</li>
+  <li>Drop jQuery UI support</li>
+  <li>Remove <strong>vague.js</strong> plugin</li>
+  <li>Remove <strong>bootstrap-datepaginator</strong> plugin</li>
+  <li>Remove <strong>x-editable</strong> plugin</li>
+  <li>Remove <strong>rating</strong> plugin</li>
+  <li>Remove <strong>tasks</strong> plugin</li>
+  <li>Improve responsivity of <strong>DataTables</strong> plugin</li>
+  <li>Replace <strong>jquery.slimscroll</strong> plugin by <strong>perfect-scrollbar</strong> plugin</li>
+  <li>Replace <strong>limiter</strong> plugin by <strong>px-char-limit</strong> plugin</li>
+  <li>Replace <strong>expanding-input</strong> plugin by <strong>px-expanding-input</strong> plugin</li>
+  <li>Add <strong>px-responsive-bg</strong> plugin</li>
+  <li>Replace <strong>bootstrap-tabdrop</strong> plugin by <strong>px-tab-resize</strong> plugin</li>
+  <li>Wrap <strong>jquery-validate</strong> plugin with <strong>px-validate</strong> plugin</li>
+  <li>Wrap <strong>jquery.sparkline</strong> chart plugin with <strong>px-sparkline</strong> plugin</li>
+  <li>Add <strong>chartist</strong> chart plugin</li>
+  <li>Add <strong>Chart.js</strong> chart plugin</li>
+  <li>Add <strong>c3</strong> chart plugin</li>
+  <li>Existing widgets are remastered</li>
+  <li>Rename <strong>article-comments</strong> widget to <strong>tree-comments</strong></li>
+  <li>Add <strong>activity</strong> widget</li>
+  <li>Add <strong>more-link</strong> widget</li>
+  <li>Add <strong>pricing</strong> widget</li>
+  <li>Add <strong>products</strong> widget</li>
+  <li>Add <strong>timeline</strong> widget</li>
+  <li>Remove SCSS sources of pages</li>
+  <li>Existing pages are remastered</li>
+  <li>Add <strong>Analytics Dashboard</strong> page</li>
+  <li>Add <strong>Videos Dashboard</strong> page</li>
+  <li>Add <strong>Financial Dashboard</strong> page</li>
+  <li>Add <strong>Blog Dashboard</strong> page</li>
+  <li>Add <strong>Blog</strong> pages</li>
+  <li>Add <strong>Forum</strong> pages</li>
+  <li>Add <strong>About Us</strong> page</li>
+  <li>Add <strong>Account</strong> page</li>
+  <li>Add <strong>Profile v2</strong> page</li>
+</ul>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('changelog.html');
+  </script>
+</body>
+</html>

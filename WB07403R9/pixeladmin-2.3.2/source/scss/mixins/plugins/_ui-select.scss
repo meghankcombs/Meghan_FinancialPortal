@@ -1,0 +1,94 @@
+//
+// Mixins / Plugins / UI Select
+// --------------------------------------------------
+
+@mixin ui-select-size-base($font-size, $line-height, $border-radius, $padding-vertical, $padding-horizontal, $choice-spacer: $select2-choice-spacer, $choice-font-size: 85%, $choice-line-height: 1.909em) {
+  font-size: $font-size;
+  line-height: $line-height;
+
+  .ui-select-search,
+  .ui-select-toggle {
+    padding: $padding-vertical $padding-horizontal;
+
+    border-radius: $border-radius;
+
+    font-size: $font-size;
+    line-height: $line-height;
+  }
+
+  &.ui-select-multiple {
+    padding: ($padding-vertical - $choice-spacer) ($padding-vertical - $choice-spacer) $padding-vertical $padding-vertical;
+
+    .ui-select-search { margin-top: $choice-spacer; }
+
+    .ui-select-match-item {
+      margin: $choice-spacer $choice-spacer 0 0;
+
+      font-size: $choice-font-size;
+      line-height: $choice-line-height;
+    }
+
+    .ui-select-match .close { line-height: $font-size * $line-height; }
+  }
+
+  // Corners
+  //
+
+  &.open,
+  &.open .ui-select-toggle,
+  .ui-select-search {
+    @include border-bottom-radius(0);
+  }
+
+  &.direction-up.open,
+  &.direction-up.open .ui-select-toggle,
+  &.direction-up .ui-select-search {
+    border-radius: $border-radius;
+
+    @include border-top-radius(0);
+  }
+}
+
+@mixin ui-select-size($size, $font-size, $line-height, $border-radius, $padding-vertical, $padding-horizontal, $choice-spacer, $choice-font-size: 85%, $choice-line-height: 1.909em) {
+  .ui-select-#{$size},
+  .ui-select-#{$size} + .ui-select-container,
+  .form-group-#{$size} .ui-select-container {
+    @include ui-select-size-base($font-size, $line-height, $border-radius, $padding-vertical, $padding-horizontal, $choice-spacer, $choice-font-size, $choice-line-height);
+  }
+}
+
+@mixin ui-select-base($background) {
+  &.ui-select-multiple .ui-select-match-item { background: $background !important; }
+  &.ui-select-multiple .ui-select-match-item.btn-primary{ background: darken($background, 10%) !important; }
+}
+
+@mixin ui-select-variant($state, $background) {
+  .ui-select-#{$state} {
+    @include ui-select-base($background);
+  }
+}
+
+@mixin ui-select-state-variant($state, $border-color) {
+  .has-#{$state} .ui-select-toggle,
+  .has-#{$state} .ui-select-multiple {
+    border-color: $border-color;
+  }
+}
+
+@mixin ui-select-theme($color, $background, $border) {
+  @include ui-select-variant(primary, $background);
+
+  .btn-default-focus .ui-select-toggle,
+  .ui-select-multiple.open,
+  .ui-select-container.open .ui-select-toggle,
+  .ui-select-container.open .ui-select-search,
+  .ui-select-choices,
+  .ui-select-no-choice {
+    border-color: $border !important;
+  }
+
+  .ui-select-choices-row.active > span {
+    color: $color;
+    background-color: $background;
+  }
+}

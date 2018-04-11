@@ -1,0 +1,376 @@
+<div ng-controller="BoxesCtrl as ctrl">
+  <div class="page-header m-b-0">
+    <h1><i class="page-header-icon ion-ios-analytics"></i>Boxes&nbsp;&nbsp;<span class="text-muted">[ <a href="../../docs/elements_box.html">Go to docs</a> ]</span></h1>
+  </div>
+
+  <div class="page-wide-block p-a-4 bg-white font-size-15">
+    <p>
+      PixelAdmin's <span class="font-weight-semibold">boxes</span> are
+      flexible tool to build content blocks. You can create boxes without writing
+      any extra styles.
+    </p>
+    <p>
+      <span class="font-weight-semibold">NOTE:</span> These examples uses <a href="utilities.html">the utility classes</a>.
+    </p>
+    <button class="btn" ng-click="ctrl.equalizeHeights()">Equalize heights</button>
+  </div>
+
+  <hr class="page-wide-block m-t-0">
+
+  <div class="row box-examples">
+
+    <div class="col-md-5">
+      <div class="box">
+        <a href="#" class="box-cell col-xs-5 b-r-1 valign-middle text-xs-center bg-success font-size-24">
+          <i class="fa fa-calendar"></i>&nbsp;&nbsp;<strong>11</strong>
+        </a>
+
+        <div class="box-cell">
+          <div class="box-container">
+            <div class="box-row">
+              <a href="#" class="box-cell p-a-1 valign-middle bg-success">
+                32 messages
+                <i class="box-icon pull-xs-right fa fa-envelope-o"></i>
+              </a>
+            </div>
+            <div class="box-row">
+              <a href="#" class="box-cell p-a-1 valign-middle bg-success darken">
+                9 issues
+                <i class="box-icon pull-xs-right fa fa-bug"></i>
+              </a>
+            </div>
+            <div class="box-row">
+              <a href="#" class="box-cell p-a-1 valign-middle bg-success darker">
+                47 new users
+                <i class="box-icon pull-xs-right fa fa-users"></i>
+              </a>
+            </div>
+          </div> <!-- / .box-container -->
+        </div> <!-- / .box-cell -->
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <a href="#" class="box bg-danger">
+        <div class="box-cell p-a-3 valign-middle">
+          <i class="box-bg-icon middle right ion-ios-chatbubble-outline"></i>
+
+          <span class="font-size-24"><strong>124</strong></span><br>
+          <span class="font-size-15">New comments today</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-3">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-cell text-xs-center bg-info font-size-52">
+            <i class="fa fa-clock-o"></i>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-y-2 text-xs-center font-size-20">
+            <strong>4:50</strong>
+            <small><small>PM</small></small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row box-examples">
+
+    <div class="col-md-3">
+      <div class="box bg-warning">
+        <div class="box-row">
+          <div class="box-cell p-a-2">
+            <div class="font-weight-semibold font-size-17">15% more</div>
+            <div class="font-size-12">Monthly visitor statistics</div>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-x-2 p-b-1 valign-bottom text-xs-center">
+            <span px-sparkline ng-model="ctrl.sparklines[0].data" options="ctrl.sparklines[0].options"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-container">
+            <div class="box-cell p-a-1 bg-info">
+              <div class="m-b-1 font-size-11">RETWEETS GRAPH</div>
+              <span px-sparkline ng-model="ctrl.sparklines[1].data" options="ctrl.sparklines[1].options"></span>
+            </div>
+          </div> <!-- / .box-container -->
+        </div>
+        <div class="box-row">
+          <div class="box-container text-xs-center">
+            <div class="box-cell p-y-1 b-r-1">
+              <div class="font-size-17"><strong>312</strong></div>
+              <div class="font-size-11">TWEETS</div>
+            </div>
+            <div class="box-cell p-y-1 b-r-1">
+              <div class="font-size-17"><strong>1000</strong></div>
+              <div class="font-size-11">FOLLOWERS</div>
+            </div>
+            <div class="box-cell p-y-1">
+              <div class="font-size-17"><strong>523</strong></div>
+              <div class="font-size-11">FOLLOWING</div>
+            </div>
+          </div> <!-- / .box-container -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-5">
+      <div class="panel box">
+        <div class="box-cell col-xs-5 p-a-3 text-xs-right">
+          <span class="font-size-11">TODAY'S EARNINGS</span><br>
+          <span class="font-size-20"><small><small>$</small></small><strong>247</strong></span>
+        </div>
+        <div class="box-cell p-a-0 valign-bottom bg-success">
+          <span px-sparkline ng-model="ctrl.sparklines[2].data" options="ctrl.sparklines[2].options"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row box-examples">
+
+    <div class="col-md-4">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-container">
+            <div class="box-cell p-a-3 valign-middle bg-primary">
+              <i class="box-bg-icon middle right font-size-52 ion-ios-information-outline"></i>
+              <div class="font-size-17">Overview</div>
+              <div class="text-muted font-size-12">Your account statistics</div>
+            </div>
+          </div> <!-- / .box-container -->
+        </div>
+        <div class="box-row">
+          <div class="box-container text-xs-center">
+            <div class="box-row valign-middle">
+              <div class="box-cell p-y-1 b-r-1">
+                <div class="font-size-17"><strong>12</strong></div>
+                <div class="font-size-11">PURCHASES</div>
+              </div>
+              <div class="box-cell p-y-1 b-r-1">
+                <div class="font-size-17"><strong>17</strong></div>
+                <div class="font-size-11">REVIEWS</div>
+              </div>
+              <div class="box-cell p-y-1">
+                <div class="font-size-17"><strong>49</strong></div>
+                <div class="font-size-11">LIKES</div>
+              </div>
+            </div>
+            <div class="box-row valign-middle">
+              <div class="box-cell p-y-1 b-t-1 b-r-1">
+                <div class="font-size-17"><strong>203</strong></div>
+                <div class="font-size-11">FRIENDS</div>
+              </div>
+              <div class="box-cell p-y-1 b-t-1 b-r-1">
+                <div class="font-size-17"><strong>1056</strong></div>
+                <div class="font-size-11">POINTS</div>
+              </div>
+              <a href="#" class="box-cell p-y-1 b-t-1 bg-white text-default font-size-12">
+                MORE&nbsp;&nbsp;>
+              </a>
+            </div>
+          </div> <!-- / .box-container -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-cell col-md-4 p-a-3 valign-top">
+            <h4 class="m-y-1 font-weight-normal"><i class="fa fa-cloud-upload text-primary"></i>&nbsp;&nbsp;Uploads</h4>
+            <ul class="list-group m-x-0 m-t-3 m-b-0">
+              <li class="list-group-item b-x-0 b-t-0">
+                <span class="label pull-right">34</span>
+                Documents
+              </li>
+              <li class="list-group-item b-x-0">
+                <span class="label pull-right">128</span>
+                Audio
+              </li>
+              <li class="list-group-item b-x-0 b-b-0">
+                <span class="label pull-right">12</span>
+                Videos
+              </li>
+            </ul>
+          </div>
+          <div class="box-cell col-md-8 p-a-1 bg-primary">
+            <div morris-line data="ctrl.morrisData" options="ctrl.morrisOptions" style="height: 220px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row box-examples">
+
+    <div class="col-md-4">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-cell p-x-3 p-y-1">
+            <div class="pull-xs-left font-weight-semibold font-size-12">DOWNLOADS</div>
+            <div class="pull-xs-right text-success font-size-12"><i class="fa fa-caret-up"></i> 5%</div>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-x-3 p-y-2">
+            <i class="box-bg-icon middle left text-info font-size-52 ion-ios-cloud-download-outline"></i>
+            <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">23,500</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="box">
+        <div class="box-row">
+          <div class="box-cell p-x-3 p-y-1 bg-success">
+            <div class="pull-xs-left font-weight-semibold font-size-12">ORDERS</div>
+            <div class="pull-xs-right font-size-12"><i class="fa fa-caret-up"></i> 21%</div>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-x-3 p-y-2 bg-success darken">
+            <i class="box-bg-icon middle left font-size-52 ion-android-done"></i>
+            <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">1,265</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="box">
+        <div class="box-row">
+          <div class="box-cell p-x-3 p-y-1 bg-info darken">
+            <div class="pull-xs-left font-weight-semibold font-size-12">VISITORS</div>
+            <div class="pull-xs-right font-size-12"><i class="fa fa-caret-down"></i> 6%</div>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-x-3 p-y-2 bg-info">
+            <i class="box-bg-icon middle left font-size-52 ion-ios-people-outline"></i>
+            <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">987</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row box-examples">
+
+    <div class="col-md-6">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-cell col-sm-4 p-a-3 valign-middle bg-success">
+            <span class="font-size-16 font-weight-light">Overview</span><br>
+            <span class="font-size-12 text-muted">Server <strong>C13</strong></span>
+          </div>
+          <div class="box-cell col-sm-8">
+            <div class="box-container">
+              <div class="box-row">
+                <div class="box-cell p-x-3 p-y-1 bg-black">
+                  <div class="m-b-1 font-size-11">CPU USAGE</div>
+                  <span px-sparkline ng-model="ctrl.sparklines[3].data" options="ctrl.sparklines[3].options"></span>
+                </div>
+              </div>
+              <div class="box-row">
+                <div class="box-cell">
+                  <div class="box-container">
+                    <div class="box-cell p-x-2 p-y-1">
+                      <span class="text-muted">Memory</span><br>
+                      <span class="font-size-16">12 / 32GB</span>
+                    </div>
+                    <div class="box-cell p-x-2 p-y-1">
+                      <span class="text-muted">Storage</span><br>
+                      <span class="font-size-16"><span class="text-danger">212</span> / 216GB</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-cell p-a-3 valign-middle bg-white darken font-size-17">
+            You have an invite
+          </div>
+        </div>
+        <div class="box-container valign-middle">
+          <div class="box-cell p-y-3 p-r-1 p-l-3">
+            <button class="btn btn-lg btn-success btn-outline btn-block">Accept</button>
+          </div>
+          <div class="box-cell p-y-3 p-r-3 p-l-1">
+            <button class="btn btn-lg btn-danger btn-outline btn-block">Decline</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row box-examples">
+
+    <div class="col-md-4">
+      <div class="panel box">
+        <div class="box-row">
+          <div class="box-cell p-x-2 p-t-2">
+            <span class="font-size-20">241</span>
+            <span class="pull-xs-right label label-success">+ 12%</span>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-x-2">
+            <span class="text-muted font-weight-semibold font-size-11">SUBSCRIPTIONS IN LAST 7 DAYS</span>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-y-3">
+            <span px-sparkline ng-model="ctrl.sparklines[4].data" options="ctrl.sparklines[4].options"></span>
+          </div>
+        </div>
+        <div class="box-row">
+          <a href="#" class="box-cell p-x-2 p-y-1 b-t-1 bg-white text-default">
+            View subscriptions >
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="box bg-danger">
+        <div class="box-row">
+          <div class="box-cell p-x-2 p-t-2 text-xs-right">
+            <span class="font-weight-semibold font-size-12">Jul 2016 - Aug 2016</span>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-y-3 p-x-2 valign-bottom text-xs-center">
+            <span px-sparkline ng-model="ctrl.sparklines[5].data" options="ctrl.sparklines[5].options"></span>
+          </div>
+        </div>
+        <div class="box-row">
+          <div class="box-cell p-x-2 p-y-1 valign-middle bg-danger darker">
+            <span class="font-weight-light font-size-16">New visitors</span>
+            <button class="pull-xs-right btn btn-sm btn-danger btn-outline btn-outline-colorless-inverted"><i class="fa fa-refresh"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

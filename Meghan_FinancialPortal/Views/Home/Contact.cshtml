@@ -1,17 +1,39 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿@model Meghan_FinancialPortal.Models.Helpers.EmailModel
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i></span>Contact Us</h1>
+</div>
+<div class="row">
+    <div class="col-md-6 center-block">
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-title">Send a message</div>
+            </div>
+            <div class="panel-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label for="grid-input-16">Name</label>
+                            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="grid-input-18">E-mail</label>
+                            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label for="grid-input-20">Message</label>
+                            @Html.TextAreaFor(m => m.Body, new { @class = "form-control", rows = 5 })
+                        </div>
+                    </div>
+                    <div class="panel-footer text-right">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,7 +1,69 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+﻿<div class="page-about-us-header page-header m-b-0 b-b-0 text-xs-center bg-default" style="background-image: url('../../assets/demo/bgs/1.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center center;">
+    <h1 class="m-b-1 font-size-28 font-weight-bold">About</h1><br>
+</div>
+<!-- Contacts -->
+<div class="page-wide-block">
+    <div class="box m-a-0 valign-middle border-radius-0 text-xs-center font-size-14">
+        <div class="box-cell col-md-4 p-x-1 p-y-2 text-white" style="background: #66cdaa;"><i class="fa fa-balance-scale"></i>&nbsp;&nbsp;Create Households</div>
+        <div class="box-cell col-md-4 p-x-1 p-y-2 text-white" style="background: #1a7ab9;"><i class="fa fa-dollar"></i>&nbsp;&nbsp;Manage Budgets</div>
+        <div class="box-cell col-md-4 p-x-1 p-y-2 text-white" style="background: #4f5b66;"><i class="fa fa-area-chart"></i>&nbsp;&nbsp;Track Transactions</div>
+    </div>
+</div>
+<!-- / Contacts -->
+<!-- About text -->
+<div class="page-about-us-text page-block panel m-y-0 b-a-0 border-radius-0 font-size-16">
+    <div class="m-x-auto" style="max-width: 800px;">
+        <p>
+            Manage your expenses for each household easily and efficiently with the Financial Portal.
+        </p>
+    </div>
+</div>
+<!-- / About text -->
+<!-- Team -->
+<ul class="nav nav-lg nav-tabs nav-tabs-simple">
+    <li class="active">
+        <a href="#tabs-most-sold" data-toggle="tab" class="text-center">Benefits</a>
+    </li>
+</ul>
+<div class="tab-content row m-t-1">
+    <!-- Most sold products -->
+    <div class="tab-pane fade in active" id="tabs-most-sold">
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+            <div class="widget-products-image">
+                <img src="~/assets/demo/bgs/7.jpg" />
+                <span class="widget-products-overlay"></span>
+            </div>
+            <div class="widget-products-title text-center">Households</div>
+            <div class="widget-products-footer text-muted">
+            </div>
+        </div>
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+            <div class="widget-products-image">
+                <img src="~/MyImages/Accounts.jpg" />
+                <span class="widget-products-overlay"></span>
+            </div>
+            <div class="widget-products-title text-center">Accounts</div>
+            <div class="widget-products-footer text-muted">
+            </div>
+        </div>
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+            <div class="widget-products-image">
+                <img src="~/MyImages/Budgets.jpg" />
+                <span class="widget-products-overlay"></span>
+            </div>
+            <div class="widget-products-title text-center">Budgets</div>
+            <div class="widget-products-footer text-muted">
+            </div>
+        </div>
+        <div class="widget-products-item col-xs-12 col-sm-6 col-md-4 col-xl-3">
+            <div class="widget-products-image">
+                <img src="~/MyImages/Transactions.jpg" />
+                <span class="widget-products-overlay"></span>
+            </div>
+            <div class="widget-products-title text-center">Transactions</div>
+            <div class="widget-products-footer text-muted">
+            </div>
+        </div>
+    </div>
+    <!-- / Most sold products -->
+</div>

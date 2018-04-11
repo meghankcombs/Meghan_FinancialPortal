@@ -1,0 +1,630 @@
+<!-- Custom template -->
+<script id="px/pages/profile-v1.html" type="text/ng-template">
+  <div>
+    <ul class="nav nav-tabs" ng-transclude></ul>
+    <div class="tab-content tab-content-bordered p-a-0 bg-white">
+      <div class="tab-pane" ng-repeat="tab in tabset.tabs" ng-class="{active: tabset.active === tab.index}" uib-tab-content-transclude="tab"></div>
+    </div>
+  </div>
+</script>
+<!-- / Custom template -->
+
+<!-- Custom styling -->
+<style>
+  .page-profile-v1-avatar {
+    max-width: 160px;
+    border: 4px solid #fff;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="row m-t-1">
+  <div class="col-md-4 col-lg-3">
+    <div class="text-xs-center"><img src="assets/demo/avatars/5.jpg" alt="" class="page-profile-v1-avatar border-round"></div>
+    <div class="m-y-3 text-xs-center">
+      <a href="#" class="btn btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a>&nbsp;&nbsp;
+      <a href="#" class="btn"><i class="fa fa-envelope"></i></a>
+    </div>
+    <div class="panel panel-transparent">
+      <div class="panel-heading p-x-1">
+        <span class="panel-title">About me</span>
+      </div>
+      <div class="panel-body p-a-1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et <a href="#">dolore magna</a> aliqua.
+      </div>
+    </div>
+    <div class="panel panel-transparent">
+      <div class="panel-heading p-x-1">
+        <span class="panel-title">Statistics</span>
+      </div>
+      <div class="list-group m-y-1">
+        <a href="#" class="list-group-item p-x-1 b-a-0"><strong>126</strong> Likes</a>
+        <a href="#" class="list-group-item p-x-1 b-a-0"><strong>579</strong> Followers</a>
+        <a href="#" class="list-group-item p-x-1 b-a-0"><strong>100</strong> Following</a>
+      </div>
+    </div>
+    <div class="panel panel-transparent">
+      <div class="panel-heading p-x-1">
+        <span class="panel-title">Skills</span>
+      </div>
+      <div class="panel-body p-a-1">
+        <span class="label label-primary">UI/UX</span>
+        <span class="label label-primary">Web design</span>
+        <span class="label label-primary">Photoshop</span>
+        <span class="label label-primary">HTML</span>
+        <span class="label label-primary">CSS</span>
+      </div>
+    </div>
+    <div class="panel panel-transparent">
+      <div class="panel-heading p-x-1">
+        <span class="panel-title">Social</span>
+      </div>
+      <div class="list-group m-t-1">
+        <a href="#" class="list-group-item p-x-1 b-a-0"><i class="fa fa-twitter" style="color: #4ab6d5"></i>&nbsp;&nbsp;&nbsp;@dsteiner</a>
+        <a href="#" class="list-group-item p-x-1 b-a-0"><i class="fa fa-facebook-square" style="color: #1a7ab9"></i>&nbsp;&nbsp;&nbsp;Denise Steiner</a>
+        <a href="#" class="list-group-item p-x-1 b-a-0"><i class="fa fa-envelope" style="color: #888"></i>&nbsp;&nbsp;&nbsp;dsteiner@example.com</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="page-wide-block visible-xs visible-sm">
+
+  <div class="col-md-8 col-lg-9">
+    <h1 class="font-size-20 m-y-4">Denise Steiner<span class="font-weight-normal">'s profile</span></h1>
+
+    <uib-tabset template-url="px/pages/profile-v1.html" px-tab-resize class="page-block">
+      <uib-tab heading="Board">
+
+        <form class="widget-tree-comments-item p-y-2" ng-controller="PagesProfileV1CommentCtrl as ctrl">
+          <img src="assets/demo/avatars/1.jpg" alt="" class="widget-tree-comments-avatar">
+
+          <px-expanding-input on-expand="ctrl.onExpand">
+            <textarea px-expanding-input-control rows="1" class="form-control widget-tree-comments-input" placeholder="Write your comment..."></textarea>
+            <px-expanding-input-content>
+              <label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-1">
+                <input type="checkbox" id="custom-checkbox-1" class="custom-control-input">
+                <span class="custom-control-indicator"></span>
+                Private message
+              </label>
+              <div class="pull-right">
+                <button type="button" class="btn btn-primary">Leave message</button>
+              </div>
+            </px-expanding-input-content>
+          </px-expanding-input>
+        </form>
+
+        <hr class="m-y-0">
+
+        <div class="widget-tree-comments-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-tree-comments-avatar">
+          <div class="widget-tree-comments-header">
+            <a href="#" title="">Robert Jang</a><span>&nbsp;&nbsp;14 hours ago</span>
+          </div>
+          <div class="widget-tree-comments-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </div>
+          <div class="widget-tree-comments-footer">
+            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <a href="#">Reply</a>
+          </div>
+
+          <!-- Second-level comment -->
+          <div class="widget-tree-comments-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-tree-comments-avatar">
+            <div class="widget-tree-comments-header">
+              <a href="#" title="">Timothy Owens</a><span>&nbsp;&nbsp;14 hours ago</span>
+            </div>
+            <div class="widget-tree-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-tree-comments-footer">
+              <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+              <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+              &nbsp;&nbsp;·&nbsp;&nbsp;
+              <a href="#">Reply</a>
+            </div>
+          </div>
+
+          <!-- Second-level comment -->
+          <div class="widget-tree-comments-item">
+            <img src="assets/demo/avatars/5.jpg" alt="" class="widget-tree-comments-avatar">
+            <div class="widget-tree-comments-header">
+              <a href="#" title="">Denise Steiner</a><span>&nbsp;&nbsp;14 hours ago</span>
+            </div>
+            <div class="widget-tree-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-tree-comments-footer">
+              <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+              <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+              &nbsp;&nbsp;·&nbsp;&nbsp;
+              <a href="#">Reply</a>
+            </div>
+
+            <!-- Third-level comment -->
+            <div class="widget-tree-comments-item">
+              <img src="assets/demo/avatars/1.jpg" alt="" class="widget-tree-comments-avatar">
+              <div class="widget-tree-comments-header">
+                <a href="#" title="">John Doe</a><span>&nbsp;&nbsp;14 hours ago</span>
+              </div>
+              <div class="widget-tree-comments-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </div>
+              <div class="widget-tree-comments-footer">
+                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
+                <a href="#">Reply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget-tree-comments-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-tree-comments-avatar">
+          <div class="widget-tree-comments-header">
+            <a href="#" title="">Michelle Bortz</a><span>&nbsp;&nbsp;14 hours ago</span>
+          </div>
+          <div class="widget-tree-comments-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </div>
+          <div class="widget-tree-comments-footer">
+            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <a href="#">Reply</a>
+          </div>
+        </div>
+
+        <div class="widget-tree-comments-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-tree-comments-avatar">
+          <div class="widget-tree-comments-header">
+            <a href="#" title="">Robert Jang</a><span>&nbsp;&nbsp;14 hours ago</span>
+          </div>
+          <div class="widget-tree-comments-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </div>
+          <div class="widget-tree-comments-footer">
+            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <a href="#">Reply</a>
+          </div>
+
+          <!-- Second-level comment -->
+          <div class="widget-tree-comments-item">
+            <img src="assets/demo/avatars/4.jpg" alt="" class="widget-tree-comments-avatar">
+            <div class="widget-tree-comments-header">
+              <a href="#" title="">Timothy Owens</a><span>&nbsp;&nbsp;14 hours ago</span>
+            </div>
+            <div class="widget-tree-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-tree-comments-footer">
+              <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+              <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+              &nbsp;&nbsp;·&nbsp;&nbsp;
+              <a href="#">Reply</a>
+            </div>
+          </div>
+
+          <!-- Second-level comment -->
+          <div class="widget-tree-comments-item">
+            <img src="assets/demo/avatars/5.jpg" alt="" class="widget-tree-comments-avatar">
+            <div class="widget-tree-comments-header">
+              <a href="#" title="">Denise Steiner</a><span>&nbsp;&nbsp;14 hours ago</span>
+            </div>
+            <div class="widget-tree-comments-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+            </div>
+            <div class="widget-tree-comments-footer">
+              <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+              <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+              &nbsp;&nbsp;·&nbsp;&nbsp;
+              <a href="#">Reply</a>
+            </div>
+
+            <!-- Third-level comment -->
+            <div class="widget-tree-comments-item">
+              <img src="assets/demo/avatars/1.jpg" alt="" class="widget-tree-comments-avatar">
+              <div class="widget-tree-comments-header">
+                <a href="#" title="">John Doe</a><span>&nbsp;&nbsp;14 hours ago</span>
+              </div>
+              <div class="widget-tree-comments-text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </div>
+              <div class="widget-tree-comments-footer">
+                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                &nbsp;&nbsp;·&nbsp;&nbsp;
+                <a href="#">Reply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="widget-tree-comments-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-tree-comments-avatar">
+          <div class="widget-tree-comments-header">
+            <a href="#" title="">Michelle Bortz</a><span>&nbsp;&nbsp;14 hours ago</span>
+          </div>
+          <div class="widget-tree-comments-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+          </div>
+          <div class="widget-tree-comments-footer">
+            <a href="#"><i class="fa fa-thumbs-o-up"></i></a>&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <a href="#">Reply</a>
+          </div>
+        </div>
+
+      </uib-tab>
+      <uib-tab heading="Timeline">
+
+        <div class="widget-timeline m-a-3">
+          <div class="widget-timeline-section font-weight-semibold">NOW</div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-bullet"></div>
+              <div class="widget-timeline-time">9:09 PM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-bullet bg-primary"></div>
+              <div class="widget-timeline-time bg-primary">10:00 AM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-title text-danger">Lorem ipsum dolor sit amet</div>
+              <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-icon"><i class="fa fa-envelope"></i></div>
+              <div class="widget-timeline-time">9:35 PM</div>
+            </div>
+            <div class="panel panel-warning panel-body-colorful">
+              <div class="panel-title">Lorem ipsum dolor sit amet</div>
+              <div class="panel-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-icon bg-success"><i class="fa fa-picture-o"></i></div>
+              <div class="widget-timeline-time">6:12 PM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-body">
+                <a href="#">John Doe</a> shared an image on <a href="#">The Gallery</a>
+              </div>
+              <hr class="m-a-0">
+              <div class="panel-img p-a-1">
+                <img src="assets/demo/thumbs/3.jpg">
+              </div>
+              <div class="panel-footer text-muted">
+                <em>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</em>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-image"><img src="assets/demo/avatars/2.jpg" alt=""></div>
+              <div class="widget-timeline-time">2:22 PM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-body">
+                <div class="widget-comments-item p-a-0">
+                  <div class="widget-comments-header">
+                    <a href="#" title="">Robert Jang</a> commented on <a href="#" title="">Article Name</a>
+                  </div>
+                  <div class="widget-comments-text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-icon bg-black"><i class="fa fa-check"></i></div>
+              <div class="widget-timeline-time">11:47 AM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-body">
+                <a href="#" title=""><img src="assets/demo/avatars/4.jpg" alt="" class="image-inline border-rounded">&nbsp;&nbsp;Timothy Owens</a> followed <a href="#" title="">John Doe</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-section font-weight-semibold">Yesterday</div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-icon bg-info"><i class="fa fa-comment"></i></div>
+              <div class="widget-timeline-time">11:49 PM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-body">
+                <a href="#"><img src="assets/demo/avatars/1.jpg" alt="" class="image-inline border-rounded">&nbsp;&nbsp;John Doe</a> liked a comment on <a href="#">Some Article</a>
+              </div>
+              <hr class="m-a-0">
+              <div class="widget-comments-item bg-white darken">
+                <img src="assets/demo/avatars/3.jpg" alt="" class="widget-comments-avatar">
+                <div class="widget-comments-header">
+                  <a href="#" title="">Michelle Bortz</a> commented on <a href="#" title="">Article Name</a>
+                </div>
+                <div class="widget-comments-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-timeline-item">
+            <div class="widget-timeline-info">
+              <div class="widget-timeline-image"><img src="assets/demo/avatars/1.jpg" alt=""></div>
+              <div class="widget-timeline-time">5:17 PM</div>
+            </div>
+            <div class="panel">
+              <div class="panel-body">
+                <a href="#">John Doe</a> liked <a href="#">Shop Item</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </uib-tab>
+      <uib-tab heading="Followers">
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+      </uib-tab>
+      <uib-tab heading="Following">
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-success"><i class="fa fa-check"></i>&nbsp;&nbsp;Following</a></div>
+          <a href="#" class="widget-followers-name">Robert Jang</a>
+          <a href="#" class="widget-followers-username">@rjang</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Michelle Bortz</a>
+          <a href="#" class="widget-followers-username">@mbortz</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a></div>
+          <a href="#" class="widget-followers-name">Timothy Owens</a>
+          <a href="#" class="widget-followers-username">@towens</a>
+        </div>
+
+        <div class="widget-followers-item">
+          <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+          <div class="widget-followers-controls"><a href="#" class="btn btn-sm btn-outline">Follow</a> </div>
+          <a href="#" class="widget-followers-name">Denise Steiner</a>
+          <a href="#" class="widget-followers-username">@dsteiner</a>
+        </div>
+
+      </uib-tab>
+    </uib-tabset>
+
+  </div>
+</div>

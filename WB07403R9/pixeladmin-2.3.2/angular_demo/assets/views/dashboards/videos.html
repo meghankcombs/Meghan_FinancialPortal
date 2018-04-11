@@ -1,0 +1,428 @@
+<!-- Custom styling -->
+<style>
+  .videos-list {
+    white-space: nowrap;
+  }
+
+  .videos-list .videos-list-item {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    white-space: normal;
+  }
+
+  .videos-list .videos-list-item a,
+  .videos-list .videos-list-item img {
+    width: 200px;
+  }
+
+  .videos-list .videos-list-item a:hover,
+  .videos-list .videos-list-item a:focus {
+    opacity: .7;
+    transition: opacity .3s;
+  }
+
+  .videos-list .videos-list-item + .videos-list-item {
+    margin-left: 30px;
+  }
+
+  html[dir="rtl"] .videos-list .videos-list-item + .videos-list-item {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header">
+  <div class="row">
+    <div class="col-md-4">
+      <h1><i class="page-header-icon ion-social-youtube-outline"></i>Videos <span class="text-muted font-weight-light">Dashboard</span></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <!-- Stats -->
+
+  <div class="col-md-3">
+    <a href="#" class="box bg-success darken">
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-1 bg-success">
+          <div class="pull-xs-left font-weight-semibold font-size-12">TOTAL VIEWS</div>
+        </div>
+      </div>
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-2">
+          <i class="box-bg-icon middle left font-size-52 ion-ios-play text-white"></i>
+          <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">231,500</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-3">
+    <a href="#" class="panel box bg-white text-default">
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-1">
+          <div class="pull-xs-left font-weight-semibold font-size-12">VIDEOS</div>
+        </div>
+      </div>
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-2">
+          <i class="box-bg-icon middle left text-danger font-size-52 ion-ios-film-outline"></i>
+          <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">123</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-3">
+    <a href="#" class="panel box bg-white text-default">
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-1">
+          <div class="pull-xs-left font-weight-semibold font-size-12">SUBSCRIBERS</div>
+        </div>
+      </div>
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-2">
+          <i class="box-bg-icon middle left text-info font-size-52 ion-ios-people-outline"></i>
+          <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">22,712</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col-md-3">
+    <a href="#" class="panel box bg-white text-default">
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-1">
+          <div class="pull-xs-left font-weight-semibold font-size-12">COMMENTS</div>
+        </div>
+      </div>
+      <div class="box-row">
+        <div class="box-cell p-x-3 p-y-2">
+          <i class="box-bg-icon middle left text-warning font-size-52 ion-ios-chatbubble-outline"></i>
+          <div class="pull-xs-right font-weight-semibold font-size-24 line-height-1">8,631</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- / Stats -->
+
+</div>
+
+<!-- Overview -->
+
+<div class="panel" ng-controller="VideosDashboardOverviewCtrl as overview">
+  <div class="panel-title">
+    Overview
+    <div class="pull-xs-right col-md-5 p-a-0">
+      <div bootstrap-datepicker date="overview.datepickerData" orientation="'bottom right'" class="input-daterange input-group input-group-sm">
+        <bootstrap-datepicker-start />
+        <span class="input-group-addon b-a-0 bg-transparent">-</span>
+        <bootstrap-datepicker-end />
+      </div>
+    </div>
+  </div>
+
+  <hr class="m-a-0">
+
+  <!-- Overview stats -->
+  <div class="p-x-2 p-y-2 b-b-1 clearfix bg-white darken">
+    <div class="col-xs-4 p-x-2 b-r-1">
+      <div class="font-size-24"><strong>6,216</strong></div>
+      <div class="font-size-14">Views</div>
+    </div>
+    <div class="col-xs-4 p-x-2 b-r-1">
+      <div class="font-size-24"><strong>2,715</strong></div>
+      <div class="font-size-14">Likes</div>
+    </div>
+    <div class="col-xs-4 p-x-2">
+      <div class="font-size-24"><strong>1,321</strong></div>
+      <div class="font-size-14">Dislikes</div>
+    </div>
+  </div>
+
+  <!-- Graph -->
+  <div class="p-x-2 p-y-4">
+    <div morris-area data="overview.morrisData" options="overview.morrisOptions" style="height: 250px;"></div>
+  </div>
+</div>
+
+<!-- / Overview -->
+
+<hr class="page-block">
+
+<h4 class="m-y-4 font-weight-normal"><i class="fa fa-diamond"></i>&nbsp;&nbsp;Top videos <a href="#" class="pull-xs-right btn btn-xs btn-primary btn-outline btn-outline-colorless">Show top videos</a></h4>
+
+<!-- Top videos -->
+
+<perfect-scrollbar supress-scroll-y="true" class="ps-block videos-list p-b-2"><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/1.jpg" alt="" class="border-rounded"></a>
+  <span class="label label-success label-ribbon right">Most viewed</span>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/2.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/3.jpg" alt="" class="border-rounded"></a>
+  <span class="label label-info label-ribbon right">Most popular</span>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/4.jpg" alt="" class="border-rounded"></a>
+  <span class="label label-warning label-ribbon right">Most commented</span>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/5.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/6.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/7.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/8.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div></perfect-scrollbar>
+
+<!-- / Top videos -->
+
+<hr class="page-block">
+
+<h4 class="m-y-4 font-weight-normal"><i class="fa fa fa-film"></i>&nbsp;&nbsp;Latest videos <a href="#" class="pull-xs-right btn btn-xs btn-primary btn-outline btn-outline-colorless">Show all videos</a></h4>
+
+<!-- Latest videos -->
+
+<perfect-scrollbar supress-scroll-y="true" class="ps-block videos-list p-b-2"><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/8.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/7.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/6.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/5.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/4.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/3.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/2.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div><div class="videos-list-item">
+  <a href="#"><img src="assets/demo/thumbs/1.jpg" alt="" class="border-rounded"></a>
+  <div class="font-size-11 text-muted" style="margin-top: 5px;">
+    <i class="fa fa-eye"></i> 1,234
+    <i class="fa fa-thumbs-o-up p-l-1"></i> 652
+    <i class="fa fa-thumbs-o-down p-l-1"></i> 38
+  </div>
+</div></perfect-scrollbar>
+
+<!-- / Latest videos -->
+
+<hr class="page-block">
+
+<div class="row">
+  <div class="col-md-6">
+
+    <!-- Latest activity -->
+
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Latest activity</span>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/5.jpg" alt="">
+          <div class="widget-activity-icon fa fa-comment bg-info"></div>
+        </div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Denise Steiner</a> commented on <a href="#" title="">Some video</a>
+        </div>
+        <div class="widget-activity-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/3.jpg" alt="">
+          <div class="widget-activity-icon fa fa-thumbs-up bg-success"></div>
+        </div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Michelle Bortz</a> liked <a href="#" title="">Some video</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/2.jpg" alt="">
+          <div class="widget-activity-icon fa fa-thumbs-down bg-danger"></div>
+        </div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Robert Jang</a> disliked <a href="#" title="">Some video</a>
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/4.jpg" alt="">
+          <div class="widget-activity-icon fa fa-comment bg-info"></div>
+        </div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Timothy Owens</a> commented on <a href="#" title="">Some video</a>
+        </div>
+        <div class="widget-activity-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <div class="widget-activity-item">
+        <div class="widget-activity-avatar">
+          <img src="assets/demo/avatars/4.jpg" alt="">
+          <div class="widget-activity-icon fa fa-check bg-warning"></div>
+        </div>
+        <div class="widget-activity-header">
+          <a href="#" title="">Timothy Owens</a> subscribed
+        </div>
+        <div class="widget-activity-footer">2 hours ago</div>
+      </div>
+
+      <a href="#" class="widget-more-link">MORE ACTIVITIES</a>
+    </div>
+
+    <!-- / Latest activity -->
+
+  </div>
+  <div class="col-md-6">
+
+    <!-- Recently subscribed -->
+
+    <!-- Use followers widget for the subscribers list -->
+    <div class="panel">
+      <div class="panel-heading">
+        <span class="panel-title">Recently subscribed</span>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Robert Jang</a>
+        <a href="#" class="widget-followers-username">@rjang</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Michelle Bortz</a>
+        <a href="#" class="widget-followers-username">@mbortz</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Timothy Owens</a>
+        <a href="#" class="widget-followers-username">@towens</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/5.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Denise Steiner</a>
+        <a href="#" class="widget-followers-username">@dsteiner</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/2.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Robert Jang</a>
+        <a href="#" class="widget-followers-username">@rjang</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/3.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Michelle Bortz</a>
+        <a href="#" class="widget-followers-username">@mbortz</a>
+      </div>
+
+      <div class="widget-followers-item">
+        <img src="assets/demo/avatars/4.jpg" alt="" class="widget-followers-avatar">
+        <a href="#" class="widget-followers-name">Timothy Owens</a>
+        <a href="#" class="widget-followers-username">@towens</a>
+      </div>
+
+      <a href="#" class="widget-more-link">MORE SUBSCRIBERS</a>
+    </div>
+
+    <!-- / Recently subscribed -->
+
+  </div>
+</div>

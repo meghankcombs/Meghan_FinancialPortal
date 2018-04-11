@@ -7,17 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Meghan_FinancialPortal.Models;
+using Meghan_FinancialPortal.Models.ViewModels;
 
 namespace Meghan_FinancialPortal.Controllers
 {
     public class HouseholdsController : Controller
     {
-        private FinancialPortal db = new FinancialPortal();
+        private FinancialPortal fdb = new FinancialPortal();
+        private ApplicationDbContext adb = new ApplicationDbContext();
 
         // GET: Households
         public ActionResult Index()
         {
-            return View(db.Households.ToList());
+            return View(fdb.Households.ToList());
         }
 
         // GET: Households/Details/5
@@ -27,7 +29,14 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Household household = db.Households.Find(id);
+            //Load up and set View Model for this details view
+            var household = new HouseholdViewModel();
+            var householdId = fdb.Households.FirstOrDefault(h => h.Id == id).Id;
+            household.Accounts = fdb.PersonalAccounts.Where(a => a.Id == householdId).ToList();
+            household.Invitations = fdb.Invites.Where(i => i.Id == householdId).ToList();
+            household.Transactions = fdb.Transactions.Where(t => t.Id == householdId).ToList();
+            household.Users = adb.Users.Where(u => u.HouseholdId == householdId).ToList();
+
             if (household == null)
             {
                 return HttpNotFound();
@@ -50,8 +59,8 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Households.Add(household);
-                db.SaveChanges();
+                fdb.Households.Add(household);
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -65,7 +74,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Household household = db.Households.Find(id);
+            Household household = fdb.Households.Find(id);
             if (household == null)
             {
                 return HttpNotFound();
@@ -82,8 +91,8 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(household).State = EntityState.Modified;
-                db.SaveChanges();
+                fdb.Entry(household).State = EntityState.Modified;
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(household);
@@ -96,7 +105,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Household household = db.Households.Find(id);
+            Household household = fdb.Households.Find(id);
             if (household == null)
             {
                 return HttpNotFound();
@@ -109,9 +118,9 @@ namespace Meghan_FinancialPortal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Household household = db.Households.Find(id);
-            db.Households.Remove(household);
-            db.SaveChanges();
+            Household household = fdb.Households.Find(id);
+            fdb.Households.Remove(household);
+            fdb.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -119,7 +128,7 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                fdb.Dispose();
             }
             base.Dispose(disposing);
         }

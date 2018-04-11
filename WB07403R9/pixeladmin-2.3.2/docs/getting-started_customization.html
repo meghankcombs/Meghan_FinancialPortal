@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  
+  <title>Customization - Getting started - PixelAdmin 2.3.2 Docs</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- DEMO ONLY: Function for the proper stylesheet loading according to the demo settings -->
+  <script>function _pxDemo_loadStylesheet(a,b,c){var c=c||decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean"),d="rtl"===document.getElementsByTagName("html")[0].getAttribute("dir");document.write(a.replace(/^(.*?)((?:\.min)?\.css)$/,'<link href="$1'+(c.indexOf("dark")!==-1&&a.indexOf("/css/")!==-1&&a.indexOf("/themes/")===-1?"-dark":"")+(!d||0!==a.indexOf("assets/css")&&0!==a.indexOf("assets/demo")?"":".rtl")+'$2" rel="stylesheet" type="text/css"'+(b?'class="'+b+'"':"")+">"))}</script>
+
+  <!-- DEMO ONLY: Set RTL direction -->
+  <script>"ltr"!==document.getElementsByTagName("html")[0].getAttribute("dir")&&"1"===decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-rtl")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"0")&&document.getElementsByTagName("html")[0].setAttribute("dir","rtl");</script>
+
+  <!-- DEMO ONLY: Load PixelAdmin core stylesheets -->
+  <script>
+    _pxDemo_loadStylesheet('assets/css/bootstrap.min.css', 'px-demo-stylesheet-bs');
+    _pxDemo_loadStylesheet('assets/css/pixeladmin.min.css', 'px-demo-stylesheet-core');
+  </script>
+
+  <!-- DEMO ONLY: Load theme -->
+  <script>
+    function _pxDemo_loadTheme(a){var b=decodeURIComponent((new RegExp(";\\s*"+encodeURIComponent("px-demo-theme")+"\\s*=\\s*([^;]+)\\s*;","g").exec(";"+document.cookie+";")||[])[1]||"clean");_pxDemo_loadStylesheet(a+b+".min.css","px-demo-stylesheet-theme",b)}
+    _pxDemo_loadTheme('assets/css/themes/');
+  </script>
+
+  <!-- Demo assets -->
+  <script>_pxDemo_loadStylesheet('assets/demo/demo.css');</script>
+  <!-- / Demo assets -->
+
+
+  <script src="assets/demo/demo.js"></script>
+
+
+  <!-- holder.js -->
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.9.0/holder.js"></script>
+
+  <link rel="stylesheet" href="assets/docs.css">
+  <link rel="stylesheet" href="assets/content.css">
+  <link rel="stylesheet" href="assets/highlight.css">
+
+    <!-- jQuery -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+  <script src="assets/clipboard.min.js"></script>
+  <script src="assets/highlight.js"></script>
+  <script src="assets/docs.js"></script>
+
+  <!-- ==============================================================================
+  |
+  |  SCRIPTS
+  |
+  =============================================================================== -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/pixeladmin.min.js"></script>
+
+  <script src="assets/js/angular/angular.js"></script>
+  <script src="assets/js/angular/ui-bootstrap.js"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <div class="docs-logo clearfix">
+      <span class="px-demo-logo" style="background: #888;"><span class="px-demo-logo-1"></span><span class="px-demo-logo-2"></span><span class="px-demo-logo-3"></span><span class="px-demo-logo-4"></span><span class="px-demo-logo-5"></span><span class="px-demo-logo-6"></span><span class="px-demo-logo-7"></span><span class="px-demo-logo-8"></span><span class="px-demo-logo-9"></span></span>
+      <a href="index.html"><strong>DOCS v2.3.2</strong></a>
+    </div>
+    <hr>
+    <h6 class="doc-sidebar-header">Getting Started</h6>
+    <a href="getting-started_introduction.html" class="doc-link">Introduction</a>
+    <a href="getting-started_commands.html" class="doc-link">Console commands</a>
+    <a href="getting-started_app.html" class="doc-link">Builder app</a>
+    <a href="getting-started_customization.html" class="doc-link">Customization</a>
+    <a href="getting-started_basicjs.html" class="doc-link">Utilities</a>
+    <a href="getting-started_rtl.html" class="doc-link">RTL support</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Versions</h6>
+    <a href="versions_concatenated.html" class="doc-link">Concatenated</a>
+    <a href="versions_requirejs.html" class="doc-link">RequireJS</a>
+    <a href="versions_angular.html" class="doc-link">Angular</a>
+    <hr>
+    <h6 class="doc-sidebar-header">Migration guide</h6>
+    <a href="migration_120-to-130.html" class="doc-link">2.2.0 &rarr; 2.3.0</a>
+    <hr>
+    <h6 class="doc-sidebar-header m-b-3"><a href="changelog.html" class="doc-link">Changelog</a></h6>
+    <hr>
+    <h6 class="doc-sidebar-header">Elements</h6>
+    <a href="elements_accordion.html" class="doc-link">Accordion</a>
+<a href="elements_alert.html" class="doc-link">Alert</a>
+<a href="elements_box.html" class="doc-link">Box</a>
+<a href="elements_breadcrumb.html" class="doc-link">Breadcrumb</a>
+<a href="elements_button-group.html" class="doc-link">Button group</a>
+<a href="elements_button.html" class="doc-link">Button</a>
+<a href="elements_dropdown.html" class="doc-link">Dropdown</a>
+<a href="#" class="doc-link">Form</a><div class="doc-dropdown">
+<a href="elements_form_components.html" class="doc-link">Components</a>
+<a href="elements_form_controls.html" class="doc-link">Controls</a>
+<a href="elements_form_custom-controls.html" class="doc-link">Custom controls</a>
+<a href="elements_form_input-group.html" class="doc-link">Input group</a>
+<a href="elements_form_layout.html" class="doc-link">Layout</a>
+</div>
+<a href="elements_icons.html" class="doc-link">Icons</a>
+<a href="elements_jumbotron.html" class="doc-link">Jumbotron</a>
+<a href="elements_label.html" class="doc-link">Label</a>
+<a href="elements_labeled-button.html" class="doc-link">Labeled button</a>
+<a href="elements_list-group.html" class="doc-link">List group</a>
+<a href="elements_modal.html" class="doc-link">Modal</a>
+<a href="elements_nav.html" class="doc-link">Nav</a>
+<a href="elements_note.html" class="doc-link">Note</a>
+<a href="elements_pagination.html" class="doc-link">Pagination</a>
+<a href="elements_panel.html" class="doc-link">Panel</a>
+<a href="elements_popover.html" class="doc-link">Popover</a>
+<a href="elements_progress.html" class="doc-link">Progress</a>
+<a href="elements_px-footer.html" class="doc-link">PxFooter</a>
+<a href="elements_px-nav.html" class="doc-link">PxNav</a>
+<a href="elements_px-navbar.html" class="doc-link">PxNavbar</a>
+<a href="elements_px-sidebar.html" class="doc-link">PxSidebar</a>
+<a href="elements_switcher.html" class="doc-link">Switcher</a>
+<a href="elements_table.html" class="doc-link">Table</a>
+<a href="elements_thumbnail.html" class="doc-link">Thumbnail</a>
+<a href="elements_tooltip.html" class="doc-link">Tooltip</a>
+<a href="elements_utilities.html" class="doc-link">Utility classes</a>
+<a href="elements_well.html" class="doc-link">Well</a>
+<a href="elements_wizard.html" class="doc-link">Wizard</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Plugins</h6>
+    <a href="plugins_autosize.html" class="doc-link">Autosize</a>
+<a href="plugins_bootbox.html" class="doc-link">Bootbox</a>
+<a href="plugins_bootstrap-slider.html" class="doc-link">Seiyria Bootstrap Slider</a>
+<a href="plugins_bootstrap-tagsinput.html" class="doc-link">Tags Input</a>
+<a href="plugins_bootstrap-touchspin.html" class="doc-link">Bootstrap TouchSpin</a>
+<a href="plugins_bootstrap3-typeahead.html" class="doc-link">Typeahead</a>
+<a href="plugins_datatables.html" class="doc-link">Datatables</a>
+<a href="plugins_datepicker.html" class="doc-link">Datepicker</a>
+<a href="plugins_daterangepicker.html" class="doc-link">Date Range Picker</a>
+<a href="plugins_dropzone.html" class="doc-link">Dropzone</a>
+<a href="plugins_editable-table.html" class="doc-link">editableTableWidget</a>
+<a href="plugins_growl.html" class="doc-link">Growl</a>
+<a href="plugins_ionrangeslider.html" class="doc-link">Ion.RangeSlider</a>
+<a href="plugins_jquery-sortable.html" class="doc-link">jQuery Sortable</a>
+<a href="plugins_knob.html" class="doc-link">Knob</a>
+<a href="plugins_markdown.html" class="doc-link">Markdown</a>
+<a href="plugins_masked-input.html" class="doc-link">Masked input</a>
+<a href="plugins_minicolors.html" class="doc-link">Minicolors</a>
+<a href="plugins_nouislider.html" class="doc-link">noUiSlider</a>
+<a href="plugins_owl-carousel.html" class="doc-link">Owl Carousel</a>
+<a href="plugins_perfect-scrollbar.html" class="doc-link">Perfect scrollbar</a>
+<a href="plugins_px-block-alert.html" class="doc-link">Block-alert</a>
+<a href="plugins_px-char-limit.html" class="doc-link">Char limit</a>
+<a href="plugins_px-expanding-input.html" class="doc-link">Expanding input</a>
+<a href="plugins_px-responsive-bg.html" class="doc-link">ResponsiveBg</a>
+<a href="plugins_px-tab-resize.html" class="doc-link">Tab resize</a>
+<a href="plugins_px-validate.html" class="doc-link">Validate</a>
+<a href="plugins_quick-select.html" class="doc-link">Quick[select]</a>
+<a href="plugins_select2.html" class="doc-link">Select2 / UI-Select</a>
+<a href="plugins_sortablejs.html" class="doc-link">Sortable</a>
+<a href="plugins_summernote.html" class="doc-link">Summernote</a>
+<a href="plugins_timepicker.html" class="doc-link">Timepicker</a>
+<a href="plugins_toastr.html" class="doc-link">Toastr</a>
+
+    <hr>
+    <h6 class="doc-sidebar-header">Charts</h6>
+    <a href="charts_c3.html" class="doc-link">C3.js</a>
+<a href="charts_chartist.html" class="doc-link">Chartist</a>
+<a href="charts_chartjs.html" class="doc-link">Chart.js</a>
+<a href="charts_easy-pie-chart.html" class="doc-link">Easy Pie Chart</a>
+<a href="charts_flot.html" class="doc-link">Flot.js</a>
+<a href="charts_morris.html" class="doc-link">Morris.js</a>
+<a href="charts_sparkline.html" class="doc-link">Sparkline</a>
+
+  </div>
+  <div id="sidebar-dimmer"></div>
+  <div id="sidebar-button"><span class="sidebar-icon"></span></div>
+
+  <style>
+  .px-stucture {
+    padding: 20px;
+    border-radius: 3px;
+    border: 3px solid #f7f7f9;
+  }
+
+  .px-stucture li {
+    list-style: none;
+    padding: 2px 0;
+  }
+
+  .px-stucture ul {
+    padding-left: 20px;
+    margin-top: 0;
+  }
+
+  html[dir="rtl"] .px-stucture ul {
+    padding-left: 0;
+    padding-right: 20px;
+  }
+
+  .px-stucture .fa {
+    display: inline-block;
+    margin-right: 7px;
+  }
+
+  html[dir="rtl"] .px-stucture .fa {
+    margin-right: 0;
+    margin-left: 7px;
+  }
+
+  .example-filename {
+    margin-top: 20px;
+    margin-bottom: -22px;
+    font-size: 12px;
+    background: #f7f7f9;
+    padding: 3px 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #888;
+    font-family: Consolas, Monaco, "Courier New", monospace;
+  }
+
+  #theming-example > pre {
+    max-height: 10000px;
+  }
+
+  @media (max-width: 750px) {
+    .example-filename {
+      margin-left: -22px;
+      margin-right: -22px;
+    }
+  }
+</style>
+
+<h1 class="doc-header">Customization</h1>
+
+<h4 class="doc-subheader"><strong>custom</strong> directory structure</h4>
+<p>
+  Place your Javascript / SCSS sources into the <strong>custom</strong> directory.
+</p>
+
+<div class="alert alert-warning">
+  <strong>Note:</strong> I don't recommend to edit files outside the
+  <strong>custom</strong> directory, because they will be rewritten by Builder
+  app when updating the bundle. <br>
+  Exceptions: <strong>bower.json</strong>, <strong>amd.json</strong>, <strong>config.json</strong>
+</div>
+
+<ul class="px-stucture">
+  <li>
+    <i class="fa fa-folder-o"></i>custom
+    <ul>
+      <li><i class="fa fa-folder-o"></i>build <span class="text-muted">- Babel working dir (All sources from the <strong>js</strong> directory will be compiled into this directory)</span></li>
+      <li><i class="fa fa-folder-o"></i>js <span class="text-muted">- Javascript sources</span></li>
+      <li>
+        <i class="fa fa-folder-o"></i>scss <span class="text-muted">- SCSS sources</span>
+        <ul>
+          <li><i class="fa fa-folder-o"></i>themes <span class="text-muted">- Themes</span></li>
+          <li><i class="fa fa-file-o"></i>_variables.scss <span class="text-muted">- Variables</span></li>
+          <li><i class="fa fa-file-o"></i>_variables-dark.scss <span class="text-muted">- Dark scheme variables</span></li>
+        </ul>
+      </li>
+      <li><i class="fa fa-file-o"></i>custom.js <span class="text-muted">- Basic Javascript file</span></li>
+      <li><i class="fa fa-file-o"></i>custom.scss <span class="text-muted">- Basic SCSS file</span></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 class="doc-subheader">Customizing PixelAdmin's components</h4>
+
+<p>
+  You can change default PixelAdmin's SCSS variables by adding it to the
+  <strong>custom/scss/_variables.scss</strong> or <strong>custom/scss/_variables-dark.scss</strong> file.
+</p>
+<p>For example, to change default
+background of <code>.panel</code>s:</p>
+
+<div class="example-filename">custom/scss/_variables.scss</div>
+<div class="example nocode">
+  <pre><code data-lang="scss">
+$panel-bg: #fafafa;
+  </code></pre>
+</div>
+
+<p>Now, all panels will have <code>background: #fafafa</code> by default.</p>
+
+<h4 class="doc-subheader">Custom SCSS</h4>
+
+<p>
+  You can place custom SCSS sources into the <strong>custom/scss</strong> directory.
+  In your code you can use all PixelAdmin's SCSS variables and mixins.
+</p>
+
+<div class="alert alert-info m-t-3">
+  The <strong>custom/custom.scss</strong> file is imported at the end of <strong>scss/pixeladmin.scss</strong> file.
+</div>
+
+<p>
+  To add custom SCSS:
+</p>
+
+<ol>
+  <li>Create <strong>custom/scss/_fileName.scss</strong> file.</li>
+  <li>Write some SCSS code.</li>
+  <li>Add <code>@import 'scss/fileName';</code> line to the <strong>custom/custom.scss</strong> file.</li>
+</ol>
+
+<p>Example:</p>
+
+<div class="example-filename">custom/scss/_ad-panel.scss</div>
+<div class="example nocode">
+  <pre><code data-lang="scss">
+.ad-panel {
+  padding: $panel-body-padding;
+
+  @include clearfix();
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+  </code></pre>
+</div>
+
+<div class="example-filename">custom/custom.scss</div>
+<div class="example nocode">
+  <pre><code data-lang="scss">
+@import 'scss/ad-panel';
+  </code></pre>
+</div>
+
+<h4 class="doc-subheader">Custom Javascript</h4>
+
+<p>
+  You can place custom Javascript sources into the <strong>custom/js</strong> directory.
+  Javascript sources can be written using ES5 or ES6.
+</p>
+
+
+<div class="alert alert-info">
+  Files which included in the <strong>custom/custom.js</strong> will be added to
+  the end of <strong>pixeladmin.js</strong> file.
+</div>
+
+<div class="alert alert-info">
+  <ul class="m-a-0">
+    <li>If compilation of <strong>concatenated version</strong> is enabled, compiled custom sources will be placed into the <code>custom/build</code> directory.</li>
+    <li>If compilation of <strong>RequireJS version</strong> is enabled, compiled custom sources will be placed into the <code>dist/js/amd/pixeladmin/custom</code> directory.</li>
+    <li>If compilation of <strong>angular version</strong> is enabled, compiled custom sources will be placed into the <code>dist/js/angular/pixeladmin/custom</code> directory.</li>
+  </ul>
+</div>
+
+<p>
+  To add custom Javascript:
+</p>
+
+<ol>
+  <li>Create <strong>custom/js/fileName.js</strong> file.</li>
+  <li>Write some Javascript code.</li>
+  <li>
+    <span class="text-muted"><strong>Note:</strong> you can skip this step if compilation of <strong>concatenated version</strong> is disabled.</span><br>
+    Include created file in the <strong>custom/custom.js</strong> file using the
+    syntax: <br>
+    <code class="m-y-1 display-inline-block">//= require path/to/compiled/source.js</code>
+    <br>
+    I.e. you need to add <code>//= require build/fileName.js</code> line to the <strong>custom/custom.js</strong> file.
+  </li>
+</ol>
+
+<p>
+  Example:
+</p>
+
+<div class="example-filename">custom/js/utils/browser.js</div>
+<div class="example nocode">
+  <pre><code data-lang="js">
+const browserUtils = {
+  alert(message) {
+    window.alert(message);
+  }
+};
+
+export default browserUtils;
+  </code></pre>
+</div>
+
+<div class="example-filename">custom/js/app.js</div>
+<div class="example nocode">
+  <pre><code data-lang="js">
+import jQuery from 'jquery';
+import browserUtils from 'px/custom/utils/browser';
+
+class SomeApp {
+  constructor() {
+    jQuery(function() {
+      browserUtils.alert('App started');
+    });
+  }
+}
+
+export default SomeApp;
+  </code></pre>
+</div>
+
+<div class="example-filename">custom/custom.js</div>
+<div class="example nocode">
+  <pre><code data-lang="js">
+//= require build/utils/browser.js
+//= require build/app.js
+  </code></pre>
+</div>
+
+<p>
+  Non-RequireJS usage:
+</p>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+browserUtils.alert('Some alert');
+
+new SomeApp();
+  </code></pre>
+</div>
+
+<p>
+  RequireJS usage:
+</p>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+require(['px/custom/utils/browser'], function(browserUtils) {
+  browserUtils.alert('Some alert');
+});
+
+require(['px/custom/app'], function(App) {
+  new App();
+});
+  </code></pre>
+</div>
+
+<h4 class="doc-subheader">Adding Bower packages</h4>
+
+<div class="alert alert-info">
+  <ul class="m-a-0">
+    <li>If compilation of <strong>RequireJS version</strong> is enabled, included files will be placed into the <code>dist/js/amd/libs</code> directory.</li>
+    <li>If compilation of <strong>angular version</strong> is enabled, included files will be placed into the <code>dist/js/angular/libs</code> directory.</li>
+  </ul>
+</div>
+
+<p>
+  To add custom Bower package:
+</p>
+
+<ol>
+  <li>Add package name and version to the <code>dependencies</code> section in the <strong>bower.json</strong> file.</li>
+  <li><a href="getting-started_commands.html">Install Bower packages.</a></li>
+  <li>
+    Require the package's main file in the <strong>custom/custom.js</strong> file using the
+    syntax: <br>
+    <code class="m-t-1 display-inline-block">//= require ../libs/path/to/package/main/file.js</code>
+  </li>
+</ol>
+
+<p>Example:</p>
+
+<div class="example-filename">bower.json</div>
+<div class="example nocode">
+  <pre><code data-lang="JSON">
+{
+  ...
+  "dependencies": {
+    ...
+    "blazy": "*"
+  }
+}
+  </code></pre>
+</div>
+
+<div class="example-filename">custom/custom.js</div>
+<div class="example nocode">
+  <pre><code data-lang="js">
+//= require ../libs/blazy/blazy.min.js
+  </code></pre>
+</div>
+
+<p>
+  Non-RequireJS usage:
+</p>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+new Blazy(...);
+  </code></pre>
+</div>
+
+<p>
+  RequireJS usage:
+</p>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+require(['px-libs/blazy.min'], function(Blazy) {
+  new Blazy(...);
+});
+  </code></pre>
+</div>
+
+<h4 class="doc-subheader">Wrapping Bower package with AMD</h4>
+
+<p>
+  Some Bower packages are not providing an AMD interface. To automatically add an
+  AMD interface to the package:
+</p>
+
+<ol>
+  <li>
+    Add package's main file path (in the <strong>amd</strong> directory) and its dependencies to the
+    <code>dependencies</code> section in the <strong>amd.json</strong> file. If package
+    has no dependencies then just specify an empty array.
+
+    <div class="example-filename">amd.json</div>
+    <div class="example nocode">
+      <pre><code data-lang="JSON">
+{
+  "dependencies": {
+    ...
+    "libs/packageName.js": [
+      { "name": "jquery", "param": "$", "global": "jQuery" },
+      { "name": "px-bootstrap/transition", "param": "transition", "global": "Transition" }
+    ],
+    "libs/anotherPackage.js": []
+  },
+  ...
+}
+      </code></pre>
+    </div>
+  </li>
+  <li class="m-t-3">
+    If package must export an object, add the appropriate config to the <code>exports</code>
+    section in the <strong>amd.json</strong> file:
+
+    <div class="example-filename">amd.json</div>
+    <div class="example nocode">
+      <pre><code data-lang="JSON">
+{
+  ...
+  "exports": {
+    "libs/packageName.js": "PackageClassToExport"
+  },
+}
+      </code></pre>
+  </li>
+</ol>
+
+<p>Full example:</p>
+
+<div class="example-filename">bower.json</div>
+<div class="example nocode">
+  <pre><code data-lang="JSON">
+{
+  ...
+  "dependencies": {
+    ...
+    "FitText.js": "*"
+  }
+}
+  </code></pre>
+</div>
+
+<div class="example-filename">custom/custom.js</div>
+<div class="example nocode">
+  <pre><code data-lang="js">
+//= require ../libs/FitText.js/jquery.fittext.js
+  </code></pre>
+</div>
+
+<div class="example-filename">amd.json</div>
+<div class="example nocode">
+  <pre><code data-lang="JSON">
+{
+  "dependencies": {
+    ...
+    "libs/jquery.fittext.js": [
+      { "name": "jquery", "param": "jQuery", "global": "jQuery" }
+    ]
+  },
+  ...
+}
+  </code></pre>
+</div>
+
+<p>Now you can use <strong>FitText.js</strong> plugin with AMD:</p>
+
+<div class="example nocode">
+  <pre><code data-lang="js">
+require(['jquery', 'px-libs/jquery.fittext'], function($) {
+  $('.responsive-text').fitText();
+});
+  </code></pre>
+</div>
+
+<a name="custom-colors"></a>
+<h4 class="doc-subheader">Creating custom colors</h4>
+
+<p>
+  You can customize UI elements using custom color classes. To generate a
+  custom color just include the <code>pixel-color-variant</code> mixin in your SCSS code
+  using the next syntax:
+</p>
+<p>
+  <code>@include pixel-color-variant(color-name, #bg-color, #text-color);</code>
+</p>
+<p>Let's take the example of color creation:</p>
+
+<div class="example-filename">custom/scss/_colors.scss</div>
+<div class="example nocode" id="theming-example">
+  <pre><code data-lang="scss">
+@include pixel-color-variant(facebook, #3b5998, #fff);
+  </code></pre>
+</div>
+
+<div class="example-filename">custom/custom.scss</div>
+<div class="example nocode">
+  <pre><code data-lang="scss">
+@import 'scss/colors';
+  </code></pre>
+</div>
+
+<p>The call above will generate the next classes:</p>
+
+<ul>
+  <li><code>.text-facebook</code></li>
+  <li><code>.bg-facebook</code></li>
+  <li><code>.bg-facebook.darken</code></li>
+  <li><code>.bg-facebook.darker</code></li>
+  <li><code>.border-facebook</code></li>
+  <li><code>.label-facebook</code></li>
+  <li><code>.btn-facebook</code></li>
+  <li><code>.table-facebook</code></li>
+  <li><code>.dropdown-menu-facebook</code></li>
+  <li><code>.nav-facebook</code></li>
+  <li><code>.alert-dark.alert-facebook</code></li>
+  <li><code>.progress-bar-facebook</code></li>
+  <li><code>.tooltip-facebook</code></li>
+  <li><code>.popover-facebook</code></li>
+  <li><code>.list-group-facebook</code></li>
+  <li><code>.panel-group-facebook</code></li>
+  <li><code>.switcher-facebook</code></li>
+  <li><code>.custom-control-facebook</code></li>
+  <li><code>.panel-dark.panel-facebook</code></li>
+  <li><code>.panel-dark.panel-body-colorful.panel-facebook</code></li>
+</ul>
+
+<p>
+  Now, after the sources recompilation, you can change the style of an element
+  by adding the appropriate class:
+</p>
+
+<div class="example nocode">
+  <pre><code class="html hljs xml">
+&lt;button type="button" class="btn btn-facebook"&gt;...&lt;/button&gt;
+
+&lt;ul class="dropdown-menu dropdown-menu-facebook"&gt;
+  ...
+&lt;/ul&gt;
+
+&lt;div class="progress"&gt;
+  &lt;div class="progress-bar progress-bar-facebook"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;label class="custom-control custom-checkbox custom-control-facebook"&gt;
+  &lt;input type="checkbox" class="custom-control-input"&gt;
+  &lt;span class="custom-control-indicator"&gt;&lt;/span&gt;
+  ...
+&lt;/label&gt;
+  </code></pre>
+</div>
+
+
+<h4 class="doc-subheader">Theming</h4>
+
+<p>
+  You can easily create your own themes using built-in <code>pixel-theme</code> mixin.
+  To create theme:
+</p>
+
+<ol>
+  <li>Create <strong>custom/scss/themes/theme-name/theme-name.scss</strong> file.</li>
+  <li>Setup your theme colors using the <code>pixel-theme</code> mixin.</li>
+  <li><a href="getting-started_commands.html">Compile SCSS sources.</a> Compiled themes are placed into the <strong>dist/css/themes</strong> directory.</li>
+  <li>
+    Include compiled theme file in the page's <code>&lt;head&gt;</code> element: <br>
+    <code>&lt;link href="path/to/assets/css/themes/theme-name.css" rel="stylesheet" type="text/css"&gt;</code>
+  </li>
+  <li>Done!</li>
+</ol>
+
+<p>
+  Let's take the example of theme configuration:
+</p>
+
+<div class="example-filename">custom/scss/themes/brand-blue/brand-blue.scss</div>
+<div class="example nocode" id="theming-example">
+  <pre><code data-lang="scss">
+// If you're creating a dark theme do not forget to import dark scheme variables
+
+// @import '../../../../scss/variables-dark';
+@import '../../../../scss/variables';
+@import '../../../../libs/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+// @import '../../variables-dark';
+@import '../../variables';
+@import '../../../../libs/bootstrap-sass/assets/stylesheets/bootstrap/mixins';
+@import '../../../../scss/mixins';
+
+
+$theme-primary-color: #2383F4;
+
+
+// Generate theme
+//
+
+@include pixel-theme(
+
+  // Basic
+  //
+
+  $primary-color:        $theme-primary-color,             // Primary color
+  $primary-text-color:   #fff,                             // Primary text color
+  $primary-border-color: darken($theme-primary-color, 6%), // Primary border color
+
+  $body-bg:              #f6f6f6,            // Body background
+  $panel-border-color:   #e2e2e2,            // Border color of panel
+  $header-bg:            transparent,        // [Optional] [Default: transparent] Background of page header
+  $header-border-color:  rgba(0, 0, 0, .07), // [Optional] [Default: false] Border color of page header
+
+  // Px-Navbar element
+  //
+
+  $px-navbar: (
+    bg:                             $theme-primary-color,    // Navbar background
+    border-color:                   rgba(0, 0, 0, .09),      // Border color of navbar item on md, lg and xl screens
+    link-color:                     #fff,                    // Link color
+    link-hover-color:               rgba(255, 255, 255, .8), // Link color in hover state
+    link-hover-bg:                  rgba(0, 0, 0, .04),      // Link background in hover state
+    shadow:                         "none",                  // [Optional] [Default: "none"] Navbar shadow
+
+    // Navbar brand styling (take effect when .px-nav is expanded on lg and xl screens)
+    brand-bg:                       $theme-primary-color, // Brand background
+    brand-link-color:               #fff,                 // Brand link color
+    brand-link-hover-color:         #fff,                 // Brand link color in hover state
+
+    collapse-bg:                    #2578da,                  // [Optional] [Default: px-navbar[bg]] Background of navbar collapse on xs and sm screens; Background of dropdown menu on md, lg and xl screens
+    collapse-border-color:          #216CC5,                  // Border color of navbar item on xs and sm screens; Border color of dropdown menu divider on md, lg and xl screens
+    collapse-dropdown-bg:           rgba(255, 255, 255, .06), // Background of dropdown menu on xs and sm screens
+    collapse-dropdown-border-color: #5898E3,                  // Border color of dropdown menu item on xs and sm screens
+
+    form-control-bg:                rgba(255, 255, 255, .3), // Background of navbar form control
+    form-control-border-color:      transparent,             // Border color of navbar form control
+    form-control-color:             #fff,                    // Text color of navbar form control
+
+    scrollbar-color:                rgba(255, 255, 255, .5), // Scrollbar color
+    scrollbar-rail-color:           transparent,             // Scrollbar rail color
+
+    enable-transitions:             false // [Optional] [Default: true] Enable transitions
+  ),
+
+  // Px-Nav element
+  //
+
+  $px-nav: (
+    toggle-color:                #fff,    // Text color of toggler
+    toggle-bg:                   #2977d3, // Background of toggler
+
+    bg:                          #545d64,            // Nav background
+    color:                       #aabcca,            // Text and link color
+    link-hover-color:            #fff,               // Link color in hover state
+    link-hover-bg:               rgba(0, 0, 0, .08), // Link background in hover state
+
+    // Dropdowns
+    dropdown-bg:                 #485056,              // Background of dropdown
+    dropdown-menu-title-color:   #fff,                 // Text color of floating dropdown title 
+    dropdown-menu-title-bg:      $theme-primary-color, // Background of floating dropdown title
+
+    // Active
+    active-color:                #fff,                 // Text color of active nav item
+    active-bg:                   #3687e6,              // Background of active nav item
+    active-icon-color:           #fff,                 // Icon color of active nav item
+    active-dropdown-icon-color:  $theme-primary-color, // [Optional] [Default: px-nav[active-icon-color]] Icon color of active nav dropdown
+
+    scrollbar-color:             rgba(255, 255, 255, .3), // Scrollbar color
+    scrollbar-rail-color:        transparent,             // Scrollbar rail color
+
+    toggle-border-color:         #3372bc, // [Optional] [Default: false] Border color of toggler
+    border-color:                false,   // [Optional] [Default: false] Border color of nav
+    item-border-color:           #4D565C, // [Optional] [Default: false] Border color of nav item
+    dropdown-item-border-color:  #41494E, // [Optional] [Default: false] Border color of dropdown item
+    box-border-color:            #445059, // [Optional] [Default: transparent] Border color of .px-nav-box
+
+    tooltip-bg:                  $theme-primary-color, // [Optional] [Default: px-nav[active-bg]] Background of tooltip
+    tooltip-color:               #fff,                 // [Optional] [Default: px-nav[active-color]] Text color of tooltip
+
+    dimmer-bg:                   rgba(#485056, .5), // [Optional] [Default: $px-nav-dimmer-bg] Background of dimmer
+
+    animate-items:               true // [Optional] [Default: false] Add transitions to nav items
+  ),
+
+  // Px-Footer element
+  //
+
+  $px-footer: (
+    color:            rgba(255, 255, 255, .5), // Text color
+    bg:               #5d676f,                 // Background of footer
+
+    link-color:       rgba(255, 255, 255, .6), // Link color
+    link-hover-color: #fff,                    // Link color in hover state
+
+    muted-color:      #939ea7, // [Optional] [Default: false] Text color of .text-muted element
+    border-color:     false,   // [Optional] [Default: false] Border color of footer
+    hr-color:         #6d7881  // [Optional] [Default: false] Border color of <hr> element
+  )
+);
+
+// Custom styles
+//
+
+// PxNavbar
+@if mixin-exists(px-nav-theme) {
+  @media (min-width: $screen-md-min) {
+    .px-navbar .dropdown-menu {
+      border: none;
+    }
+  }
+}
+
+// Pace.js
+.pace-progress { background: darken($theme-primary-color, 13%); }
+  </code></pre>
+</div>
+
+<div class="example nocode">
+  <pre><code data-lang="html">
+&lt;html&gt;
+  &lt;head&gt;
+    ...
+    &lt;link href="path/to/assets/css/themes/brand-blue.min.css" rel="stylesheet" type="text/css"&gt;
+    ...
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+  &lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+</div>
+
+<br>
+<p>
+  The result:
+</p>
+<br>
+
+<div class="doc-image">
+  <img src="assets/images/customization/theming-1.png" alt="">
+</div>
+<br><br>
+
+<div class="doc-image">
+  <img src="assets/images/customization/theming-2.png" alt="">
+</div>
+<br><br>
+
+<div class="doc-image">
+  <img src="assets/images/customization/theming-3.png" alt="">
+</div>
+<br><br>
+
+<div class="doc-image">
+  <img src="assets/images/customization/theming-4.png" alt="">
+</div>
+<br><br>
+
+<div class="doc-image">
+  <img src="assets/images/customization/theming-5.png" alt="">
+</div>
+
+
+<h4 class="font-weight-normal">
+  Have a question or problem? You can try to find the solution or create an issue at<br><br>
+  <a href="https://github.com/smnedelko/PixelAdmin/issues" target="_blank">https://github.com/smnedelko/PixelAdmin/issues</a>
+</h4>
+
+
+
+  <script>
+    // -------------------------------------------------------------------------
+    // Initialize DEMO sidebar
+
+    $(function() {
+      pxDemo.initializeDemoSidebar();
+
+      $('#px-demo-sidebar').pxSidebar();
+      pxDemo.initializeDemo();
+    });
+  </script>
+
+
+  <script>
+    window.initPixelAdminDocs('getting-started_customization.html');
+  </script>
+</body>
+</html>

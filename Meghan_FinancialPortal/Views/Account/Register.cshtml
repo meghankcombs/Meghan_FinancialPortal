@@ -1,41 +1,43 @@
 ﻿@model Meghan_FinancialPortal.Models.RegisterViewModel
-@{
-    ViewBag.Title = "Register";
-}
 
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+<div class="page-header m-b-0 p-b-0 b-b-0">
+    <h1>Register</h1>
+    <ul class="nav nav-tabs page-block m-t-4" id="account-tabs"></ul>
+</div>
+<div class="tab-content p-y-4">
+    <!-- Register tab -->
+    <div class="tab-pane fade in active" id="account-profile">
+        <div class="row">
+            @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "col-md-8 col-lg-9", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="p-x-1">
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-firstname">First Name</label>
+                        <input type="text" name="FirstName" class="form-control">
+                    </fieldset>
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-lastname">Last Name</label>
+                        <input type="text" name="LastName" class="form-control">
+                    </fieldset>
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-email">Email</label>
+                        <input type="email" name="Email" class="form-control">
+                    </fieldset>
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-password">Password</label>
+                        <input type="password" name="Password" class="form-control">
+                    </fieldset>
+                    <fieldset class="form-group form-group-lg">
+                        <label for="account-confirmpassword">Confirm Password</label>
+                        <input type="password" name="ConfirmPassword" class="form-control">
+                    </fieldset>
+                    <button type="submit" class="btn btn-lg btn-primary m-t-3">Register</button>
+                </div>
+            }
+            <!-- Spacer -->
+            <div class="m-t-4 visible-xs visible-sm"></div>
         </div>
     </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+    <!-- / Register tab -->
+</div>

@@ -1,0 +1,749 @@
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-monitor"></i>UI elements / </span>Tabs & Accordions</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Default tabs</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-tabs" ng-init="tabsDrdnActive = 1">
+          <li ng-class="{active: tabsDrdnActive === 1}">
+            <a href ng-click="tabsDrdnActive = 1">
+              Home <span class="label label-success">12</span>
+            </a>
+          </li>
+          <li ng-class="{active: tabsDrdnActive === 2}">
+            <a href ng-click="tabsDrdnActive = 2">
+              Profile <span class="badge badge-primary">12</span>
+            </a>
+          </li>
+          <li uib-dropdown ng-class="{active: tabsDrdnActive === 3 || tabsDrdnActive === 4}">
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li ng-class="{active: tabsDrdnActive === 3}">
+                <a href ng-click="tabsDrdnActive = 3">@fat</a>
+              </li>
+              <li ng-class="{active: tabsDrdnActive === 4}">
+                <a href ng-click="tabsDrdnActive = 4">@mdo</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <div class="tab-content tab-content-bordered">
+          <div class="tab-pane fade" ng-class="{'in active': tabsDrdnActive === 1}">
+            <p>
+              Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt
+              tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+              williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyed
+              dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson
+              ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+              cardigan american apparel, butcher voluptate nisi qui.
+            </p>
+          </div>
+          <div class="tab-pane fade" ng-class="{'in active': tabsDrdnActive === 2}">
+            <p>
+              Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
+              coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings
+              next level wes anderson artisan four loko farm-to-table craft beer twee.
+              Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean
+              shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore
+              aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna
+              velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson
+              8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson
+              biodiesel.
+            </p>
+          </div>
+          <div class="tab-pane fade" ng-class="{'in active': tabsDrdnActive === 3}">
+            <p>
+              Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out
+              mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.
+              Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
+              locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy
+              irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi
+              whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk
+              vice blog. Scenester cred you probably haven't heard of them, vinyl craft
+              beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+            </p>
+          </div>
+          <div class="tab-pane fade" ng-class="{'in active': tabsDrdnActive === 4}">
+            <p>
+              Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party
+              before they sold out master cleanse gluten-free squid scenester freegan
+              cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf
+              cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR,
+              banh mi before they sold out farm-to-table VHS viral locavore cosby
+              sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft
+              beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park
+              vegan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Simple tabs</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-tabs nav-tabs-simple">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Pills</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-pills">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Stacked</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-tabs nav-stacked">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Justified</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-tabs nav-justified">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills nav-justified">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Sizes</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-tabs nav-xs">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-tabs nav-tabs-simple nav-xs">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills nav-xs">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <hr class="panel-wide-block">
+
+        <ul class="nav nav-tabs nav-sm">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-tabs nav-tabs-simple nav-sm">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills nav-sm">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <hr class="panel-wide-block">
+
+        <ul class="nav nav-tabs nav-lg">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-tabs nav-tabs-simple nav-lg">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills nav-lg">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <hr class="panel-wide-block">
+
+        <ul class="nav nav-tabs nav-xl">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-tabs nav-tabs-simple nav-xl">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills nav-xl">
+          <li class="active">
+            <a href="#">Home<span class="label label-warning">14</span></a>
+          </li>
+          <li>
+            <a href="#">Help<span class="badge badge-danger">16</span></a>
+          </li>
+          <li uib-dropdown>
+            <a href uib-dropdown-toggle>Dropdown</a>
+            <ul uib-dropdown-menu>
+              <li><a href>Action</a></li>
+              <li><a href>Another action</a></li>
+              <li><a href>Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href>Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Justified</div>
+      </div>
+      <div class="panel-body">
+        <ul class="nav nav-tabs">
+          <li>
+            <a href="#">Clickable link</a>
+          </li>
+          <li>
+            <a href="#">Clickable link</a>
+          </li>
+          <li class="disabled">
+            <a href="#">Disabled link</a>
+          </li>
+        </ul>
+
+        <br>
+
+        <ul class="nav nav-pills">
+          <li>
+            <a href="#">Clickable link</a>
+          </li>
+          <li>
+            <a href="#">Clickable link</a>
+          </li>
+          <li class="disabled">
+            <a href="#">Disabled link</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Tab Resize Plugin</div>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        <uib-tabset px-tab-resize>
+          <uib-tab heading="Section 1">
+            <p>I'm in Section 1.</p>
+          </uib-tab>
+          <uib-tab heading="Section 2">
+            <p>I'm in Section 2.</p>
+          </uib-tab>
+          <uib-tab heading="Section 3">
+            <p>I'm in Section 3.</p>
+          </uib-tab>
+          <uib-tab heading="Section 4">
+            <p>I'm in Section 4.</p>
+          </uib-tab>
+          <uib-tab heading="Section 5">
+            <p>I'm in Section 5.</p>
+          </uib-tab>
+          <uib-tab heading="Section 6">
+            <p>I'm in Section 6.</p>
+          </uib-tab>
+          <uib-tab heading="Section 7">
+            <p>I'm in Section 7.</p>
+          </uib-tab>
+          <uib-tab heading="Section 8">
+            <p>I'm in Section 8.</p>
+          </uib-tab>
+          <uib-tab heading="Section 9">
+            <p>I'm in Section 9.</p>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+      <div class="col-md-6">
+        <uib-tabset px-tab-resize type="pills">
+          <uib-tab heading="Section 1">
+            <p>I'm in Section 1.</p>
+          </uib-tab>
+          <uib-tab heading="Section 2">
+            <p>I'm in Section 2.</p>
+          </uib-tab>
+          <uib-tab heading="Section 3">
+            <p>I'm in Section 3.</p>
+          </uib-tab>
+          <uib-tab heading="Section 4">
+            <p>I'm in Section 4.</p>
+          </uib-tab>
+          <uib-tab heading="Section 5">
+            <p>I'm in Section 5.</p>
+          </uib-tab>
+          <uib-tab heading="Section 6">
+            <p>I'm in Section 6.</p>
+          </uib-tab>
+          <uib-tab heading="Section 7">
+            <p>I'm in Section 7.</p>
+          </uib-tab>
+          <uib-tab heading="Section 8">
+            <p>I'm in Section 8.</p>
+          </uib-tab>
+          <uib-tab heading="Section 9">
+            <p>I'm in Section 9.</p>
+          </uib-tab>
+        </uib-tabset>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Default Accordion</div>
+  </div>
+  <div class="panel-body">
+    <uib-accordion>
+      <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+      <div uib-accordion-group heading="Collapsible Group Item #2">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+      <div uib-accordion-group heading="Collapsible Group Item #3">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </uib-accordion>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Accordion colors</div>
+  </div>
+  <div class="panel-body">
+
+    <div class="row">
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-danger">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-danger">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-danger">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-danger panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-danger panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-danger panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+    </div>
+
+    <hr class="panel-wide-block m-t-0">
+
+    <div class="row">
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-success">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-success">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-success">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-success panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-success panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-success panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+    </div>
+
+    <hr class="panel-wide-block m-t-0">
+
+    <div class="row">
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-warning">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-warning">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-warning">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-warning panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-warning panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-warning panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+    </div>
+
+    <hr class="panel-wide-block m-t-0">
+
+    <div class="row">
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-info">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-info">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-info">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+      <div class="col-md-6">
+        <uib-accordion>
+          <div uib-accordion-group heading="Collapsible Group Item #1" is-open="true" class="panel-info panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #2" class="panel-info panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+          <div uib-accordion-group heading="Collapsible Group Item #3" class="panel-info panel-dark">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </uib-accordion>
+      </div>
+    </div>
+
+  </div>
+</div>

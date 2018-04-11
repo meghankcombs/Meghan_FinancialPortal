@@ -12,12 +12,13 @@ namespace Meghan_FinancialPortal.Controllers
 {
     public class PersonalAccountsController : Controller
     {
-        private FinancialPortal db = new FinancialPortal();
+        private FinancialPortal fdb = new FinancialPortal();
+        private ApplicationDbContext adb = new ApplicationDbContext();
 
         // GET: PersonalAccounts
         public ActionResult Index()
         {
-            var personalAccounts = db.PersonalAccounts.Include(p => p.AspNetUser).Include(p => p.Household);
+            var personalAccounts = fdb.PersonalAccounts.Include(p => p.User).Include(p => p.Household);
             return View(personalAccounts.ToList());
         }
 
@@ -28,7 +29,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonalAccount personalAccount = db.PersonalAccounts.Find(id);
+            PersonalAccount personalAccount = fdb.PersonalAccounts.Find(id);
             if (personalAccount == null)
             {
                 return HttpNotFound();
@@ -39,8 +40,8 @@ namespace Meghan_FinancialPortal.Controllers
         // GET: PersonalAccounts/Create
         public ActionResult Create()
         {
-            ViewBag.CreatedById = new SelectList(db.AspNetUsers, "Id", "FirstName");
-            ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name");
+            ViewBag.CreatedById = new SelectList(adb.Users, "Id", "FirstName");
+            ViewBag.HouseholdId = new SelectList(fdb.Households, "Id", "Name");
             return View();
         }
 
@@ -53,13 +54,13 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PersonalAccounts.Add(personalAccount);
-                db.SaveChanges();
+                fdb.PersonalAccounts.Add(personalAccount);
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CreatedById = new SelectList(db.AspNetUsers, "Id", "FirstName", personalAccount.CreatedById);
-            ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name", personalAccount.HouseholdId);
+            ViewBag.CreatedById = new SelectList(adb.Users, "Id", "FirstName", personalAccount.CreatedById);
+            ViewBag.HouseholdId = new SelectList(fdb.Households, "Id", "Name", personalAccount.HouseholdId);
             return View(personalAccount);
         }
 
@@ -70,13 +71,13 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonalAccount personalAccount = db.PersonalAccounts.Find(id);
+            PersonalAccount personalAccount = fdb.PersonalAccounts.Find(id);
             if (personalAccount == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CreatedById = new SelectList(db.AspNetUsers, "Id", "FirstName", personalAccount.CreatedById);
-            ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name", personalAccount.HouseholdId);
+            ViewBag.CreatedById = new SelectList(adb.Users, "Id", "FirstName", personalAccount.CreatedById);
+            ViewBag.HouseholdId = new SelectList(fdb.Households, "Id", "Name", personalAccount.HouseholdId);
             return View(personalAccount);
         }
 
@@ -89,12 +90,12 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(personalAccount).State = EntityState.Modified;
-                db.SaveChanges();
+                fdb.Entry(personalAccount).State = EntityState.Modified;
+                fdb.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CreatedById = new SelectList(db.AspNetUsers, "Id", "FirstName", personalAccount.CreatedById);
-            ViewBag.HouseholdId = new SelectList(db.Households, "Id", "Name", personalAccount.HouseholdId);
+            ViewBag.CreatedById = new SelectList(adb.Users, "Id", "FirstName", personalAccount.CreatedById);
+            ViewBag.HouseholdId = new SelectList(fdb.Households, "Id", "Name", personalAccount.HouseholdId);
             return View(personalAccount);
         }
 
@@ -105,7 +106,7 @@ namespace Meghan_FinancialPortal.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PersonalAccount personalAccount = db.PersonalAccounts.Find(id);
+            PersonalAccount personalAccount = fdb.PersonalAccounts.Find(id);
             if (personalAccount == null)
             {
                 return HttpNotFound();
@@ -118,9 +119,9 @@ namespace Meghan_FinancialPortal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PersonalAccount personalAccount = db.PersonalAccounts.Find(id);
-            db.PersonalAccounts.Remove(personalAccount);
-            db.SaveChanges();
+            PersonalAccount personalAccount = fdb.PersonalAccounts.Find(id);
+            fdb.PersonalAccounts.Remove(personalAccount);
+            fdb.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -128,7 +129,7 @@ namespace Meghan_FinancialPortal.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                fdb.Dispose();
             }
             base.Dispose(disposing);
         }

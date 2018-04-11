@@ -1,0 +1,487 @@
+<!-- Custom styling -->
+<style>
+  .box,
+  .box-cell {
+    overflow: visible !important;
+    -webkit-mask-image: none !important;
+  }
+
+  .page-forum-thread-title .label {
+    vertical-align: text-bottom;
+    font-weight: bold;
+  }
+
+  .page-forum-thread-actions .btn.btn-outline {
+    opacity: .4;
+  }
+
+  .page-forum-thread-actions .btn.btn-outline:hover,
+  .page-forum-thread-actions .btn.btn-outline:focus,
+  .page-forum-thread-actions .btn.btn-outline:active,
+  .page-forum-thread-actions .btn.btn-outline.active {
+    opacity: 1;
+  }
+
+  #summernote-forum-thread-reply + .note-editor {
+    border-radius: 0;
+    border: none;
+    margin: 0;
+  }
+
+  .note-editor {
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+  }
+
+  @media (min-width: 768px) {
+    .page-forum-thread-counters {
+      border-left-style: solid;
+      border-left-width: 1px;
+    }
+
+    html[dir="rtl"] .page-forum-thread-counters {
+      border-left: 0;
+      border-right-style: solid;
+      border-right-width: 1px;
+    }
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-header p-y-4">
+  <div class="box m-a-0 bg-transparent">
+    <div class="box-cell col-md-7 col-lg-8 col-xl-9">
+      <div class="font-size-12 text-muted line-height-1 font-weight-bold"><a ui-sref="pages.forum.forums-list">FORUMS</a> /</div>
+      <h1 class="font-weight-bold text-default"><a ui-sref="pages.forum.topics">General Web Design</a></h1>
+    </div>
+
+    <!-- Spacer -->
+    <hr class="visible-xs visible-sm">
+
+    <div class="box-cell col-md-5 col-lg-4 col-xl-3 valign-middle">
+      <form class="input-group">
+        <input type="text" name="s" class="form-control" placeholder="Search">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+        </span>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Topic -->
+
+<div class="panel">
+  <div class="page-forum-thread-title panel-title position-relative">
+    <span class="font-weight-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
+    &nbsp;&nbsp;<span class="font-size-13"><span class="label label-info">Info</span></span>
+    &nbsp;&nbsp;<span class="text-muted"><i class="fa fa-lock" uib-tooltip="Locked"></i>&nbsp;&nbsp;<i class="fa fa-dot-circle-o" uib-tooltip="Sticky"></i></span>
+  </div>
+
+  <hr>
+
+  <div class="panel-body font-size-14">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+      erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+      velit eget odio.
+    </p>
+    <blockquote>
+      Ut at nunc rhoncus, dignissim metus id, posuere sem. Phasellus venenatis
+      eu turpis id vehicula. Fusce tristique quam blandit lorem malesuada euismod.
+    </blockquote>
+    <p>
+      Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+      ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+      congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+      pretium et.
+      <br><br>
+    </p>
+    <pre><code>$('[data-toggle="tooltip"]').tooltip();</code></pre>
+    <p>
+      <br>
+      Aenean gravida elit a ante ultricies, non dignissim magna sollicitudin.
+      In ligula turpis, suscipit sed ullamcorper eu, efficitur non lacus.
+      Nulla et est tempus, pulvinar turpis in, scelerisque tellus. Vivamus
+      aliquam dolor nec risus semper consectetur. Maecenas dapibus lacus
+      dapibus eros gravida, sed tempor orci blandit.
+    </p>
+  </div>
+  <div class="page-forum-thread-actions p-x-3 p-b-3 clearfix">
+    <div class="pull-xs-right position-relative">
+      <a href="#" class="btn btn-danger btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Like"><i class="fa fa-heart"></i></a>
+      <a href="#" class="btn btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+    </div>
+  </div>
+
+  <!-- Topic info -->
+
+  <div class="panel-footer bg-white darken clearfix">
+    <div class="box m-y-1 bg-transparent">
+      <div class="box-row">
+        <div class="box-cell col-md-4">
+          <div class="box-container">
+            <div class="box-row">
+              <div class="box-cell" style="width: 30px;">
+                <img src="assets/demo/avatars/1.jpg" alt="" class="border-round" style="width: 100%;">
+              </div>
+              <div class="box-cell p-l-1">
+                <div class="line-height-1"><span class="font-size-11 text-muted">by</span> <a href="#"><strong>John Doe</strong></a></div>
+                <span class="font-size-11 text-muted">5d ago</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="m-y-1 visible-xs visible-sm">
+        <div class="box-cell col-md-4">
+          <div class="font-size-11 text-muted line-height-1">last reply by</div>
+          <a href="#"><strong>Denise Steiner</strong></a><span class="font-size-11 text-muted"> &middot; 15m ago</span>
+        </div>
+        <hr class="m-y-1 visible-xs visible-sm">
+        <div class="page-forum-thread-counters box-cell col-md-4 text-xs-center">
+          <div class="box-container">
+            <div class="box-row">
+              <div class="box-cell">
+                <div class="font-size-14 line-height-1"><strong>555</strong></div>
+                <div class="font-size-11 text-muted">views</div>
+              </div>
+              <div class="box-cell b-l-1">
+                <div class="font-size-14 line-height-1"><strong>25</strong></div>
+                <div class="font-size-11 text-muted">likes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- / Topic info -->
+
+</div>
+
+<!-- / Topic -->
+
+
+<hr class="page-wide-block">
+
+<h5 class="m-y-4"><strong>8 <span class="text-muted">replies</span></strong></h5>
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/2.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Robert Jang</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/3.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Michelle Bortz</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/4.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Timothy Owens</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/5.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Denise Steiner</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/2.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Robert Jang</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/3.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Michelle Bortz</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/4.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Timothy Owens</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<!-- Reply  -->
+<div class="box bg-transparent">
+  <div class="box-row">
+    <div class="box-cell p-y-1" style="width: 40px;">
+      <img src="assets/demo/avatars/5.jpg" alt="" class="border-round" style="width: 100%;">
+    </div>
+    <div class="box-cell p-l-2">
+      <div class="panel m-a-0">
+        <div class="panel-body p-y-1">
+          <div class="page-forum-thread-actions pull-xs-right p-t-1">
+            <a href="#" class="btn btn-sm btn-outline btn-outline-colorless b-a-0 font-size-14" uib-tooltip="Link"><i class="fa fa-link"></i></a>
+          </div>
+
+          <a href="#"><strong>Denise Steiner</strong></a>
+          <div class="text-muted font-size-12">posted 3d ago</div>
+        </div>
+        <hr class="m-y-0">
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis,
+            erat ut faucibus interdum, velit erat elementum libero, ut efficitur dolor
+            velit eget odio.
+          </p>
+          <p>
+            Nunc et dui quis lacus tristique ullamcorper quis sit amet massa. In
+            ullamcorper vitae erat mollis viverra. Cras rhoncus bibendum urna, vitae
+            congue velit suscipit vel. Fusce facilisis posuere quam, at accumsan diam
+            pretium et.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / Reply  -->
+
+<hr class="page-wide-block">
+
+<h5 class="m-y-4"><strong>Write your reply</strong></h5>
+
+<!-- Form  -->
+<form class="clearfix" ng-controller="PagesForumThreadReplyCtrl as ctrl">
+  <div class="box bg-transparent m-b-2 position-static">
+    <div class="box-row">
+      <div class="box-cell p-y-1" style="width: 40px;">
+        <img src="assets/demo/avatars/1.jpg" alt="" class="border-round" style="width: 100%;">
+      </div>
+      <div class="box-cell p-l-2">
+        <div class="panel m-a-0">
+          <div class="panel-body p-y-1">
+            <a href="#"><strong>John Doe</strong></a>
+            <div class="text-muted font-size-12">now</div>
+          </div>
+          <hr class="m-y-0">
+          <div summernote height="200" config="ctrl.options"></div>
+
+          <!-- <textarea id="summernote-forum-thread-reply" class="form-control m-a-0 b-a-0 border-radius-0" rows="7" name="thread-reply"></textarea> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-lg btn-primary p-x-4 pull-xs-right">Post</button>
+</form>
+<!-- / Form  -->

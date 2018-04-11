@@ -1,0 +1,565 @@
+<!-- Custom styling -->
+<style>
+
+  /* Common styles */
+
+  .box, .box-row, .box-cell { overflow: visible !important; -webkit-mask-image: none !important; }
+  .page-messages-container > .box-row > .box-cell { display: block !important; }
+
+  .page-messages-label {
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 999px;
+    float: left;
+    margin-top: 6px;
+    margin-right: 12px;
+  }
+
+  html[dir="rtl"] .page-messages-label {
+    float: right;
+    margin-left: 12px;
+    margin-right: 0;
+  }
+
+  #page-messages-aside-nav {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height .3s;
+    transition: max-height .3s;
+  }
+
+  #page-messages-aside-nav.show { max-height: 2000px; }
+
+  @media (min-width: 768px) {
+    .page-messages-container > .box-row > .box-cell {
+      display: table-cell !important;
+      padding-top: 15px;
+    }
+    .page-messages-aside { width: 200px; }
+    .page-messages-content { padding-left: 20px; }
+
+    html[dir="rtl"] .page-messages-content {
+      padding-left: 0;
+      padding-right: 20px;
+    }
+
+    #page-messages-aside-nav { max-height: none !important; }
+
+    .page-messages-wide-buttons .btn { width: 60px; }
+  }
+
+  /* Special styles */
+
+  .page-messages-pages { line-height: 31px; }
+
+  .page-messages-items td {
+    border: none !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .page-messages-item-actions {
+    width: 60px;
+  }
+
+  .page-messages-item-from,
+  .page-messages-item-subject {
+    display: block;
+  }
+
+  .page-messages-item-date {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  html[dir="rtl"] .page-messages-item-date {
+    right: auto;
+    left: 0;
+  }
+
+  @media (min-width: 768px) {
+    .page-messages-item-from,
+    .page-messages-item-subject {
+      display: table-cell;
+    }
+
+    .page-messages-item-from { width: 140px; }
+
+    .page-messages-item-date {
+      display: table-cell;
+      position: static;
+      width: 80px;
+    }
+  }
+</style>
+<!-- / Custom styling -->
+
+<div class="page-messages-container box m-a-0 bg-transparent">
+  <div class="box-row">
+
+    <!-- Aside -->
+
+    <div class="page-messages-aside box-cell valign-top">
+      <div class="clearfix">
+
+        <!-- Controls -->
+
+        <div class="box-container">
+          <div class="box-row">
+            <div class="box-cell"><a ui-sref="pages.messages.new" class="btn btn-block btn-primary"><span class="btn-label-icon left fa fa-pencil-square-o"></span>New message</a></div>
+            <div class="box-cell p-l-3 hidden-md hidden-lg hidden-xl" style="width: 60px;"><button type="button" class="btn btn-block btn-outline btn-outline-colorless p-x-0" id="page-messages-aside-nav-toggle" ng-click="asideNavExpanded = !asideNavExpanded" ng-class="{ active: asideNavExpanded }"><i class="fa fa-bars"></i></button></div>
+          </div>
+        </div>
+
+        <!-- / Controls -->
+
+        <div class="m-t-3" id="page-messages-aside-nav" ng-class="{ show: asideNavExpanded }">
+          <div class="list-group m-b-1">
+            <a href="#" class="list-group-item active"><i class="list-group-icon fa fa-inbox"></i>Inbox<span class="label">20</span></a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-star"></i>Starred<span class="label">43</span></a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-envelope"></i>Sent</a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-exclamation"></i>Important</a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-file-text-o"></i>Drafts<span class="label">11</span></a>
+            <a href="#" class="list-group-item"><i class="list-group-icon fa fa-trash-o"></i>Trash</a>
+          </div>
+          <a href="#" class="text-muted">+ Add More</a>
+
+          <h6 class="m-t-4 m-b-1 text-muted">LABELS</h6>
+          <div class="list-group m-b-1">
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-success"></i>Client</a>
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-danger"></i>Social</a>
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-info"></i>Family</a>
+            <a href="#" class="list-group-item"><i class="page-messages-label bg-warning"></i>Friends</a>
+          </div>
+          <a href="#" class="text-muted">+ Add More</a>
+
+          <!-- Spacer -->
+          <div class="m-t-3 visible-xs visible-sm"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- / Aside -->
+
+    <hr class="page-wide-block m-t-0 visible-xs visible-sm">
+
+    <!-- Content -->
+
+    <div class="page-messages-content box-cell valign-top">
+      <div class="row">
+        <h3 class="p-x-3 col-xs-12 col-md-7 col-lg-8" style="margin-top: 5px;"><i class="fa fa-inbox"></i>&nbsp;&nbsp;Inbox</h3>
+
+        <div class="col-xs-12 col-md-5 col-lg-4">
+          <form class="input-group">
+            <input type="text" name="s" class="form-control" placeholder="Search">
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+            </span>
+          </form>
+        </div>
+      </div>
+
+      <!-- Spacer -->
+      <div class="m-t-3 visible-xs visible-sm"></div>
+
+      <div class="panel">
+
+        <!-- Controls -->
+
+        <div class="panel-body p-a-1 clearfix">
+          <div class="btn-toolbar page-messages-wide-buttons pull-left" role="toolbar">
+            <div class="btn-group">
+              <div uib-dropdown class="btn-group">
+                <button uib-dropdown-toggle type="button" class="btn"><i class="fa fa-check-square-o"></i>&nbsp;<i class="fa fa-caret-down"></i></button>
+                <ul uib-dropdown-menu role="menu">
+                  <li><a href="#">Check all</a></li>
+                  <li><a href="#">Check read</a></li>
+                  <li><a href="#">Check unread</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Uncheck all</a></li>
+                  <li><a href="#">Uncheck read</a></li>
+                  <li><a href="#">Uncheck unread</a></li>
+                </ul>
+              </div>
+              <button type="button" class="btn"><i class="fa fa-repeat"></i></button>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn"><i class="fa fa fa-file-text-o"></i></button>
+              <button type="button" class="btn"><i class="fa fa-exclamation-circle"></i></button>
+              <button type="button" class="btn"><i class="fa fa-trash-o"></i></button>
+            </div>
+          </div>
+
+          <div class="btn-toolbar pull-right" role="toolbar">
+            <div class="btn-group">
+              <button type="button" class="btn"><i class="fa fa-chevron-left"></i></button>
+              <button type="button" class="btn"><i class="fa fa-chevron-right"></i></button>
+            </div>
+          </div>
+          <div class="page-messages-pages pull-right p-r-1 text-muted">1-50 of 825</div>
+        </div>
+
+        <!-- / Controls -->
+
+        <hr class="m-y-0">
+
+        <!-- List -->
+
+        <div class="panel-body p-a-1 clearfix">
+          <table class="page-messages-items table table-striped m-a-0">
+            <tbody>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Facebook</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-danger">Social</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default font-weight-bold">Reset your account password</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">1h ago</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Dropbox</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">Complete your Dropbox setup!</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">3h ago</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Michelle Bortz</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-success">Client</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default font-weight-bold">New design concepts <i class="fa fa-paperclip"></i></a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 11</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">TaskManager</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">You have 5 uncompleted tasks!</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 10</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">GitHub</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">[GitHub] Your password has changed</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 9</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Timothy Owens</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-warning">Friends</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default">Hi John! How are you?</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 8</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Master Yoda</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default font-weight-bold">You're ready, young padawan.</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 7</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Facebook</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-danger">Social</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default">Reset your account password</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 6</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Dropbox</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">Complete your Dropbox setup!</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 5</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Michelle Bortz</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-success">Client</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default font-weight-bold">New design concepts <i class="fa fa-paperclip"></i></a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Aug 4</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">TaskManager</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">You have 5 uncompleted tasks!</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 28</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">GitHub</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">[GitHub] Your password has changed</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 27</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Timothy Owens</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-warning">Friends</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default">Hi John! How are you?</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 26</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Master Yoda</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">You're ready, young padawan.</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 25</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Facebook</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-danger">Social</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default font-weight-bold">Reset your account password</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 24</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Dropbox</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">Complete your Dropbox setup!</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 23</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Michelle Bortz</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-success">Client</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default font-weight-bold">New design concepts <i class="fa fa-paperclip"></i></a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 22</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">TaskManager</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">You have 5 uncompleted tasks!</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 21</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">GitHub</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">[GitHub] Your password has changed</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 20</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Timothy Owens</a>
+                    <div class="page-messages-item-subject box-cell"><span class="label label-warning">Friends</span>&nbsp;&nbsp;&nbsp;<a ui-sref="pages.messages.item" class="text-default">Hi John! How are you?</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 19</div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="page-messages-item-actions">
+                  <label class="custom-control custom-checkbox custom-control-blank m-a-0 pull-xs-left">
+                    <input type="checkbox" class="custom-control-input"><span class="custom-control-indicator"></span>
+                  </label>
+                  <a href="#" class="pull-xs-left m-l-1 text-muted font-size-14"><i class="fa fa-star"></i></a>
+                </td>
+                <td>
+                  <div class="box m-a-0 bg-transparent">
+                    <a href="#" class="page-messages-item-from box-cell text-default">Master Yoda</a>
+                    <div class="page-messages-item-subject box-cell"><a ui-sref="pages.messages.item" class="text-default">You're ready, young padawan.</a></div>
+                    <div class="page-messages-item-date box-cell text-muted text-xs-right">Jul 18</div>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <!-- / List -->
+
+      </div>
+    </div>
+
+    <!-- / Content -->
+
+  </div>
+</div>

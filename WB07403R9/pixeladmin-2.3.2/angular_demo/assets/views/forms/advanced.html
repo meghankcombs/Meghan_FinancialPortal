@@ -1,0 +1,567 @@
+<div class="page-header">
+  <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-android-checkbox-outline"></i>Forms / </span>Advanced</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">UI Select (Angular Select2 alternative)</div>
+      </div>
+      <div class="panel-body" ng-init="uiSelect = { single: main.states[9], multiple: [main.states[3], main.states[6], main.states[12]] }">
+        <div class="m-b-2">
+          <ui-select ng-model="uiSelect.single">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">DISABLED</h6>
+
+        <div class="m-b-2">
+          <ui-select ng-disabled="true" ng-model="uiSelect.single">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select ng-disabled="true" multiple ng-model="uiSelect.multiple">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZES</h6>
+
+        <div class="m-b-2">
+          <ui-select ng-model="uiSelect.single" class="ui-select-sm">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-sm">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select ng-model="uiSelect.single" class="ui-select-lg">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-lg">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-primary">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-success">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-info">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-warning">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="m-b-2">
+          <ui-select multiple ng-model="uiSelect.multiple" class="ui-select-danger">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">STATES</h6>
+
+        <div class="form-group has-success">
+          <ui-select ng-model="uiSelect.single">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="form-group has-success">
+          <ui-select multiple ng-model="uiSelect.multiple">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="form-group has-warning">
+          <ui-select ng-model="uiSelect.single">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="form-group has-warning">
+          <ui-select multiple ng-model="uiSelect.multiple">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="form-group has-error">
+          <ui-select ng-model="uiSelect.single">
+            <ui-select-match placeholder="Select value">
+              <span ng-bind="$select.selected.name"></span>
+            </ui-select-match>
+            <ui-select-choices repeat="state in (main.states | filter: $select.search | orderBy: 'name') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+        <div class="form-group has-error">
+          <ui-select multiple ng-model="uiSelect.multiple">
+            <ui-select-match placeholder="Select value">
+              <span>{{$item.name}}</span>
+            </ui-select-match>
+            <ui-select-choices group-by="'timezone'" repeat="state in (main.states | filter: $select.search | orderBy: 'timezone') track by state.id">
+                <span ng-bind="state.name"></span>
+            </ui-select-choices>
+            <ui-select-no-choice>
+              No results found.
+            </ui-select-no-choice>
+          </ui-select>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Bootstrap TouchSpin</div>
+      </div>
+      <div class="panel-body" ng-init="touchspinModel=50">
+        <input touch-spin type="text" ng-model="touchspinModel">
+        <br>
+        <input touch-spin type="text" ng-model="touchspinModel" min="0" max="100" step="0.1" decimals="2" boostat="5" maxboostedstep="10" postfix="'%'">
+        <br>
+        <input touch-spin type="text" ng-model="touchspinModel" verticalbuttons="true">
+        <br>
+        <input touch-spin type="text" ng-model="touchspinModel" verticalbuttons="true" prefix="'$'">
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZING</h6>
+
+        <input touch-spin type="text" ng-model="touchspinModel">
+        <br>
+        <input touch-spin type="text" ng-model="touchspinModel" verticalbuttons="true">
+        <br>
+        <input touch-spin type="text" ng-model="touchspinModel">
+        <br>
+        <input touch-spin type="text" ng-model="touchspinModel" verticalbuttons="true">
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Expanding input</div>
+      </div>
+      <div class="panel-body">
+        <px-expanding-input class="m-b-2">
+          <input px-expanding-input-control type="text" class="form-control" placeholder="Write a comment...">
+          <px-expanding-input-content>
+            <label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-1">
+              <input type="checkbox" id="custom-checkbox-1" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Publish now
+            </label>
+            <div class="pull-right">
+              <button type="button" class="btn" data-collapse="true">Cancel</button>&nbsp;
+              <button type="button" class="btn btn-primary">Post</button>
+            </div>
+          </px-expanding-input-content>
+        </px-expanding-input>
+
+        <px-expanding-input class="m-b-2">
+          <textarea px-expanding-input-control class="form-control" rows="4" placeholder="Write a comment..."></textarea>
+          <px-expanding-input-content>
+            <label class="custom-control custom-checkbox checkbox-inline" for="custom-checkbox-2">
+              <input type="checkbox" id="custom-checkbox-2" class="custom-control-input">
+              <span class="custom-control-indicator"></span>
+              Publish now
+            </label>
+            <div class="pull-right">
+              <button type="button" class="btn" data-collapse="true">Cancel</button>&nbsp;
+              <button type="button" class="btn btn-primary">Post</button>
+            </div>
+          </px-expanding-input-content>
+        </px-expanding-input>
+
+        <px-expanding-input class="m-b-2">
+          <input px-expanding-input-control type="text" class="form-control input-sm" placeholder="Write a comment...">
+          <px-expanding-input-content style="text-align: right">
+            <button type="button" class="btn btn-sm" data-collapse="true">Cancel</button>&nbsp;
+            <button type="button" class="btn btn-sm btn-primary">Post</button>
+          </px-expanding-input-content>
+        </px-expanding-input>
+
+        <px-expanding-input>
+          <input px-expanding-input-control type="text" class="form-control input-lg" placeholder="Write a comment...">
+          <px-expanding-input-content style="text-align: right">
+            <button type="button" class="btn btn-lg" data-collapse="true">Cancel</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-lg btn-primary">Post</button>
+          </px-expanding-input-content>
+        </px-expanding-input>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Knob</div>
+      </div>
+      <div class="panel-body" ng-init="knobValue = 75">
+        <div style="display: inline-block">
+          <input knob ng-model="knobValue" type="text" data-width="80" data-height="80" data-fgColor="#6597ea" data-thickness=".2" data-angleOffset="180">
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div style="display: inline-block">
+          <input knob ng-model="knobValue" type="text" data-width="80" data-height="80" data-displayPrevious="true" data-thickness=".2" data-min="-100" data-angleOffset="-125" data-angleArc="250" data-linecap="round" data-fgColor="#5ebd5e">
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;
+
+        <div style="display: inline-block">
+          <input knob ng-model="knobValue" type="text" data-width="100" data-height="100" data-thickness=".25" data-cursor="true" data-fgColor="#e5635f">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">ngTagsInput</div>
+      </div>
+      <div class="panel-body" ng-init="selectedTags = [main.ngTagsInputData[2], main.ngTagsInputData[6], main.ngTagsInputData[9]]">
+        <tags-input ng-model="selectedTags" tag-class="{'label': true}" placeholder="Add a superhero" />
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">AUTOCOMPLETE</h6>
+
+        <tags-input ng-model="selectedTags" tag-class="{'label': true}" placeholder="Add a superhero" replace-spaces-with-dashes="false" add-from-autocomplete-only="true" select-first-match="true">
+          <auto-complete source="main.ngTagsInputAutocomplete($query)" min-length="0" max-results-to-show="100" />
+        </tags-input>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">Disabled</h6>
+
+        <tags-input ng-model="selectedTags" tag-class="{'label': true}" disabled="disabled" />
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">COLORS</h6>
+
+        <tags-input ng-model="selectedTags" tag-class="{'label label-primary': true}" placeholder="Add a superhero" />
+        <br>
+        <tags-input ng-model="selectedTags" tag-class="{'label label-success': true}" placeholder="Add a superhero" />
+        <br>
+        <tags-input ng-model="selectedTags" tag-class="{'label label-info': true}" placeholder="Add a superhero" />
+        <br>
+        <tags-input ng-model="selectedTags" tag-class="{'label label-warning': true}" placeholder="Add a superhero" />
+        <br>
+        <tags-input ng-model="selectedTags" tag-class="{'label label-danger': true}" placeholder="Add a superhero" />
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">STATES</h6>
+
+        <div class="form-group has-error">
+          <tags-input ng-model="selectedTags" tag-class="{'label': true}" placeholder="Add a superhero" />
+        </div>
+        <div class="form-group has-warning">
+          <tags-input ng-model="selectedTags" tag-class="{'label': true}" placeholder="Add a superhero" />
+        </div>
+        <div class="form-group has-success">
+          <tags-input ng-model="selectedTags" tag-class="{'label': true}" placeholder="Add a superhero" />
+        </div>
+
+        <hr class="panel-wide-block">
+
+        <h6 class="m-t-0 m-b-2 font-weight-semibold text-muted">SIZING</h6>
+
+        <tags-input ng-model="selectedTags" tag-class="{'label': true}" class="tags-input-sm" placeholder="Add a superhero" />
+        <br>
+        <tags-input ng-model="selectedTags" tag-class="{'label': true}" class="tags-input-lg" placeholder="Add a superhero" />
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Typeahead</div>
+      </div>
+      <div class="panel-body">
+        <p>Enter a state:</p>
+        <input ng-model="typeaheadSelected" uib-typeahead="state.name for state in main.states | filter:$viewValue | limitTo:8" class="form-control" type="text" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Autosize</div>
+      </div>
+      <div class="panel-body">
+        <textarea autosize rows="3" class="form-control"></textarea>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Masked input</div>
+      </div>
+      <div class="panel-body" ng-controller="FormsAdvancedMaskedInputCtrl as ctrl">
+        <input maskedinput mask="'99/99/9999'" type="text" class="form-control" placeholder="Date: 99/99/9999">
+        <br>
+        <input maskedinput mask="'(999) 999-9999'" type="text" class="form-control" placeholder="SSN: 999-99-9999">
+        <br>
+        <input maskedinput mask="'999-99-9999'" type="text" class="form-control" placeholder="Phone: (999) 999-9999">
+        <br>
+        <input maskedinput mask="'a*-999-a999'" completed="ctrl.completed" type="text" class="form-control" placeholder="Product Key: a*-999-a999">
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Char limit</div>
+      </div>
+      <div class="panel-body">
+        <input px-char-limit type="text" class="form-control m-b-2" maxlength="20">
+        <textarea px-char-limit class="form-control m-b-2" rows="3" maxlength="100"></textarea>
+        <div class="m-b-2">
+          <input  px-char-limit counter="#char-limit-counter-1" type="text" class="form-control" maxlength="20">
+          <small class="text-muted">Characters left: <strong id="char-limit-counter-1">0</strong></small>
+        </div>
+        <textarea px-char-limit counter="#char-limit-counter-2" class="form-control" rows="3" maxlength="100"></textarea>
+        <small class="text-muted">Characters left: <strong id="char-limit-counter-2">0</strong></small>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-heading">
+        <div class="panel-title">Quick[select]</div>
+      </div>
+      <div class="panel-body">
+        <!--[if lte IE 9]>Quick[select] plugin do not support IE &lt; 10<![endif]-->
+        <!--[if !IE]> -->
+        <p>What's your favourite meal?</p>
+        <select ng-model="quickselectModel" quickselect active-button-class="'btn-primary active'" break-out-values="['Breakfast', 'Lunch', 'Dinner']" button-class="'btn btn-default'" select-default-text="'Other'" wrapper-class="'btn-group'">
+          <option value="">Select one...</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Brunch">Brunch</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Afternoon Tea">Afternoon Tea</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Midnight Snack">Midnight Snack</option>
+          <option value="I do not know">I do not know</option>
+        </select>
+        <div class="m-t-3"></div>
+        <select ng-model="quickselectModel" quickselect active-button-class="'btn-primary active'" break-out-all="true" button-class="'btn btn-default'" select-default-text="'Other'" wrapper-class="'btn-group'">
+          <option value="">Select one...</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Brunch">Brunch</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Afternoon Tea">Afternoon Tea</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Midnight Snack">Midnight Snack</option>
+          <option value="I do not know">I do not know</option>
+        </select>
+        <div class="m-t-3"></div>
+        <select ng-model="quickselectModel" quickselect active-button-class="'btn-primary active'" break-out-values="['Breakfast', 'Lunch', 'Dinner']" button-class="'btn btn-default'" select-default-text="'Other'" wrapper-class="'btn-group'" disabled>
+          <option value="">Select one...</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Brunch">Brunch</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Afternoon Tea">Afternoon Tea</option>
+          <option value="Dinner">Dinner</option>
+          <option value="Midnight Snack">Midnight Snack</option>
+          <option value="I do not know">I do not know</option>
+        </select>
+        <!-- <![endif]-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div class="panel-title">Dropzone</div>
+  </div>
+  <div class="panel-body" ng-controller="FormsAdvancedDropzoneCtrl as ctrl">
+    <form dropzone action="/upload" instance="ctrl.$dropzone" options="ctrl.options" callbacks="ctrl.callbacks">
+      <dropzone-message >
+        <div class="dz-upload-icon"></div>
+        Drop files in here<br>
+        <span class="dz-text-small">or click to pick manually</span>
+      </dropzone-message>
+      <dropzone-fallback class="font-weight-bold">Your browser isn't support Dropzone</dropzone-fallback>
+    </form>
+  </div>
+</div>

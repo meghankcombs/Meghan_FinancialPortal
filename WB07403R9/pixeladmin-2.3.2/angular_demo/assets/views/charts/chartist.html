@@ -1,0 +1,78 @@
+<div ng-controller="ChartsChartistCtrl as ctrl">
+  <div class="page-header">
+    <h1><span class="text-muted font-weight-light"><i class="page-header-icon ion-stats-bars"></i>Charts / </span>Chartist</h1>
+    <a href="https://gionkunz.github.io/chartist-js" target="_blank" class="page-header-text text-muted font-weight-light pull-md-right col-xs-12 width-md-auto width-lg-auto width-xl-auto p-x-0">https://gionkunz.github.io/chartist-js</a>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Graph</div>
+        <hr>
+
+        <div class="panel-body">
+          <div chartist class="ct-chart" chartist-data="ctrl.lineData" chartist-chart-options="ctrl.lineOptions" chartist-chart-type="Line" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">BI-polar</div>
+        <hr>
+
+        <div class="panel-body">
+          <div chartist class="ct-chart" chartist-data="ctrl.biPolarData" chartist-chart-options="ctrl.biPolarOptions" chartist-chart-type="Line" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Bars</div>
+        <hr>
+
+        <div class="panel-body">
+          <div chartist class="ct-chart" chartist-data="ctrl.barsData" chartist-chart-options="ctrl.barsOptions" chartist-chart-type="Bar" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Horizontal bars</div>
+        <hr>
+
+        <div class="panel-body">
+          <div chartist class="ct-chart" chartist-data="ctrl.hBarsData" chartist-chart-options="ctrl.hBarsOptions" chartist-chart-type="Bar" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Pie</div>
+        <hr>
+
+        <div class="panel-body">
+          <div chartist class="ct-chart ct-negative-labels" chartist-data="ctrl.pieData" chartist-chart-options="ctrl.pieOptions" chartist-chart-type="Pie" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="panel">
+        <div class="panel-title">Gauge</div>
+        <hr>
+
+        <div class="panel-body">
+          <div chartist class="ct-chart" chartist-data="ctrl.gaugeData" chartist-chart-options="ctrl.gaugeOptions" chartist-chart-type="Pie" style="height: 250px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

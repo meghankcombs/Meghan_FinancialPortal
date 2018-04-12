@@ -28,10 +28,7 @@ namespace Meghan_FinancialPortal.Models.Helpers
             var hid = cUser.Claims.FirstOrDefault(c => c.Type == "HouseholdId");
             return (hid != null && !string.IsNullOrWhiteSpace(hid.Value));
         }
-
-        //is user in role method here
-
-        //refresh authentication method here
+       
         public static async Task RefreshAuthentication(this HttpContextBase context, ApplicationUser user)
         {
             context.GetOwinContext().Authentication.SignOut();

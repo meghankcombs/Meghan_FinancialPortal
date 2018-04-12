@@ -30,19 +30,6 @@ namespace Meghan_FinancialPortal.Models.Helpers
             return true;
         }
 
-        public void AddUserToHousehold(string userId, int householdId) //add new user to household, if he/she not in household already
-        {
-            if (!userHelper.InHousehold(userId, householdId))
-            {
-                Household household = fdb.Households.Find(householdId);
-                var newUser = adb.Users.Find(userId);
-
-                household.Users.Add(newUser);
-                fdb.Entry(household).State = EntityState.Modified; //modifies existing Household record
-                fdb.SaveChanges();
-            }
-        }
-
         public void RemoveUserFromHousehold(string userId, int householdId) //remove user from Household
         {
             if (userHelper.InHousehold(userId, householdId))
@@ -55,6 +42,5 @@ namespace Meghan_FinancialPortal.Models.Helpers
                 fdb.SaveChanges();
             }
         }
-
     }
 }

@@ -51,20 +51,23 @@ namespace Meghan_FinancialPortal.Controllers
         // POST: Households/Create
         [Authorize]
         [HttpPost]
-        public async Task<ActionResult> CreateHousehold(HouseholdViewModel vm)
+        public async Task<ActionResult> Create(HouseholdViewModel vm)
         {
-            //Create new Household and save to DB
+            //Create new household
             Household household = new Household();
+
+            //check if name is unique
             if(househldHelper.IsUnique(household.Name) == true)
             {
                 household.Name = vm.HouseholdName;
             }
             else
             {
-                TempData["NameNotUnique"] = "The name you selected is not unique. Please choose a different name.";
-                return RedirectToAction("Create"); //bring create hoousehold view back up...
+                TempData["NameNotUnique"] = "The Household name you entered is not unique. Please enter a different name.";
+                return RedirectToAction("Create"); //bring create household view back up...
             }
             
+            // add household to database
             fdb.Households.Add(household);
             fdb.SaveChanges();
 
@@ -72,7 +75,7 @@ namespace Meghan_FinancialPortal.Controllers
             var user = adb.Users.Find(User.Identity.GetUserId());
             household.Users.Add(user);
             fdb.SaveChanges();
-            await ControllerContext.HttpContext.RefreshAuthentication(user);
+            await ControllerContext.HttpContext.RefreshAuthentication(user); //refresh thier cookies and direct them to their dashboard
 
             return RedirectToAction("Index", "Home");
         }

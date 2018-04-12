@@ -109,7 +109,19 @@ namespace Meghan_FinancialPortal.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("InviteError", new { errMsg = msg });
+                    //if there's an error, throw a sweet alert to tell the user and redirect them to the home index
+                    switch(msg)
+                    {
+                        case "invalid":
+                            TempData["InvalidInvite"] = "Invalid household join attempt. You will be redirected.";
+                            break;
+                        case "expired":
+                            TempData["ExpiredInvite"] = "This invite has expired. Try creating your own.";
+                            break;
+                        default:
+                            break;
+                    }
+                    return RedirectToAction("Index", "Home");
                 }
             }
             return View(household);
@@ -136,8 +148,20 @@ namespace Meghan_FinancialPortal.Controllers
                 return false;
             }
         }
+        
+        [HttpPost]
+        [Authorize]
+        public async Task<ActionResult> JoinHousehold(HouseholdViewModel vm) //action user clicks when they have been sent an invite link
+        {
+            Household household = fdb.Households.Find(vm.HouseholdId);
+            var user = adb.Users.Find(User.Identity.GetUserId());
 
-        //join household method here
+            household.Users.Add(user);
+            fdb.SaveChanges();
+
+            await ControllerContext.HttpContext.RefreshAuthentication(user);
+            return RedirectToAction("Index", "Home");
+        }
     }
 
 }

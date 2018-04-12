@@ -11,7 +11,7 @@ using System.Web.Routing;
 
 namespace Meghan_FinancialPortal.Models.Helpers
 {
-    public class HouseholdHelper : AuthorizeAttribute
+    public class HouseholdHelper
     {
         private static Household household = new Household();
         private static ApplicationDbContext adb = new ApplicationDbContext();
@@ -34,7 +34,7 @@ namespace Meghan_FinancialPortal.Models.Helpers
         {
             if (!userHelper.InHousehold(userId, householdId))
             {
-                Household household = fdb.Households.Find(householdId); //assigns entire record to Household, NOT just householdId
+                Household household = fdb.Households.Find(householdId);
                 var newUser = adb.Users.Find(userId);
 
                 household.Users.Add(newUser);
@@ -43,7 +43,7 @@ namespace Meghan_FinancialPortal.Models.Helpers
             }
         }
 
-        public void RemoveUserFromHousehold(string userId, int householdId) //remove user (including self) from Household
+        public void RemoveUserFromHousehold(string userId, int householdId) //remove user from Household
         {
             if (userHelper.InHousehold(userId, householdId))
             {
@@ -51,35 +51,10 @@ namespace Meghan_FinancialPortal.Models.Helpers
                 var delUser = adb.Users.Find(userId);
 
                 household.Users.Remove(delUser);
-                fdb.Entry(household).State = EntityState.Modified; //modifies existing Project record
+                fdb.Entry(household).State = EntityState.Modified; //modifies existing Household record
                 fdb.SaveChanges();
             }
         }
 
-        protected override bool AuthorizeCore(HttpContextBase httpContext) //only people in households are allow to do things
-        {
-            var isAuthorized = base.AuthorizeCore(httpContext);
-            if (!isAuthorized)
-            {
-                return false;
-            }
-            return httpContext.User.Identity.IsInHousehold(); //check if user is in a household
-        }
-
-        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
-        {
-            if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
-            {
-                base.HandleUnauthorizedRequest(filterContext);
-            }
-            else
-            {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new
-                {
-                    controller = "Home",
-                    action = "CreateJoinHousehold"
-                }));
-            }
-        }
     }
 }

@@ -19,3 +19,14 @@
         </fieldset>
     }
 </div>
+
+@section scripts {
+    @if (TempData.ContainsKey("NoProjectMessage"))
+    {
+        <script>
+                    $(function () {
+                        swal('Oops!', '@TempData["NameNotUnique"]', 'warning');
+                    });
+        </script>
+    }
+}

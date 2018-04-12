@@ -19,18 +19,16 @@ namespace Meghan_FinancialPortal.Controllers
         private ApplicationDbContext adb = new ApplicationDbContext();
         private FinancialPortal fdb = new FinancialPortal();
 
+        [AuthorizeHouseholdRequired] //goes to Attributes file and runs two methods to get householdId and 
         public ActionResult Index()
         {
-            var IndexData = new HomeViewModel();
-
-            //Shows all data in datatables; can go to Household details page for specific data
-            IndexData.Households = fdb.Households.ToList();
-            IndexData.AllUsers = adb.Users.ToList();
-            IndexData.Accounts = fdb.PersonalAccounts.ToList();
-            IndexData.Budgets = fdb.Budgets.ToList();
-            IndexData.Transactions = fdb.Transactions.OrderByDescending(t => t.Date).Take(50).ToList();
-
-            return View(IndexData);
+            var id = User.Identity.GetHouseholdId(); //get the household id of user logged in
+            Household household = fdb.Households.Find(id); //show their household data (control this in view)
+            if(household == null)
+            {
+                return HttpNotFound();
+            }
+            return View(household);
         }
 
         public ActionResult About()
@@ -79,7 +77,7 @@ namespace Meghan_FinancialPortal.Controllers
         }
 
         [Authorize]
-        public ActionResult CreateJoinHousehold(Guid? code)
+        public ActionResult CreateJoinHousehold(Guid? code) //creating household that a person joined
         {
             //If the current user accessing this page already has a HouseholdId, send them to their dashboard
             if (User.Identity.IsInHousehold())
@@ -87,13 +85,13 @@ namespace Meghan_FinancialPortal.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            HouseholdViewModel household = new HouseholdViewModel();
+            HouseholdViewModel household = new HouseholdViewModel(); //getting info for user without household to create a household
 
             //Determine whether the user has been sent an invite and set property values 
-            if (code != null)
+            if (code != null) //code sent via email (or some other means)
             {
                 string msg = "";
-                if (ValidInvite(code, ref msg))
+                if (ValidInvite(code, ref msg)) //validate invitation code (ref = access variable by reference (default is usually value))
                 {
                     Invite result = fdb.Invites.FirstOrDefault(i => i.HHToken == code);
 
@@ -117,14 +115,14 @@ namespace Meghan_FinancialPortal.Controllers
             return View(household);
         }
         
-        private bool ValidInvite(Guid? code, ref string message)
+        private bool ValidInvite(Guid? code, ref string message) //message references same memory location as msg in CreateJoinHousehold method above
         {
-            if ((DateTime.Now - fdb.Invites.FirstOrDefault(i => i.HHToken == code).InviteDate).TotalDays < 6)
+            if ((DateTime.Now - fdb.Invites.FirstOrDefault(i => i.HHToken == code).InviteDate).TotalDays < 6) //if invite newer than 6 days
             {
                 bool result = fdb.Invites.FirstOrDefault(i => i.HHToken == code).HasBeenUsed;
                 if (result)
                 {
-                    message = "invalid";
+                    message = "invalid"; //this is what msg is being set to above and code acts on these outcomes
                 }
                 else
                 {
@@ -138,5 +136,8 @@ namespace Meghan_FinancialPortal.Controllers
                 return false;
             }
         }
+
+        //join household method here
     }
+
 }
